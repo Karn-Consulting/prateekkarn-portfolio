@@ -15,7 +15,7 @@ const HeroSection = () => {
                 Architecting Digital Growth for Market Leaders.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                A strategic advisor with a decade of experience building data-driven marketing engines for B2B leaders in the US and UK. I translate complex data into profitable business outcomes.
+                A strategic advisor with a decade of experience building data-driven marketing engines for business leaders. I translate complex data into profitable business outcomes.
               </p>
             </div>
             

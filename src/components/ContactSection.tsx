@@ -19,7 +19,7 @@ const ContactSection = () => {
             className="flex items-center gap-3 text-primary-foreground hover:text-accent transition-colors duration-200"
           >
             <Mail className="w-5 h-5" />
-            <span className="font-medium">prateekkarn5@gmail.com</span>
+            <span className="font-medium">prateek[at]karn[dot]consulting</span>
           </a>
           
           <div className="w-px h-6 bg-primary-foreground/30 hidden sm:block"></div>
@@ -46,7 +46,7 @@ const ContactSection = () => {
 
         <div className="pt-12 border-t border-primary-foreground/20">
           <p className="text-sm opacity-70">
-            © 2024 Prateek Karan. Growth Architect.
+            © 2025 Prateek Karan. Growth Architect.
           </p>
         </div>
       </div>

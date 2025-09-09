@@ -13,8 +13,8 @@ const GrowthStackSection = () => {
       tools: ["HubSpot", "Salesforce", "Segment"]
     },
     {
-      category: "SEO",
-      tools: ["SEMrush", "Moz"]
+      category: "SEO & Paid Ads",
+      tools: ["SEMrush", "Moz", "Google Ads", "Meta Ads", "LinkedIn Ads"]
     }
   ];
 
