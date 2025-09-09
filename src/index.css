@@ -143,3 +143,15 @@ All colors MUST be HSL.
     background: hsl(var(--accent) / 0.8);
   }
 }
+
+@layer utilities {
+  /* Animation Keyframes */
+  @keyframes slide-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .animate-slide-left {
+    animation: slide-left 20s linear infinite;
+  }
+}

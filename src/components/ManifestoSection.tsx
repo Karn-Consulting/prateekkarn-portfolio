@@ -5,7 +5,7 @@ const ManifestoSection = () => {
     {
       icon: Compass,
       title: "Strategy",
-      description: "Owning the end-to-end B2B sales funnel, from lead generation to C-suite advisory."
+      description: "Handling LinkedIn accounts of C-level executives from Fortune 500 companies, delivering measurable results."
     },
     {
       icon: Settings,
