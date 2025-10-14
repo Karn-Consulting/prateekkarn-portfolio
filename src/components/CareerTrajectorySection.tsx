@@ -1,53 +1,33 @@
-import { useEffect, useState } from "react";
-
 const CareerTrajectorySection = () => {
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    const element = document.getElementById('career-section');
-    if (element) observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
-
   const experiences = [
     {
       period: "2024-Present",
-      title: "AI Business Architect & Consultant",
+      title: "Digital Marketing Consultant",
       company: "",
-      achievement: "Architecting intelligent MarTech systems and AI-driven operating models for enterprise growth teams."
+      achievement: "Advising B2B clients on data-driven growth and deploying custom AI agents."
     },
     {
       period: "2023-2024",
-      title: "Marketing Systems Lead",
-      company: "Enterprise Real Estate",
-      achievement: "Built data-driven marketing infrastructure; directed cross-functional team executing integrated campaigns."
+      title: "Digital Marketing Manager",
+      company: "Ashapurna Buildcon Ltd.",
+      achievement: "Directed a 6-person marketing team, owning content and SEO strategy."
     },
     {
       period: "2021-2023",
-      title: "Executive Growth Advisor",
-      company: "Agency Practice",
-      achievement: "Strategic advisor to C-suite leaders at global enterprises; designed LinkedIn content and brand positioning."
+      title: "Account Manager",
+      company: "Standout Authority",
+      achievement: "Served as primary strategic advisor to C-suite executives from Fortune 500 corporations."
     },
     {
       period: "2019-2021",
-      title: "Performance Marketing Specialist",
-      company: "Professional Services",
-      achievement: "Managed performance campaigns across paid search and display; optimized LTV/CAC and acquisition efficiency."
+      title: "Google Ads Specialist",
+      company: "WNS",
+      achievement: "Managed Google Ads strategies that increased client ROI by an average of 25%."
     }
   ];
 
   return (
-    <section id="career-section" className="py-24 px-6 lg:px-8 bg-secondary/30">
+    <section className="py-24 px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -57,19 +37,8 @@ const CareerTrajectorySection = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            {/* Timeline line with stroke animation */}
-            <svg className="absolute left-4 lg:left-8 top-0 bottom-0 w-0.5 h-full" xmlns="http://www.w3.org/2000/svg">
-              <line 
-                x1="1" 
-                y1="0" 
-                x2="1" 
-                y2="100%" 
-                stroke="hsl(var(--accent))" 
-                strokeWidth="2" 
-                opacity="0.3"
-                className={inView ? 'animate-draw-line' : ''}
-              />
-            </svg>
+            {/* Timeline line */}
+            <div className="absolute left-4 lg:left-8 top-0 bottom-0 w-0.5 bg-accent/30"></div>
             
             <div className="space-y-12">
               {experiences.map((exp, index) => (
