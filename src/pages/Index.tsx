@@ -1,5 +1,5 @@
 import HeroSection from "@/components/HeroSection";
-import ManifestoSection from "@/components/ManifestoSection";
+import PrinciplesSection from "@/components/PrinciplesSection";
 import ProofOfImpactSection from "@/components/ProofOfImpactSection";
 import TrustedBySection from "@/components/TrustedBySection";
 import AreasOfArchitectureSection from "@/components/AreasOfArchitectureSection";
@@ -11,7 +11,7 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <ManifestoSection />
+      <PrinciplesSection />
       <ProofOfImpactSection />
       <TrustedBySection />
       <AreasOfArchitectureSection />
