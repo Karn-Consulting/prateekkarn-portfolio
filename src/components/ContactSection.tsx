@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Linkedin, Mail, Phone } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -15,27 +14,19 @@ const ContactSection = () => {
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
           <a 
-            href="mailto:prateekkarn5@gmail.com"
+            href="mailto:prateek.karn@prateekkarn.com"
             className="flex items-center gap-3 text-primary-foreground hover:text-accent transition-colors duration-200"
           >
             <Mail className="w-5 h-5" />
-            <span className="font-medium">imperialkarn[at]gmail[dot]com</span>
+            <span className="font-medium">prateek.karn@prateekkarn.com</span>
           </a>
           
           <div className="w-px h-6 bg-primary-foreground/30 hidden sm:block"></div>
           
           <a 
-            href="tel:+917576956682"
-            className="flex items-center gap-3 text-primary-foreground hover:text-accent transition-colors duration-200"
-          >
-            <Phone className="w-5 h-5" />
-            <span className="font-medium">+91-7576956682</span>
-          </a>
-          
-          <div className="w-px h-6 bg-primary-foreground/30 hidden sm:block"></div>
-          
-          <a 
-            href="#" 
+            href="https://linkedin.com/in/prateekkarn" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-3 text-primary-foreground hover:text-accent transition-colors duration-200"
             aria-label="LinkedIn Profile"
           >
@@ -44,7 +35,22 @@ const ContactSection = () => {
           </a>
         </div>
 
-        <div className="pt-12 border-t border-primary-foreground/20">
+        <div className="pt-12 border-t border-primary-foreground/20 space-y-4">
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <a 
+              href="/privacy-policy" 
+              className="opacity-70 hover:opacity-100 hover:text-accent transition-all duration-200"
+            >
+              Privacy Policy
+            </a>
+            <span className="opacity-50">·</span>
+            <a 
+              href="/terms-and-conditions" 
+              className="opacity-70 hover:opacity-100 hover:text-accent transition-all duration-200"
+            >
+              Terms & Conditions
+            </a>
+          </div>
           <p className="text-sm opacity-70">
             © 2025 Prateek Karn. AI Business Architect.
           </p>
