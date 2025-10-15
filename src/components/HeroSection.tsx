@@ -9,13 +9,13 @@ const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="font-heading text-5xl lg:text-7xl font-bold text-foreground leading-tight">
-                Prateek Karan
+                Prateek Karn
               </h1>
               <p className="font-heading text-xl lg:text-2xl text-muted-foreground font-medium">
-                Architecting Digital Growth for Market Leaders.
+                AI Business Architect | Building Intelligent MarTech Systems
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                A strategic advisor with a decade of experience building data-driven marketing engines for business leaders. I translate complex data into profitable business outcomes.
+                I design AI-powered business systems that integrate marketing, data, and automation into intelligent growth engines. Transforming complex data architectures into measurable enterprise outcomes.
               </p>
             </div>
             

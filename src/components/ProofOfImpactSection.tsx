@@ -6,24 +6,24 @@ const ProofOfImpactSection = () => {
 
   const metrics = [
     {
-      value: "$XM+",
-      target: 100, // Will show as $XM+
-      description: "Multi-Million Dollar Ad Budgets Managed"
+      value: "10+",
+      target: 10,
+      description: "Years Building AI & MarTech Systems"
+    },
+    {
+      value: "40%",
+      target: 40,
+      description: "Increase in Qualified Lead Generation"
     },
     {
       value: "25%",
       target: 25,
-      description: "Average Client ROI Increase"
-    },
-    {
-      value: "F500",
-      target: 500, // Will show as F500
-      description: "C-Suite Executives Advised"
+      description: "Average Client ROI Improvement"
     },
     {
       value: "10K+",
       target: 10000,
-      description: "Students Mentored via Founder Program"
+      description: "Students Mentored in Entrepreneurship"
     }
   ];
 
@@ -68,9 +68,9 @@ const ProofOfImpactSection = () => {
 
   const formatValue = (counter: number, index: number) => {
     switch (index) {
-      case 0: return counter === 100 ? "$XM+" : `$${counter}M+`;
+      case 0: return counter >= 10 ? "10+" : `${counter}+`;
       case 1: return `${counter}%`;
-      case 2: return counter === 500 ? "F500" : `F${counter}`;
+      case 2: return `${counter}%`;
       case 3: return counter >= 10000 ? "10K+" : `${Math.floor(counter/1000)}K+`;
       default: return counter.toString();
     }

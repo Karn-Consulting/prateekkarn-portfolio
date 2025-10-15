@@ -23,20 +23,20 @@ const ManifestoSection = () => {
   const principles = [
     {
       icon: Compass,
-      title: "Strategy",
-      description: "Handling LinkedIn accounts of C-level executives from Fortune 500 companies, delivering measurable results.",
+      title: "Intelligent Architecture",
+      description: "Designing unified MarTech systems that integrate CRM, automation, analytics, and AI models for adaptive, data-driven decision-making across your enterprise.",
       animation: "animate-spin-slow"
     },
     {
       icon: Settings,
-      title: "AI & Automation", 
-      description: "Architecting custom AI agents and workflows to increase operational efficiency and nurture leads.",
+      title: "AI-Powered Automation", 
+      description: "Engineering predictive segmentation models and closed-loop workflows that accelerate lead nurturing, reduce CAC, and enable real-time optimization.",
       animation: "animate-spin"
     },
     {
       icon: TrendingUp,
-      title: "Analytics",
-      description: "Optimizing for key commercial metrics including ROAS, LTV/CAC, and campaign ROI.",
+      title: "Measurable Outcomes",
+      description: "Building automated data pipelines and ROI dashboards that provide C-suite visibility into performance metrics, ensuring every decision is backed by intelligence.",
       animation: "animate-bounce"
     }
   ];
@@ -46,7 +46,7 @@ const ManifestoSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            A Data-First Philosophy
+            Building Intelligent Systems for Modern Enterprises
           </h2>
         </div>
 

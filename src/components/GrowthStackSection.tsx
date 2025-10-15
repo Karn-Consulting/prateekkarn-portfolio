@@ -1,20 +1,20 @@
 const GrowthStackSection = () => {
   const stackCategories = [
     {
-      category: "AI & Automation",
-      tools: ["Zapier", "Instantly"]
+      category: "AI & Machine Learning",
+      tools: ["AWS SageMaker", "Vertex AI", "OpenAI API", "LangChain"]
     },
     {
       category: "Analytics & BI", 
-      tools: ["Google Analytics", "Looker", "Tableau", "Power BI"]
+      tools: ["Looker Studio", "BigQuery", "Google Analytics 4", "Tableau"]
     },
     {
-      category: "CRM & CDP",
-      tools: ["HubSpot", "Salesforce", "Segment"]
+      category: "MarTech & CRM",
+      tools: ["HubSpot", "GoHighLevel", "Salesforce", "ActiveCampaign"]
     },
     {
-      category: "SEO & Paid Ads",
-      tools: ["SEMrush", "Moz", "Google Ads", "Meta Ads", "LinkedIn Ads"]
+      category: "Automation & Paid Media",
+      tools: ["N8N", "Zapier", "Google Ads", "Meta Ads", "LinkedIn Ads"]
     }
   ];
 

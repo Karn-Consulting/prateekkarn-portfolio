@@ -2,27 +2,33 @@ const CareerTrajectorySection = () => {
   const experiences = [
     {
       period: "2024-Present",
-      title: "Digital Marketing Consultant",
-      company: "",
-      achievement: "Advising B2B clients on data-driven growth and deploying custom AI agents."
+      title: "Principal, AI & MarTech Transformation",
+      company: "Karn Consulting",
+      achievement: "Designing intelligent MarTech architectures that unify CRM, automation, analytics, and AI models. Engineering AI-led lead scoring and predictive segmentation on AWS and Vertex AI."
     },
     {
       period: "2023-2024",
       title: "Digital Marketing Manager",
       company: "Ashapurna Buildcon Ltd.",
-      achievement: "Directed a 6-person marketing team, owning content and SEO strategy."
-    },
-    {
-      period: "2021-2023",
-      title: "Account Manager",
-      company: "Standout Authority",
-      achievement: "Served as primary strategic advisor to C-suite executives from Fortune 500 corporations."
+      achievement: "Directed a 6-person marketing team, increasing qualified lead generation by over 40% through optimized multi-channel digital campaigns."
     },
     {
       period: "2019-2021",
       title: "Google Ads Specialist",
       company: "WNS",
-      achievement: "Managed Google Ads strategies that increased client ROI by an average of 25%."
+      achievement: "Managed B2B/B2C client portfolios, executing Google Ads strategies that increased client ROI by an average of 25%."
+    },
+    {
+      period: "2017-2019",
+      title: "Founder",
+      company: "Enterpriser",
+      achievement: "Founded and scaled a college-level entrepreneurship program connecting over 10,000 students with industry leaders for mentorship."
+    },
+    {
+      period: "2015-2017",
+      title: "Project Manager",
+      company: "Shiprocket / Kartrocket",
+      achievement: "Led end-to-end project management for enterprise SaaS e-commerce deployments and directed design teams for foundational SEO implementations."
     }
   ];
 

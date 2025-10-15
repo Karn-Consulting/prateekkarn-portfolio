@@ -1,14 +1,14 @@
 const AreasOfArchitectureSection = () => {
   const leftServices = [
-    "B2B Growth Strategy",
-    "AI & Automation Architecture",
-    "Performance Marketing & ROI Optimization"
+    "Intelligent MarTech Architecture",
+    "AI-Led Lead Scoring & Segmentation",
+    "Automated Data Pipelines & Dashboards"
   ];
 
   const rightServices = [
-    "Executive Brand Advisory", 
-    "Content & SEO Ecosystems",
-    "Data & LTV/CAC Modeling"
+    "Closed-Loop Automation Workflows", 
+    "CRM & Marketing Automation Integration",
+    "Performance Marketing & ROI Optimization"
   ];
 
   return (
