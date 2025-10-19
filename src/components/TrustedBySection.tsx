@@ -11,10 +11,10 @@ const TrustedBySection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Trusted by Industry Leaders
+            Experience with C-Level Executives at Leading Global Firms
           </h2>
           <p className="text-lg text-muted-foreground">
-            Over a year of experience handling LinkedIn accounts of C-level executives from Fortune 500 companies
+            Through a previous agency roles, I gained direct experience managing personal branding and digital presence for C-level executives from Fortune 500 companies and globally recognized brands, including:
           </p>
         </div>
 
