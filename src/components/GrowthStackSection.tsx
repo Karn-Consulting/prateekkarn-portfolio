@@ -6,7 +6,7 @@ const GrowthStackSection = () => {
     },
     {
       category: "AI & Machine Learning",
-      tools: ["Agentic AI", "RAG", "MCP", "Python", "LangChain"]
+      tools: ["Agentic AI", "RAG", "MCP", "Python", "LangChain", "SQL"]
     },
     {
       category: "MarTech & CRM",
