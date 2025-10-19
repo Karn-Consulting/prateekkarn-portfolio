@@ -2,7 +2,7 @@ const GrowthStackSection = () => {
   const stackCategories = [
     {
       category: "Automation & Paid Media",
-      tools: ["Meta Ads", "Google Ads", "LinkedIn Ads", "SEO", "GEO", "No-Code Automation"]
+      tools: ["Meta Ads", "Google Ads", "LinkedIn Ads", "SEO & GEO", "No-Code Automation"]
     },
     {
       category: "AI & Machine Learning",
