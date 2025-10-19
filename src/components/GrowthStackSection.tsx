@@ -2,7 +2,7 @@ const GrowthStackSection = () => {
   const stackCategories = [
     {
       category: "AI & Machine Learning",
-      tools: ["AWS SageMaker", "Vertex AI", "OpenAI API", "LangChain"]
+      tools: ["Agentic AI", "RAG", "MCP", "Python", "LangChain", "OpenAI"]
     },
     {
       category: "Analytics & BI", 
@@ -14,7 +14,7 @@ const GrowthStackSection = () => {
     },
     {
       category: "Automation & Paid Media",
-      tools: ["N8N", "Zapier", "Google Ads", "Meta Ads", "LinkedIn Ads"]
+      tools: ["Meta Ads", "Google Ads", "LinkedIn Ads", "SEO", "GEO", "No-Code Automation"]
     }
   ];
 
