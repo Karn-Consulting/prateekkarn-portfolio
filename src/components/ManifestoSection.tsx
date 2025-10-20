@@ -58,7 +58,7 @@ const ManifestoSection = () => {
                 <div className="flex justify-center">
                   <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center">
                     <IconComponent 
-                      className={`w-8 h-8 text-accent ${inView ? principle.animation : ''}`} 
+                      className="w-8 h-8 text-accent" 
                       strokeWidth={1.5} 
                     />
                   </div>
