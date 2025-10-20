@@ -31,11 +31,11 @@ const HeroSection = () => {
 
           {/* Right Image */}
           <div className="relative lg:justify-self-end">
-            <div className="relative w-full max-w-md mx-auto lg:max-w-lg group">
+            <div className="relative w-full max-w-sm mx-auto lg:max-w-md group">
               <img
                 src={heroImage}
                 alt="Prateek Karan - AI Business Architect"
-                className="w-full h-auto rounded-lg shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+                className="w-full h-auto object-cover rounded-lg shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
               />
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/20 to-primary/10 group-hover:from-accent/5 group-hover:to-transparent transition-all duration-700 ease-in-out pointer-events-none"></div>
             </div>
