@@ -1,20 +1,44 @@
 const GrowthStackSection = () => {
   const stackCategories = [
     {
-      category: "Automation & Paid Media",
-      tools: ["Meta Ads", "Google Ads", "LinkedIn Ads", "SEO & GEO", "No-Code Automation"]
+      category: "Automation & Growth Systems",
+      tools: [
+        "Meta Ads",
+        "Google Ads",
+        "LinkedIn Ads",
+        "SEO & GEO (Generative Engine Optimization)",
+        "Automation & Integrations (Zapier / Make / n8n)"
+      ]
     },
     {
       category: "AI & Machine Learning",
-      tools: ["Agentic AI", "RAG & MCP", "Python & SQL", "LangChain", "Big Data Engineering"]
+      tools: [
+        "Agentic AI & LLM Orchestration (LangChain / LangGraph / CrewAI / AutoGen)",
+        "RAG & MCP (context systems & tools)",
+        "Python & SQL",
+        "Data Engineering & Pipelines (dbt / Airflow / Prefect / ETL)",
+        "Infrastructure & Deployment Ops (Docker / K8s / CI-CD / Observability)"
+      ]
     },
     {
       category: "MarTech & CRM",
-      tools: ["HubSpot", "GoHighLevel", "Salesforce", "ActiveCampaign"]
+      tools: [
+        "CRM & Marketing Automation (Salesforce / HubSpot / GoHighLevel / ActiveCampaign)",
+        "Lead Scoring & Enrichment (Apollo / Clearbit)",
+        "Customer Journey Automation & Drip Flows",
+        "Personalization & Segmentation",
+        "Attribution & Lifecycle Analytics"
+      ]
     },
     {
-      category: "Analytics & BI", 
-      tools: ["Looker Studio", "BigQuery", "Google Analytics 4", "Tableau"]
+      category: "Analytics & BI",
+      tools: [
+        "Data Warehousing & Modeling (BigQuery / Snowflake / dbt)",
+        "Visualization & BI (Looker Studio / Tableau)",
+        "Web & Engagement Analytics (GA4 / Mixpanel)",
+        "Experimentation & A/B Testing",
+        "Value & ROI Analytics (Cost / Usage / FinOps)"
+      ]
     }
   ];
 
