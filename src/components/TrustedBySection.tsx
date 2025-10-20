@@ -1,9 +1,9 @@
 const TrustedBySection = () => {
   const clients = [
-    { name: "Credit Suisse", logo: "https://logoapi.voicify.ai/creditsuisse.svg" },
-    { name: "Morgan Stanley", logo: "https://logoapi.voicify.ai/morganstanley.svg" },
-    { name: "Microsoft", logo: "https://logoapi.voicify.ai/microsoft.svg" },
-    { name: "Deloitte", logo: "https://logoapi.voicify.ai/deloitte.svg" }
+    { name: "Credit Suisse", logo: "https://logo.clearbit.com/credit-suisse.com" },
+    { name: "Morgan Stanley", logo: "https://logo.clearbit.com/morganstanley.com" },
+    { name: "Microsoft", logo: "https://logo.clearbit.com/microsoft.com" },
+    { name: "Deloitte", logo: "https://logo.clearbit.com/deloitte.com" }
   ];
 
   return (
@@ -14,7 +14,7 @@ const TrustedBySection = () => {
             Experience with C-Level Executives at Leading Global Firms
           </h2>
           <p className="text-lg text-muted-foreground">
-            Through a previous agency roles, I gained direct experience managing personal branding and digital presence for C-level executives from Fortune 500 companies and globally recognized brands, including:
+            Through previous agency roles, I gained direct experience managing personal branding and digital presence for C-level executives from Fortune 500 companies and globally recognized brands, including:
           </p>
         </div>
 
