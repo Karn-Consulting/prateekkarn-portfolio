@@ -1,43 +1,43 @@
 const GrowthStackSection = () => {
   const stackCategories = [
     {
-      category: "Automation & Growth Systems",
+      category: "Growth Systems & Automation Systems",
       tools: [
         "Meta Ads",
         "Google Ads",
         "LinkedIn Ads",
-        "SEO & GEO (Generative Engine Optimization)",
-        "Automation & Integrations (Zapier / Make / n8n)"
+        "Search & Generative Optimization",
+        "Workflow Automation"
       ]
     },
     {
       category: "AI & Machine Learning",
       tools: [
-        "Agentic AI & LLM Orchestration (LangChain / LangGraph / CrewAI / AutoGen)",
-        "RAG & MCP (context systems & tools)",
+        "Agentic AI & LLM Orchestration",
+        "RAG Systems & Memory Context Platforms",
         "Python & SQL",
-        "Data Engineering & Pipelines (dbt / Airflow / Prefect / ETL)",
-        "Infrastructure & Deployment Ops (Docker / K8s / CI-CD / Observability)"
+        "Data Engineering & Pipelines",
+        "MLOps"
       ]
     },
     {
-      category: "MarTech & CRM",
+      category: "CRM and MarTech",
       tools: [
-        "CRM & Marketing Automation (Salesforce / HubSpot / GoHighLevel / ActiveCampaign)",
-        "Lead Scoring & Enrichment (Apollo / Clearbit)",
-        "Customer Journey Automation & Drip Flows",
+        "Lead Scoring & Enrichment",
+        "Customer Journey Orchestration",
         "Personalization & Segmentation",
-        "Attribution & Lifecycle Analytics"
+        "Attribution & Lifecycle Analytics",
+        "Marketing & CRM Automation"
       ]
     },
     {
       category: "Analytics & BI",
       tools: [
-        "Data Warehousing & Modeling (BigQuery / Snowflake / dbt)",
-        "Visualization & BI (Looker Studio / Tableau)",
-        "Web & Engagement Analytics (GA4 / Mixpanel)",
+        "Data Warehousing & Modeling",
+        "Business Intelligence & Visualization",
+        "Web & Engagement Analytics",
         "Experimentation & A/B Testing",
-        "Value & ROI Analytics (Cost / Usage / FinOps)"
+        "Financial & ROI Analytics"
       ]
     }
   ];
