@@ -7,28 +7,28 @@ const CareerTrajectorySection = () => {
       achievement: "Designing intelligent MarTech architectures that unify CRM, automation, analytics, and AI models. Engineering AI-led lead scoring and predictive segmentation on AWS and Vertex AI."
     },
     {
-      period: "2023-2024",
-      title: "Digital Marketing Manager",
-      company: "Ashapurna Buildcon Ltd.",
-      achievement: "Directed a 6-person marketing team, increasing qualified lead generation by over 40% through optimized multi-channel digital campaigns."
+      period: "Aug 2021 – Jun 2023",
+      title: "Client Account Manager",
+      company: "Standout Authority",
+      achievement: "Led LinkedIn personal-branding programs for Fortune 500 executives/founders; combined content analytics, event activation, and AI automation. Ran LinkedIn Live & engagement campaigns; linked attendance/comment velocity to inbound lead spikes. Built AI content-automation pipelines reducing content development time 55%. Designed virality prediction models (embeddings/regression), lifting average reach 30%+."
     },
     {
-      period: "2019-2021",
-      title: "Google Ads Specialist",
-      company: "WNS",
-      achievement: "Managed B2B/B2C client portfolios, executing Google Ads strategies that increased client ROI by an average of 25%."
+      period: "Dec 2019 – Jun 2021",
+      title: "Google Ads Analyst",
+      company: "WNS Global Services",
+      achievement: "Managed multi-region portfolios (>$1M/yr); predictive budget-allocation via Google Ads API improved ROI 25%. Automated keyword/bid tracking with BigQuery; dashboards for 30+ accounts. Performed multi-touch attribution to rebalance Search/Display/YouTube."
     },
     {
-      period: "2017-2019",
+      period: "May 2017 – Dec 2019",
       title: "Founder",
-      company: "Enterpriser",
-      achievement: "Founded and scaled a college-level entrepreneurship program connecting over 10,000 students with industry leaders for mentorship."
+      company: "Enterpriser Initiative",
+      achievement: "Built a college entrepreneurship program across with 40+ global entrepreneurs as mentors via live video, touched over 100+ Colleges in India. Reached 10,000+ students; recruited & led 30+ campus ambassadors; ran FB/Google Ads & on-ground campaigns. Produced brochures/flyers & print campaigns; coordinated global mentorship sessions."
     },
     {
-      period: "2015-2017",
+      period: "Oct 2015 – Apr 2017",
       title: "Project Manager",
-      company: "Shiprocket / Kartrocket",
-      achievement: "Led end-to-end project management for enterprise SaaS e-commerce deployments and directed design teams for foundational SEO implementations."
+      company: "Kartrocket (now Shiprocket)",
+      achievement: "Managed end-to-end e-commerce site builds from requirements to launch (design, payments, product architecture). Implemented analytics & conversion tracking (GA, FB Pixel, GTM) with measurable KPIs at launch. Drove SEO (on-page/off-page) and set up Meta/Google Ads aligned to sales objectives; delivered post-launch training/support."
     }
   ];
 
