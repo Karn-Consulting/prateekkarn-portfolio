@@ -10,7 +10,7 @@ const CareerTrajectorySection = () => {
       period: "Aug 2021 – Jun 2023",
       title: "Client Account Manager",
       company: "Standout Authority",
-      achievement: "Led LinkedIn branding programs for Fortune 500 executives; merged content analytics, AI automation, and event activation. Built virality-prediction models (+30% reach) and automated content workflows (–65% manual effort)."
+      achievement: "Led LinkedIn branding programs for Fortune 500 executives; merged content analytics, AI automation, and event activation. Built virality-prediction models (+30% reach) and automated content workflows (45% manual effort)."
     },
     {
       period: "Dec 2019 – Jun 2021",
