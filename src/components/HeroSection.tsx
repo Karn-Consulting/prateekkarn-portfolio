@@ -3,19 +3,19 @@ import heroImage from "@/assets/prateek-hero.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 lg:px-8">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 lg:py-0">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <h1 className="font-heading text-5xl lg:text-7xl font-bold text-foreground leading-tight">
+          <div className="space-y-6 lg:space-y-8 text-center lg:text-left order-1 lg:order-1">
+            <div className="space-y-4 lg:space-y-6">
+              <h1 className="font-heading text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground leading-tight">
                 Prateek Karn
               </h1>
-              <p className="font-heading text-xl lg:text-2xl text-muted-foreground font-medium">
+              <p className="font-heading text-lg sm:text-xl lg:text-2xl text-muted-foreground font-medium">
                 AI Business Architect | Building Intelligent MarTech Systems
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
                 I design AI-powered business systems that integrate marketing, data, and automation into intelligent growth engines. Transforming complex data architectures into measurable enterprise outcomes.
               </p>
             </div>
@@ -23,15 +23,15 @@ const HeroSection = () => {
             <Button 
               variant="cta" 
               size="lg"
-              className="font-medium text-base px-8 py-6 h-auto"
+              className="font-medium text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto"
             >
               Schedule a Consultation
             </Button>
           </div>
 
           {/* Right Image */}
-          <div className="relative lg:justify-self-end">
-            <div className="relative w-full max-w-md mx-auto lg:max-w-lg group">
+          <div className="relative lg:justify-self-end w-full order-2 lg:order-2">
+            <div className="relative w-full max-w-sm sm:max-w-md mx-auto lg:max-w-lg group">
               <img
                 src={heroImage}
                 alt="Prateek Karan - AI Business Architect"
