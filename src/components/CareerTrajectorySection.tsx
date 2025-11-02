@@ -4,18 +4,21 @@ const CareerTrajectorySection = () => {
       period: "Jun 2023 – Present",
       title: "Principal, AI & MarTech Transformation",
       company: "Karn Consulting",
+      website: "https://karnconsulting.co",
       achievement: "Architecting AI-driven MarTech ecosystems integrating CRM, automation, and analytics for unified growth intelligence. Built predictive lead-scoring and segmentation models on AWS / Vertex AI; automated campaign reporting with LLM agents cutting analysis time 70%. Designed multi-source marketing data pipelines improving ROAS visibility 42% and enabling data-to-decision execution."
     },
     {
       period: "Aug 2021 – Jun 2023",
       title: "Client Account Manager",
       company: "Standout Authority",
+      website: "https://standoutauthority.com/",
       achievement: "Led LinkedIn branding programs for Fortune 500 executives; merged content analytics, AI automation, and event activation. Built virality-prediction models (+30% reach) and automated content workflows (45% manual effort)."
     },
     {
       period: "Dec 2019 – Jun 2021",
       title: "Google Ads Analyst",
       company: "WNS Global Services",
+      website: "https://www.wns.com/",
       achievement: "Managed >$1M ad spend; implemented predictive budget allocation (+25% ROI). Automated BigQuery dashboards and attribution across Search, Display & YouTube."
     },
     {
@@ -28,6 +31,7 @@ const CareerTrajectorySection = () => {
       period: "Oct 2015 – Apr 2017",
       title: "Project Manager",
       company: "Kartrocket (now Shiprocket)",
+      website: "https://www.shiprocket.in/",
       achievement: "Delivered end-to-end e-commerce builds with integrated analytics (GA, FB Pixel, GTM), SEO & ad systems aligned to ROI objectives."
     }
   ];
@@ -62,9 +66,20 @@ const CareerTrajectorySection = () => {
                           {exp.title}
                         </h3>
                         {exp.company && (
-                          <p className="text-accent font-medium">
-                            {exp.company}
-                          </p>
+                          exp.website ? (
+                            <a 
+                              href={exp.website} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-accent font-medium hover:underline"
+                            >
+                              {exp.company}
+                            </a>
+                          ) : (
+                            <p className="text-accent font-medium">
+                              {exp.company}
+                            </p>
+                          )
                         )}
                       </div>
                       <span className="text-sm text-muted-foreground font-medium bg-secondary px-3 py-1 rounded-full w-fit">
