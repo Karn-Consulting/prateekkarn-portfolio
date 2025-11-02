@@ -8,9 +8,10 @@ const ContactSection = () => {
           Let's Build Your Intelligent Growth System
         </h2>
         
-        <p className="text-lg lg:text-xl opacity-90 max-w-2xl mx-auto leading-relaxed">
-          Ready to transform your marketing infrastructure with AI-powered automation and intelligent data systems? Let's discuss how we can architect measurable growth for your enterprise.
-        </p>
+        <div className="text-lg lg:text-xl opacity-90 max-w-3xl mx-auto leading-relaxed space-y-2">
+          <p>Ready to transform your marketing infrastructure with AI-powered automation and intelligent data systems?</p>
+          <p>Let&apos;s discuss how we can architect measurable growth for your enterprise.</p>
+        </div>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
           <a 
