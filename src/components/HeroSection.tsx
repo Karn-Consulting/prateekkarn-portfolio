@@ -15,11 +15,11 @@ const HeroSection = () => {
             
             {/* Photo - Order 2 on mobile, hidden on desktop (shows in right column) */}
             <div className="relative w-full max-w-xs mx-auto lg:hidden order-2">
-              <div className="relative w-full aspect-square group">
+              <div className="relative w-full aspect-square group bg-background/5 rounded-lg">
                 <img
                   src={heroImage}
                   alt="Prateek Karan - AI Business Architect"
-                  className="w-full h-full object-cover rounded-lg shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+                  className="w-full h-full object-contain rounded-lg shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
                 />
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/20 to-primary/10 group-hover:from-accent/5 group-hover:to-transparent transition-all duration-700 ease-in-out pointer-events-none"></div>
               </div>
@@ -52,11 +52,11 @@ const HeroSection = () => {
 
           {/* Right Image - Desktop only */}
           <div className="hidden lg:block relative lg:justify-self-end w-full">
-            <div className="relative w-full max-w-md aspect-square group">
+            <div className="relative w-full max-w-md aspect-square group bg-background/5 rounded-lg">
               <img
                 src={heroImage}
                 alt="Prateek Karan - AI Business Architect"
-                className="w-full h-full object-cover rounded-lg shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
+                className="w-full h-full object-contain rounded-lg shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out"
               />
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/20 to-primary/10 group-hover:from-accent/5 group-hover:to-transparent transition-all duration-700 ease-in-out pointer-events-none"></div>
             </div>
