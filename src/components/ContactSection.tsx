@@ -9,7 +9,7 @@ const ContactSection = () => {
         </h2>
         
         <div className="text-lg lg:text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
-          <p>Transform your marketing with AI-powered automation and data systems built for one purpose: measurable results.</p>
+          <p>Transform your marketing with AI-powered automation and data systems built for one purpose: Measurable Results.</p>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
