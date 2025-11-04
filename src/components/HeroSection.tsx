@@ -35,19 +35,22 @@ const HeroSection = () => {
               </p>
             </div>
             
-            <a 
-              href="https://calendly.com/prateekkarn5/free-consultationhighlevel"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button 
-                variant="cta" 
-                size="lg"
-                className="font-medium text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto order-4 lg:order-none"
+            <div className="mt-8 lg:mt-10">
+              <a 
+                href="https://calendly.com/prateekkarn5/free-consultationhighlevel"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Schedule a Consultation
-              </Button>
-            </a>
+                <Button 
+                  variant="cta" 
+                  size="lg"
+                  className="font-medium text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto order-4 lg:order-none group"
+                >
+                  Schedule a Consultation
+                  <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </Button>
+              </a>
+            </div>
           </div>
 
           {/* Right Image - Desktop only */}
