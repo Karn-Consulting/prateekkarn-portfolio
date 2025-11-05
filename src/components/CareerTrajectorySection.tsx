@@ -5,34 +5,51 @@ const CareerTrajectorySection = () => {
       title: "Principal, AI & MarTech Transformation",
       company: "Karn Consulting",
       website: "https://karnconsulting.co",
-      achievement: "Architecting AI-driven MarTech ecosystems integrating CRM, automation, and analytics for unified growth intelligence. Built predictive lead-scoring and segmentation models on AWS / Vertex AI; automated campaign reporting with LLM agents cutting analysis time 70%. Designed multi-source marketing data pipelines improving ROAS visibility 42% and enabling data-to-decision execution."
+      achievements: [
+        "Architected unified AI and MarTech ecosystems (CRM, Analytics, AI) to deliver C-suite-level \"growth intelligence\".",
+        "Engineered predictive lead-scoring models on AWS/Vertex AI and deployed LLM agents to automate campaign reporting, cutting data analysis time by 70%.",
+        "Designed multi-source marketing data pipelines that improved ROAS visibility by 42% and enabled true data-to-decision execution for leadership."
+      ]
     },
     {
       period: "Aug 2021 – Jun 2023",
       title: "Client Account Manager",
       company: "Standout Authority",
       website: "https://standoutauthority.com/",
-      achievement: "Led LinkedIn branding programs for Fortune 500 executives; merged content analytics, AI automation, and event activation. Built virality-prediction models (+30% reach) and automated content workflows (45% manual effort)."
+      achievements: [
+        "Designed and implemented personal branding and digital strategy for Fortune 500 C-level executives, integrating content analytics, AI-driven automation, and event activation.",
+        "Built virality-prediction models that successfully increased executive content reach by +30%.",
+        "Automated complex content-to-social workflows, reducing manual publishing and analytics effort by 45%."
+      ]
     },
     {
       period: "Dec 2019 – Jun 2021",
       title: "Google Ads Analyst",
       company: "WNS Global Services",
       website: "https://www.wns.com/",
-      achievement: "Managed >$1M ad spend; implemented predictive budget allocation (+25% ROI). Automated BigQuery dashboards and attribution across Search, Display & YouTube."
+      achievements: [
+        "Managed >$1M in annual ad spend, implementing a predictive budget-allocation model that improved client ROI by +25%.",
+        "Automated enterprise-scale attribution modeling and performance dashboards using BigQuery, covering Search, Display, and YouTube."
+      ]
     },
     {
       period: "May 2017 – Dec 2019",
       title: "Founder",
       company: "Enterpriser Initiative",
-      achievement: "10K+ Member Digital Ecosystem Built from Scratch – India's first college entrepreneurship network with 40+ global mentors via live video. Ran digital + on-ground campaigns and managed 30+ campus ambassadors."
+      achievements: [
+        "Built and scaled India's first college-focused digital ecosystem from scratch, activating a 10,000+ member network.",
+        "Managed all digital marketing operations and a leadership team of 30+ campus ambassadors to drive network growth."
+      ]
     },
     {
       period: "Oct 2015 – Apr 2017",
       title: "Project Manager",
       company: "Kartrocket (now Shiprocket)",
       website: "https://www.shiprocket.in/",
-      achievement: "Delivered end-to-end e-commerce builds with integrated analytics (GA, FB Pixel, GTM), SEO & ad systems aligned to ROI objectives."
+      achievements: [
+        "Delivered end-to-end e-commerce platforms aligned with client ROI objectives.",
+        "Integrated foundational growth stacks, including Analytics (GA, GTM), Ad Systems (FB Pixel), and SEO for new builds."
+      ]
     }
   ];
 
@@ -60,7 +77,7 @@ const CareerTrajectorySection = () => {
                   
                   {/* Content */}
                   <div className="flex-1 space-y-3">
-                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2">
                       <div>
                         <h3 className="font-heading text-xl lg:text-2xl font-semibold text-foreground">
                           {exp.title}
@@ -82,13 +99,20 @@ const CareerTrajectorySection = () => {
                           )
                         )}
                       </div>
-                      <span className="text-sm text-muted-foreground font-medium bg-secondary px-3 py-1 rounded-full w-fit">
+                      <span className="text-sm text-muted-foreground font-medium bg-secondary px-3 py-1 rounded-full w-fit lg:mt-0">
                         {exp.period}
                       </span>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed italic">
-                      {exp.achievement}
-                    </p>
+                    <ul className="space-y-2.5 mt-4">
+                      {exp.achievements.map((achievement, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <span className="text-accent mt-1.5 flex-shrink-0">•</span>
+                          <span className="text-muted-foreground leading-relaxed">
+                            {achievement}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               ))}
