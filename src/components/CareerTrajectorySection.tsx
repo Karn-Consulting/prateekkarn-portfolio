@@ -25,7 +25,7 @@ const CareerTrajectorySection = () => {
       period: "May 2017 – Dec 2019",
       title: "Founder",
       company: "Enterpriser Initiative",
-      achievement: "Built India's first college entrepreneurship network linking 10,000+ students with 40+ global mentors via live video. Ran digital + on-ground campaigns and managed 30+ campus ambassadors."
+      achievement: "10K+ Member Digital Ecosystem Built from Scratch – India's first college entrepreneurship network with 40+ global mentors via live video. Ran digital + on-ground campaigns and managed 30+ campus ambassadors."
     },
     {
       period: "Oct 2015 – Apr 2017",
