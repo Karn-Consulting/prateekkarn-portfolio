@@ -13,12 +13,12 @@ const ProofOfImpactSection = () => {
     {
       value: "70%",
       target: 70,
-      description: "Reduction in Data Analysis Time (via LLM Agents)"
+      description: "Reduction in Reporting Overhead"
     },
     {
-      value: "42%",
-      target: 42,
-      description: "Improvement in ROAS Visibility (via Data Pipelines)"
+      value: "40%",
+      target: 40,
+      description: "Increase in AI-Qualified Leads"
     },
     {
       value: "10K+",
