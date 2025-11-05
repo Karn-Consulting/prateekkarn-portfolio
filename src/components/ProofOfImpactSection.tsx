@@ -11,19 +11,19 @@ const ProofOfImpactSection = () => {
       description: "Years Building AI & MarTech Systems"
     },
     {
-      value: "40%",
-      target: 40,
-      description: "Increase in Qualified Lead Generation"
+      value: "70%",
+      target: 70,
+      description: "Reduction in Data Analysis Time (via LLM Agents)"
     },
     {
-      value: "25%",
-      target: 25,
-      description: "Average Client ROI Improvement"
+      value: "42%",
+      target: 42,
+      description: "Improvement in ROAS Visibility (via Data Pipelines)"
     },
     {
       value: "10K+",
       target: 10000,
-      description: "Students Mentored in Entrepreneurship"
+      description: "Member Digital Ecosystem Built & Scaled"
     }
   ];
 
