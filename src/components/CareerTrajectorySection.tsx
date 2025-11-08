@@ -24,7 +24,7 @@ const CareerTrajectorySection = () => {
     },
     {
       period: "Dec 2019 – Jun 2021",
-      title: "Google Ads Analyst",
+      title: "Google Ads Specialist",
       company: "WNS Global Services",
       website: "https://www.wns.com/",
       achievements: [
@@ -35,9 +35,10 @@ const CareerTrajectorySection = () => {
     {
       period: "May 2017 – Dec 2019",
       title: "Founder",
-      company: "Enterpriser Initiative",
+      company: "Enterpriser",
       achievements: [
-        "Built and scaled India's first college-focused digital ecosystem from scratch, activating a 10,000+ member network.",
+        "Pioneered India's first college-focused digital ecosystem, securing video-conference lectures from Fortune 500 entrepreneurs, billionaires, and media producers.",
+        "Scaled the platform from scratch to activate a 10,000+ member network nationwide.",
         "Managed all digital marketing operations and a leadership team of 30+ campus ambassadors to drive network growth."
       ]
     },
@@ -47,7 +48,7 @@ const CareerTrajectorySection = () => {
       company: "Kartrocket (now Shiprocket)",
       website: "https://www.shiprocket.in/",
       achievements: [
-        "Delivered end-to-end e-commerce platforms aligned with client ROI objectives.",
+        "Managed the end-to-end delivery of B2C e-commerce platforms on the company's proprietary website builder, ensuring alignment with client ROI objectives.",
         "Integrated foundational growth stacks, including Analytics (GA, GTM), Ad Systems (FB Pixel), and SEO for new builds."
       ]
     }
