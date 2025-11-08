@@ -148,7 +148,7 @@ All colors MUST be HSL.
   /* Animation Keyframes */
   @keyframes slide-left {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-33.333%); }
   }
   
   @keyframes spin-slow {
@@ -157,7 +157,11 @@ All colors MUST be HSL.
   }
   
   .animate-slide-left {
-    animation: slide-left 20s linear infinite;
+    animation: slide-left 30s linear infinite;
+  }
+  
+  .animate-slide-left:hover {
+    animation-play-state: paused;
   }
   
   .animate-spin-slow {

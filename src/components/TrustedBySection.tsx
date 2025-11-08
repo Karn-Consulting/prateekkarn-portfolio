@@ -22,7 +22,7 @@ const TrustedBySection = () => {
         </div>
 
         <div className="relative overflow-hidden">
-          <div className="flex animate-slide-left space-x-16">
+          <div className="flex animate-slide-left space-x-16 hover:pause">
             {/* First set of logos */}
             {clients.map((client, index) => (
               <div
@@ -40,6 +40,19 @@ const TrustedBySection = () => {
             {clients.map((client, index) => (
               <div
                 key={`duplicate-${index}`}
+                className="flex-shrink-0 w-40 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+              >
+                <img
+                  src={client.logo}
+                  alt={`${client.name} logo`}
+                  className="w-full h-full object-contain scale-90"
+                />
+              </div>
+            ))}
+            {/* Third set for extra smooth loop */}
+            {clients.map((client, index) => (
+              <div
+                key={`duplicate-2-${index}`}
                 className="flex-shrink-0 w-40 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
               >
                 <img
