@@ -5,7 +5,8 @@ const TrustedBySection = () => {
     { name: "Microsoft", logo: "https://logo.clearbit.com/microsoft.com" },
     { name: "Deloitte", logo: "https://logo.clearbit.com/deloitte.com" },
     { name: "Ernst & Young", logo: "https://logo.clearbit.com/ey.com" },
-    { name: "Mastercard", logo: "https://logo.clearbit.com/mastercard.com" }
+    { name: "Mastercard", logo: "https://logo.clearbit.com/mastercard.com" },
+    { name: "PwC", logo: "https://logo.clearbit.com/pwc.com" }
   ];
 
   return (
