@@ -27,12 +27,12 @@ const TrustedBySection = () => {
             {clients.map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+                className="flex-shrink-0 w-40 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
               >
                 <img
                   src={client.logo}
                   alt={`${client.name} logo`}
-                  className="max-w-full max-h-full object-contain"
+                  className="w-full h-full object-contain scale-90"
                 />
               </div>
             ))}
@@ -40,12 +40,12 @@ const TrustedBySection = () => {
             {clients.map((client, index) => (
               <div
                 key={`duplicate-${index}`}
-                className="flex-shrink-0 w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+                className="flex-shrink-0 w-40 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
               >
                 <img
                   src={client.logo}
                   alt={`${client.name} logo`}
-                  className="max-w-full max-h-full object-contain"
+                  className="w-full h-full object-contain scale-90"
                 />
               </div>
             ))}
