@@ -43,7 +43,7 @@ const GrowthStackSection = () => {
   ];
 
   return (
-    <section id="growth-stack" className="py-24 px-6 lg:px-8">
+    <section className="py-24 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">

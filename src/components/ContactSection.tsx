@@ -52,7 +52,7 @@ const ContactSection = () => {
             </a>
           </div>
           <p className="text-sm opacity-70">
-            © 2025 Prateek Karn - Entrepreneur | AI Business Architect.
+            © 2025 Prateek Karn. AI Business Architect.
           </p>
         </div>
       </div>

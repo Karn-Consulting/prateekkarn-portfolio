@@ -10,7 +10,7 @@ const HeroSection = () => {
           <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
             {/* Name - Order 1 on mobile */}
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground leading-tight order-1 lg:order-none">
-              Prateek Karn - AI Business Architect | Entrepreneur & Builder of Intelligent Growth Systems
+              Prateek Karn
             </h1>
             
             {/* Photo - Order 2 on mobile, hidden on desktop (shows in right column) */}
@@ -28,7 +28,7 @@ const HeroSection = () => {
             {/* Rest of content - Order 3 on mobile */}
             <div className="space-y-4 lg:space-y-6 order-3 lg:order-none">
               <p className="font-heading text-lg sm:text-xl lg:text-2xl text-muted-foreground font-medium">
-                Entrepreneur and AI Business Architect helping enterprises design intelligent MarTech, automation, and data systems for measurable growth
+                AI Business Architect | Building Intelligent MarTech Systems
               </p>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
                 I design AI-powered business systems that integrate marketing, data, and automation into intelligent growth engines. Transforming complex data architectures into measurable enterprise outcomes.
