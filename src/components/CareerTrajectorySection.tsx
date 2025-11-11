@@ -7,7 +7,7 @@ const CareerTrajectorySection = () => {
       website: "https://karnconsulting.co",
       achievements: [
         "Architected unified AI and MarTech ecosystems (CRM, Analytics, AI) to deliver C-suite-level \"growth intelligence\".",
-        "Engineered predictive lead-scoring models on AWS/Vertex AI and deployed LLM agents to automate campaign reporting, cutting data analysis time by 70%.",
+        "Engineered predictive lead-scoring models on AWS and Vertex AI and deployed LLM agents to automate campaign reporting, cutting data analysis time by 70%.",
         "Designed multi-source marketing data pipelines that improved ROAS visibility by 42% and enabled true data-to-decision execution for leadership."
       ]
     },
