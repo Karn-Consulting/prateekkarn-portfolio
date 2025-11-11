@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import ManifestoSection from "@/components/ManifestoSection";
 import ProofOfImpactSection from "@/components/ProofOfImpactSection";
+import MidPageCTASection from "@/components/MidPageCTASection";
 import TrustedBySection from "@/components/TrustedBySection";
 import AreasOfArchitectureSection from "@/components/AreasOfArchitectureSection";
 import CareerTrajectorySection from "@/components/CareerTrajectorySection";
@@ -13,6 +14,7 @@ const Index = () => {
       <HeroSection />
       <ManifestoSection />
       <ProofOfImpactSection />
+      <MidPageCTASection />
       <TrustedBySection />
       <AreasOfArchitectureSection />
       <CareerTrajectorySection />
