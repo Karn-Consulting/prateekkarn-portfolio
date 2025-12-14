@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
+import Header from '@/components/Header';
+import ContactSection from '@/components/ContactSection';
 import { TabNavigation } from '@/components/TabNavigation';
 import { PortfolioCard } from '@/components/PortfolioCard';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -268,7 +268,7 @@ export default function Home() {
         </div>
       </main>
 
-      <Footer />
+      <ContactSection />
 
       {/* Case Detail Modal */}
       <Dialog open={!!selectedCase} onOpenChange={(open) => !open && setSelectedCase(null)}>
