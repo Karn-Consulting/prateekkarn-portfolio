@@ -1,12 +1,12 @@
 const TrustedBySection = () => {
   const clients = [
-    { name: "Credit Suisse", domain: "credit-suisse.com" },
-    { name: "Morgan Stanley", domain: "morganstanley.com" },
-    { name: "Microsoft", domain: "microsoft.com" },
-    { name: "Deloitte", domain: "deloitte.com" },
-    { name: "Ernst & Young", domain: "ey.com" },
-    { name: "Mastercard", domain: "mastercard.com" },
-    { name: "PwC", domain: "pwc.com" }
+    { name: "Credit Suisse", logo: "/logos/credit-suisse.svg" },
+    { name: "Morgan Stanley", logo: "/logos/morgan-stanley.svg" },
+    { name: "Microsoft", logo: "/logos/microsoft.svg" },
+    { name: "Deloitte", logo: "/logos/deloitte.svg" },
+    { name: "Ernst & Young", logo: "/logos/ey.svg" },
+    { name: "Mastercard", logo: "/logos/mastercard.svg" },
+    { name: "PwC", logo: "/logos/pwc.svg" }
   ];
 
   return (
@@ -29,9 +29,9 @@ const TrustedBySection = () => {
                 className="flex-shrink-0 w-40 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
               >
                 <img
-                  src={`https://www.google.com/s2/favicons?domain=${client.domain}&sz=128`}
+                  src={client.logo}
                   alt={`${client.name} logo`}
-                  className="w-16 h-16 object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
             ))}
