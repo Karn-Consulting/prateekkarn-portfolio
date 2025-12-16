@@ -1,12 +1,12 @@
 const TrustedBySection = () => {
   const clients = [
-    { name: "Credit Suisse", logo: "https://logo.clearbit.com/credit-suisse.com" },
-    { name: "Morgan Stanley", logo: "https://logo.clearbit.com/morganstanley.com" },
-    { name: "Microsoft", logo: "https://logo.clearbit.com/microsoft.com" },
-    { name: "Deloitte", logo: "https://logo.clearbit.com/deloitte.com" },
-    { name: "Ernst & Young", logo: "https://logo.clearbit.com/ey.com" },
-    { name: "Mastercard", logo: "https://logo.clearbit.com/mastercard.com" },
-    { name: "PwC", logo: "https://logo.clearbit.com/pwc.com" }
+    { name: "Credit Suisse", logo: "/logos/credit-suisse.jpg" },
+    { name: "Morgan Stanley", logo: "/logos/morgan-stanley.jpg" },
+    { name: "Microsoft", logo: "/logos/microsoft.jpg" },
+    { name: "Deloitte", logo: "/logos/deloitte.jpg" },
+    { name: "Ernst & Young", logo: "/logos/ey.jpg" },
+    { name: "Mastercard", logo: "/logos/mastercard.jpg" },
+    { name: "PwC", logo: "/logos/pwc.jpg" }
   ];
 
   return (
