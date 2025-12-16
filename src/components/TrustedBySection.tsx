@@ -1,12 +1,12 @@
 const TrustedBySection = () => {
   const clients = [
-    { name: "Credit Suisse", logo: "/images/logos/credit-suisse.jpg" },
-    { name: "Morgan Stanley", logo: "/images/logos/morgan-stanley.jpg" },
-    { name: "Microsoft", logo: "/images/logos/microsoft.jpg" },
-    { name: "Deloitte", logo: "/images/logos/deloitte.jpg" },
-    { name: "Ernst & Young", logo: "/images/logos/ey.jpg" },
-    { name: "Mastercard", logo: "/images/logos/mastercard.jpg" },
-    { name: "PwC", logo: "/images/logos/pwc.jpg" }
+    { name: "Credit Suisse", domain: "credit-suisse.com" },
+    { name: "Morgan Stanley", domain: "morganstanley.com" },
+    { name: "Microsoft", domain: "microsoft.com" },
+    { name: "Deloitte", domain: "deloitte.com" },
+    { name: "Ernst & Young", domain: "ey.com" },
+    { name: "Mastercard", domain: "mastercard.com" },
+    { name: "PwC", domain: "pwc.com" }
   ];
 
   return (
@@ -23,42 +23,15 @@ const TrustedBySection = () => {
 
         <div className="relative overflow-hidden">
           <div className="flex animate-slide-left space-x-16 hover:pause">
-            {/* First set of logos */}
-            {clients.map((client, index) => (
+            {[...clients, ...clients, ...clients].map((client, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 w-40 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
               >
                 <img
-                  src={client.logo}
+                  src={`https://www.google.com/s2/favicons?domain=${client.domain}&sz=128`}
                   alt={`${client.name} logo`}
-                  className="w-full h-full object-contain scale-90"
-                />
-              </div>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {clients.map((client, index) => (
-              <div
-                key={`duplicate-${index}`}
-                className="flex-shrink-0 w-40 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
-              >
-                <img
-                  src={client.logo}
-                  alt={`${client.name} logo`}
-                  className="w-full h-full object-contain scale-90"
-                />
-              </div>
-            ))}
-            {/* Third set for extra smooth loop */}
-            {clients.map((client, index) => (
-              <div
-                key={`duplicate-2-${index}`}
-                className="flex-shrink-0 w-40 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
-              >
-                <img
-                  src={client.logo}
-                  alt={`${client.name} logo`}
-                  className="w-full h-full object-contain scale-90"
+                  className="w-16 h-16 object-contain"
                 />
               </div>
             ))}
