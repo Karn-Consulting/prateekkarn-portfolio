@@ -2,16 +2,25 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="w-full py-6 px-4 sm:px-6 lg:px-8 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link to="/" className="font-heading text-2xl font-bold text-foreground hover:opacity-80 transition-opacity">
+    <header className="w-full py-6 px-6 lg:px-8 bg-[#f5f5f0] border-b border-[#e8e6e1]">
+      <div className="max-w-6xl mx-auto flex justify-between items-center">
+        <Link 
+          to="/" 
+          className="font-heading text-xl md:text-2xl text-[#1a1a1a] hover:text-[#4a4a4a] transition-colors"
+        >
           Prateek Karn
         </Link>
-        <nav className="hidden md:flex gap-8">
-          <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+        <nav className="flex gap-8">
+          <Link 
+            to="/" 
+            className="text-sm font-medium text-[#8b8578] hover:text-[#1a1a1a] transition-colors"
+          >
             Home
           </Link>
-          <Link to="/mywork" className="text-sm font-medium text-foreground transition-colors">
+          <Link 
+            to="/mywork" 
+            className="text-sm font-medium text-[#1a1a1a] transition-colors"
+          >
             My Work
           </Link>
         </nav>
