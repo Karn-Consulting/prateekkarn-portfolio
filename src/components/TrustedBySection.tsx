@@ -3,7 +3,7 @@ const TrustedBySection = () => {
   // Text-heavy logos (EY) need smaller dimensions than wordmark logos (Morgan Stanley)
   const clients = [
     { name: "Credit Suisse", logo: "/logos/credit-suisse.svg", width: 100, height: 28 },
-    { name: "Morgan Stanley", logo: "/logos/morgan-stanley.png", width: 120, height: 20 },
+    { name: "Morgan Stanley", logo: "/logos/morgan-stanley.png", width: 140, height: 28 },
     { name: "Microsoft", logo: "/logos/microsoft.svg", width: 110, height: 24 },
     { name: "Deloitte", logo: "/logos/deloitte.svg", width: 100, height: 22 },
     { name: "Ernst & Young", logo: "/logos/ey.png", width: 50, height: 20 },
