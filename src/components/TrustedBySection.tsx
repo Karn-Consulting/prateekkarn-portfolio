@@ -3,7 +3,7 @@ const TrustedBySection = () => {
   // Desktop sizes for larger screens, scaled down proportionally for mobile
   const clients = [
     { name: "Credit Suisse", logo: "/logos/credit-suisse.svg", width: 130, height: 36, mobileWidth: 90, mobileHeight: 25 },
-    { name: "Morgan Stanley", logo: "/logos/morgan-stanley.png", width: 160, height: 40, mobileWidth: 110, mobileHeight: 28 },
+    { name: "Morgan Stanley", logo: "/logos/morgan-stanley.png", width: 180, height: 48, mobileWidth: 130, mobileHeight: 34 },
     { name: "Microsoft", logo: "/logos/microsoft.svg", width: 120, height: 26, mobileWidth: 85, mobileHeight: 18 },
     { name: "Deloitte", logo: "/logos/deloitte.svg", width: 110, height: 24, mobileWidth: 80, mobileHeight: 18 },
     { name: "Ernst & Young", logo: "/logos/ey.png", width: 65, height: 26, mobileWidth: 45, mobileHeight: 18 },
