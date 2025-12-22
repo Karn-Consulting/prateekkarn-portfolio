@@ -98,7 +98,7 @@ const CookieConsent = () => {
             </a>
           </p>
 
-          {/* Buttons */}
+          {/* Buttons - Accept on RIGHT side (primary action) */}
           <div className="flex gap-3">
             <button
               onClick={handleReject}

@@ -1,12 +1,14 @@
 const TrustedBySection = () => {
+  // Optical sizing - each logo has custom dimensions to appear visually equal
+  // Text-heavy logos (EY) need smaller dimensions than wordmark logos (Morgan Stanley)
   const clients = [
-    { name: "Credit Suisse", logo: "/logos/credit-suisse.svg" },
-    { name: "Morgan Stanley", logo: "/logos/morgan-stanley.png" },
-    { name: "Microsoft", logo: "/logos/microsoft.svg" },
-    { name: "Deloitte", logo: "/logos/deloitte.svg" },
-    { name: "Ernst & Young", logo: "/logos/ey.png" },
-    { name: "Mastercard", logo: "/logos/mastercard.svg" },
-    { name: "PwC", logo: "/logos/pwc.png" }
+    { name: "Credit Suisse", logo: "/logos/credit-suisse.svg", width: 100, height: 28 },
+    { name: "Morgan Stanley", logo: "/logos/morgan-stanley.png", width: 120, height: 20 },
+    { name: "Microsoft", logo: "/logos/microsoft.svg", width: 110, height: 24 },
+    { name: "Deloitte", logo: "/logos/deloitte.svg", width: 100, height: 22 },
+    { name: "Ernst & Young", logo: "/logos/ey.png", width: 50, height: 20 },
+    { name: "Mastercard", logo: "/logos/mastercard.png", width: 70, height: 42 },
+    { name: "PwC", logo: "/logos/pwc.png", width: 70, height: 30 }
   ];
 
   return (
@@ -22,20 +24,28 @@ const TrustedBySection = () => {
         </div>
 
         <div className="relative overflow-hidden">
-          <div className="flex animate-slide-left space-x-12 sm:space-x-16 md:space-x-20 hover:pause items-center">
+          {/* Gradient fade on edges for premium feel */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-secondary/30 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-secondary/30 to-transparent z-10 pointer-events-none" />
+          
+          <div className="flex animate-slide-left items-center">
             {[...clients, ...clients, ...clients].map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
-                style={{ width: '120px', height: '48px' }}
+                className="flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 mx-8 sm:mx-10 md:mx-12"
+                style={{ 
+                  width: `${client.width}px`, 
+                  height: '48px',
+                  minWidth: `${client.width}px`
+                }}
               >
                 <img
                   src={client.logo}
                   alt={`${client.name} logo`}
-                  className="object-contain"
+                  className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-500"
                   style={{ 
-                    maxWidth: '120px', 
-                    maxHeight: '40px',
+                    maxWidth: `${client.width}px`, 
+                    maxHeight: `${client.height}px`,
                     width: 'auto',
                     height: 'auto'
                   }}
