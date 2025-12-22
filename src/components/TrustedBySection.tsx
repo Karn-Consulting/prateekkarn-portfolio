@@ -22,16 +22,23 @@ const TrustedBySection = () => {
         </div>
 
         <div className="relative overflow-hidden">
-          <div className="flex animate-slide-left space-x-8 sm:space-x-12 md:space-x-16 hover:pause">
+          <div className="flex animate-slide-left space-x-12 sm:space-x-16 md:space-x-20 hover:pause items-center">
             {[...clients, ...clients, ...clients].map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-24 h-12 sm:w-32 sm:h-16 md:w-40 md:h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+                className="flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+                style={{ width: '120px', height: '48px' }}
               >
                 <img
                   src={client.logo}
                   alt={`${client.name} logo`}
-                  className="w-full h-full object-contain"
+                  className="object-contain"
+                  style={{ 
+                    maxWidth: '120px', 
+                    maxHeight: '40px',
+                    width: 'auto',
+                    height: 'auto'
+                  }}
                 />
               </div>
             ))}
