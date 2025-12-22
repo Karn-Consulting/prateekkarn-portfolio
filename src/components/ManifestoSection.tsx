@@ -42,31 +42,31 @@ const ManifestoSection = () => {
   ];
 
   return (
-    <section id="manifesto-section" className="py-24 px-6 lg:px-8">
+    <section id="manifesto-section" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
             Building Intelligent Systems for Modern Enterprises
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
           {principles.map((principle, index) => {
             const IconComponent = principle.icon;
             return (
-              <div key={index} className="text-center space-y-6">
+              <div key={index} className="text-center space-y-4 sm:space-y-6">
                 <div className="flex justify-center">
-                  <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-accent/10 flex items-center justify-center">
                     <IconComponent 
-                      className="w-8 h-8 text-accent" 
+                      className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-accent" 
                       strokeWidth={1.5} 
                     />
                   </div>
                 </div>
-                <h3 className="font-heading text-2xl font-semibold text-foreground">
+                <h3 className="font-heading text-lg sm:text-xl md:text-2xl font-semibold text-foreground">
                   {principle.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                   {principle.description}
                 </p>
               </div>

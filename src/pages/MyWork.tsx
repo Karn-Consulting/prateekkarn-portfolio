@@ -5,6 +5,7 @@ import { TabNavigation } from '@/components/TabNavigation';
 import { HeroCard } from '@/components/HeroCard';
 import { GridCard } from '@/components/GridCard';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { X } from 'lucide-react';
 
 // Tab Data
 const TABS = [
@@ -268,13 +269,13 @@ export default function MyWork() {
     <div className="min-h-screen bg-[#f5f5f0]">
       <Header />
       
-      {/* Hero Section */}
-      <section className="pt-16 pb-8 px-6">
+      {/* Hero Section - Responsive padding and typography */}
+      <section className="pt-8 sm:pt-12 md:pt-16 pb-4 sm:pb-6 md:pb-8 px-4 sm:px-6">
         <div className="container max-w-6xl mx-auto">
-          <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-[#1a1a1a] mb-6">
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[#1a1a1a] mb-4 sm:mb-5 md:mb-6">
             My Work
           </h1>
-          <p className="font-body text-[#5a5a5a] text-lg md:text-xl max-w-2xl leading-relaxed">
+          <p className="font-body text-[#5a5a5a] text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed">
             A curated body of AI decision frameworks, data systems, and growth architectures — organized by impact and maturity.
           </p>
         </div>
@@ -287,9 +288,9 @@ export default function MyWork() {
         onTabChange={setActiveTab} 
       />
 
-      {/* Main Content */}
-      <main className="container max-w-6xl mx-auto px-6 py-12">
-        <div className="space-y-12 animate-in fade-in duration-500">
+      {/* Main Content - Responsive grid and spacing */}
+      <main className="container max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
+        <div className="space-y-6 sm:space-y-8 md:space-y-12 animate-in fade-in duration-500">
           
           {/* Hero Card - Featured Item */}
           {currentContent?.hero && (
@@ -303,9 +304,9 @@ export default function MyWork() {
             />
           )}
 
-          {/* Grid Cards - Secondary Items */}
+          {/* Grid Cards - Responsive grid: 1 col mobile, 2 col tablet, 3 col desktop */}
           {currentContent?.grid && currentContent.grid.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
               {currentContent.grid.map((item, index) => (
                 <GridCard
                   key={index}
@@ -324,46 +325,46 @@ export default function MyWork() {
 
       <ContactSection />
 
-      {/* Case Detail Modal */}
+      {/* Case Detail Modal - Responsive */}
       <Dialog open={!!selectedCase} onOpenChange={(open) => !open && setSelectedCase(null)}>
-        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto bg-[#fafaf8] border-[#e8e6e1]">
+        <DialogContent className="max-w-[95vw] sm:max-w-xl md:max-w-2xl lg:max-w-3xl max-h-[90vh] overflow-y-auto bg-[#fafaf8] border-[#e8e6e1] p-4 sm:p-6">
           <DialogHeader>
-            <DialogTitle className="font-heading text-3xl text-[#1a1a1a] mb-2">
+            <DialogTitle className="font-heading text-xl sm:text-2xl md:text-3xl text-[#1a1a1a] mb-1 sm:mb-2 pr-8">
               {selectedCase?.title}
             </DialogTitle>
-            <DialogDescription className="font-body text-[#8b8578] text-sm uppercase tracking-wider">
+            <DialogDescription className="font-body text-[#8b8578] text-xs sm:text-sm uppercase tracking-wider">
               {selectedCase?.context}
             </DialogDescription>
           </DialogHeader>
           
-          <div className="space-y-8 py-6">
-            <div className="space-y-3">
-              <h4 className="font-heading text-xl text-[#1a1a1a] border-b border-[#e8e6e1] pb-2">Problem Framing</h4>
-              <p className="font-body text-[#5a5a5a] leading-relaxed">
+          <div className="space-y-5 sm:space-y-6 md:space-y-8 py-4 sm:py-6">
+            <div className="space-y-2 sm:space-y-3">
+              <h4 className="font-heading text-base sm:text-lg md:text-xl text-[#1a1a1a] border-b border-[#e8e6e1] pb-2">Problem Framing</h4>
+              <p className="font-body text-[#5a5a5a] text-sm sm:text-base leading-relaxed">
                 {selectedCase?.problem}
               </p>
             </div>
 
-            <div className="space-y-3">
-              <h4 className="font-heading text-xl text-[#1a1a1a] border-b border-[#e8e6e1] pb-2">System / Architecture</h4>
-              <p className="font-body text-[#5a5a5a] leading-relaxed">
+            <div className="space-y-2 sm:space-y-3">
+              <h4 className="font-heading text-base sm:text-lg md:text-xl text-[#1a1a1a] border-b border-[#e8e6e1] pb-2">System / Architecture</h4>
+              <p className="font-body text-[#5a5a5a] text-sm sm:text-base leading-relaxed">
                 {selectedCase?.system}
               </p>
             </div>
 
-            <div className="space-y-3">
-              <h4 className="font-heading text-xl text-[#1a1a1a] border-b border-[#e8e6e1] pb-2">Decision Impact</h4>
-              <p className="font-body text-[#5a5a5a] leading-relaxed">
+            <div className="space-y-2 sm:space-y-3">
+              <h4 className="font-heading text-base sm:text-lg md:text-xl text-[#1a1a1a] border-b border-[#e8e6e1] pb-2">Decision Impact</h4>
+              <p className="font-body text-[#5a5a5a] text-sm sm:text-base leading-relaxed">
                 {selectedCase?.outcome || selectedCase?.impact}
               </p>
             </div>
 
             {selectedCase?.techStack && (
-              <div className="bg-[#f0ede8] p-4 rounded-sm">
-                <h4 className="font-heading text-sm text-[#1a1a1a] mb-3 uppercase tracking-wider">Tech Stack</h4>
-                <div className="flex flex-wrap gap-2">
+              <div className="bg-[#f0ede8] p-3 sm:p-4 rounded-sm">
+                <h4 className="font-heading text-xs sm:text-sm text-[#1a1a1a] mb-2 sm:mb-3 uppercase tracking-wider">Tech Stack</h4>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {selectedCase.techStack.map((tech: string, i: number) => (
-                    <span key={i} className="text-xs font-medium uppercase tracking-wider text-[#6a6a6a] bg-white px-3 py-1 rounded-sm border border-[#e8e6e1]">
+                    <span key={i} className="text-[10px] sm:text-xs font-medium uppercase tracking-wider text-[#6a6a6a] bg-white px-2 sm:px-3 py-0.5 sm:py-1 rounded-sm border border-[#e8e6e1]">
                       {tech}
                     </span>
                   ))}
