@@ -23,7 +23,7 @@ const PrivacyPolicy = () => {
               Privacy Policy
             </h1>
             <p className="text-muted-foreground">
-              Last updated: October 15, 2025
+              Last updated: December 22, 2025
             </p>
           </div>
 
@@ -127,9 +127,41 @@ const PrivacyPolicy = () => {
               <h2 className="font-heading text-2xl font-semibold text-foreground mb-3">
                 8. Cookies and Tracking Technologies
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed mb-4">
                 We use cookies and similar tracking technologies to track activity on our website and store certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, some parts of our website may not function properly without cookies.
               </p>
+              
+              {/* RB2B Disclosure */}
+              <div className="bg-secondary/50 border border-border rounded-lg p-4 mt-4">
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
+                  Third-Party Data Partners & Visitor Identification
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-3">
+                  When you visit or log in to our website, cookies and similar technologies may be used by our online data partners or vendors to associate these activities with other personal information they or others have about you, including by association with your email. We (or service providers on our behalf) may then send communications and marketing to these email addresses.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-3">
+                  <strong>Opt-Out:</strong> You may opt out of receiving this advertising by visiting:{" "}
+                  <a 
+                    href="https://app.retention.com/optout" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-accent hover:underline"
+                  >
+                    https://app.retention.com/optout
+                  </a>
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  <strong>GDPR Opt-Out:</strong> You also have the option to opt out of the collection of your personal data in compliance with GDPR. To exercise this option, please visit:{" "}
+                  <a 
+                    href="https://www.rb2b.com/rb2b-gdpr-opt-out" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-accent hover:underline"
+                  >
+                    https://www.rb2b.com/rb2b-gdpr-opt-out
+                  </a>
+                </p>
+              </div>
             </section>
 
             <section>
