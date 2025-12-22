@@ -164,7 +164,19 @@ All colors MUST be HSL.
   }
   
   .animate-slide-left {
-    animation: slide-left 45s linear infinite;
+    animation: slide-left 30s linear infinite;
+  }
+  
+  @media (min-width: 640px) {
+    .animate-slide-left {
+      animation: slide-left 40s linear infinite;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .animate-slide-left {
+      animation: slide-left 45s linear infinite;
+    }
   }
   
   .animate-slide-left:hover {
