@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/prateek-hero.jpg";
 
 const HeroSection = () => {
@@ -35,7 +36,9 @@ const HeroSection = () => {
               </p>
             </div>
             
-            <div className="mt-8 lg:mt-10">
+            {/* CTA Buttons */}
+            <div className="mt-8 lg:mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start order-4 lg:order-none">
+              {/* Primary CTA - Schedule a Consultation */}
               <a 
                 href="https://calendly.com/prateekkarn5/free-consultationhighlevel"
                 target="_blank"
@@ -44,12 +47,24 @@ const HeroSection = () => {
                 <Button 
                   variant="cta" 
                   size="lg"
-                  className="font-medium text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto order-4 lg:order-none group"
+                  className="font-semibold text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto group bg-[#8b7355] text-white hover:bg-[#7a6548]"
                 >
                   Schedule a Consultation
                   <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Button>
               </a>
+              
+              {/* Secondary CTA - View My Work */}
+              <Link to="/mywork">
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="font-semibold text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto group border-[#8b7355] text-[#8b7355] hover:bg-[#8b7355] hover:text-white transition-all duration-300"
+                >
+                  View My Work
+                  <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </Button>
+              </Link>
             </div>
           </div>
 
