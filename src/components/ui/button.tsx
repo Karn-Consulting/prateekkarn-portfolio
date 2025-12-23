@@ -4,18 +4,40 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
+/**
+ * Global Button Design System - Antique Bronze Theme
+ * 
+ * Primary Style: Antique Bronze (#9C7C38) background, White (#FFFFFF) text
+ * Secondary/Ghost Style: Transparent bg, 1px Antique Bronze border, White/Gold text
+ * Hover: Brighten to #B59045 with subtle inner glow
+ * Typography: Weight 600 (Semi-Bold), Letter-spacing 0.5px
+ */
+
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold tracking-[0.5px] ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9C7C38] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        // Primary: Antique Bronze background, white text
+        default: "bg-[#9C7C38] text-white hover:bg-[#B59045] hover:shadow-[inset_0_0_20px_rgba(255,255,255,0.15)]",
+        
+        // Destructive: Keep for error states
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        cta: "bg-accent text-accent-foreground hover:bg-accent hover:brightness-110 font-medium tracking-wide transition-all duration-300 hover:shadow-[0_8px_30px_hsl(42_20%_58%_/_0.4)] hover:translate-y-[-4px] active:translate-y-[-2px] active:shadow-[0_4px_20px_hsl(42_20%_58%_/_0.3)]",
+        
+        // Ghost/Secondary: Transparent with Antique Bronze border
+        outline: "border border-[#9C7C38] bg-transparent text-[#9C7C38] hover:bg-[#9C7C38]/10 hover:text-[#B59045] hover:border-[#B59045]",
+        
+        // Secondary: Lighter bronze background
+        secondary: "bg-[#9C7C38]/15 text-[#9C7C38] hover:bg-[#9C7C38]/25 hover:text-[#B59045]",
+        
+        // Ghost: For less important actions - transparent with gold text
+        ghost: "text-[#9C7C38] hover:bg-[#9C7C38]/10 hover:text-[#B59045]",
+        
+        // Link style
+        link: "text-[#9C7C38] underline-offset-4 hover:underline hover:text-[#B59045]",
+        
+        // CTA: Premium Antique Bronze with enhanced hover effects
+        cta: "bg-[#9C7C38] text-white font-semibold tracking-[0.5px] hover:bg-[#B59045] hover:shadow-[inset_0_0_30px_rgba(255,255,255,0.2),0_8px_30px_rgba(156,124,56,0.35)] transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -6,6 +6,13 @@ declare global {
   }
 }
 
+/**
+ * Cookie Consent Banner with Antique Bronze Design System
+ * Primary: #9C7C38 background, white text
+ * Ghost: Transparent bg, #9C7C38 border
+ * Hover: Brighten to #B59045
+ */
+
 const CookieConsent = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -68,8 +75,8 @@ const CookieConsent = () => {
         <div className="p-5 sm:p-6">
           {/* Header */}
           <div className="flex items-start gap-3 mb-3">
-            <div className="w-9 h-9 rounded-full bg-[#8b7355]/10 flex items-center justify-center flex-shrink-0">
-              <svg className="w-4 h-4 text-[#8b7355]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-9 h-9 rounded-full bg-[#9C7C38]/10 flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-[#9C7C38]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
@@ -81,7 +88,7 @@ const CookieConsent = () => {
             {/* Close button */}
             <button 
               onClick={handleReject}
-              className="text-[#8b7355]/60 hover:text-[#8b7355] transition-colors p-1"
+              className="text-[#9C7C38]/60 hover:text-[#B59045] transition-colors p-1"
               aria-label="Close"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,22 +100,24 @@ const CookieConsent = () => {
           <p className="text-[#5a5a5a] text-sm leading-relaxed mb-4">
             We use cookies to enhance your experience and analyze our traffic. 
             By clicking "Accept", you consent to our use of cookies.{' '}
-            <a href="/privacy-policy" className="text-[#8b7355] hover:text-[#6b5a45] underline transition-colors">
+            <a href="/privacy-policy" className="text-[#9C7C38] hover:text-[#B59045] underline transition-colors">
               Learn more
             </a>
           </p>
 
-          {/* Buttons - Accept on RIGHT side (primary action) */}
+          {/* Buttons - Ghost style for Decline, Primary for Accept */}
           <div className="flex gap-3">
+            {/* Ghost/Secondary Button - Decline */}
             <button
               onClick={handleReject}
-              className="flex-1 px-4 py-2.5 rounded-xl border border-[#d4d4cc] text-[#5a5a5a] hover:text-[#1a1a1a] hover:border-[#8b7355]/40 hover:bg-[#8b7355]/5 transition-all duration-300 text-sm font-medium"
+              className="flex-1 px-4 py-2.5 rounded-xl border border-[#9C7C38] bg-transparent text-[#9C7C38] font-semibold tracking-[0.5px] hover:bg-[#9C7C38]/10 hover:text-[#B59045] hover:border-[#B59045] transition-all duration-300 text-sm"
             >
               Decline
             </button>
+            {/* Primary Button - Accept */}
             <button
               onClick={handleAcceptAll}
-              className="flex-1 px-4 py-2.5 rounded-xl bg-[#8b7355] text-white font-medium hover:bg-[#7a6548] transition-all duration-300 text-sm shadow-sm hover:shadow-md"
+              className="flex-1 px-4 py-2.5 rounded-xl bg-[#9C7C38] text-white font-semibold tracking-[0.5px] hover:bg-[#B59045] hover:shadow-[inset_0_0_20px_rgba(255,255,255,0.15)] transition-all duration-300 text-sm"
             >
               Accept
             </button>
