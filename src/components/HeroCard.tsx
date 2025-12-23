@@ -69,10 +69,10 @@ export const HeroCard = ({
             <span className="text-xs sm:text-sm text-[#5a5a5a]">{impact}</span>
           </div>
 
-          {/* CTA Link - Updated to Antique Bronze */}
+          {/* CTA Link */}
           <a 
             href="#" 
-            className="inline-flex items-center text-xs sm:text-sm font-semibold tracking-[0.5px] text-[#9C7C38] hover:text-[#B59045] transition-colors group/cta"
+            className="inline-flex items-center text-xs sm:text-sm font-medium text-[#8b7355] hover:text-[#6d5a43] transition-colors group/cta"
             onClick={(e) => {
               e.preventDefault();
               onClick?.();

@@ -85,8 +85,8 @@ export const PortfolioCard = ({
           ))}
         </div>
 
-        {/* Text CTA - Updated to Antique Bronze */}
-        <div className="flex items-center text-sm font-semibold tracking-[0.5px] text-[#9C7C38] group-hover:text-[#B59045] transition-colors">
+        {/* Text CTA (No Buttons) */}
+        <div className="flex items-center text-sm font-medium text-primary group-hover:text-accent transition-colors">
           {ctaText}
           <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
         </div>
