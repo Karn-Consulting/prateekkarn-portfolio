@@ -164,18 +164,18 @@ All colors MUST be HSL.
   }
   
   .animate-scroll-left {
-    animation: scroll-left 40s linear infinite;
+    animation: scroll-left 30s linear infinite;
   }
   
   @media (min-width: 640px) {
     .animate-scroll-left {
-      animation: scroll-left 50s linear infinite;
+      animation: scroll-left 40s linear infinite;
     }
   }
   
   @media (min-width: 1024px) {
     .animate-scroll-left {
-      animation: scroll-left 60s linear infinite;
+      animation: scroll-left 45s linear infinite;
     }
   }
   
