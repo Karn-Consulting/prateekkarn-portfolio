@@ -194,7 +194,7 @@ const KarnInsightsSection = () => {
         </div>
 
         {/* Consolidated Footer - Premium Quiet Luxury Design */}
-        <footer className="mt-16 sm:mt-20 relative overflow-hidden rounded-lg" style={{ backgroundColor: '#3d3229' }}>
+        <footer className="mt-16 sm:mt-20 relative overflow-hidden" style={{ backgroundColor: '#1a1a1a' }}>
           {/* Noise texture overlay */}
           <NoiseOverlay />
           
@@ -204,7 +204,7 @@ const KarnInsightsSection = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                 {/* Left Column - Contact Info */}
                 <div className="text-center lg:text-left">
-                  <h3 className="font-heading text-2xl sm:text-3xl font-normal text-white/95 mb-6 leading-relaxed tracking-wide">
+                  <h3 className="font-heading text-2xl sm:text-3xl font-normal text-[#f5f5dc] mb-6 leading-relaxed tracking-wide">
                     Ready for Intelligent Growth?
                   </h3>
                   
@@ -212,7 +212,7 @@ const KarnInsightsSection = () => {
                   <div className="flex flex-col gap-4">
                     <a 
                       href="mailto:prateek.karn@prateekkarn.com"
-                      className="inline-flex items-center gap-3 text-[#c9b896] hover:text-white transition-colors duration-200 text-sm sm:text-base justify-center lg:justify-start"
+                      className="inline-flex items-center gap-3 text-[#c9b896] hover:text-[#c9b896] hover:brightness-125 transition-all duration-300 text-sm sm:text-base justify-center lg:justify-start"
                     >
                       <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                       <span className="font-medium">prateek.karn@prateekkarn.com</span>
@@ -222,7 +222,7 @@ const KarnInsightsSection = () => {
                       href="https://linkedin.com/in/prateekkarn" 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 text-[#c9b896] hover:text-white transition-colors duration-200 text-sm sm:text-base justify-center lg:justify-start"
+                      className="inline-flex items-center gap-3 text-[#c9b896] hover:text-[#c9b896] hover:brightness-125 transition-all duration-300 text-sm sm:text-base justify-center lg:justify-start"
                       aria-label="LinkedIn Profile"
                     >
                       <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
@@ -233,12 +233,12 @@ const KarnInsightsSection = () => {
 
                 {/* Right Column - Newsletter */}
                 <div className="text-center lg:text-left">
-                  <h4 className="font-heading text-xl sm:text-2xl font-normal text-white/95 mb-4 leading-relaxed tracking-wide">
+                  <h4 className="font-heading text-xl sm:text-2xl font-normal text-[#f5f5dc] mb-4 leading-relaxed tracking-wide">
                     Strategic Intelligence Newsletter
                   </h4>
                   
-                  <p className="text-white/60 text-sm leading-[1.8] mb-6 max-w-md mx-auto lg:mx-0">
-                    Curated frameworks and lessons from building AI and MarTech systems.
+                  <p className="text-white/50 text-sm leading-[1.8] mb-6 max-w-md mx-auto lg:mx-0">
+                    Curated frameworks and lessons learned from building AI and MarTech systems.
                   </p>
                   
                   {/* Input & CTA */}
@@ -247,14 +247,13 @@ const KarnInsightsSection = () => {
                       <input
                         type="email"
                         placeholder="Enter your email"
-                        className="w-full bg-transparent border-0 border-b border-[#c9b896]/40 text-white/90 placeholder-white/40 focus:outline-none focus:border-[#c9b896] transition-colors py-3 text-center sm:text-left font-heading italic text-sm tracking-wide"
-                        style={{ borderBottomWidth: '0.5px' }}
+                        className="w-full bg-[#2a2a2a] border border-[#444] text-white/90 placeholder-white/40 focus:outline-none focus:border-[#c9b896] transition-colors py-3 px-4 text-center sm:text-left font-heading text-sm tracking-wide rounded"
                       />
                     </div>
                     
-                    <button className="group px-5 py-2.5 bg-transparent border border-[#c9b896]/50 hover:border-[#c9b896] text-[#c9b896] hover:text-white transition-all duration-300">
+                    <button className="group px-5 py-3 bg-transparent border border-[#c9b896] hover:bg-[#c9b896] text-[#c9b896] hover:text-[#1a1a1a] transition-all duration-300 rounded">
                       <span className="text-xs font-medium tracking-[0.2em] uppercase">
-                        Subscribe
+                        SUBSCRIBE
                       </span>
                     </button>
                   </div>
@@ -262,7 +261,7 @@ const KarnInsightsSection = () => {
               </div>
 
               {/* Divider Line */}
-              <div className="border-t border-white/10 mt-12 pt-8">
+              <div className="border-t border-[#333] mt-12 pt-8">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                   {/* Copyright */}
                   <p className="text-white/50 text-xs sm:text-sm">
@@ -273,13 +272,14 @@ const KarnInsightsSection = () => {
                   <div className="flex items-center gap-6 text-xs sm:text-sm">
                     <Link 
                       to="/privacy-policy" 
-                      className="text-white/50 hover:text-[#c9b896] transition-colors duration-200"
+                      className="text-white/50 hover:text-[#c9b896] transition-colors duration-300"
                     >
                       Privacy Policy
                     </Link>
+                    <span className="text-white/30">|</span>
                     <Link 
                       to="/terms-and-conditions" 
-                      className="text-white/50 hover:text-[#c9b896] transition-colors duration-200"
+                      className="text-white/50 hover:text-[#c9b896] transition-colors duration-300"
                     >
                       Terms & Conditions
                     </Link>

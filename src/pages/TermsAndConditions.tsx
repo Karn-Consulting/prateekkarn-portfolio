@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
@@ -278,7 +278,7 @@ const TermsAndConditions = () => {
       </main>
 
       {/* Footer */}
-      <ContactSection />
+      <Footer />
     </div>
   );
 };
