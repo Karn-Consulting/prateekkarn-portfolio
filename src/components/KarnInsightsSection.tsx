@@ -4,7 +4,7 @@ const BLOG_POSTS = [
   {
     id: 1,
     title: "The Kinetic Enterprise",
-    excerpt: "Building the Self-Healing Business through a High-Resolution Digital Nervous System that senses and evolves in real-time.",
+    excerpt: "Building the Self-Healing Business through a High-Resolution Digital Nervous System.",
     category: "AI Strategy",
     readTime: "14 min read",
     date: "Dec 18, 2024"
