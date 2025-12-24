@@ -107,12 +107,12 @@ const ArticleCard = ({ post, index }: { post: typeof BLOG_POSTS[0]; index: numbe
       </div>
       
       {/* Headline */}
-      <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground mb-3 leading-snug group-hover:text-accent transition-colors line-clamp-2">
+      <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground mb-3 leading-snug group-hover:text-accent transition-colors line-clamp-2 min-h-[3.5rem]">
         {post.title}
       </h3>
       
       {/* Summary - 2 lines */}
-      <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4 flex-grow">
+      <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">
         {post.excerpt}
       </p>
       
