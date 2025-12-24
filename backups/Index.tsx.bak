@@ -8,6 +8,7 @@ import MyWorkSection from "@/components/MyWorkSection";
 import GrowthStackSection from "@/components/GrowthStackSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import KarnInsightsSection from "@/components/KarnInsightsSection";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <TestimonialsSection />
       <GrowthStackSection />
       <KarnInsightsSection />
+      <ContactSection />
     </main>
   );
 };
