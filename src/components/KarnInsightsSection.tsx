@@ -97,11 +97,10 @@ const ArticleCard = ({ post, index }: { post: typeof BLOG_POSTS[0]; index: numbe
     {/* Content */}
     <div className="p-5 sm:p-6 flex flex-col flex-grow">
       {/* Category & Read Time */}
-      <div className="flex items-center gap-2 mb-3">
+      <div className="flex items-center justify-between mb-3">
         <span className="text-xs uppercase tracking-[0.15em] text-accent font-medium">
           {post.category}
         </span>
-        <span className="text-xs text-muted-foreground">•</span>
         <span className="text-xs text-muted-foreground">
           {post.readTime}
         </span>
