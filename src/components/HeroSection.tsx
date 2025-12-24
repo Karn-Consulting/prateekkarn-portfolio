@@ -38,7 +38,7 @@ const HeroSection = () => {
             
             {/* CTA Buttons */}
             <div className="mt-8 lg:mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start order-4 lg:order-none">
-              {/* Primary CTA - Schedule a Consultation */}
+              {/* Primary CTA - Request a Consultation */}
               <a 
                 href="https://calendly.com/prateekkarn5/free-consultationhighlevel"
                 target="_blank"
@@ -49,7 +49,7 @@ const HeroSection = () => {
                   size="lg"
                   className="font-semibold text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto group bg-[#8b7355] text-white hover:bg-[#7a6548]"
                 >
-                  Schedule a Consultation
+                  Request a Consultation
                   <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Button>
               </a>
