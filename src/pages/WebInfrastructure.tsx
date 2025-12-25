@@ -185,8 +185,8 @@ const WebInfrastructure = () => {
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}
               >
-                {/* Screenshot */}
-                <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                {/* Screenshot - Hidden on mobile, shown on desktop */}
+                <div className={`hidden lg:block ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <a 
                     href={website.url} 
                     target="_blank" 
@@ -216,6 +216,30 @@ const WebInfrastructure = () => {
                   <h3 className="font-heading text-2xl md:text-3xl text-[#1a1a1a] mb-4">
                     {website.name}
                   </h3>
+
+                  {/* Screenshot - Mobile only: between title and description */}
+                  <div className="lg:hidden mb-6">
+                    <a 
+                      href={website.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block group"
+                    >
+                      <div className="relative overflow-hidden rounded-sm shadow-lg border border-[#e8e6e1]">
+                        <img 
+                          src={website.image} 
+                          alt={website.name}
+                          className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 px-4 py-2 rounded-sm text-sm font-medium text-[#1a1a1a] flex items-center gap-2">
+                            Visit Website <ExternalLink className="w-4 h-4" />
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
                   <p className="text-[#5a5a5a] leading-relaxed mb-6">
                     {website.description}
                   </p>
