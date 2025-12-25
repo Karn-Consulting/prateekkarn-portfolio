@@ -9,6 +9,7 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import NotFound from "./pages/NotFound";
 import MyWork from "./pages/MyWork";
 import EnterpriseAIPreparedness from "./pages/EnterpriseAIPreparedness";
+import WebInfrastructure from "./pages/WebInfrastructure";
 import CookieConsent from "./components/CookieConsent";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/mywork" element={<MyWork />} />
           <Route path="/mywork/enterprise-ai-preparedness" element={<EnterpriseAIPreparedness />} />
+          <Route path="/mywork/web-infrastructure" element={<WebInfrastructure />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

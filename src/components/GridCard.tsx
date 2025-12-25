@@ -9,6 +9,8 @@ export interface GridCardProps {
   outcome: string;
   techStack: string[];
   imagePlaceholder?: string;
+  image?: string;
+  link?: string;
   onClick?: () => void;
 }
 
@@ -19,8 +21,11 @@ export const GridCard = ({
   outcome,
   techStack,
   imagePlaceholder,
+  image,
+  link,
   onClick
 }: GridCardProps) => {
+  const imageToShow = image || imagePlaceholder;
   return (
     <div 
       className="group relative bg-white rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-md border border-[#e8e6e1] h-full flex flex-col"
@@ -28,9 +33,9 @@ export const GridCard = ({
     >
       {/* Image Section - responsive aspect ratio */}
       <div className="relative aspect-[4/3] sm:aspect-[16/10] md:aspect-[4/3] bg-[#f0ede8] overflow-hidden flex-shrink-0">
-        {imagePlaceholder ? (
+        {imageToShow ? (
           <img 
-            src={imagePlaceholder} 
+            src={imageToShow} 
             alt={title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />

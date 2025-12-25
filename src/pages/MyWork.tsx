@@ -237,7 +237,9 @@ const CONTENT = {
         outcome: 'Deployed high-speed assets in 5 days vs 4 weeks, achieving 99/100 performance scores.',
         techStack: ['React', 'Next.js', 'Tailwind'],
         problem: 'Aesthetic-driven bloat created slow, conversion-killing web experiences.',
-        system: 'Conversion-first development prioritizing Core Web Vitals and sub-second load times.'
+        system: 'Conversion-first development prioritizing Core Web Vitals and sub-second load times.',
+        image: '/work-web-infrastructure.png',
+        link: '/mywork/web-infrastructure'
       },
       {
         title: 'Graphic Design Portfolio',
@@ -311,17 +313,29 @@ export default function MyWork() {
           {/* Grid Cards - Responsive grid: 1 col mobile, 2 col tablet, 3 col desktop */}
           {currentContent?.grid && currentContent.grid.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-              {currentContent.grid.map((item, index) => (
-                <GridCard
-                  key={index}
-                  title={item.title}
-                  context={item.context}
-                  description={item.description}
-                  outcome={item.outcome}
-                  techStack={item.techStack}
-                  onClick={() => setSelectedCase(item)}
-                />
-              ))}
+              {currentContent.grid.map((item, index) => {
+                const cardContent = (
+                  <GridCard
+                    key={index}
+                    title={item.title}
+                    context={item.context}
+                    description={item.description}
+                    outcome={item.outcome}
+                    techStack={item.techStack}
+                    image={item.image}
+                    onClick={item.link ? undefined : () => setSelectedCase(item)}
+                  />
+                );
+                
+                if (item.link) {
+                  return (
+                    <a key={index} href={item.link} className="block h-full">
+                      {cardContent}
+                    </a>
+                  );
+                }
+                return cardContent;
+              })}
             </div>
           )}
         </div>
