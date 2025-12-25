@@ -179,10 +179,22 @@ const KarnInsightsSection = () => {
           </div>
           <Link 
             to="/insights"
-            className="inline-flex items-center text-accent hover:text-accent/80 font-medium transition-colors group text-sm sm:text-base"
+            className="
+              group
+              inline-flex items-center
+              px-6 sm:px-8 py-3 sm:py-4
+              text-[#8b7355] 
+              text-sm font-semibold tracking-wide uppercase
+              border border-[#8b7355]
+              rounded-sm
+              cursor-pointer
+              transition-all duration-300
+              hover:bg-[#8b7355]
+              hover:text-white
+            "
           >
-            View All Insights
-            <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+            <span className="tracking-[0.15em]">View All Insights</span>
+            <span className="ml-3 transition-transform duration-300 group-hover:translate-x-1">→</span>
           </Link>
         </div>
 

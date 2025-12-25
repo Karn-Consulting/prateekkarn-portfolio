@@ -110,10 +110,11 @@ const MyWorkSection = () => {
           <Link 
             to="/mywork"
             className="
+              group
               inline-flex items-center
               px-8 py-4
               text-[#8b7355] 
-              text-sm font-medium tracking-wide uppercase
+              text-sm font-semibold tracking-wide uppercase
               border border-[#8b7355]
               rounded-sm
               cursor-pointer
