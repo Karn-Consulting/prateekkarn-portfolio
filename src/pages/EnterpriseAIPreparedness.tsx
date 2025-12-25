@@ -239,7 +239,7 @@ const EnterpriseAIPreparedness = () => {
         {/* Header */}
         <header className="border-b border-[#E8E5DF] bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <Link to="/mywork" className="px-4 py-2 bg-[#8b7355] text-white font-semibold rounded-sm hover:bg-[#6d5a43] transition-colors text-sm inline-block">
+            <Link to="/mywork" className="px-4 py-2 text-[#8b7355] font-semibold rounded-sm hover:bg-[#8b7355] hover:text-white transition-all duration-200 text-sm inline-block border border-transparent hover:border-[#8b7355]">
               ← Back to My Work
             </Link>
           </div>
@@ -620,19 +620,28 @@ const EnterpriseAIPreparedness = () => {
 
     return (
       <div className="min-h-screen bg-[#F9F8F6] flex flex-col">
-        {/* Header */}
+        {/* Main Header with Prateek Karn */}
         <header className="border-b border-[#E8E5DF] bg-white print:hidden">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <Link to="/" className="font-heading text-xl font-semibold text-[#1a1a1a] hover:text-[#8b7355] transition-colors">
+              Prateek Karn
+            </Link>
+          </div>
+        </header>
+
+        {/* Sub Header with Logo, Executive Summary, and Actions */}
+        <div className="border-b border-[#E8E5DF] bg-white print:hidden">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div className="flex items-center gap-4">
               <img src="/ai-preparedness-logo.png" alt="" className="h-8 w-8 object-contain" />
               <span className="font-heading font-semibold text-[#1a1a1a]">Executive Summary</span>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 items-center">
               <button
                 onClick={() => window.print()}
-                className="px-4 py-2 text-sm border border-[#E8E5DF] rounded hover:bg-[#F9F8F6] transition-colors"
+                className="px-4 py-2 text-sm bg-[#8b7355] text-white rounded hover:bg-[#6d5a43] transition-colors"
               >
-                Print / Save PDF
+                Download PDF Report
               </button>
               <button
                 onClick={resetAssessment}
@@ -642,7 +651,7 @@ const EnterpriseAIPreparedness = () => {
               </button>
             </div>
           </div>
-        </header>
+        </div>
 
         <main className="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 print:py-0">
           <div className="bg-white border border-[#E8E5DF] rounded-lg overflow-hidden print:border-none print:shadow-none">
@@ -837,7 +846,7 @@ const EnterpriseAIPreparedness = () => {
           <div className="mt-8 text-center print:hidden">
             <Link 
               to="/mywork"
-              className="px-4 py-2 bg-[#8b7355] text-white font-semibold rounded-sm hover:bg-[#6d5a43] transition-colors text-sm inline-block"
+              className="px-4 py-2 text-[#8b7355] font-semibold rounded-sm hover:bg-[#8b7355] hover:text-white transition-all duration-200 text-sm inline-block border border-transparent hover:border-[#8b7355]"
             >
               ← Back to My Work
             </Link>
