@@ -177,11 +177,13 @@ const KarnInsightsSection = () => {
               Frameworks, strategies, and lessons learned from building AI and MarTech systems.
             </p>
           </div>
+          {/* View All Insights - Hidden on mobile, shown on sm+ */}
           <Link 
             to="/insights"
             className="
+              hidden sm:inline-flex
               group
-              inline-flex items-center
+              items-center
               px-6 sm:px-8 py-3 sm:py-4
               text-[#8b7355] 
               text-sm font-semibold tracking-wide uppercase
@@ -203,6 +205,29 @@ const KarnInsightsSection = () => {
           {BLOG_POSTS.map((post, index) => (
             <ArticleCard key={post.id} post={post} index={index} />
           ))}
+        </div>
+
+        {/* View All Insights - Mobile only, shown below cards */}
+        <div className="flex justify-center mt-8 sm:hidden">
+          <Link 
+            to="/insights"
+            className="
+              group
+              inline-flex items-center
+              px-6 py-3
+              text-[#8b7355] 
+              text-sm font-semibold tracking-wide uppercase
+              border border-[#8b7355]
+              rounded-sm
+              cursor-pointer
+              transition-all duration-300
+              hover:bg-[#8b7355]
+              hover:text-white
+            "
+          >
+            <span className="tracking-[0.15em]">View All Insights</span>
+            <span className="ml-3 transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </Link>
         </div>
 
         {/* Consolidated Footer - Premium Quiet Luxury Design */}
