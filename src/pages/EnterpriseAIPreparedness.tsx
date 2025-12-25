@@ -236,10 +236,19 @@ const EnterpriseAIPreparedness = () => {
   if (viewMode === 'landing') {
     return (
       <div className="min-h-screen bg-[#F9F8F6] flex flex-col">
-        {/* Header */}
-        <header className="border-b border-[#E8E5DF] bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <Link to="/mywork" className="px-4 py-2 text-[#8b7355] font-semibold rounded-sm hover:bg-[#8b7355] hover:text-white transition-all duration-200 text-sm inline-block border border-transparent hover:border-[#8b7355]">
+        {/* Header - Consistent with WebInfrastructure */}
+        <header className="sticky top-0 z-50 bg-[#faf9f7]/95 backdrop-blur-sm border-b border-[#e8e6e1]">
+          <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <Link 
+              to="/" 
+              className="font-heading text-xl text-[#1a1a1a] hover:text-[#8b7355] transition-colors"
+            >
+              Prateek Karn
+            </Link>
+            <Link 
+              to="/mywork"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-[#8b7355] border border-[#8b7355] rounded-sm hover:bg-[#8b7355] hover:text-white transition-all duration-200"
+            >
               ← Back to My Work
             </Link>
           </div>
@@ -485,8 +494,26 @@ const EnterpriseAIPreparedness = () => {
 
     return (
       <div className="min-h-screen bg-[#F9F8F6] flex flex-col">
-        {/* Header */}
-        <header className="border-b border-[#E8E5DF] bg-white">
+        {/* Main Header - Consistent with WebInfrastructure */}
+        <header className="sticky top-0 z-50 bg-[#faf9f7]/95 backdrop-blur-sm border-b border-[#e8e6e1]">
+          <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <Link 
+              to="/" 
+              className="font-heading text-xl text-[#1a1a1a] hover:text-[#8b7355] transition-colors"
+            >
+              Prateek Karn
+            </Link>
+            <Link 
+              to="/mywork"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-[#8b7355] border border-[#8b7355] rounded-sm hover:bg-[#8b7355] hover:text-white transition-all duration-200"
+            >
+              ← Back to My Work
+            </Link>
+          </div>
+        </header>
+
+        {/* Sub Header with Logo and Reset */}
+        <div className="border-b border-[#E8E5DF] bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div className="flex items-center gap-4">
               <img src="/ai-preparedness-logo.png" alt="" className="h-8 w-8 object-contain" />
@@ -499,7 +526,7 @@ const EnterpriseAIPreparedness = () => {
               Reset
             </button>
           </div>
-        </header>
+        </div>
 
         <main className="flex-1 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Progress */}
@@ -620,18 +647,27 @@ const EnterpriseAIPreparedness = () => {
 
     return (
       <div className="min-h-screen bg-[#F9F8F6] flex flex-col">
-        {/* Main Header with Prateek Karn */}
-        <header className="border-b border-[#E8E5DF] bg-white print:hidden">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <Link to="/" className="font-heading text-xl font-semibold text-[#1a1a1a] hover:text-[#8b7355] transition-colors">
+        {/* Main Header - Consistent with WebInfrastructure */}
+        <header className="sticky top-0 z-50 bg-[#faf9f7]/95 backdrop-blur-sm border-b border-[#e8e6e1] print:hidden">
+          <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <Link 
+              to="/" 
+              className="font-heading text-xl text-[#1a1a1a] hover:text-[#8b7355] transition-colors"
+            >
               Prateek Karn
+            </Link>
+            <Link 
+              to="/mywork"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-[#8b7355] border border-[#8b7355] rounded-sm hover:bg-[#8b7355] hover:text-white transition-all duration-200"
+            >
+              ← Back to My Work
             </Link>
           </div>
         </header>
 
         {/* Sub Header with Logo, Executive Summary, and Actions */}
         <div className="border-b border-[#E8E5DF] bg-white print:hidden">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex items-center gap-4">
               <img src="/ai-preparedness-logo.png" alt="" className="h-8 w-8 object-contain" />
               <span className="font-heading font-semibold text-[#1a1a1a]">Executive Summary</span>
@@ -639,7 +675,7 @@ const EnterpriseAIPreparedness = () => {
             <div className="flex gap-4 items-center">
               <button
                 onClick={() => window.print()}
-                className="px-4 py-2 text-sm bg-[#8b7355] text-white rounded hover:bg-[#6d5a43] transition-colors"
+                className="px-4 py-2 text-sm bg-[#8b7355] text-white rounded-sm hover:bg-[#6d5a43] transition-colors"
               >
                 Download PDF Report
               </button>

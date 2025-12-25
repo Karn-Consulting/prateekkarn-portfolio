@@ -80,6 +80,16 @@ const WebInfrastructure = () => {
               <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#1a1a1a] mb-6 leading-tight">
                 High-Velocity Web Infrastructure
               </h1>
+              
+              {/* Mobile Hero Image - Between title and description */}
+              <div className="lg:hidden relative mb-6">
+                <img 
+                  src="/work-web-infrastructure.png" 
+                  alt="Web Infrastructure" 
+                  className="w-full h-auto rounded-sm shadow-lg"
+                />
+              </div>
+              
               <p className="text-[#5a5a5a] text-base md:text-lg leading-relaxed mb-8">
                 Conversion-first development prioritizing Core Web Vitals and sub-second load times. 
                 These websites replace aesthetic-driven bloat with lean, performance-optimized architectures 
@@ -115,8 +125,8 @@ const WebInfrastructure = () => {
               </div>
             </div>
 
-            {/* Right: Hero Image */}
-            <div className="relative">
+            {/* Right: Hero Image - Desktop only */}
+            <div className="relative hidden lg:block">
               <img 
                 src="/work-web-infrastructure.png" 
                 alt="Web Infrastructure" 

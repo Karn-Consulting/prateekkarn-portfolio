@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
-import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
 import { TabNavigation } from '@/components/TabNavigation';
 import { HeroCard } from '@/components/HeroCard';
 import { GridCard } from '@/components/GridCard';
@@ -351,7 +351,7 @@ export default function MyWork() {
         </div>
       </main>
 
-      <ContactSection />
+      <Footer />
 
       {/* Case Detail Modal - Responsive */}
       <Dialog open={!!selectedCase} onOpenChange={(open) => !open && setSelectedCase(null)}>
