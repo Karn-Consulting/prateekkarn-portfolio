@@ -78,45 +78,50 @@ const USE_CASES = [
 // Speedometer Gauge Component
 const SpeedometerGauge = ({ score, maxScore = 5 }: { score: number; maxScore?: number }) => {
   // Calculate the needle rotation angle
-  // Score 1 = -90deg (left), Score 5 = 90deg (right)
-  // Mapping: score 1-5 to angle -90 to 90
+  // Score 0% = -90deg (left), Score 100% = +90deg (right)
+  // For score 1-5 scale: map to percentage first, then to rotation
   const normalizedScore = Math.max(1, Math.min(maxScore, score));
-  const angle = ((normalizedScore - 1) / (maxScore - 1)) * 180 - 90;
+  const percentage = ((normalizedScore - 1) / (maxScore - 1)) * 100;
+  // Map 0-100% to -90° to +90° range
+  const rotation = (percentage / 100) * 180 - 90;
   
   return (
-    <div className="relative w-64 h-40 mx-auto">
+    <div className="relative mx-auto" style={{ width: '280px' }}>
       {/* Gauge Background Image */}
       <img 
-        src="/speedometer-gauge.png" 
+        src="/gauge-bg.png" 
         alt="Score Gauge" 
-        className="w-full h-auto"
+        style={{ 
+          width: '100%',
+          height: 'auto',
+          objectFit: 'contain',
+          display: 'block'
+        }}
       />
-      {/* Needle Overlay - CSS-based needle */}
+      {/* Needle Image - rotates based on score */}
       <div 
-        className="absolute bottom-4 left-1/2 origin-bottom"
-        style={{
-          width: '4px',
-          height: '70px',
-          backgroundColor: '#1a1a1a',
-          transform: `translateX(-50%) rotate(${angle}deg)`,
-          borderRadius: '2px',
-          transition: 'transform 0.5s ease-out'
+        className="absolute transition-transform duration-1000 ease-out"
+        style={{ 
+          width: '120px',
+          height: '120px',
+          position: 'absolute',
+          bottom: '0',
+          left: '50%',
+          transform: `translateX(-50%) rotate(${rotation}deg)`,
+          transformOrigin: 'center 75%',
+          zIndex: 2
         }}
       >
-        {/* Needle tip */}
-        <div 
-          className="absolute -top-1 left-1/2 -translate-x-1/2 w-0 h-0"
-          style={{
-            borderLeft: '6px solid transparent',
-            borderRight: '6px solid transparent',
-            borderBottom: '12px solid #1a1a1a'
-          }}
+        <img 
+          src="/gauge-needle.png" 
+          alt="Needle" 
+          style={{ 
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain'
+          }} 
         />
       </div>
-      {/* Center circle */}
-      <div 
-        className="absolute bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#1a1a1a] rounded-full"
-      />
     </div>
   );
 };
@@ -234,7 +239,7 @@ const EnterpriseAIPreparedness = () => {
         {/* Header */}
         <header className="border-b border-[#E8E5DF] bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <Link to="/mywork" className="text-[#8b7355] hover:text-[#6d5a43] hover:bg-[#E8E5DF] hover:px-3 hover:py-2 hover:-mx-3 hover:-my-2 px-3 py-2 -mx-3 -my-2 rounded-sm transition-all duration-200 text-sm font-medium cursor-pointer inline-block">
+            <Link to="/mywork" className="px-4 py-2 bg-[#8b7355] text-white font-semibold rounded-sm hover:bg-[#6d5a43] transition-colors text-sm inline-block">
               ← Back to My Work
             </Link>
           </div>
@@ -832,7 +837,7 @@ const EnterpriseAIPreparedness = () => {
           <div className="mt-8 text-center print:hidden">
             <Link 
               to="/mywork"
-              className="text-[#8b7355] hover:text-[#6d5a43] hover:bg-[#E8E5DF] px-3 py-2 rounded-sm transition-all duration-200 text-sm font-medium cursor-pointer inline-block"
+              className="px-4 py-2 bg-[#8b7355] text-white font-semibold rounded-sm hover:bg-[#6d5a43] transition-colors text-sm inline-block"
             >
               ← Back to My Work
             </Link>
