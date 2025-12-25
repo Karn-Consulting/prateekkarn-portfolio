@@ -175,7 +175,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       console.error('Resend API error:', responseData);
       
       // Check if it's a domain verification issue
-      if (responseData.message && responseData.message.includes('verify a domain')) {
+      if (responseData.message && (responseData.message.includes('verify a domain') || responseData.message.includes('not verified'))) {
         // Domain not yet verified - still accept the subscription but inform user
         console.log(`Subscriber added (pending email): ${normalizedEmail}`);
         
