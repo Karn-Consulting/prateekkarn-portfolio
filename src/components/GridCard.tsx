@@ -23,7 +23,7 @@ export const GridCard = ({
 }: GridCardProps) => {
   return (
     <div 
-      className="group relative bg-white rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-subtle border border-[#e8e6e1] h-full flex flex-col"
+      className="group relative bg-white rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-md border border-[#e8e6e1] h-full flex flex-col"
       onClick={onClick}
     >
       {/* Image Section - responsive aspect ratio */}

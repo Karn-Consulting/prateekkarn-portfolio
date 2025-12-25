@@ -15,7 +15,7 @@ const ContactSection = () => {
         </div>
 
         {/* Contact Links */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 justify-center items-center pt-6 sm:pt-8">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-6 sm:pt-8">
           <a 
             href="mailto:prateek.karn@prateekkarn.com"
             className="flex items-center gap-2 sm:gap-3 text-primary-foreground hover:text-accent transition-colors duration-200 text-sm sm:text-base"
@@ -40,7 +40,7 @@ const ContactSection = () => {
 
         {/* Footer Links */}
         <div className="pt-8 sm:pt-10 md:pt-12 border-t border-primary-foreground/20 space-y-3 sm:space-y-4">
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-10 text-xs sm:text-sm">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm">
             <a 
               href="/privacy-policy" 
               className="opacity-70 hover:opacity-100 hover:text-accent transition-all duration-200"

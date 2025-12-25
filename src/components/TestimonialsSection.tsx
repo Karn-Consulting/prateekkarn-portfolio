@@ -40,7 +40,7 @@ interface Testimonial {
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
-    <div className="flex flex-col p-6 sm:p-8 bg-card/50 border border-border/50 rounded-none hover:border-accent/20 transition-all duration-300">
+    <div className="flex flex-col p-6 sm:p-8 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
       {/* B&W Photo with subtle gold border */}
       <div className="relative w-28 h-36 sm:w-32 sm:h-40 lg:w-36 lg:h-44 mb-8 mx-auto">
         <div className="w-full h-full bg-secondary overflow-hidden ring-1 ring-accent/20">
@@ -92,7 +92,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
 const TestimonialsSection = () => {
   return (
     <section className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header - Left aligned for architectural consistency */}
         <div className="mb-12 sm:mb-16 md:mb-20">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6">
@@ -104,7 +104,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Horizontal Three-Column Layout with increased gap */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {TESTIMONIALS.map((testimonial) => (
             <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           ))}

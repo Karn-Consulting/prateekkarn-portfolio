@@ -38,10 +38,10 @@ const SELECT_WORKS = [
 
 const SelectWorkCard = ({ work }: { work: typeof SELECT_WORKS[0] }) => {
   return (
-    <div className="bg-white rounded-none border border-[#e5e5dc] shadow-subtle hover:shadow-elevation transition-all duration-300 overflow-hidden group">
+    <div className="bg-white rounded-lg border border-[#e5e5dc] shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group">
       {/* Image Placeholder */}
       <div className="h-44 sm:h-48 bg-gradient-to-br from-[#f5f5f0] to-[#e8e8e0] flex items-center justify-center border-b border-[#e5e5dc]">
-        <div className="text-[#9C8B6B]/40 text-sm font-medium">
+        <div className="text-[#8b7355]/40 text-sm font-medium">
           Image Placeholder
         </div>
       </div>
@@ -49,12 +49,12 @@ const SelectWorkCard = ({ work }: { work: typeof SELECT_WORKS[0] }) => {
       {/* Content */}
       <div className="p-6">
         {/* Category */}
-        <span className="text-xs font-medium text-[#9C8B6B] uppercase tracking-wider">
+        <span className="text-xs font-medium text-[#8b7355] uppercase tracking-wider">
           {work.category}
         </span>
         
         {/* Title */}
-        <h3 className="font-heading text-xl font-semibold text-[#1a1a1a] mt-2 mb-3 group-hover:text-[#9C8B6B] transition-colors">
+        <h3 className="font-heading text-xl font-semibold text-[#1a1a1a] mt-2 mb-3 group-hover:text-[#8b7355] transition-colors">
           {work.title}
         </h3>
         
@@ -65,7 +65,7 @@ const SelectWorkCard = ({ work }: { work: typeof SELECT_WORKS[0] }) => {
         
         {/* Outcome */}
         <div className="text-sm font-medium text-[#2a2a2a] mb-4">
-          <span className="text-[#9C8B6B]">→</span> {work.outcome}
+          <span className="text-[#8b7355]">→</span> {work.outcome}
         </div>
         
         {/* Tech Stack */}
@@ -87,7 +87,7 @@ const SelectWorkCard = ({ work }: { work: typeof SELECT_WORKS[0] }) => {
 const MyWorkSection = () => {
   return (
     <section className="py-20 sm:py-24 lg:py-32">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12 sm:mb-16">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
@@ -99,7 +99,7 @@ const MyWorkSection = () => {
         </div>
 
         {/* 2x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {SELECT_WORKS.map((work) => (
             <SelectWorkCard key={work.id} work={work} />
           ))}
@@ -113,13 +113,13 @@ const MyWorkSection = () => {
               group
               inline-flex items-center
               px-8 py-4
-              text-[#9C8B6B] 
+              text-[#8b7355] 
               text-sm font-semibold tracking-wide uppercase
-              border border-[#9C8B6B]
+              border border-[#8b7355]
               rounded-sm
               cursor-pointer
               transition-all duration-300
-              hover:opacity-80
+              hover:bg-[#8b7355]
               hover:text-white
             "
           >

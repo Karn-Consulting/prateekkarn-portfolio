@@ -89,7 +89,7 @@ const AbstractGraphic = ({ variant = 0 }: { variant?: number }) => {
 };
 
 const ArticleCard = ({ post, index }: { post: typeof BLOG_POSTS[0]; index: number }) => (
-  <article className="group flex flex-col h-full bg-card border border-border rounded-none overflow-hidden transition-all duration-300 hover:shadow-elevation hover:border-accent/30">
+  <article className="group flex flex-col h-full bg-card border border-border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-accent/30">
     {/* Image Placeholder - Rectangular */}
     <div className="relative h-40 sm:h-48 overflow-hidden">
       <AbstractGraphic variant={index} />
@@ -125,14 +125,14 @@ const ArticleCard = ({ post, index }: { post: typeof BLOG_POSTS[0]; index: numbe
         <span 
           className="
             relative inline-flex items-center
-            text-[#9C8B6B]
+            text-[#8b7355]
             text-xs font-medium tracking-[0.12em] uppercase
             px-3 py-1.5
-            border border-[#9C8B6B]
+            border border-[#8b7355]
             rounded-sm
             cursor-pointer
             transition-all duration-300
-            group-hover:opacity-80
+            group-hover:bg-[#8b7355]
             group-hover:text-white
             group-hover:translate-x-[2px]
           "
@@ -166,7 +166,7 @@ const NoiseOverlay = () => (
 const KarnInsightsSection = () => {
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 sm:mb-12 md:mb-16">
           <div>
@@ -183,13 +183,13 @@ const KarnInsightsSection = () => {
               group
               inline-flex items-center
               px-6 sm:px-8 py-3 sm:py-4
-              text-[#9C8B6B] 
+              text-[#8b7355] 
               text-sm font-semibold tracking-wide uppercase
-              border border-[#9C8B6B]
+              border border-[#8b7355]
               rounded-sm
               cursor-pointer
               transition-all duration-300
-              hover:opacity-80
+              hover:bg-[#8b7355]
               hover:text-white
             "
           >
@@ -199,7 +199,7 @@ const KarnInsightsSection = () => {
         </div>
 
         {/* 3-Column Horizontal Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {BLOG_POSTS.map((post, index) => (
             <ArticleCard key={post.id} post={post} index={index} />
           ))}
@@ -281,7 +281,7 @@ const KarnInsightsSection = () => {
                   </p>
                   
                   {/* Legal Links */}
-                  <div className="flex items-center gap-10 text-xs sm:text-sm">
+                  <div className="flex items-center gap-6 text-xs sm:text-sm">
                     <Link 
                       to="/privacy-policy" 
                       className="text-white/50 hover:text-[#c9b896] transition-colors duration-300"

@@ -16,7 +16,7 @@ const TrustedBySection = () => {
 
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
             Experience with C-Level Executives at Leading Global Firms

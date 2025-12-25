@@ -56,7 +56,7 @@ const CareerTrajectorySection = () => {
 
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6">
             Career Trajectory
@@ -72,7 +72,7 @@ const CareerTrajectorySection = () => {
               {experiences.map((exp, index) => (
                 <div key={index} className="relative flex items-start space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12">
                   {/* Timeline dot */}
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-accent rounded-full flex-shrink-0 flex items-center justify-center border-2 sm:border-4 border-background shadow-elevation">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-accent rounded-full flex-shrink-0 flex items-center justify-center border-2 sm:border-4 border-background shadow-lg">
                     <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent-foreground rounded-full"></div>
                   </div>
                   

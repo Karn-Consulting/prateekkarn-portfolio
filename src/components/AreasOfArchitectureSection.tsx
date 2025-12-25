@@ -13,14 +13,14 @@ const AreasOfArchitectureSection = () => {
 
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6">
             Areas of Architecture
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-10 md:gap-12 lg:gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-20">
           {/* Left Column */}
           <div className="space-y-5 sm:space-y-6 md:space-y-8">
             {leftServices.map((service, index) => (
