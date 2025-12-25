@@ -6,7 +6,7 @@ const ContactSection = () => {
       <div className="max-w-6xl mx-auto text-center space-y-6 sm:space-y-8">
         {/* Main Heading */}
         <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-          Ready for Intelligent Growth?
+          Architect Your Advantage
         </h2>
         
         {/* Subtitle */}

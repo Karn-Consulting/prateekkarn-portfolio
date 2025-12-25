@@ -242,7 +242,7 @@ const KarnInsightsSection = () => {
                 {/* Left Column - Contact Info */}
                 <div className="text-center lg:text-left">
                   <h3 className="font-heading text-2xl sm:text-3xl font-normal text-[#f5f5dc] mb-6 leading-relaxed tracking-wide">
-                    Ready for Intelligent Growth?
+                    Architect Your Advantage
                   </h3>
                   
                   {/* Contact Links */}
