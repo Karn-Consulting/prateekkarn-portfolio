@@ -40,7 +40,7 @@ const TABS = [
 const CONTENT = {
   'ai-frameworks': {
     hero: {
-      title: 'AI Readiness Compass',
+      title: 'Enterprise AI Preparedness Check',
       context: 'Strategic Diagnostic Tool',
       description: 'A multi-dimensional scoring model evaluating data governance, talent density, and technical debt. Organizations often rush into AI pilots without assessing infrastructure maturity, leading to 80% failure rates.',
       impact: 'Prevented premature $200k investment for a mid-market firm by identifying critical data gaps first.',

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const SELECT_WORKS = [
   {
     id: 1,
-    title: 'AI Readiness Compass',
+    title: 'Enterprise AI Preparedness Check',
     category: 'Decision Frameworks',
     description: 'Multi-dimensional scoring model evaluating data governance, talent density, and technical debt across the enterprise.',
     outcome: 'Prevented premature $200k investment',
