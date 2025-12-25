@@ -9,7 +9,7 @@ const SELECT_WORKS = [
     description: 'Multi-dimensional scoring model evaluating data governance, talent density, and technical debt across the enterprise.',
     outcome: 'Prevented premature $200k investment',
     techStack: ['Python', 'Scoring Models', 'Data Analysis'],
-    link: '/work/enterprise-ai-preparedness',
+    link: '/mywork/enterprise-ai-preparedness',
     image: '/work-ai-preparedness.png'
   },
   {

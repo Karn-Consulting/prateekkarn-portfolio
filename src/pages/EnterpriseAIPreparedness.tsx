@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from 'recharts';
+import Footer from '@/components/Footer';
 
 // Assessment Questions - 4 dimensions, 8 questions total
 const DIMENSIONS = {
@@ -73,6 +74,52 @@ const USE_CASES = [
   'Forecasting and planning',
   'Document review and extraction'
 ];
+
+// Speedometer Gauge Component
+const SpeedometerGauge = ({ score, maxScore = 5 }: { score: number; maxScore?: number }) => {
+  // Calculate the needle rotation angle
+  // Score 1 = -90deg (left), Score 5 = 90deg (right)
+  // Mapping: score 1-5 to angle -90 to 90
+  const normalizedScore = Math.max(1, Math.min(maxScore, score));
+  const angle = ((normalizedScore - 1) / (maxScore - 1)) * 180 - 90;
+  
+  return (
+    <div className="relative w-64 h-40 mx-auto">
+      {/* Gauge Background Image */}
+      <img 
+        src="/speedometer-gauge.png" 
+        alt="Score Gauge" 
+        className="w-full h-auto"
+      />
+      {/* Needle Overlay - CSS-based needle */}
+      <div 
+        className="absolute bottom-4 left-1/2 origin-bottom"
+        style={{
+          width: '4px',
+          height: '70px',
+          backgroundColor: '#1a1a1a',
+          transform: `translateX(-50%) rotate(${angle}deg)`,
+          borderRadius: '2px',
+          transition: 'transform 0.5s ease-out'
+        }}
+      >
+        {/* Needle tip */}
+        <div 
+          className="absolute -top-1 left-1/2 -translate-x-1/2 w-0 h-0"
+          style={{
+            borderLeft: '6px solid transparent',
+            borderRight: '6px solid transparent',
+            borderBottom: '12px solid #1a1a1a'
+          }}
+        />
+      </div>
+      {/* Center circle */}
+      <div 
+        className="absolute bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#1a1a1a] rounded-full"
+      />
+    </div>
+  );
+};
 
 type ViewMode = 'landing' | 'assessment' | 'report';
 
@@ -183,17 +230,17 @@ const EnterpriseAIPreparedness = () => {
   // Landing Page
   if (viewMode === 'landing') {
     return (
-      <div className="min-h-screen bg-[#F9F8F6]">
+      <div className="min-h-screen bg-[#F9F8F6] flex flex-col">
         {/* Header */}
         <header className="border-b border-[#E8E5DF] bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <Link to="/" className="text-[#8b7355] hover:text-[#6d5a43] transition-colors text-sm font-medium">
-              ← Back to Portfolio
+            <Link to="/mywork" className="text-[#8b7355] hover:text-[#6d5a43] transition-colors text-sm font-medium">
+              ← Back to My Work
             </Link>
           </div>
         </header>
 
-        <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <main className="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           {/* Hero Section */}
           <div className="text-center mb-16">
             <div className="flex justify-center mb-8">
@@ -233,11 +280,19 @@ const EnterpriseAIPreparedness = () => {
           {/* Sample Output */}
           {showSampleOutput && (
             <div className="bg-white border border-[#E8E5DF] rounded-lg p-8 mb-16">
-              <h3 className="font-heading text-xl font-semibold text-[#1a1a1a] mb-4">Sample Executive Summary</h3>
+              <h3 className="font-heading text-xl font-semibold text-[#1a1a1a] mb-6">Sample Executive Summary</h3>
+              
+              {/* Speedometer Gauge for Sample */}
+              <div className="mb-8">
+                <p className="text-sm text-[#5a5a5a] text-center mb-2">Overall Score</p>
+                <SpeedometerGauge score={4.6} />
+                <p className="text-2xl font-bold text-[#1a1a1a] text-center mt-2">4.6 <span className="text-lg font-normal text-[#5a5a5a]">/ 5</span></p>
+              </div>
+              
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-[#F9F8F6] p-4 rounded">
                   <p className="text-sm text-[#5a5a5a]">Overall Preparedness</p>
-                  <p className="text-lg font-semibold text-[#1a1a1a]">Operational</p>
+                  <p className="text-lg font-semibold text-[#1a1a1a]">Scaled</p>
                 </div>
                 <div className="bg-[#F9F8F6] p-4 rounded">
                   <p className="text-sm text-[#5a5a5a]">Confidence Signal</p>
@@ -255,16 +310,8 @@ const EnterpriseAIPreparedness = () => {
                 <div>
                   <h4 className="font-semibold text-[#1a1a1a] mb-2">Attention Areas</h4>
                   <ul className="text-sm text-[#5a5a5a] space-y-1">
-                    <li>• AI adoption in daily workflows</li>
-                    <li>• Clear ownership for data quality</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-[#1a1a1a] mb-2">Suggested Focus (Next 30 Days)</h4>
-                  <ul className="text-sm text-[#5a5a5a] space-y-1">
-                    <li>• Select one workflow where AI must be used consistently</li>
-                    <li>• Define what "successful adoption" means in practice</li>
-                    <li>• Assign a single accountable owner per AI use case</li>
+                    <li>• Data quality governance</li>
+                    <li>• Workflow integration depth</li>
                   </ul>
                 </div>
               </div>
@@ -272,115 +319,116 @@ const EnterpriseAIPreparedness = () => {
           )}
 
           {/* Why This Check Exists */}
-          <section className="mb-16">
+          <div className="mb-16">
             <h2 className="font-heading text-2xl font-semibold text-[#1a1a1a] mb-6">Why this check exists</h2>
-            <p className="text-[#5a5a5a] mb-4">
+            <p className="text-[#5a5a5a] leading-relaxed mb-4">
               Across many organizations, AI investments move quickly into pilots but struggle to scale.
             </p>
-            <p className="text-[#5a5a5a] mb-4">Common reasons include:</p>
+            <p className="text-[#5a5a5a] leading-relaxed mb-4">Common reasons include:</p>
             <ul className="space-y-2 text-[#5a5a5a]">
               <li className="flex items-start gap-2">
-                <span className="text-[#8b7355] mt-1">•</span>
+                <span className="text-[#8b7355]">•</span>
                 Leadership intent is unclear or inconsistent
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#8b7355] mt-1">•</span>
+                <span className="text-[#8b7355]">•</span>
                 Data is available, but not trusted
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#8b7355] mt-1">•</span>
+                <span className="text-[#8b7355]">•</span>
                 AI insights exist, but do not change daily decisions
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#8b7355] mt-1">•</span>
+                <span className="text-[#8b7355]">•</span>
                 Risk, privacy, and explainability are addressed too late
               </li>
             </ul>
-            <p className="text-[#5a5a5a] mt-4">
+            <p className="text-[#5a5a5a] leading-relaxed mt-4">
               This check is designed to surface where the real constraint is — early and clearly.
             </p>
-          </section>
+          </div>
 
-          {/* What This Is */}
-          <section className="mb-16 grid md:grid-cols-2 gap-8">
+          {/* What It Is / What It Is Not */}
+          <div className="grid sm:grid-cols-2 gap-8 mb-16">
             <div>
-              <h3 className="font-heading text-xl font-semibold text-[#1a1a1a] mb-4">What it is</h3>
+              <h3 className="font-heading text-lg font-semibold text-[#1a1a1a] mb-4">What it is</h3>
               <ul className="space-y-2 text-[#5a5a5a]">
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-600 mt-1">✓</span>
+                  <span className="text-emerald-600">✓</span>
                   A high-level, executive-friendly diagnostic
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-600 mt-1">✓</span>
+                  <span className="text-emerald-600">✓</span>
                   A way to identify readiness gaps before scaling AI
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-600 mt-1">✓</span>
+                  <span className="text-emerald-600">✓</span>
                   A structured snapshot of organizational preparedness
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="font-heading text-xl font-semibold text-[#1a1a1a] mb-4">What it is not</h3>
+              <h3 className="font-heading text-lg font-semibold text-[#1a1a1a] mb-4">What it is not</h3>
               <ul className="space-y-2 text-[#5a5a5a]">
                 <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">✗</span>
+                  <span className="text-red-500">✗</span>
                   A technical audit
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">✗</span>
+                  <span className="text-red-500">✗</span>
                   A vendor or tool comparison
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">✗</span>
+                  <span className="text-red-500">✗</span>
                   A compliance or certification exercise
                 </li>
               </ul>
             </div>
-          </section>
+          </div>
 
           {/* How It Works */}
-          <section className="mb-16">
+          <div className="mb-16">
             <h2 className="font-heading text-2xl font-semibold text-[#1a1a1a] mb-6">How it works</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white border border-[#E8E5DF] rounded-lg p-6">
-                <div className="text-3xl font-bold text-[#8b7355] mb-2">1</div>
-                <p className="text-[#5a5a5a]">Answer 8 short statements on a 1–5 scale</p>
-              </div>
-              <div className="bg-white border border-[#E8E5DF] rounded-lg p-6">
-                <div className="text-3xl font-bold text-[#8b7355] mb-2">2</div>
-                <p className="text-[#5a5a5a]">Responses are grouped into 4 critical areas</p>
-              </div>
-              <div className="bg-white border border-[#E8E5DF] rounded-lg p-6">
-                <div className="text-3xl font-bold text-[#8b7355] mb-2">3</div>
-                <p className="text-[#5a5a5a]">Receive a simple executive summary</p>
-              </div>
-              <div className="bg-white border border-[#E8E5DF] rounded-lg p-6">
-                <div className="text-3xl font-bold text-[#8b7355] mb-2">4</div>
-                <p className="text-[#5a5a5a]">Get clear next-step actions</p>
-              </div>
-            </div>
-            <p className="text-sm text-[#8b7355] mt-4 text-center">No technical background is required.</p>
-          </section>
-
-          {/* What We Assess */}
-          <section className="mb-16">
-            <h2 className="font-heading text-2xl font-semibold text-[#1a1a1a] mb-6">What we assess</h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {Object.entries(DIMENSIONS).map(([dimension, data], index) => (
-                <div key={dimension} className="bg-white border border-[#E8E5DF] rounded-lg p-6">
-                  <div className="text-sm text-[#8b7355] font-medium mb-2">{index + 1}.</div>
-                  <h3 className="font-heading text-lg font-semibold text-[#1a1a1a] mb-2">{dimension}</h3>
-                  <p className="text-sm text-[#5a5a5a]">{data.description}</p>
+            <div className="grid sm:grid-cols-4 gap-4">
+              {[
+                { step: 1, text: 'Answer 8 short statements on a 1–5 scale' },
+                { step: 2, text: 'Responses are grouped into 4 critical areas' },
+                { step: 3, text: 'Receive a simple executive summary' },
+                { step: 4, text: 'Get clear next-step actions' }
+              ].map(({ step, text }) => (
+                <div key={step} className="text-center">
+                  <div className="w-10 h-10 rounded-full bg-[#8b7355] text-white flex items-center justify-center mx-auto mb-3 font-semibold">
+                    {step}
+                  </div>
+                  <p className="text-sm text-[#5a5a5a]">{text}</p>
                 </div>
               ))}
             </div>
-          </section>
+            <p className="text-sm text-[#8b7355] text-center mt-6">No technical background is required.</p>
+          </div>
 
-          {/* Common Use Cases */}
-          <section className="mb-16">
-            <h2 className="font-heading text-2xl font-semibold text-[#1a1a1a] mb-6">Common AI use cases teams evaluate</h2>
-            <div className="flex flex-wrap gap-3">
+          {/* What We Assess */}
+          <div className="mb-16">
+            <h2 className="font-heading text-2xl font-semibold text-[#1a1a1a] mb-6">What we assess</h2>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {Object.entries(DIMENSIONS).map(([name, data], index) => (
+                <div key={name} className="bg-white border border-[#E8E5DF] rounded-lg p-6">
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#8b7355] font-semibold">{index + 1}.</span>
+                    <div>
+                      <h3 className="font-heading font-semibold text-[#1a1a1a] mb-2">{name}</h3>
+                      <p className="text-sm text-[#5a5a5a]">{data.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Use Cases */}
+          <div className="mb-16">
+            <h2 className="font-heading text-xl font-semibold text-[#1a1a1a] mb-4">Common AI use cases teams evaluate</h2>
+            <div className="flex flex-wrap gap-2">
               {USE_CASES.map(useCase => (
                 <span key={useCase} className="px-4 py-2 bg-white border border-[#E8E5DF] rounded-full text-sm text-[#5a5a5a]">
                   {useCase}
@@ -388,12 +436,12 @@ const EnterpriseAIPreparedness = () => {
               ))}
             </div>
             <p className="text-sm text-[#8b7355] mt-4">This assessment is use-case agnostic.</p>
-          </section>
+          </div>
 
-          {/* CTA */}
-          <section className="text-center mb-16">
+          {/* Final CTA */}
+          <div className="text-center bg-white border border-[#E8E5DF] rounded-lg p-8 mb-16">
             <h2 className="font-heading text-2xl font-semibold text-[#1a1a1a] mb-4">Ready to get a clear signal?</h2>
-            <p className="text-[#5a5a5a] mb-6">
+            <p className="text-[#5a5a5a] mb-6 max-w-lg mx-auto">
               Run the Enterprise AI Preparedness Check to get a concise, structured view of where your organization stands — and where to focus next.
             </p>
             <button
@@ -402,26 +450,25 @@ const EnterpriseAIPreparedness = () => {
             >
               Start Assessment
             </button>
-          </section>
+          </div>
 
-          {/* Context */}
-          <section className="mb-16 bg-white border border-[#E8E5DF] rounded-lg p-6">
+          {/* Context & Disclosure */}
+          <div className="text-center">
             <h3 className="font-heading text-lg font-semibold text-[#1a1a1a] mb-3">Context</h3>
-            <p className="text-sm text-[#5a5a5a]">
+            <p className="text-sm text-[#5a5a5a] max-w-2xl mx-auto mb-4">
               This diagnostic reflects recurring execution and governance patterns observed while designing AI-led systems for enterprise and B2B environments. It is intended as a high-level signal, not a substitute for deep, organization-specific work.
             </p>
-          </section>
-
-          {/* Disclosure */}
-          <section className="border-t border-[#E8E5DF] pt-8">
-            <p className="text-xs text-[#8b7355] text-center">
+            <p className="text-xs text-[#8b7355] max-w-2xl mx-auto">
               <strong>Disclosure:</strong> This is a reconstructed demonstration created for portfolio purposes. All questions and outputs are illustrative and use dummy data. No proprietary employer, client, or confidential materials are included.
             </p>
-            <p className="text-xs text-[#999] text-center mt-2">
+            <p className="text-xs text-[#5a5a5a] mt-4">
               Designed as an architectural diagnostic, not a sales tool.
             </p>
-          </section>
+          </div>
         </main>
+
+        {/* Footer */}
+        <Footer />
       </div>
     );
   }
@@ -432,7 +479,7 @@ const EnterpriseAIPreparedness = () => {
     const isComplete = Object.keys(answers).length === totalQuestions;
 
     return (
-      <div className="min-h-screen bg-[#F9F8F6]">
+      <div className="min-h-screen bg-[#F9F8F6] flex flex-col">
         {/* Header */}
         <header className="border-b border-[#E8E5DF] bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
@@ -449,10 +496,10 @@ const EnterpriseAIPreparedness = () => {
           </div>
         </header>
 
-        {/* Progress Bar */}
-        <div className="bg-white border-b border-[#E8E5DF]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <div className="flex items-center justify-between text-sm text-[#5a5a5a] mb-2">
+        <main className="flex-1 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          {/* Progress */}
+          <div className="mb-8">
+            <div className="flex justify-between text-sm text-[#5a5a5a] mb-2">
               <span>Progress</span>
               <span>{Object.keys(answers).length} of {totalQuestions} questions</span>
             </div>
@@ -463,41 +510,40 @@ const EnterpriseAIPreparedness = () => {
               />
             </div>
           </div>
-        </div>
 
-        <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          {/* Question Card */}
           {!isComplete ? (
             <div className="bg-white border border-[#E8E5DF] rounded-lg p-8">
-              {/* Dimension Badge */}
-              <div className="text-xs font-medium text-[#8b7355] uppercase tracking-wider mb-4">
+              {/* Dimension Label */}
+              <span className="text-xs font-semibold text-[#8b7355] uppercase tracking-wider">
                 {currentQuestion.dimension}
-              </div>
+              </span>
 
               {/* Question */}
-              <h2 className="font-heading text-xl sm:text-2xl font-semibold text-[#1a1a1a] mb-8">
+              <h2 className="font-heading text-xl sm:text-2xl font-semibold text-[#1a1a1a] mt-3 mb-8">
                 {currentQuestion.text}
               </h2>
 
-              {/* Scale */}
+              {/* Answer Options */}
               <div className="space-y-3">
-                {[1, 2, 3, 4, 5].map(score => (
+                {[1, 2, 3, 4, 5].map((score) => (
                   <button
                     key={score}
                     onClick={() => handleAnswer(currentQuestion.id, score)}
                     className={`w-full p-4 text-left border rounded-lg transition-all ${
                       answers[currentQuestion.id] === score
                         ? 'border-[#8b7355] bg-[#8b7355]/5'
-                        : 'border-[#E8E5DF] hover:border-[#8b7355]/50'
+                        : 'border-[#E8E5DF] hover:border-[#8b7355]'
                     }`}
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-semibold ${
+                      <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
                         answers[currentQuestion.id] === score
-                          ? 'border-[#8b7355] bg-[#8b7355] text-white'
-                          : 'border-[#E8E5DF] text-[#5a5a5a]'
+                          ? 'bg-[#8b7355] text-white'
+                          : 'bg-[#F9F8F6] text-[#5a5a5a]'
                       }`}>
                         {score}
-                      </div>
+                      </span>
                       <span className="text-[#5a5a5a]">{SCALE_LABELS[score - 1]}</span>
                     </div>
                   </button>
@@ -568,7 +614,7 @@ const EnterpriseAIPreparedness = () => {
     const results = calculateResults();
 
     return (
-      <div className="min-h-screen bg-[#F9F8F6]">
+      <div className="min-h-screen bg-[#F9F8F6] flex flex-col">
         {/* Header */}
         <header className="border-b border-[#E8E5DF] bg-white print:hidden">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
@@ -593,7 +639,7 @@ const EnterpriseAIPreparedness = () => {
           </div>
         </header>
 
-        <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 print:py-0">
+        <main className="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 print:py-0">
           <div className="bg-white border border-[#E8E5DF] rounded-lg overflow-hidden print:border-none print:shadow-none">
             {/* Report Header */}
             <div className="p-8 border-b border-[#E8E5DF] flex items-center justify-between">
@@ -604,19 +650,23 @@ const EnterpriseAIPreparedness = () => {
               <img src="/ai-preparedness-logo.png" alt="" className="h-16 w-16 object-contain" />
             </div>
 
-            {/* Overall Snapshot */}
+            {/* Overall Snapshot with Speedometer */}
             <div className="p-8 border-b border-[#E8E5DF]">
               <h2 className="text-xs font-semibold text-[#8b7355] uppercase tracking-wider mb-6">Overall Snapshot</h2>
-              <div className="grid sm:grid-cols-3 gap-6">
+              
+              {/* Speedometer Gauge */}
+              <div className="mb-8">
+                <p className="text-sm text-[#5a5a5a] text-center mb-2">Overall Score</p>
+                <SpeedometerGauge score={results.overallScore} />
+                <p className="text-3xl font-bold text-[#1a1a1a] text-center mt-2">{results.overallScore.toFixed(1)} <span className="text-lg font-normal text-[#5a5a5a]">/ 5</span></p>
+              </div>
+              
+              <div className="grid sm:grid-cols-2 gap-6">
                 <div className="text-center p-6 bg-[#F9F8F6] rounded-lg">
                   <p className="text-sm text-[#5a5a5a] mb-2">Preparedness Level</p>
                   <span className={`inline-block px-4 py-2 rounded-full text-lg font-semibold border ${getStageColor(results.stage)}`}>
                     {results.stage}
                   </span>
-                </div>
-                <div className="text-center p-6 bg-[#F9F8F6] rounded-lg">
-                  <p className="text-sm text-[#5a5a5a] mb-2">Overall Score</p>
-                  <p className="text-3xl font-bold text-[#1a1a1a]">{results.overallScore.toFixed(1)} <span className="text-lg font-normal text-[#5a5a5a]">/ 5</span></p>
                 </div>
                 <div className="text-center p-6 bg-[#F9F8F6] rounded-lg">
                   <p className="text-sm text-[#5a5a5a] mb-2">Confidence Signal</p>
@@ -778,7 +828,7 @@ const EnterpriseAIPreparedness = () => {
             </div>
           </div>
 
-          {/* Back to Portfolio */}
+          {/* Back to My Work */}
           <div className="mt-8 text-center print:hidden">
             <Link 
               to="/mywork"
@@ -788,6 +838,11 @@ const EnterpriseAIPreparedness = () => {
             </Link>
           </div>
         </main>
+
+        {/* Footer */}
+        <div className="print:hidden">
+          <Footer />
+        </div>
       </div>
     );
   }

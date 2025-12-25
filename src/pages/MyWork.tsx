@@ -46,7 +46,7 @@ const CONTENT = {
       impact: 'Prevented premature $200k investment for a mid-market firm by identifying critical data gaps first.',
       techStack: ['Python', 'Survey Logic', 'Scoring Models', 'Visualization'],
       ctaText: 'Try the Assessment',
-      link: '/work/enterprise-ai-preparedness',
+      link: '/mywork/enterprise-ai-preparedness',
       logoImage: '/ai-preparedness-logo.png',
       problem: 'Organizations often rush into AI pilots without assessing infrastructure maturity, leading to 80% failure rates.',
       system: 'A multi-dimensional scoring model evaluating data governance, talent density, and technical debt.',
