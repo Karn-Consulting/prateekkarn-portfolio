@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Growth Architect Design System
+Premium, sophisticated design for executive-level personal branding
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 27 20% 97.5%; /* Warm off-white #F9F9F9 */
+    --foreground: 0 0% 6.7%; /* Deep charcoal #111111 */
+
+    /* Card and Surface Colors */
+    --card: 27 20% 97.5%;
+    --card-foreground: 0 0% 6.7%;
+
+    --popover: 27 20% 97.5%;
+    --popover-foreground: 0 0% 6.7%;
+
+    /* Brand Primary - Deep Charcoal */
+    --primary: 0 0% 6.7%;
+    --primary-foreground: 27 20% 97.5%;
+
+    /* Brand Accent - Muted Gold */
+    --accent: 42 20% 58%;
+    --accent-foreground: 0 0% 6.7%;
+
+    /* Secondary - Subtle variations */
+    --secondary: 27 15% 94%;
+    --secondary-foreground: 0 0% 6.7%;
+
+    /* Muted colors for subtle text */
+    --muted: 27 15% 92%;
+    --muted-foreground: 0 0% 40%;
+
+    /* Utility colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 27 20% 97.5%;
+
+    --border: 27 15% 90%;
+    --input: 27 15% 90%;
+    --ring: 42 20% 58%;
+
+    --radius: 0.375rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode maintains the same sophisticated approach */
+    --background: 0 0% 8%;
+    --foreground: 27 20% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 27 20% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 27 20% 95%;
+
+    --primary: 27 20% 95%;
+    --primary-foreground: 0 0% 8%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 27 20% 95%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 42 25% 55%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 27 20% 95%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 42 25% 55%;
+    
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 27 20% 95%;
+    --sidebar-primary: 42 25% 55%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 27 20% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 42 25% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body leading-relaxed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Typography Classes */
+  .font-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--accent));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent) / 0.8);
+  }
+}
+
+@layer utilities {
+  /* Animation Keyframes */
+  @keyframes slide-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+  }
+  
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .animate-scroll-left {
+    animation: scroll-left 30s linear infinite;
+  }
+  
+  @media (min-width: 640px) {
+    .animate-scroll-left {
+      animation: scroll-left 40s linear infinite;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .animate-scroll-left {
+      animation: scroll-left 45s linear infinite;
+    }
+  }
+  
+  .animate-scroll-left:hover,
+  .pause-animation:hover {
+    animation-play-state: paused;
+  }
+  
+  @keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .animate-slide-left {
+    animation: slide-left 30s linear infinite;
+  }
+  
+  @media (min-width: 640px) {
+    .animate-slide-left {
+      animation: slide-left 40s linear infinite;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .animate-slide-left {
+      animation: slide-left 45s linear infinite;
+    }
+  }
+  
+  .animate-slide-left:hover {
+    animation-play-state: paused;
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+  }
+
+  /* Hide scrollbar for horizontal scroll containers */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Line clamp utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Touch-friendly tap targets */
+  @media (hover: none) and (pointer: coarse) {
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+
+  /* Safe area padding for notched devices */
+  .safe-area-inset {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Responsive container adjustments */
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}

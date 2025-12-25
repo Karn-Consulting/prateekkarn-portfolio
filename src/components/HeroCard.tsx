@@ -23,7 +23,7 @@ export const HeroCard = ({
 }: HeroCardProps) => {
   return (
     <div 
-      className="group relative bg-[#f8f7f4] rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg"
+      className="group relative bg-[#f8f7f4] rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-elevation"
       onClick={onClick}
     >
       {/* Responsive grid: stack on mobile, side-by-side on larger screens */}
@@ -72,7 +72,7 @@ export const HeroCard = ({
           {/* CTA Link */}
           <a 
             href="#" 
-            className="inline-flex items-center text-xs sm:text-sm font-medium text-[#8b7355] hover:text-[#6d5a43] transition-colors group/cta"
+            className="inline-flex items-center text-xs sm:text-sm font-medium text-[#9C8B6B] hover:text-[#6d5a43] transition-colors group/cta"
             onClick={(e) => {
               e.preventDefault();
               onClick?.();

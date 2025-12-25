@@ -41,14 +41,14 @@ export const TabNavigation = ({ tabs, activeTab, onTabChange }: TabNavigationPro
     <div className={cn(
       "w-full z-40 transition-all duration-300",
       isSticky 
-        ? "sticky top-0 bg-[#f5f5f0]/98 backdrop-blur-sm shadow-sm py-3 sm:py-4" 
+        ? "sticky top-0 bg-[#f5f5f0]/98 backdrop-blur-sm shadow-subtle py-3 sm:py-4" 
         : "relative bg-transparent py-4 sm:py-6"
     )}>
       <div className="container max-w-6xl mx-auto px-4 sm:px-6">
         {/* Tab Buttons - horizontal scroll on mobile */}
         <div 
           ref={scrollContainerRef}
-          className="flex overflow-x-auto scrollbar-hide gap-4 sm:gap-6 md:gap-8 pb-3 sm:pb-4 border-b border-[#d4d0c8] -mx-4 px-4 sm:mx-0 sm:px-0"
+          className="flex overflow-x-auto scrollbar-hide gap-4 sm:gap-10 md:gap-10 pb-3 sm:pb-4 border-b border-[#d4d0c8] -mx-4 px-4 sm:mx-0 sm:px-0"
         >
           {tabs.map((tab) => (
             <button
@@ -66,7 +66,7 @@ export const TabNavigation = ({ tabs, activeTab, onTabChange }: TabNavigationPro
               {/* Active Indicator */}
               <span 
                 className={cn(
-                  "absolute bottom-0 left-0 w-full h-0.5 bg-[#8b7355] transition-all duration-300",
+                  "absolute bottom-0 left-0 w-full h-0.5 bg-[#9C8B6B] transition-all duration-300",
                   activeTab === tab.id ? "opacity-100" : "opacity-0"
                 )}
               />

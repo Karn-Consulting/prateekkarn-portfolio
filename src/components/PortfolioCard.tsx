@@ -48,7 +48,7 @@ export const PortfolioCard = ({
       </div>
 
       {/* Content Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
         <div className="space-y-2">
           <h4 className="font-heading text-lg text-primary/80">Problem</h4>
           <p className="font-body text-muted-foreground text-sm leading-relaxed">
@@ -72,7 +72,7 @@ export const PortfolioCard = ({
       </div>
 
       {/* Footer Section: Tech Stack & CTA */}
-      <div className="mt-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="mt-auto flex flex-col md:flex-row md:items-center justify-between gap-10">
         {/* Tech Stack Row - CRITICAL REQUIREMENT */}
         <div className="flex flex-wrap gap-2">
           {techStack.map((tech, index) => (

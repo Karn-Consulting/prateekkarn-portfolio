@@ -78,14 +78,14 @@ const ProofOfImpactSection = () => {
 
   return (
     <section id="proof-section" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1440px] mx-auto">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6">
             Quantifiable Impact
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-10 md:gap-10 lg:gap-12">
           {metrics.map((metric, index) => (
             <div key={index} className="text-center space-y-2 sm:space-y-3 md:space-y-4">
               <div className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-accent">
