@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from 'recharts';
 
 // Assessment Questions - 4 dimensions, 8 questions total
 const DIMENSIONS = {
@@ -120,11 +121,20 @@ const EnterpriseAIPreparedness = () => {
       .map(([name, score]) => ({ name, score }))
       .sort((a, b) => b.score - a.score);
 
+    // Prepare radar chart data
+    const radarData = Object.entries(dimensionScores).map(([name, score]) => ({
+      dimension: name.split(' ')[0], // Use first word for shorter labels
+      fullName: name,
+      score: score,
+      fullMark: 5
+    }));
+
     return {
       overallScore,
       confidenceScore,
       dimensionScores,
       sortedDimensions,
+      radarData,
       stage: getStageLabel(overallScore),
       confidenceLevel: getConfidenceLabel(confidenceScore),
       strengths: sortedDimensions.slice(0, 2),
@@ -619,6 +629,63 @@ const EnterpriseAIPreparedness = () => {
                 {results.stage === 'Operational' && 'Strong foundation in place — optimize execution and governance for scale.'}
                 {results.stage === 'Scaled' && 'Mature AI operations — focus on continuous improvement and innovation.'}
               </p>
+            </div>
+
+            {/* Preparedness Overview - Radar Chart */}
+            <div className="p-8 border-b border-[#E8E5DF]">
+              <h2 className="text-xs font-semibold text-[#8b7355] uppercase tracking-wider mb-6">Preparedness Overview</h2>
+              <div className="flex flex-col lg:flex-row items-center gap-8">
+                {/* Radar Chart */}
+                <div className="w-full lg:w-1/2 h-80">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <RadarChart cx="50%" cy="50%" outerRadius="70%" data={results.radarData}>
+                      <PolarGrid stroke="#E8E5DF" />
+                      <PolarAngleAxis 
+                        dataKey="dimension" 
+                        tick={{ 
+                          fontSize: 11, 
+                          fill: '#5a5a5a',
+                          fontWeight: 500
+                        }} 
+                      />
+                      <PolarRadiusAxis 
+                        angle={90} 
+                        domain={[0, 5]} 
+                        tick={{ fontSize: 10, fill: '#999' }}
+                        axisLine={{ stroke: '#E8E5DF' }}
+                        tickCount={6}
+                      />
+                      <Radar
+                        name="Score"
+                        dataKey="score"
+                        stroke="#8b7355"
+                        fill="#8b7355"
+                        fillOpacity={0.3}
+                        strokeWidth={2}
+                      />
+                    </RadarChart>
+                  </ResponsiveContainer>
+                </div>
+                
+                {/* Legend */}
+                <div className="w-full lg:w-1/2 space-y-3">
+                  {results.radarData.map((item, index) => {
+                    const status = getDimensionStatus(item.score);
+                    return (
+                      <div key={index} className="flex items-center justify-between p-3 bg-[#F9F8F6] rounded-lg">
+                        <div className="flex items-center gap-3">
+                          <div className="w-3 h-3 rounded-full bg-[#8b7355]" />
+                          <span className="text-sm font-medium text-[#1a1a1a]">{item.fullName}</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-sm font-semibold">{item.score.toFixed(1)}</span>
+                          <span className={`text-xs font-medium ${status.color}`}>{status.label}</span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
 
             {/* Dimension Breakdown */}

@@ -10,7 +10,7 @@ const SELECT_WORKS = [
     outcome: 'Prevented premature $200k investment',
     techStack: ['Python', 'Scoring Models', 'Data Analysis'],
     link: '/work/enterprise-ai-preparedness',
-    hasLogo: true
+    image: '/work-ai-preparedness.png'
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const SELECT_WORKS = [
     outcome: 'Shifted 30% budget to high-performing channels',
     techStack: ['BigQuery', 'Looker', 'Python'],
     link: null,
-    hasLogo: false
+    image: '/work-attribution.png'
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const SELECT_WORKS = [
     outcome: 'Scaled to $50k/mo with stable ROAS',
     techStack: ['Meta Ads', 'GA4', 'Looker'],
     link: null,
-    hasLogo: false
+    image: '/work-meta-ads.png'
   },
   {
     id: 4,
@@ -40,26 +40,20 @@ const SELECT_WORKS = [
     outcome: 'Reduced reporting overhead by 70%',
     techStack: ['Looker', 'BigQuery', 'SQL'],
     link: null,
-    hasLogo: false
+    image: '/work-dashboard.png'
   }
 ];
 
 const SelectWorkCard = ({ work }: { work: typeof SELECT_WORKS[0] }) => {
   const CardContent = () => (
     <>
-      {/* Image/Logo Area */}
-      <div className="h-44 sm:h-48 bg-gradient-to-br from-[#f5f5f0] to-[#e8e8e0] flex items-center justify-center border-b border-[#e5e5dc]">
-        {work.hasLogo ? (
-          <img 
-            src="/ai-preparedness-logo.png" 
-            alt={work.title}
-            className="h-20 w-20 object-contain"
-          />
-        ) : (
-          <div className="text-[#8b7355]/40 text-sm font-medium">
-            Image Placeholder
-          </div>
-        )}
+      {/* Image Area */}
+      <div className="h-44 sm:h-48 bg-gradient-to-br from-[#f5f5f0] to-[#e8e8e0] flex items-center justify-center border-b border-[#e5e5dc] overflow-hidden">
+        <img 
+          src={work.image} 
+          alt={work.title}
+          className="w-full h-full object-cover"
+        />
       </div>
       
       {/* Content */}
