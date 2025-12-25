@@ -8,7 +8,9 @@ const SELECT_WORKS = [
     category: 'Decision Frameworks',
     description: 'Multi-dimensional scoring model evaluating data governance, talent density, and technical debt across the enterprise.',
     outcome: 'Prevented premature $200k investment',
-    techStack: ['Python', 'Scoring Models', 'Data Analysis']
+    techStack: ['Python', 'Scoring Models', 'Data Analysis'],
+    link: '/work/enterprise-ai-preparedness',
+    hasLogo: true
   },
   {
     id: 2,
@@ -16,7 +18,9 @@ const SELECT_WORKS = [
     category: 'Data Science',
     description: 'Unified data pipeline ingesting API data into BigQuery for cross-channel comparison and budget optimization.',
     outcome: 'Shifted 30% budget to high-performing channels',
-    techStack: ['BigQuery', 'Looker', 'Python']
+    techStack: ['BigQuery', 'Looker', 'Python'],
+    link: null,
+    hasLogo: false
   },
   {
     id: 3,
@@ -24,7 +28,9 @@ const SELECT_WORKS = [
     category: 'Paid Media',
     description: 'Structured creative testing framework with broad targeting and CBO to manage creative fatigue at scale.',
     outcome: 'Scaled to $50k/mo with stable ROAS',
-    techStack: ['Meta Ads', 'GA4', 'Looker']
+    techStack: ['Meta Ads', 'GA4', 'Looker'],
+    link: null,
+    hasLogo: false
   },
   {
     id: 4,
@@ -32,18 +38,28 @@ const SELECT_WORKS = [
     category: 'Dashboards & BI',
     description: 'Real-time KPI dashboard consolidating spend, leads, and pipeline metrics for C-suite visibility.',
     outcome: 'Reduced reporting overhead by 70%',
-    techStack: ['Looker', 'BigQuery', 'SQL']
+    techStack: ['Looker', 'BigQuery', 'SQL'],
+    link: null,
+    hasLogo: false
   }
 ];
 
 const SelectWorkCard = ({ work }: { work: typeof SELECT_WORKS[0] }) => {
-  return (
-    <div className="bg-white rounded-lg border border-[#e5e5dc] shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group">
-      {/* Image Placeholder */}
+  const CardContent = () => (
+    <>
+      {/* Image/Logo Area */}
       <div className="h-44 sm:h-48 bg-gradient-to-br from-[#f5f5f0] to-[#e8e8e0] flex items-center justify-center border-b border-[#e5e5dc]">
-        <div className="text-[#8b7355]/40 text-sm font-medium">
-          Image Placeholder
-        </div>
+        {work.hasLogo ? (
+          <img 
+            src="/ai-preparedness-logo.png" 
+            alt={work.title}
+            className="h-20 w-20 object-contain"
+          />
+        ) : (
+          <div className="text-[#8b7355]/40 text-sm font-medium">
+            Image Placeholder
+          </div>
+        )}
       </div>
       
       {/* Content */}
@@ -80,6 +96,23 @@ const SelectWorkCard = ({ work }: { work: typeof SELECT_WORKS[0] }) => {
           ))}
         </div>
       </div>
+    </>
+  );
+
+  if (work.link) {
+    return (
+      <Link 
+        to={work.link}
+        className="bg-white rounded-lg border border-[#e5e5dc] shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group block"
+      >
+        <CardContent />
+      </Link>
+    );
+  }
+
+  return (
+    <div className="bg-white rounded-lg border border-[#e5e5dc] shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group">
+      <CardContent />
     </div>
   );
 };

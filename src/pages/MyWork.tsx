@@ -45,7 +45,9 @@ const CONTENT = {
       description: 'A multi-dimensional scoring model evaluating data governance, talent density, and technical debt. Organizations often rush into AI pilots without assessing infrastructure maturity, leading to 80% failure rates.',
       impact: 'Prevented premature $200k investment for a mid-market firm by identifying critical data gaps first.',
       techStack: ['Python', 'Survey Logic', 'Scoring Models', 'Visualization'],
-      ctaText: 'View Case Study',
+      ctaText: 'Try the Assessment',
+      link: '/work/enterprise-ai-preparedness',
+      logoImage: '/ai-preparedness-logo.png',
       problem: 'Organizations often rush into AI pilots without assessing infrastructure maturity, leading to 80% failure rates.',
       system: 'A multi-dimensional scoring model evaluating data governance, talent density, and technical debt.',
       outcome: 'Prevented premature $200k investment for a mid-market firm by identifying critical data gaps first.'
@@ -300,7 +302,9 @@ export default function MyWork() {
               description={currentContent.hero.description}
               impact={currentContent.hero.impact}
               ctaText={currentContent.hero.ctaText}
-              onClick={() => setSelectedCase(currentContent.hero)}
+              link={currentContent.hero.link}
+              logoImage={currentContent.hero.logoImage}
+              onClick={currentContent.hero.link ? undefined : () => setSelectedCase(currentContent.hero)}
             />
           )}
 

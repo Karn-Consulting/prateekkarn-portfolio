@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { ArrowRight } from 'lucide-react';
 
@@ -9,6 +10,8 @@ export interface HeroCardProps {
   impact: string;
   ctaText: string;
   imagePlaceholder?: string;
+  logoImage?: string;
+  link?: string;
   onClick?: () => void;
 }
 
@@ -19,18 +22,25 @@ export const HeroCard = ({
   impact,
   ctaText,
   imagePlaceholder,
+  logoImage,
+  link,
   onClick
 }: HeroCardProps) => {
-  return (
-    <div 
-      className="group relative bg-[#f8f7f4] rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg"
-      onClick={onClick}
-    >
+  const CardContent = () => (
+    <>
       {/* Responsive grid: stack on mobile, side-by-side on larger screens */}
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Image Section */}
         <div className="relative bg-[#e8e6e1] overflow-hidden min-h-[250px] sm:min-h-[300px] lg:min-h-[450px] xl:min-h-[500px]">
-          {imagePlaceholder ? (
+          {logoImage ? (
+            <div className="w-full h-full bg-gradient-to-br from-[#f5f5f0] to-[#e8e8e0] flex items-center justify-center">
+              <img 
+                src={logoImage} 
+                alt={title}
+                className="w-32 h-32 sm:w-40 sm:h-40 object-contain transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+          ) : imagePlaceholder ? (
             <img 
               src={imagePlaceholder} 
               alt={title}
@@ -70,19 +80,32 @@ export const HeroCard = ({
           </div>
 
           {/* CTA Link */}
-          <a 
-            href="#" 
-            className="inline-flex items-center text-xs sm:text-sm font-medium text-[#8b7355] hover:text-[#6d5a43] transition-colors group/cta"
-            onClick={(e) => {
-              e.preventDefault();
-              onClick?.();
-            }}
-          >
+          <span className="inline-flex items-center text-xs sm:text-sm font-medium text-[#8b7355] group-hover:text-[#6d5a43] transition-colors">
             {ctaText}
-            <ArrowRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 group-hover/cta:translate-x-1" />
-          </a>
+            <ArrowRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
         </div>
       </div>
+    </>
+  );
+
+  if (link) {
+    return (
+      <Link 
+        to={link}
+        className="group relative bg-[#f8f7f4] rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg block"
+      >
+        <CardContent />
+      </Link>
+    );
+  }
+
+  return (
+    <div 
+      className="group relative bg-[#f8f7f4] rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg"
+      onClick={onClick}
+    >
+      <CardContent />
     </div>
   );
 };
