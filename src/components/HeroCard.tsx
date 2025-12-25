@@ -33,11 +33,11 @@ export const HeroCard = ({
         {/* Image Section */}
         <div className="relative bg-[#e8e6e1] overflow-hidden min-h-[250px] sm:min-h-[300px] lg:min-h-[450px] xl:min-h-[500px]">
           {logoImage ? (
-            <div className="w-full h-full bg-gradient-to-br from-[#f5f5f0] to-[#e8e8e0] flex items-center justify-center">
+            <div className="w-full h-full bg-gradient-to-br from-[#f5f5f0] to-[#e8e8e0]">
               <img 
                 src={logoImage} 
                 alt={title}
-                className="w-32 h-32 sm:w-40 sm:h-40 object-contain transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           ) : imagePlaceholder ? (
