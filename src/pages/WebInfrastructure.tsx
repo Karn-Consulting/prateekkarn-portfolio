@@ -27,12 +27,12 @@ const WEBSITES = [
   },
   {
     id: 'xulr21',
-    name: 'Dr. Rajnish Dass',
+    name: 'B2B Strategy Executive',
     url: 'https://www.xulr21.rest',
     image: '/website-xulr21.webp',
-    description: 'Executive personal brand website for a global corporate strategy advisor. Features the MMA Framework, case studies, and advisory mandate system.',
+    description: 'Executive personal brand website for a Managing Director of a global B2B consulting firm. Features strategic frameworks, government advisory mandates, and Fortune 500 case studies with a premium dark theme.',
     techStack: ['React', 'TypeScript', 'TailwindCSS', 'Shadcn/UI'],
-    highlights: ['99/100 Performance Score', 'Interactive Framework Tabs', 'Professional Authority Design'],
+    highlights: ['99/100 Performance Score', 'Interactive Framework Tabs', 'Premium Executive Aesthetic'],
     category: 'Personal Brand / Executive'
   },
   {
