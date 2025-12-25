@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { Linkedin, Mail } from "lucide-react";
+import { useState } from "react";
 
 const BLOG_POSTS = [
   {
@@ -48,58 +49,88 @@ const AbstractGraphic = ({ variant = 0 }: { variant?: number }) => {
       <path d="M 82 60 L 40 60 L 20 80" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent/70" />
       <path d="M 100 78 L 100 100 L 140 105" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent/70" />
       <path d="M 100 78 L 100 100 L 60 105" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent/70" />
-      {/* Endpoint nodes */}
-      <circle cx="140" cy="15" r="4" fill="currentColor" className="text-accent" />
-      <circle cx="60" cy="15" r="4" fill="currentColor" className="text-accent" />
-      <circle cx="180" cy="40" r="4" fill="currentColor" className="text-accent" />
-      <circle cx="180" cy="80" r="4" fill="currentColor" className="text-accent" />
-      <circle cx="20" cy="40" r="4" fill="currentColor" className="text-accent" />
-      <circle cx="20" cy="80" r="4" fill="currentColor" className="text-accent" />
-      <circle cx="140" cy="105" r="4" fill="currentColor" className="text-accent" />
-      <circle cx="60" cy="105" r="4" fill="currentColor" className="text-accent" />
+      {/* Sensor nodes */}
+      <circle cx="140" cy="15" r="4" fill="currentColor" className="text-accent/60" />
+      <circle cx="60" cy="15" r="4" fill="currentColor" className="text-accent/60" />
+      <circle cx="180" cy="40" r="4" fill="currentColor" className="text-accent/60" />
+      <circle cx="180" cy="80" r="4" fill="currentColor" className="text-accent/60" />
+      <circle cx="20" cy="40" r="4" fill="currentColor" className="text-accent/60" />
+      <circle cx="20" cy="80" r="4" fill="currentColor" className="text-accent/60" />
+      <circle cx="140" cy="105" r="4" fill="currentColor" className="text-accent/60" />
+      <circle cx="60" cy="105" r="4" fill="currentColor" className="text-accent/60" />
     </svg>,
-    // Wave pattern
+    // Attribution Flow pattern - broken paths converging
     <svg viewBox="0 0 200 120" className="w-full h-full">
-      <path d="M 0 60 Q 50 30 100 60 T 200 60" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent" />
-      <path d="M 0 75 Q 50 45 100 75 T 200 75" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent/50" />
-      <path d="M 0 45 Q 50 15 100 45 T 200 45" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent/50" />
-      <circle cx="50" cy="45" r="4" fill="currentColor" className="text-accent" />
-      <circle cx="150" cy="75" r="4" fill="currentColor" className="text-accent" />
+      {/* Multiple broken/fragmented paths */}
+      <path d="M 20 30 Q 50 30 60 50" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent/60" strokeDasharray="8 4" />
+      <path d="M 20 60 Q 50 55 70 60" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent/70" strokeDasharray="6 3" />
+      <path d="M 20 90 Q 50 85 65 70" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent/50" strokeDasharray="10 5" />
+      {/* Central convergence point */}
+      <circle cx="100" cy="60" r="15" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent" />
+      <circle cx="100" cy="60" r="6" fill="currentColor" className="text-accent/40" />
+      {/* Converging solid paths */}
+      <path d="M 70 50 L 85 55" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent" />
+      <path d="M 75 60 L 85 60" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent" />
+      <path d="M 70 70 L 85 65" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent" />
+      {/* Output path */}
+      <path d="M 115 60 L 180 60" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent" />
+      <polygon points="180,55 190,60 180,65" fill="currentColor" className="text-accent" />
+      {/* Question marks representing uncertainty */}
+      <text x="35" y="45" className="text-accent/40" fontSize="12" fontFamily="serif">?</text>
+      <text x="40" y="75" className="text-accent/40" fontSize="12" fontFamily="serif">?</text>
     </svg>,
-    // Nodes pattern
+    // Dashboard/Grid pattern with data points
     <svg viewBox="0 0 200 120" className="w-full h-full">
-      <circle cx="40" cy="40" r="8" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent" />
-      <circle cx="100" cy="30" r="8" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent" />
-      <circle cx="160" cy="50" r="8" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent" />
-      <circle cx="60" cy="90" r="8" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent" />
-      <circle cx="140" cy="90" r="8" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1" className="text-accent" />
-      <line x1="48" y1="40" x2="92" y2="32" stroke="currentColor" strokeWidth="0.5" className="text-muted-foreground" />
-      <line x1="108" y1="32" x2="152" y2="48" stroke="currentColor" strokeWidth="0.5" className="text-muted-foreground" />
-      <line x1="44" y1="48" x2="56" y2="82" stroke="currentColor" strokeWidth="0.5" className="text-muted-foreground" />
-      <line x1="68" y1="88" x2="132" y2="88" stroke="currentColor" strokeWidth="0.5" className="text-muted-foreground" />
-      <line x1="156" y1="58" x2="144" y2="82" stroke="currentColor" strokeWidth="0.5" className="text-muted-foreground" />
+      {/* Grid structure */}
+      <rect x="25" y="20" width="70" height="40" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent/40" />
+      <rect x="105" y="20" width="70" height="40" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent/40" />
+      <rect x="25" y="70" width="70" height="35" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent/40" />
+      <rect x="105" y="70" width="70" height="35" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent/40" />
+      {/* Data visualization elements */}
+      <line x1="35" y1="50" x2="45" y2="35" stroke="currentColor" strokeWidth="1.5" className="text-accent" />
+      <line x1="45" y1="35" x2="55" y2="42" stroke="currentColor" strokeWidth="1.5" className="text-accent" />
+      <line x1="55" y1="42" x2="65" y2="30" stroke="currentColor" strokeWidth="1.5" className="text-accent" />
+      <line x1="65" y1="30" x2="75" y2="38" stroke="currentColor" strokeWidth="1.5" className="text-accent" />
+      <line x1="75" y1="38" x2="85" y2="28" stroke="currentColor" strokeWidth="1.5" className="text-accent" />
+      {/* Bar chart */}
+      <rect x="115" y="45" width="8" height="10" fill="currentColor" className="text-accent/60" />
+      <rect x="128" y="38" width="8" height="17" fill="currentColor" className="text-accent/70" />
+      <rect x="141" y="32" width="8" height="23" fill="currentColor" className="text-accent/80" />
+      <rect x="154" y="28" width="8" height="27" fill="currentColor" className="text-accent" />
+      {/* Dots representing data points */}
+      <circle cx="45" cy="85" r="4" fill="currentColor" className="text-accent/50" />
+      <circle cx="60" cy="90" r="6" fill="currentColor" className="text-accent/70" />
+      <circle cx="78" cy="82" r="5" fill="currentColor" className="text-accent/60" />
+      {/* Connecting lines in bottom right */}
+      <circle cx="125" cy="87" r="5" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent" />
+      <circle cx="145" cy="87" r="5" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent" />
+      <circle cx="165" cy="87" r="5" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent" />
+      <line x1="130" y1="87" x2="140" y2="87" stroke="currentColor" strokeWidth="1" className="text-accent/60" />
+      <line x1="150" y1="87" x2="160" y2="87" stroke="currentColor" strokeWidth="1" className="text-accent/60" />
     </svg>
   ];
-  
+
   return (
-    <div className="w-full h-full bg-secondary/50 flex items-center justify-center p-4">
+    <div className="w-full h-full flex items-center justify-center text-accent/60">
       {patterns[variant % patterns.length]}
     </div>
   );
 };
 
-const ArticleCard = ({ post, index }: { post: typeof BLOG_POSTS[0]; index: number }) => (
-  <article className="group flex flex-col h-full bg-card border border-border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-accent/30">
-    {/* Image Placeholder - Rectangular */}
-    <div className="relative h-40 sm:h-48 overflow-hidden">
-      <AbstractGraphic variant={index} />
+const ArticleCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: number }) => (
+  <article className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-500 flex flex-col">
+    {/* Abstract Graphic */}
+    <div className="aspect-[16/10] bg-muted/30 relative overflow-hidden">
+      <div className="absolute inset-0 p-8">
+        <AbstractGraphic variant={index} />
+      </div>
     </div>
     
     {/* Content */}
-    <div className="p-5 sm:p-6 flex flex-col flex-grow">
+    <div className="p-4 sm:p-6 flex flex-col flex-grow">
       {/* Category & Read Time */}
       <div className="flex items-center justify-between mb-3">
-        <span className="text-xs uppercase tracking-[0.15em] text-accent font-medium">
+        <span className="text-xs font-medium tracking-[0.15em] uppercase text-accent">
           {post.category}
         </span>
         <span className="text-xs text-muted-foreground">
@@ -107,37 +138,37 @@ const ArticleCard = ({ post, index }: { post: typeof BLOG_POSTS[0]; index: numbe
         </span>
       </div>
       
-      {/* Headline */}
-      <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground mb-3 leading-snug group-hover:text-accent transition-colors line-clamp-2 min-h-[3.5rem]">
+      {/* Title with min-height for consistent alignment */}
+      <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground mb-3 leading-snug min-h-[3.5rem] line-clamp-2">
         {post.title}
       </h3>
       
-      {/* Summary - 2 lines */}
-      <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">
+      {/* Excerpt - limited to 2 lines */}
+      <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4 flex-grow">
         {post.excerpt}
       </p>
       
-      {/* Date & Read Button with Sophisticated Hover */}
+      {/* Footer */}
       <div className="flex items-center justify-between pt-4 border-t border-border mt-auto">
-        <span className="text-xs text-muted-foreground">{post.date}</span>
-        
-        {/* Read Link - Matches View My Work button hover behavior */}
+        <span className="text-xs text-muted-foreground">
+          {post.date}
+        </span>
         <span 
           className="
-            relative inline-flex items-center
-            text-[#8b7355]
-            text-xs font-medium tracking-[0.12em] uppercase
-            px-3 py-1.5
+            group
+            inline-flex items-center
+            px-4 py-2
+            text-[#8b7355] 
+            text-xs font-semibold tracking-wide uppercase
             border border-[#8b7355]
             rounded-sm
             cursor-pointer
             transition-all duration-300
             group-hover:bg-[#8b7355]
             group-hover:text-white
-            group-hover:translate-x-[2px]
           "
           style={{
-            transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+            letterSpacing: '0.15em'
           }}
         >
           <span className="tracking-[0.15em] transition-all duration-300">
@@ -164,6 +195,47 @@ const NoiseOverlay = () => (
 );
 
 const KarnInsightsSection = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) {
+      setStatus('error');
+      setMessage('Please enter your email address');
+      return;
+    }
+
+    setStatus('loading');
+    setMessage('');
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus('success');
+        setMessage(data.message);
+        setEmail('');
+      } else {
+        setStatus('error');
+        setMessage(data.error);
+      }
+    } catch (error) {
+      setStatus('error');
+      setMessage('An unexpected error occurred. Please try again later.');
+    }
+  };
+
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -279,21 +351,37 @@ const KarnInsightsSection = () => {
                   </p>
                   
                   {/* Input & CTA */}
-                  <div className="flex flex-col sm:flex-row items-center gap-4">
-                    <div className="relative w-full sm:w-64">
-                      <input
-                        type="email"
-                        placeholder="Enter your email"
-                        className="w-full bg-[#2a2a2a] border border-[#444] text-white/90 placeholder-white/40 focus:outline-none focus:border-[#c9b896] transition-colors py-3 px-4 text-center sm:text-left font-heading text-sm tracking-wide rounded"
-                      />
+                  <form onSubmit={handleSubscribe} className="flex flex-col gap-4">
+                    <div className="flex flex-col sm:flex-row items-center gap-4">
+                      <div className="relative w-full sm:w-64">
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="Enter your corporate email"
+                          disabled={status === 'loading'}
+                          className="w-full bg-[#2a2a2a] border border-[#444] text-white/90 placeholder-white/40 focus:outline-none focus:border-[#c9b896] transition-colors py-3 px-4 text-center sm:text-left font-heading text-sm tracking-wide rounded disabled:opacity-50"
+                        />
+                      </div>
+                      
+                      <button 
+                        type="submit"
+                        disabled={status === 'loading'}
+                        className="group px-5 py-3 bg-transparent border border-[#c9b896] hover:bg-[#c9b896] text-[#c9b896] hover:text-[#1a1a1a] transition-all duration-300 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <span className="text-xs font-medium tracking-[0.2em] uppercase">
+                          {status === 'loading' ? 'SUBSCRIBING...' : 'SUBSCRIBE'}
+                        </span>
+                      </button>
                     </div>
                     
-                    <button className="group px-5 py-3 bg-transparent border border-[#c9b896] hover:bg-[#c9b896] text-[#c9b896] hover:text-[#1a1a1a] transition-all duration-300 rounded">
-                      <span className="text-xs font-medium tracking-[0.2em] uppercase">
-                        SUBSCRIBE
-                      </span>
-                    </button>
-                  </div>
+                    {/* Status Message */}
+                    {message && (
+                      <p className={`text-sm ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                        {message}
+                      </p>
+                    )}
+                  </form>
                 </div>
               </div>
 

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail } from "lucide-react";
+import { useState } from "react";
 
 // Noise texture overlay component
 const NoiseOverlay = () => (
@@ -13,6 +14,47 @@ const NoiseOverlay = () => (
 );
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) {
+      setStatus('error');
+      setMessage('Please enter your email address');
+      return;
+    }
+
+    setStatus('loading');
+    setMessage('');
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus('success');
+        setMessage(data.message);
+        setEmail('');
+      } else {
+        setStatus('error');
+        setMessage(data.error);
+      }
+    } catch (error) {
+      setStatus('error');
+      setMessage('An unexpected error occurred. Please try again later.');
+    }
+  };
+
   return (
     <footer className="relative overflow-hidden" style={{ backgroundColor: '#1a1a1a' }}>
       {/* Noise texture overlay */}
@@ -62,21 +104,37 @@ const Footer = () => {
               </p>
               
               {/* Input & CTA */}
-              <div className="flex flex-col sm:flex-row items-center gap-4">
-                <div className="relative w-full sm:w-64">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full bg-[#2a2a2a] border border-[#444] text-white/90 placeholder-white/40 focus:outline-none focus:border-[#c9b896] transition-colors py-3 px-4 text-center sm:text-left font-heading text-sm tracking-wide rounded"
-                  />
+              <form onSubmit={handleSubscribe} className="flex flex-col gap-4">
+                <div className="flex flex-col sm:flex-row items-center gap-4">
+                  <div className="relative w-full sm:w-64">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your corporate email"
+                      disabled={status === 'loading'}
+                      className="w-full bg-[#2a2a2a] border border-[#444] text-white/90 placeholder-white/40 focus:outline-none focus:border-[#c9b896] transition-colors py-3 px-4 text-center sm:text-left font-heading text-sm tracking-wide rounded disabled:opacity-50"
+                    />
+                  </div>
+                  
+                  <button 
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="group px-5 py-3 bg-transparent border border-[#c9b896] hover:bg-[#c9b896] text-[#c9b896] hover:text-[#1a1a1a] transition-all duration-300 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <span className="text-xs font-medium tracking-[0.2em] uppercase">
+                      {status === 'loading' ? 'SUBSCRIBING...' : 'SUBSCRIBE'}
+                    </span>
+                  </button>
                 </div>
                 
-                <button className="group px-5 py-3 bg-transparent border border-[#c9b896] hover:bg-[#c9b896] text-[#c9b896] hover:text-[#1a1a1a] transition-all duration-300 rounded">
-                  <span className="text-xs font-medium tracking-[0.2em] uppercase">
-                    SUBSCRIBE
-                  </span>
-                </button>
-              </div>
+                {/* Status Message */}
+                {message && (
+                  <p className={`text-sm ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                    {message}
+                  </p>
+                )}
+              </form>
             </div>
           </div>
 
