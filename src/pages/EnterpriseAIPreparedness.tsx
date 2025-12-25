@@ -234,7 +234,7 @@ const EnterpriseAIPreparedness = () => {
         {/* Header */}
         <header className="border-b border-[#E8E5DF] bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <Link to="/mywork" className="text-[#8b7355] hover:text-[#6d5a43] transition-colors text-sm font-medium">
+            <Link to="/mywork" className="text-[#8b7355] hover:text-[#6d5a43] hover:bg-[#E8E5DF] hover:px-3 hover:py-2 hover:-mx-3 hover:-my-2 px-3 py-2 -mx-3 -my-2 rounded-sm transition-all duration-200 text-sm font-medium cursor-pointer inline-block">
               ← Back to My Work
             </Link>
           </div>
@@ -832,7 +832,7 @@ const EnterpriseAIPreparedness = () => {
           <div className="mt-8 text-center print:hidden">
             <Link 
               to="/mywork"
-              className="text-[#8b7355] hover:text-[#6d5a43] transition-colors text-sm font-medium"
+              className="text-[#8b7355] hover:text-[#6d5a43] hover:bg-[#E8E5DF] px-3 py-2 rounded-sm transition-all duration-200 text-sm font-medium cursor-pointer inline-block"
             >
               ← Back to My Work
             </Link>
