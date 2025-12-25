@@ -248,7 +248,8 @@ const CONTENT = {
         outcome: 'Standardized the visual language for all technical documentation.',
         techStack: ['Illustrator', 'Photoshop', 'Figma'],
         problem: 'Complex technical concepts were hard to explain in text.',
-        system: 'Clean, isometric diagramming style to visualize system architectures.'
+        system: 'Clean, isometric diagramming style to visualize system architectures.',
+        image: '/work-graphic-design.png'
       },
       {
         title: 'Motion & Ad Creatives',
@@ -257,7 +258,10 @@ const CONTENT = {
         outcome: 'Increased click-through rates by 45% on cold audiences.',
         techStack: ['After Effects', 'Lottie', 'Media Encoder'],
         problem: 'Static ads suffered from banner blindness.',
-        system: 'Motion graphic templates allowing rapid iteration of hooks and CTAs.'
+        system: 'Motion graphic templates allowing rapid iteration of hooks and CTAs.',
+        image: '/work-motion-creatives.png',
+        link: 'https://www.youtube.com/watch?v=D0egLS5y3CU',
+        isExternal: true
       }
     ]
   }
@@ -329,7 +333,13 @@ export default function MyWork() {
                 
                 if (item.link) {
                   return (
-                    <a key={index} href={item.link} className="block h-full">
+                    <a 
+                      key={index} 
+                      href={item.link} 
+                      className="block h-full cursor-pointer"
+                      target={item.isExternal ? "_blank" : undefined}
+                      rel={item.isExternal ? "noopener noreferrer" : undefined}
+                    >
                       {cardContent}
                     </a>
                   );
