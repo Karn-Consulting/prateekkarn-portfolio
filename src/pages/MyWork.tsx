@@ -93,6 +93,7 @@ const CONTENT = {
       impact: 'Revealed true customer acquisition cost, shifting 30% of budget to under-credited high-performing channels.',
       techStack: ['Python', 'SQL', 'BigQuery', 'Looker'],
       ctaText: 'View Case Study',
+      link: '/mywork/end-to-end-attribution',
       logoImage: '/work-attribution.png',
       problem: 'Fragmented ad data across Meta, Google, and LinkedIn made true ROAS calculation impossible.',
       system: 'Unified data pipeline ingesting API data into BigQuery, normalized for cross-channel comparison.',
@@ -139,6 +140,7 @@ const CONTENT = {
       impact: 'Scaled to $40k/mo while maintaining stable ROAS, unlocking new growth tier.',
       techStack: ['Meta Ads', 'GA4', 'Google Sheets', 'Looker'],
       ctaText: 'View Case Study',
+      link: '/mywork/meta-ads-performance',
       problem: 'Scaling spend beyond $10k/mo caused CPA to skyrocket due to audience saturation.',
       system: 'Structured creative testing framework + broad targeting with CBO to manage creative fatigue.',
       outcome: 'Scaled to $40k/mo while maintaining stable ROAS, unlocking new growth tier.',
@@ -175,6 +177,7 @@ const CONTENT = {
       impact: 'Became the default Monday morning meeting screen for the leadership team.',
       techStack: ['Looker Studio', 'BigQuery', 'Supermetrics'],
       ctaText: 'View Case Study',
+      link: '/mywork/executive-dashboard',
       problem: 'CEO needed a single view of growth health without logging into 5 different platforms.',
       system: 'Centralized Looker Studio dashboard aggregating spend, leads, and revenue in real-time.',
       outcome: 'Became the default Monday morning meeting screen for the leadership team.'
@@ -217,6 +220,7 @@ const CONTENT = {
       impact: 'Reduced CPA by 30% through psychological hooks and structured narrative testing.',
       techStack: ['Behavioral Economics', 'A/B Testing', 'Copy Frameworks'],
       ctaText: 'View Case Study',
+      link: '/mywork/revenue-engineering',
       problem: 'Traditional "creative" copy fails to address the subconscious friction points that kill conversion at scale.',
       system: 'Leveraging behavioral economics and pattern interrupts to engineer retention loops.',
       outcome: 'Reduced CPA by 30% through psychological hooks and structured narrative testing.'

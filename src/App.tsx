@@ -1,4 +1,4 @@
-// Build version: 2.4.0 - 2025-12-26T11:00:00Z - Added About page
+// Build version: 2.5.0 - 2025-12-26T13:30:00Z - Added case study pages
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,6 +15,10 @@ import EnterpriseAIPreparedness from "./pages/EnterpriseAIPreparedness";
 import WebInfrastructure from "./pages/WebInfrastructure";
 import ExecVentureGauge from "./pages/ExecVentureGauge";
 import ExecVentureGaugeApp from "./pages/ExecVentureGaugeApp";
+import EndToEndAttribution from "./pages/EndToEndAttribution";
+import ExecutiveDashboard from "./pages/ExecutiveDashboard";
+import MetaAdsPerformance from "./pages/MetaAdsPerformance";
+import RevenueEngineering from "./pages/RevenueEngineering";
 import Insights from "./pages/Insights";
 import InsightPost from "./pages/InsightPost";
 import CookieConsent from "./components/CookieConsent";
@@ -40,6 +44,10 @@ const App = () => (
             <Route path="/mywork/web-infrastructure" element={<WebInfrastructure />} />
             <Route path="/mywork/exec-venture-gauge" element={<ExecVentureGauge />} />
             <Route path="/mywork/exec-venture-gauge/app" element={<ExecVentureGaugeApp />} />
+            <Route path="/mywork/end-to-end-attribution" element={<EndToEndAttribution />} />
+            <Route path="/mywork/executive-dashboard" element={<ExecutiveDashboard />} />
+            <Route path="/mywork/meta-ads-performance" element={<MetaAdsPerformance />} />
+            <Route path="/mywork/revenue-engineering" element={<RevenueEngineering />} />
             {/* Insights/Blog Routes */}
             <Route path="/insights" element={<Insights />} />
             <Route path="/insights/:slug" element={<InsightPost />} />
@@ -54,4 +62,3 @@ const App = () => (
 );
 
 export default App;
-// Trigger rebuild Fri Dec 26 11:11:10 EST 2025
