@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Linkedin, GraduationCap, Briefcase, MapPin } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Linkedin, GraduationCap, Briefcase, MapPin, Award } from 'lucide-react';
 import Footer from '@/components/Footer';
 
 const About = () => {
@@ -12,18 +12,33 @@ const About = () => {
       </Helmet>
 
       <main className="min-h-screen bg-background">
+        {/* Header Navigation - Matching other pages */}
+        <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              {/* Logo/Name */}
+              <Link 
+                to="/"
+                className="font-heading text-lg font-semibold text-foreground hover:text-accent transition-colors duration-300"
+              >
+                Prateek Karn
+              </Link>
+
+              {/* Back to Home Button - Matching "Back to Work" style */}
+              <Link 
+                to="/"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-border text-muted-foreground hover:bg-accent hover:text-background hover:border-accent transition-all duration-300 text-xs tracking-wider"
+              >
+                <ArrowLeft className="w-3 h-3" />
+                Back to Home
+              </Link>
+            </div>
+          </div>
+        </header>
+
         {/* Hero Section - Refined spacing */}
         <section className="pt-12 pb-16 sm:pt-16 sm:pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            {/* Back to Home Link */}
-            <Link 
-              to="/"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors duration-300 text-sm mb-10"
-            >
-              <ArrowRight className="w-4 h-4 rotate-180" />
-              Back to Home
-            </Link>
-
             {/* Page Title */}
             <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
               About Prateek
@@ -49,9 +64,22 @@ const About = () => {
 
               {/* Intro Column */}
               <div className="lg:col-span-8 flex flex-col justify-start">
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-4 uppercase tracking-wider">
-                  <MapPin className="w-3 h-3" />
-                  <span>Amritsar, Punjab, India</span>
+                {/* Location and LinkedIn in same row */}
+                <div className="flex flex-wrap items-center gap-4 mb-4">
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wider">
+                    <MapPin className="w-3 h-3" />
+                    <span>Amritsar, Punjab, India</span>
+                  </div>
+                  <span className="text-border">|</span>
+                  <a 
+                    href="https://linkedin.com/in/prateekkarn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors duration-300 text-xs font-medium uppercase tracking-wider"
+                  >
+                    <Linkedin className="w-3.5 h-3.5" />
+                    LinkedIn
+                  </a>
                 </div>
 
                 <h2 className="font-heading text-xl sm:text-2xl font-semibold text-foreground mb-4">
@@ -62,20 +90,9 @@ const About = () => {
                   I help organizations evolve from traditional marketing to intelligent business systems — architectures where data, automation, and AI work together to drive measurable growth.
                 </p>
 
-                <p className="text-muted-foreground text-sm leading-[1.75] mb-6">
+                <p className="text-muted-foreground text-sm leading-[1.75]">
                   As an AI Business Architect, I design Intelligent MarTech ecosystems that connect sensing, prediction, and action — giving enterprises real-time insight, faster decision-making, and higher marketing ROI.
                 </p>
-
-                {/* LinkedIn CTA */}
-                <a 
-                  href="https://linkedin.com/in/prateekkarn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors duration-300 text-xs font-medium uppercase tracking-wider"
-                >
-                  <Linkedin className="w-3.5 h-3.5" />
-                  Connect on LinkedIn
-                </a>
               </div>
             </div>
           </div>
@@ -107,8 +124,50 @@ const About = () => {
           </div>
         </section>
 
-        {/* Career Timeline Section - More compact */}
+        {/* Recognition Section - New */}
         <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex items-center gap-2 mb-8">
+              <Award className="w-5 h-5 text-accent" />
+              <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
+                Recognition
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Award 1 */}
+              <div className="p-4 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
+                <div className="aspect-[4/3] overflow-hidden rounded-sm mb-4">
+                  <img 
+                    src="/prateek-award-1.jpg" 
+                    alt="Prateek Karn receiving recognition award"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  Recognized for contributions to digital innovation and entrepreneurship development.
+                </p>
+              </div>
+
+              {/* Award 2 */}
+              <div className="p-4 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
+                <div className="aspect-[4/3] overflow-hidden rounded-sm mb-4">
+                  <img 
+                    src="/prateek-award-2.jpg" 
+                    alt="Prateek Karn at industry recognition event"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  Industry recognition for leadership in building scalable digital ecosystems.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Career Timeline Section - More compact */}
+        <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-2 mb-8">
               <Briefcase className="w-5 h-5 text-accent" />
@@ -194,7 +253,7 @@ const About = () => {
         </section>
 
         {/* Education Section - Compact */}
-        <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-2 mb-8">
               <GraduationCap className="w-5 h-5 text-accent" />
@@ -214,7 +273,7 @@ const About = () => {
         </section>
 
         {/* CTA Section - Refined */}
-        <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
+        <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4">
               Let's Build Something Intelligent
