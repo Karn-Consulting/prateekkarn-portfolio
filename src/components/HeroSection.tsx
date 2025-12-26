@@ -15,7 +15,7 @@ const HeroSection = () => {
             </h1>
             
             {/* Photo - Order 2 on mobile, hidden on desktop (shows in right column) */}
-            <div className="relative w-full max-w-sm mx-auto lg:hidden order-2">
+            <Link to="/about" className="relative w-full max-w-sm mx-auto lg:hidden order-2 block cursor-pointer">
               <div className="relative w-full group">
                 <img
                   src={heroImage}
@@ -24,7 +24,7 @@ const HeroSection = () => {
                 />
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/20 to-primary/10 group-hover:from-accent/5 group-hover:to-transparent transition-all duration-700 ease-in-out pointer-events-none"></div>
               </div>
-            </div>
+            </Link>
 
             {/* Rest of content - Order 3 on mobile */}
             <div className="space-y-4 lg:space-y-6 order-3 lg:order-none">
@@ -68,8 +68,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Image - Desktop only */}
-          <div className="hidden lg:block relative lg:justify-self-end w-full">
+          {/* Right Image - Desktop only, clickable to About page */}
+          <Link to="/about" className="hidden lg:block relative lg:justify-self-end w-full cursor-pointer">
             <div className="relative w-full max-w-lg group">
               <img
                 src={heroImage}
@@ -78,7 +78,7 @@ const HeroSection = () => {
               />
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-accent/20 to-primary/10 group-hover:from-accent/5 group-hover:to-transparent transition-all duration-700 ease-in-out pointer-events-none"></div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>
