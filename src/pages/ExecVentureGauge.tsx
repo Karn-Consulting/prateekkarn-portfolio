@@ -58,15 +58,13 @@ const ExecVentureGauge = () => {
               
               {/* CTA */}
               <div className="flex">
-                <a 
-                  href="https://exec-venture-gauge.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link 
+                  to="/mywork/exec-venture-gauge/app"
                   className="inline-flex items-center justify-center px-8 py-4 bg-[#8b7355] text-white font-medium rounded-sm hover:bg-[#6d5a43] transition-colors text-lg"
                 >
                   Launch the Gauge
                   <ArrowRight className="ml-3 w-5 h-5" />
-                </a>
+                </Link>
               </div>
             </div>
 
