@@ -338,10 +338,10 @@ const EnterpriseAIPreparedness = () => {
                       <PolarRadiusAxis 
                         angle={90} 
                         domain={[0, 5]} 
-                        tick={{ fontSize: 9, fill: '#999' }}
+                        tick={{ fontSize: 9, fill: '#999', dy: -3 }}
                         axisLine={{ stroke: '#E8E5DF' }}
                         tickCount={6}
-                        tickFormatter={(value) => value === 0 ? '' : value}
+                        tickFormatter={(value) => (value === 0 || value === 5) ? '' : value}
                       />
                       <Radar
                         name="Score"
@@ -794,10 +794,10 @@ const EnterpriseAIPreparedness = () => {
                       <PolarRadiusAxis 
                         angle={90} 
                         domain={[0, 5]} 
-                        tick={{ fontSize: 9, fill: '#999' }}
+                        tick={{ fontSize: 9, fill: '#999', dy: -3 }}
                         axisLine={{ stroke: '#E8E5DF' }}
                         tickCount={6}
-                        tickFormatter={(value) => value === 0 ? '' : value}
+                        tickFormatter={(value) => (value === 0 || value === 5) ? '' : value}
                       />
                       <Radar
                         name="Score"
