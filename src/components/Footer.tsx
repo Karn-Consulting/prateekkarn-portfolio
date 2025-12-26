@@ -66,6 +66,14 @@ const Footer = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left Column - Contact Info */}
             <div className="text-center lg:text-left">
+              {/* PK Logo */}
+              <div className="mb-4">
+                <img 
+                  src="/pk-logo.png" 
+                  alt="Prateek Karn" 
+                  className="h-12 w-12 object-contain mx-auto lg:mx-0 opacity-90"
+                />
+              </div>
               <h3 className="font-heading text-2xl sm:text-3xl font-normal text-[#f5f5dc] mb-6 leading-relaxed tracking-wide">
                 Architect Your Advantage
               </h3>

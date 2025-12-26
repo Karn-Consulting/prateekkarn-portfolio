@@ -313,6 +313,49 @@ const EnterpriseAIPreparedness = () => {
                   <p className="text-lg font-semibold text-[#1a1a1a]">High</p>
                 </div>
               </div>
+
+              {/* Radar Chart for Sample Output */}
+              <div className="mb-8">
+                <h4 className="text-xs font-semibold text-[#8b7355] uppercase tracking-wider mb-4">Preparedness Overview</h4>
+                <div className="h-72">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <RadarChart cx="50%" cy="50%" outerRadius="60%" data={[
+                      { dimension: 'Direction', fullName: 'Direction & Sponsorship', score: 2, fullMark: 5 },
+                      { dimension: 'Data', fullName: 'Data & Foundations', score: 1.5, fullMark: 5 },
+                      { dimension: 'Execution', fullName: 'Execution & Ways of Working', score: 1, fullMark: 5 },
+                      { dimension: 'Risk', fullName: 'Risk & Oversight', score: 2, fullMark: 5 }
+                    ]}>
+                      <PolarGrid stroke="#E8E5DF" />
+                      <PolarAngleAxis 
+                        dataKey="dimension" 
+                        tick={{ 
+                          fontSize: 12, 
+                          fill: '#5a5a5a',
+                          fontWeight: 500
+                        }}
+                        tickLine={false}
+                      />
+                      <PolarRadiusAxis 
+                        angle={90} 
+                        domain={[0, 5]} 
+                        tick={{ fontSize: 9, fill: '#999' }}
+                        axisLine={{ stroke: '#E8E5DF' }}
+                        tickCount={6}
+                        tickFormatter={(value) => value === 0 ? '' : value}
+                      />
+                      <Radar
+                        name="Score"
+                        dataKey="score"
+                        stroke="#8b7355"
+                        fill="#8b7355"
+                        fillOpacity={0.3}
+                        strokeWidth={2}
+                      />
+                    </RadarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-[#1a1a1a] mb-2">Strengths</h4>
@@ -751,9 +794,10 @@ const EnterpriseAIPreparedness = () => {
                       <PolarRadiusAxis 
                         angle={90} 
                         domain={[0, 5]} 
-                        tick={{ fontSize: 10, fill: '#999' }}
+                        tick={{ fontSize: 9, fill: '#999' }}
                         axisLine={{ stroke: '#E8E5DF' }}
                         tickCount={6}
+                        tickFormatter={(value) => value === 0 ? '' : value}
                       />
                       <Radar
                         name="Score"
