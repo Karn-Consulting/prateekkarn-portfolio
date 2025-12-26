@@ -1,4 +1,5 @@
 {
+  "buildCommand": "rm -rf .vite node_modules/.vite && pnpm run build",
   "rewrites": [
     { "source": "/mywork", "destination": "/index.html" },
     { "source": "/mywork/(.*)", "destination": "/index.html" },
