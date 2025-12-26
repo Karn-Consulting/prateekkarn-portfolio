@@ -117,6 +117,36 @@ const AbstractGraphic = ({ variant = 0 }: { variant?: number }) => {
   );
 };
 
+// Precision Node Icon - Technical "System Origin Point" indicator
+const PrecisionNodeIcon = () => (
+  <svg 
+    width="10" 
+    height="10" 
+    viewBox="0 0 10 10" 
+    className="mr-2 flex-shrink-0"
+    style={{ marginTop: '1px' }}
+  >
+    {/* Outer Circle - hairline stroke, low contrast */}
+    <circle 
+      cx="5" 
+      cy="5" 
+      r="4" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="1" 
+      className="text-muted-foreground/30 transition-opacity duration-300 group-hover:opacity-70"
+    />
+    {/* Inner Circle - solid fill, primary dark brand color */}
+    <circle 
+      cx="5" 
+      cy="5" 
+      r="1.8" 
+      fill="currentColor" 
+      className="text-[#1a1a1a] transition-transform duration-300 origin-center group-hover:scale-[1.2]"
+    />
+  </svg>
+);
+
 const ArticleCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: number }) => (
   <article className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-500 flex flex-col">
     {/* Abstract Graphic */}
@@ -133,7 +163,8 @@ const ArticleCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: numbe
         <span className="text-xs font-medium tracking-[0.15em] uppercase text-accent">
           {post.category}
         </span>
-        <span className="text-xs text-muted-foreground">
+        <span className="text-xs text-muted-foreground inline-flex items-center">
+          <PrecisionNodeIcon />
           {post.readTime}
         </span>
       </div>
