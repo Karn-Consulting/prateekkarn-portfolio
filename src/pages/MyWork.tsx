@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { TabNavigation } from '@/components/TabNavigation';
@@ -140,7 +141,8 @@ const CONTENT = {
       ctaText: 'View Case Study',
       problem: 'Scaling spend beyond $10k/mo caused CPA to skyrocket due to audience saturation.',
       system: 'Structured creative testing framework + broad targeting with CBO to manage creative fatigue.',
-      outcome: 'Scaled to $40k/mo while maintaining stable ROAS, unlocking new growth tier.'
+      outcome: 'Scaled to $40k/mo while maintaining stable ROAS, unlocking new growth tier.',
+      logoImage: '/work-meta-ads-hero.png'
     },
     grid: [
       {
@@ -150,7 +152,8 @@ const CONTENT = {
         outcome: 'Identified optimal split that maintained 90% of conversions with 75% of the budget.',
         techStack: ['Google Ads Scripts', 'JavaScript', 'Data Studio'],
         problem: 'Client unsure how budget cuts would impact total conversion volume across campaigns.',
-        system: 'Simulation tool modeling the diminishing returns curve of each campaign to optimize allocation.'
+        system: 'Simulation tool modeling the diminishing returns curve of each campaign to optimize allocation.',
+        image: '/work-google-ads-simulator.png'
       },
       {
         title: 'ROAS Stabilization Framework',
@@ -159,7 +162,8 @@ const CONTENT = {
         outcome: 'Reduced manual interventions by 60%, allowing algorithms to stabilize and improve.',
         techStack: ['Statistical Analysis', 'Media Buying Strategy'],
         problem: 'Volatile performance caused panic-pausing of campaigns, resetting learning phases.',
-        system: 'Protocol defining "normal volatility" vs "structural decline" to govern optimization decisions.'
+        system: 'Protocol defining "normal volatility" vs "structural decline" to govern optimization decisions.',
+        image: '/work-roas-stabilization.png'
       }
     ]
   },
@@ -256,8 +260,33 @@ const CONTENT = {
 };
 
 export default function MyWork() {
-  const [activeTab, setActiveTab] = useState('ai-frameworks');
+  const location = useLocation();
+  const navigate = useNavigate();
   const [selectedCase, setSelectedCase] = useState<any>(null);
+
+  // Get tab from URL hash or default to 'ai-frameworks'
+  const getTabFromHash = () => {
+    const hash = location.hash.replace('#', '');
+    const validTabs = TABS.map(t => t.id);
+    return validTabs.includes(hash) ? hash : 'ai-frameworks';
+  };
+
+  const [activeTab, setActiveTab] = useState(getTabFromHash);
+
+  // Sync URL hash with active tab
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    const validTabs = TABS.map(t => t.id);
+    if (validTabs.includes(hash) && hash !== activeTab) {
+      setActiveTab(hash);
+    }
+  }, [location.hash]);
+
+  // Update URL when tab changes
+  const handleTabChange = (tabId: string) => {
+    setActiveTab(tabId);
+    navigate(`/mywork#${tabId}`, { replace: true });
+  };
 
   const currentContent = CONTENT[activeTab as keyof typeof CONTENT];
 
@@ -281,7 +310,7 @@ export default function MyWork() {
       <TabNavigation 
         tabs={TABS} 
         activeTab={activeTab} 
-        onTabChange={setActiveTab} 
+        onTabChange={handleTabChange} 
       />
 
       {/* Main Content - Responsive grid and spacing */}
