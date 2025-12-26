@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import MyWork from "./pages/MyWork";
 import EnterpriseAIPreparedness from "./pages/EnterpriseAIPreparedness";
 import WebInfrastructure from "./pages/WebInfrastructure";
+import ExecVentureGauge from "./pages/ExecVentureGauge";
 import CookieConsent from "./components/CookieConsent";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/mywork" element={<MyWork />} />
           <Route path="/mywork/enterprise-ai-preparedness" element={<EnterpriseAIPreparedness />} />
           <Route path="/mywork/web-infrastructure" element={<WebInfrastructure />} />
+          <Route path="/mywork/exec-venture-gauge" element={<ExecVentureGauge />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

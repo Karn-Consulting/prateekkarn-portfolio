@@ -54,13 +54,15 @@ const CONTENT = {
     },
     grid: [
       {
-        title: 'AI ROI Calculator',
-        context: 'Financial Modeling',
-        description: 'Parametric model inputting labor costs, task frequency, and automation potential to forecast net savings. C-suite leaders struggle to justify AI spend due to vague "efficiency" promises without hard numbers.',
-        outcome: 'Validated a $1.2M projected annual saving for a logistics client, securing board approval.',
-        techStack: ['Excel/Sheets', 'Python', 'Financial Modeling'],
-        problem: 'C-suite leaders struggle to justify AI spend due to vague "efficiency" promises without hard numbers.',
-        system: 'Parametric model inputting labor costs, task frequency, and automation potential to forecast net savings.'
+        title: 'Exec Venture Gauge',
+        context: 'Investment Decision Support',
+        description: 'Risk-adjusted financial modeling tool helping senior leaders evaluate whether AI initiatives will deliver measurable business value. Translates strategic assumptions into NPV, IRR, payback period, and clear funding signals.',
+        outcome: 'Enabled executive teams to make informed go/no-go decisions on AI investments with quantified risk exposure.',
+        techStack: ['React', 'TypeScript', 'Financial Modeling', 'Decision Theory'],
+        problem: 'Senior leaders struggle to evaluate AI investments beyond pilot success, lacking risk-adjusted financial frameworks.',
+        system: 'Decision-support tool producing executive-ready outputs including NPV, IRR, payback period, and confidence indicators.',
+        image: '/work-exec-venture-gauge.png',
+        link: '/mywork/exec-venture-gauge'
       },
       {
         title: 'AI vs Automation Decision Matrix',
