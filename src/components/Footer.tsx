@@ -71,7 +71,8 @@ const Footer = () => {
                 <img 
                   src="/pk-logo.png" 
                   alt="Prateek Karn" 
-                  className="h-16 w-16 object-contain mx-auto lg:mx-0"
+                  className="h-16 w-16 object-contain mx-auto lg:mx-0 rounded-lg"
+                  style={{ backgroundColor: 'transparent', mixBlendMode: 'lighten' }}
                 />
               </div>
               <h3 className="font-heading text-2xl sm:text-3xl font-normal text-[#f5f5dc] mb-6 leading-relaxed tracking-wide">
