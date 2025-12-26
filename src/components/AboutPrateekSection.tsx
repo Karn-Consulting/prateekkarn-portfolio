@@ -41,11 +41,11 @@ const AboutPrateekSection = () => {
                 From scaling ad campaigns to building enterprise-grade AI systems, his journey spans every layer of the modern growth stack — giving him a rare perspective that bridges technical depth with strategic vision.
               </p>
 
-              {/* CTA Button - Matching site style */}
+              {/* CTA Button - Matching hero section "Request a Consultation" button */}
               <div>
                 <Link 
                   to="/about"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-accent text-accent hover:bg-accent hover:text-background transition-all duration-300 text-xs tracking-wider uppercase font-medium group"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#8b7355] text-white hover:bg-[#7a6548] transition-all duration-300 text-xs tracking-wider uppercase font-medium group"
                 >
                   Read the Full Story
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
