@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
-import { ArrowRight, ExternalLink, Target, TrendingUp, Shield, DollarSign, Users, Briefcase, LineChart, CheckCircle } from 'lucide-react';
+import { ArrowRight, Target, TrendingUp, Shield, DollarSign, Users, Briefcase, LineChart, CheckCircle } from 'lucide-react';
 
 const ExecVentureGauge = () => {
   return (
@@ -58,15 +58,13 @@ const ExecVentureGauge = () => {
               
               {/* CTA */}
               <div className="flex">
-                <a 
-                  href="https://exec-venture-gauge.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link 
+                  to="/mywork/exec-venture-gauge/app"
                   className="inline-flex items-center justify-center px-8 py-4 bg-[#8b7355] text-white font-medium rounded-sm hover:bg-[#6d5a43] transition-colors text-lg"
                 >
                   Launch the Gauge
                   <ArrowRight className="ml-3 w-5 h-5" />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -335,25 +333,14 @@ const ExecVentureGauge = () => {
           <p className="text-[#5a5a5a] mb-8 max-w-2xl mx-auto">
             Use Exec Venture Gauge to translate strategic assumptions into risk-adjusted financial outcomes and clear funding guidance.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://exec-venture-gauge.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
+          <div className="flex justify-center">
+            <Link 
+              to="/mywork/exec-venture-gauge/app"
               className="inline-flex items-center justify-center px-8 py-4 bg-[#8b7355] text-white font-medium rounded-sm hover:bg-[#6d5a43] transition-colors"
             >
               Launch the Gauge
               <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-            <a 
-              href="https://github.com/Karn-Consulting/exec-venture-gauge"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 border border-[#8b7355] text-[#8b7355] font-medium rounded-sm hover:bg-[#8b7355] hover:text-white transition-colors"
-            >
-              View on GitHub
-              <ExternalLink className="ml-2 w-5 h-5" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
