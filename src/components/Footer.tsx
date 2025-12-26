@@ -1,3 +1,4 @@
+// Footer v2.2 - Build timestamp: 2025-12-26T12:10:00Z - Cache bust
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail } from "lucide-react";
 import { useState } from "react";
