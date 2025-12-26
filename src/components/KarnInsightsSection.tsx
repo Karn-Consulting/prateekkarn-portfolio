@@ -118,31 +118,32 @@ const AbstractGraphic = ({ variant = 0 }: { variant?: number }) => {
 };
 
 // Precision Node Icon - Technical "System Origin Point" indicator
+// Designed to blend seamlessly with typography while maintaining the technical aesthetic
 const PrecisionNodeIcon = () => (
   <svg 
-    width="10" 
-    height="10" 
-    viewBox="0 0 10 10" 
-    className="mr-2 flex-shrink-0"
-    style={{ marginTop: '1px' }}
+    width="8" 
+    height="8" 
+    viewBox="0 0 8 8" 
+    className="mr-[6px] flex-shrink-0 opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+    style={{ marginTop: '0px' }}
   >
-    {/* Outer Circle - hairline stroke, low contrast */}
+    {/* Outer Circle - ultra-thin stroke matching muted text color */}
     <circle 
-      cx="5" 
-      cy="5" 
-      r="4" 
+      cx="4" 
+      cy="4" 
+      r="3.2" 
       fill="none" 
       stroke="currentColor" 
-      strokeWidth="1" 
-      className="text-muted-foreground/30 transition-opacity duration-300 group-hover:opacity-70"
+      strokeWidth="0.6" 
+      className="text-[#9a9590] transition-all duration-300 group-hover:stroke-[0.8]"
     />
-    {/* Inner Circle - solid fill, primary dark brand color */}
+    {/* Inner Circle - subtle fill matching the accent/brand tone */}
     <circle 
-      cx="5" 
-      cy="5" 
-      r="1.8" 
+      cx="4" 
+      cy="4" 
+      r="1.3" 
       fill="currentColor" 
-      className="text-[#1a1a1a] transition-transform duration-300 origin-center group-hover:scale-[1.2]"
+      className="text-[#8b7355] transition-transform duration-300 origin-center group-hover:scale-[1.15]"
     />
   </svg>
 );
