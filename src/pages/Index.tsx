@@ -7,6 +7,7 @@ import CareerTrajectorySection from "@/components/CareerTrajectorySection";
 import MyWorkSection from "@/components/MyWorkSection";
 import GrowthStackSection from "@/components/GrowthStackSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import AboutPrateekSection from "@/components/AboutPrateekSection";
 import KarnInsightsSection from "@/components/KarnInsightsSection";
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
       <CareerTrajectorySection />
       <MyWorkSection />
       <TestimonialsSection />
+      <AboutPrateekSection />
       <GrowthStackSection />
       <KarnInsightsSection />
     </main>
