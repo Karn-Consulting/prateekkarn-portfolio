@@ -56,25 +56,16 @@ const ExecVentureGauge = () => {
                 The tool translates strategic assumptions into risk-adjusted financial outcomes, time-to-value insights, and clear funding guidance - supporting informed decision-making before capital is committed.
               </p>
               
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* CTA */}
+              <div className="flex">
                 <a 
                   href="https://exec-venture-gauge.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-[#8b7355] text-white font-medium rounded-sm hover:bg-[#6d5a43] transition-colors"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-[#8b7355] text-white font-medium rounded-sm hover:bg-[#6d5a43] transition-colors text-lg"
                 >
                   Launch the Gauge
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </a>
-                <a 
-                  href="https://github.com/Karn-Consulting/exec-venture-gauge"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 border border-[#8b7355] text-[#8b7355] font-medium rounded-sm hover:bg-[#8b7355] hover:text-white transition-colors"
-                >
-                  View on GitHub
-                  <ExternalLink className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-3 w-5 h-5" />
                 </a>
               </div>
             </div>
