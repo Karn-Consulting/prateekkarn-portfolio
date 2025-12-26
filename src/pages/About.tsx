@@ -24,13 +24,12 @@ const About = () => {
                 Prateek Karn
               </Link>
 
-              {/* Back to Home Button - Matching "Back to Work" style */}
+              {/* Back to Home Button - Matching "Back to My Work" style with brown border */}
               <Link 
                 to="/"
-                className="inline-flex items-center gap-2 px-4 py-2 border border-border text-muted-foreground hover:bg-accent hover:text-background hover:border-accent transition-all duration-300 text-xs tracking-wider"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-[#8b7355] border border-[#8b7355] rounded-sm hover:bg-[#8b7355] hover:text-white transition-all duration-200"
               >
-                <ArrowLeft className="w-3 h-3" />
-                Back to Home
+                ← Back to Home
               </Link>
             </div>
           </div>
@@ -64,8 +63,20 @@ const About = () => {
 
               {/* Intro Column */}
               <div className="lg:col-span-8 flex flex-col justify-start">
-                {/* Location and LinkedIn in same row */}
-                <div className="flex flex-wrap items-center gap-4 mb-4">
+                <h2 className="font-heading text-xl sm:text-2xl font-semibold text-foreground mb-4">
+                  AI Business Architect
+                </h2>
+
+                <p className="text-foreground/85 text-sm sm:text-base leading-[1.8] mb-4">
+                  I help organizations evolve from traditional marketing to intelligent business systems — architectures where data, automation, and AI work together to drive measurable growth.
+                </p>
+
+                <p className="text-muted-foreground text-sm leading-[1.75] mb-6">
+                  As an AI Business Architect, I design Intelligent MarTech ecosystems that connect sensing, prediction, and action — giving enterprises real-time insight, faster decision-making, and higher marketing ROI.
+                </p>
+
+                {/* Location and LinkedIn moved below description */}
+                <div className="flex flex-wrap items-center gap-4">
                   <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-wider">
                     <MapPin className="w-3 h-3" />
                     <span>Amritsar, Punjab, India</span>
@@ -81,18 +92,6 @@ const About = () => {
                     LinkedIn
                   </a>
                 </div>
-
-                <h2 className="font-heading text-xl sm:text-2xl font-semibold text-foreground mb-4">
-                  AI Business Architect
-                </h2>
-
-                <p className="text-foreground/85 text-sm sm:text-base leading-[1.8] mb-4">
-                  I help organizations evolve from traditional marketing to intelligent business systems — architectures where data, automation, and AI work together to drive measurable growth.
-                </p>
-
-                <p className="text-muted-foreground text-sm leading-[1.75]">
-                  As an AI Business Architect, I design Intelligent MarTech ecosystems that connect sensing, prediction, and action — giving enterprises real-time insight, faster decision-making, and higher marketing ROI.
-                </p>
               </div>
             </div>
           </div>
