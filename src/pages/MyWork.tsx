@@ -92,6 +92,7 @@ const CONTENT = {
       impact: 'Revealed true customer acquisition cost, shifting 30% of budget to under-credited high-performing channels.',
       techStack: ['Python', 'SQL', 'BigQuery', 'Looker'],
       ctaText: 'View Case Study',
+      logoImage: '/work-attribution.png',
       problem: 'Fragmented ad data across Meta, Google, and LinkedIn made true ROAS calculation impossible.',
       system: 'Unified data pipeline ingesting API data into BigQuery, normalized for cross-channel comparison.',
       outcome: 'Revealed true customer acquisition cost, shifting 30% of budget to under-credited high-performing channels.'
