@@ -163,10 +163,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
       body: JSON.stringify({
         from: 'Prateek Karn <newsletter@prateekkarn.com>',
+        reply_to: 'prateek.karn@prateekkarn.com',
         to: [normalizedEmail],
         subject: 'Welcome to Strategic Intelligence Newsletter',
         html: getWelcomeEmailHtml(),
-      }),
+      })
     });
 
     const responseData = await response.json();
@@ -218,12 +219,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          from: 'Newsletter System <newsletter@prateekkarn.com>',
-          to: ['prateek.karn@prateekkarn.com'],
-          subject: `New Newsletter Subscriber: ${normalizedEmail}`,
-          html: getNotificationEmailHtml(normalizedEmail),
-        }),
+      body: JSON.stringify({
+        from: 'Newsletter System <newsletter@prateekkarn.com>',
+        reply_to: normalizedEmail,
+        to: ['prateek.karn@prateekkarn.com'],
+        subject: `New Newsletter Subscriber: ${normalizedEmail}`,
+        html: getNotificationEmailHtml(normalizedEmail),
+      })
       });
     } catch (notifyError) {
       console.error('Failed to send notification:', notifyError);
