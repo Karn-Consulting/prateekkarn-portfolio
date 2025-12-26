@@ -1,33 +1,10 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Mail } from "lucide-react";
 import { useState } from "react";
+import { BLOG_POSTS } from "@/data/blogPosts";
 
-const BLOG_POSTS = [
-  {
-    id: 1,
-    title: "The Kinetic Enterprise",
-    excerpt: "Building the Self-Healing Business through a High-Resolution Digital Nervous System.",
-    category: "AI Strategy",
-    readTime: "14 min read",
-    date: "Dec 18, 2024"
-  },
-  {
-    id: 2,
-    title: "The Death of Last-Click Attribution: What Comes Next",
-    excerpt: "iOS 14.5 didn't just change privacy—it exposed how fragile our measurement foundations were. Here's how to build attribution systems that survive.",
-    category: "Marketing Analytics",
-    readTime: "6 min read",
-    date: "Dec 12, 2024"
-  },
-  {
-    id: 3,
-    title: "Building Executive Dashboards That Actually Get Used",
-    excerpt: "Most BI projects fail not because of bad data, but because of bad design. The difference between dust and decisions comes down to these principles.",
-    category: "Data Visualization",
-    readTime: "5 min read",
-    date: "Dec 5, 2024"
-  }
-];
+// Get first 3 posts for homepage display
+const HOMEPAGE_POSTS = BLOG_POSTS.slice(0, 3);
 
 // Abstract architectural graphic placeholder
 const AbstractGraphic = ({ variant = 0 }: { variant?: number }) => {
@@ -148,7 +125,7 @@ const PrecisionNodeIcon = () => (
   </svg>
 );
 
-const ArticleCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: number }) => (
+const ArticleCard = ({ post, index }: { post: typeof HOMEPAGE_POSTS[0], index: number }) => (
   <article className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-500 flex flex-col">
     {/* Abstract Graphic */}
     <div className="aspect-[16/10] bg-muted/30 relative overflow-hidden">
@@ -185,19 +162,20 @@ const ArticleCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: numbe
         <span className="text-xs text-muted-foreground">
           {post.date}
         </span>
-        <span 
+        {/* READ button links directly to individual blog post */}
+        <Link 
+          to={`/insights/${post.slug}`}
           className="
-            group
+            group/btn
             inline-flex items-center
             px-4 py-2
             text-[#8b7355] 
             text-xs font-semibold tracking-wide uppercase
             border border-[#8b7355]
             rounded-sm
-            cursor-pointer
             transition-all duration-300
-            group-hover:bg-[#8b7355]
-            group-hover:text-white
+            hover:bg-[#8b7355]
+            hover:text-white
           "
           style={{
             letterSpacing: '0.15em'
@@ -206,10 +184,10 @@ const ArticleCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: numbe
           <span className="tracking-[0.15em] transition-all duration-300">
             READ
           </span>
-          <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
+          <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">
             →
           </span>
-        </span>
+        </Link>
       </div>
     </div>
   </article>
@@ -281,7 +259,7 @@ const KarnInsightsSection = () => {
               Frameworks, strategies, and lessons learned from building AI and MarTech systems.
             </p>
           </div>
-          {/* View All Insights - Hidden on mobile, shown on sm+ */}
+          {/* View All Insights - Links to master insights page */}
           <Link 
             to="/insights"
             className="
@@ -306,7 +284,7 @@ const KarnInsightsSection = () => {
 
         {/* 3-Column Horizontal Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {BLOG_POSTS.map((post, index) => (
+          {HOMEPAGE_POSTS.map((post, index) => (
             <ArticleCard key={post.id} post={post} index={index} />
           ))}
         </div>
@@ -455,7 +433,7 @@ const KarnInsightsSection = () => {
                   </p>
                   
                   {/* Legal Links */}
-                  <div className="flex items-center gap-6 text-xs sm:text-sm">
+                  <div className="flex items-center gap-4 text-xs sm:text-sm">
                     <Link 
                       to="/privacy-policy" 
                       className="text-white/50 hover:text-[#c9b896] transition-colors duration-300"
