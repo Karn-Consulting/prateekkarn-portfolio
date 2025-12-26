@@ -13,6 +13,7 @@ const NoiseOverlay = () => (
   />
 );
 
+// Footer v2.0 - with PK logo
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
