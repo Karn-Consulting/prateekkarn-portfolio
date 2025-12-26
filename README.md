@@ -1,73 +1,88 @@
-# Welcome to your Lovable project
+# Prateek Karn Portfolio
 
-## Project info
+A professional portfolio website for Prateek Karn - AI Business Architect & Growth Strategist.
 
-**URL**: https://lovable.dev/projects/957aba20-085d-4bf2-8fb9-cc98239241ee
+## Live Site
 
-## How can I edit this code?
+**Production URL**: [https://prateekkarn.com](https://prateekkarn.com)
 
-There are several ways of editing your application.
+## Technology Stack
 
-**Use Lovable**
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Deployment**: Vercel
+- **Email Service**: Resend API
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/957aba20-085d-4bf2-8fb9-cc98239241ee) and start prompting.
+## Features
 
-Changes made via Lovable will be committed automatically to this repo.
+- Responsive, mobile-first design
+- Newsletter subscription with Resend integration
+- Blog/Insights section
+- Career timeline
+- Portfolio showcase
+- Testimonials with LinkedIn integration
 
-**Use your preferred IDE**
+## Development
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js 18+ (recommended: use nvm)
+- pnpm package manager
 
-Follow these steps:
+### Local Setup
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# Clone the repository
+git clone https://github.com/Karn-Consulting/prateekkarn-portfolio.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to project directory
+cd prateekkarn-portfolio
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+pnpm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# Start development server
+pnpm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Build for Production
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+pnpm run build
+```
 
-**Use GitHub Codespaces**
+### Environment Variables
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+For the newsletter subscription to work, set the following environment variable in Vercel:
 
-## What technologies are used for this project?
+- `RESEND_API_KEY` - Your Resend API key
 
-This project is built with:
+## Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+├── api/                    # Vercel serverless functions
+│   └── subscribe.ts        # Newsletter subscription endpoint
+├── public/                 # Static assets
+├── src/
+│   ├── components/         # React components
+│   ├── pages/              # Page components
+│   └── App.tsx             # Main application
+├── package.json
+├── tailwind.config.js
+└── vercel.json             # Vercel configuration
+```
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/957aba20-085d-4bf2-8fb9-cc98239241ee) and click on Share -> Publish.
+The site is deployed on Vercel with automatic deployments on push to the `main` branch.
 
-## Can I connect a custom domain to my Lovable project?
+### Custom Domain
 
-Yes, you can!
+The site is configured with:
+- Primary: prateekkarn.com
+- WWW redirect: www.prateekkarn.com
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+© 2025 Prateek Karn. All rights reserved.
