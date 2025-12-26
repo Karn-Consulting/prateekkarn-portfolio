@@ -3,14 +3,14 @@ import { ArrowRight } from 'lucide-react';
 
 const AboutPrateekSection = () => {
   return (
-    <section className="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header - Matching other sections like "My Select Works", "Career Trajectory" */}
-        <div className="mb-10 sm:mb-12">
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
+        {/* Section Header - Matching TestimonialsSection exactly */}
+        <div className="mb-12 sm:mb-16 md:mb-20">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6">
             About Prateek
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-xl">
+          <p className="text-muted-foreground text-sm sm:text-base max-w-xl">
             The story behind the systems.
           </p>
         </div>
