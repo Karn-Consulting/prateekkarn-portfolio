@@ -1,3 +1,4 @@
+// Build version: 2.3.0 - 2025-12-26T12:30:00Z - Footer PK logo update
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";

@@ -323,34 +323,20 @@ const KarnInsightsSection = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                 {/* Left Column - Contact Info */}
                 <div className="text-center lg:text-left">
-                  {/* PK Logo */}
+                  {/* PK Logo - Clean text-based design with scroll-to-top */}
                   <div className="mb-4">
-                    <svg 
-                      width="64" 
-                      height="64" 
-                      viewBox="0 0 100 100" 
-                      className="mx-auto lg:mx-0"
-                      aria-label="Prateek Karn Logo"
+                    <button
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                      className="group cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#c9b896]/50 rounded-sm transition-all duration-300 mx-auto lg:mx-0 block"
+                      aria-label="Scroll to top"
+                      title="Back to top"
                     >
-                      {/* P letter */}
-                      <path 
-                        d="M20 15 L20 85 M20 15 L45 15 C60 15 65 25 65 35 C65 45 60 55 45 55 L20 55" 
-                        fill="none" 
-                        stroke="#c9b896" 
-                        strokeWidth="3" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"
-                      />
-                      {/* K letter */}
-                      <path 
-                        d="M45 15 L45 85 M75 15 L45 50 M45 50 L80 85" 
-                        fill="none" 
-                        stroke="#c9b896" 
-                        strokeWidth="3" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                      <span 
+                        className="font-heading text-4xl sm:text-5xl font-normal text-[#c9b896] tracking-[0.08em] transition-all duration-300 group-hover:brightness-125 group-hover:tracking-[0.12em]"
+                      >
+                        PK
+                      </span>
+                    </button>
                   </div>
                   <h3 className="font-heading text-2xl sm:text-3xl font-normal text-[#f5f5dc] mb-6 leading-relaxed tracking-wide">
                     Architect Your Advantage
