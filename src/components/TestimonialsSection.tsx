@@ -1,3 +1,5 @@
+import { Linkedin, MapPin } from 'lucide-react';
+
 const TESTIMONIALS = [
   {
     id: 1,
@@ -6,7 +8,9 @@ const TESTIMONIALS = [
     title: "Chief Executive Officer",
     company: "Trajectory TV Network",
     initials: "LH",
-    image: "/dr-loren-harris.jpg"
+    image: "/dr-loren-harris.jpg",
+    linkedIn: "https://www.linkedin.com/in/lorenmichaelsharris/",
+    location: "Greater Chicago Area, United States"
   },
   {
     id: 2,
@@ -15,7 +19,9 @@ const TESTIMONIALS = [
     title: "CEO",
     company: "Emilia Motors Inc.",
     initials: "TT",
-    image: "/tolga-tarak.png"
+    image: "/tolga-tarak.png",
+    linkedIn: "https://www.linkedin.com/in/tolga-tarak/",
+    location: "Florida, United States"
   },
   {
     id: 3,
@@ -24,7 +30,9 @@ const TESTIMONIALS = [
     title: "Founder",
     company: "The People's Partner",
     initials: "MR",
-    image: "/michelle-raymond.png"
+    image: "/michelle-raymond.png",
+    linkedIn: "https://www.linkedin.com/in/thepeoplespartner/",
+    location: "London, United Kingdom"
   }
 ];
 
@@ -36,6 +44,8 @@ interface Testimonial {
   company: string;
   initials: string;
   image: string | null;
+  linkedIn?: string;
+  location?: string;
 }
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
@@ -70,7 +80,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
         {testimonial.quote}
       </blockquote>
       
-      {/* Author Info - Premium Hierarchy: Name > Title > Company */}
+      {/* Author Info - Premium Hierarchy: Name > Title > Company > Location > LinkedIn */}
       <div className="text-center mt-auto pt-6 border-t border-border/50">
         {/* Name - Large, Bold, Uppercase */}
         <div className="font-heading text-base sm:text-lg font-semibold text-foreground tracking-[0.1em] uppercase mb-2">
@@ -81,9 +91,28 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           {testimonial.title}
         </div>
         {/* Company - Smaller, gold/accent color */}
-        <div className="text-xs sm:text-sm text-accent font-normal tracking-wide">
+        <div className="text-xs sm:text-sm text-accent font-normal tracking-wide mb-2">
           {testimonial.company}
         </div>
+        {/* Location - Subtle, muted */}
+        {testimonial.location && (
+          <div className="flex items-center justify-center gap-1 text-xs text-muted-foreground/70 mb-3">
+            <MapPin className="w-3 h-3" />
+            <span>{testimonial.location}</span>
+          </div>
+        )}
+        {/* LinkedIn Link - Subtle, integrated */}
+        {testimonial.linkedIn && (
+          <a 
+            href={testimonial.linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground/60 hover:text-accent transition-colors duration-300"
+          >
+            <Linkedin className="w-3.5 h-3.5" />
+            <span className="tracking-wide">LinkedIn Profile</span>
+          </a>
+        )}
       </div>
     </div>
   );
