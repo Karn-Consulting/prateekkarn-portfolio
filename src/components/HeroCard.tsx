@@ -30,17 +30,14 @@ export const HeroCard = ({
     <>
       {/* Responsive grid: stack on mobile, side-by-side on larger screens */}
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        {/* Image Section */}
+        {/* Image Section - Full bleed design */}
         <div className="relative bg-[#f5f3ef] overflow-hidden min-h-[250px] sm:min-h-[300px] lg:min-h-[450px] xl:min-h-[500px]">
           {logoImage ? (
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#f8f7f4] to-[#f0ede8] p-4 sm:p-6 lg:p-8">
-              <img 
-                src={logoImage} 
-                alt={title}
-                className="max-w-full max-h-full w-auto h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                style={{ imageRendering: 'auto' }}
-              />
-            </div>
+            <img 
+              src={logoImage} 
+              alt={title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            />
           ) : imagePlaceholder ? (
             <img 
               src={imagePlaceholder} 
