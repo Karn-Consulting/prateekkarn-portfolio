@@ -105,25 +105,8 @@ const CONTENT = {
         outcome: 'Improved quarterly budget accuracy by 18%, reducing wasted end-of-quarter spend.',
         techStack: ['Python', 'Prophet', 'Pandas'],
         problem: 'Marketing finance teams relied on trailing 30-day averages, missing seasonal trends and saturation points.',
-        system: 'Time-series forecasting model (Prophet) predicting future CPA based on historical spend and seasonality.'
-      },
-      {
-        title: 'Marketing Mix Modeling (Lite)',
-        context: 'Advanced Analytics',
-        description: 'Ridge regression model isolating the incremental impact of media spend on revenue baseline. Privacy changes (iOS14) blinded pixel-based tracking, requiring a statistical approach to measurement.',
-        outcome: 'Restored visibility into offline and brand awareness channel performance.',
-        techStack: ['R', 'Statistical Modeling', 'Tableau'],
-        problem: 'Privacy changes (iOS14) blinded pixel-based tracking, requiring a statistical approach to measurement.',
-        system: 'Ridge regression model isolating the incremental impact of media spend on revenue baseline.'
-      },
-      {
-        title: 'Email Marketing Analytics DB',
-        context: 'Data Engineering',
-        description: 'ETL pipeline extracting Elastic Email logs into SQL for join-analysis with CRM purchase data. ESP reporting was limited to open rates, disconnected from downstream revenue events.',
-        outcome: 'Identified that "dormant" subscribers had 2x higher LTV when reactivated than new leads.',
-        techStack: ['Elastic Email', 'SQL', 'Data Engineering'],
-        problem: 'ESP reporting was limited to open rates, disconnected from downstream revenue events.',
-        system: 'ETL pipeline extracting Elastic Email logs into SQL for join-analysis with CRM purchase data.'
+        system: 'Time-series forecasting model (Prophet) predicting future CPA based on historical spend and seasonality.',
+        image: '/work-forecasting.png'
       },
       {
         title: 'LLM-Powered Campaign Performance Analyst',
@@ -132,16 +115,18 @@ const CONTENT = {
         outcome: 'Reduced reporting time to 15 minutes per week, freeing up strategic thinking time.',
         techStack: ['OpenAI API', 'Python', 'LangChain'],
         problem: 'Weekly reporting took 10 hours of manual data pasting and commentary writing.',
-        system: 'Agentic workflow fetching API data, summarizing trends, and generating draft executive briefs.'
+        system: 'Agentic workflow fetching API data, summarizing trends, and generating draft executive briefs.',
+        image: '/work-llm-analyst.png'
       },
       {
-        title: 'Anomaly Detection System',
-        context: 'Automated Monitoring',
-        description: 'Statistical alert system triggering Slack notifications when metrics deviate >2 standard deviations. Ad spend spikes or tracking failures often went unnoticed for days, wasting budget.',
-        outcome: 'Caught a broken checkout pixel within 2 hours, saving an estimated $5k in lost tracking.',
-        techStack: ['Python', 'Statistical Process Control', 'Slack Webhooks'],
-        problem: 'Ad spend spikes or tracking failures often went unnoticed for days, wasting budget.',
-        system: 'Statistical alert system triggering Slack notifications when metrics deviate >2 standard deviations.'
+        title: 'C-Suite Personal Branding',
+        context: 'Executive Visibility',
+        description: 'Strategic personal brand architecture for C-Suite executives, transforming leadership presence into measurable business influence. Executives lacked systematic approaches to thought leadership, limiting their ability to attract talent, investors, and strategic partnerships.',
+        outcome: 'Elevated executive profiles resulting in 3x LinkedIn engagement, speaking invitations, and inbound partnership inquiries.',
+        techStack: ['LinkedIn Strategy', 'Content Architecture', 'Thought Leadership'],
+        problem: 'Executives lacked systematic approaches to thought leadership, limiting their ability to attract talent, investors, and strategic partnerships.',
+        system: 'Strategic personal brand architecture transforming leadership presence into measurable business influence.',
+        image: '/work-csuite-branding.png'
       }
     ]
   },
