@@ -68,12 +68,32 @@ const Footer = () => {
             <div className="text-center lg:text-left">
               {/* PK Logo */}
               <div className="mb-4">
-                <img 
-                  src="/pk-logo.png" 
-                  alt="Prateek Karn" 
-                  className="h-16 w-16 object-contain mx-auto lg:mx-0 rounded-lg"
-                  style={{ backgroundColor: 'transparent', mixBlendMode: 'lighten' }}
-                />
+                <svg 
+                  width="64" 
+                  height="64" 
+                  viewBox="0 0 100 100" 
+                  className="mx-auto lg:mx-0"
+                  aria-label="Prateek Karn Logo"
+                >
+                  {/* P letter */}
+                  <path 
+                    d="M20 15 L20 85 M20 15 L45 15 C60 15 65 25 65 35 C65 45 60 55 45 55 L20 55" 
+                    fill="none" 
+                    stroke="#c9b896" 
+                    strokeWidth="3" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                  {/* K letter */}
+                  <path 
+                    d="M45 15 L45 85 M75 15 L45 50 M45 50 L80 85" 
+                    fill="none" 
+                    stroke="#c9b896" 
+                    strokeWidth="3" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </div>
               <h3 className="font-heading text-2xl sm:text-3xl font-normal text-[#f5f5dc] mb-6 leading-relaxed tracking-wide">
                 Architect Your Advantage
