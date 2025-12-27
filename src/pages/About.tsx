@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, GraduationCap, MapPin, Award, Heart, Film, Shield, Leaf } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useConsultationModal } from '@/contexts/ConsultationModalContext';
+import chaaliDinPoster from '@/assets/chaali-din-poster.jpg';
 
 const About = () => {
   const { openModal } = useConsultationModal();
@@ -243,13 +244,19 @@ const About = () => {
                 </div>
                 <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
                   <img 
-                    src="/prateek-movie.jpg" 
-                    alt="Prateek Karn on set of Chaali Din"
-                    className="w-full h-full object-cover object-top"
+                    src={chaaliDinPoster}
+                    alt="Chaali Din Movie Poster - Punjabi Film releasing April 2026"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="text-foreground/85 text-sm leading-[1.75]">
-                  Prateek can also be seen in the upcoming Punjabi film <span className="font-medium text-accent">"Chaali Din"</span>, expected to launch in 2026. This creative venture reflects his belief in exploring diverse experiences and stepping outside conventional boundaries.
+                <p className="text-foreground/85 text-sm leading-[1.75] mb-3">
+                  Prateek makes a special appearance in the upcoming Punjabi film <span className="font-medium text-accent">"Chaali Din"</span>, adapted from the bestselling novel by Gurpreet S. Dhugga. Directed by Tarnvir Singh Jagpal, the film releases <span className="font-medium">April 3, 2026</span>.
+                </p>
+                <p className="text-foreground/85 text-sm leading-[1.75] mb-3">
+                  In a heartwarming twist, his beloved dog <span className="font-medium text-accent">Nobo</span> plays the character of <span className="font-medium">Keesha</span> from the novel — making this a truly personal creative venture for Prateek.
+                </p>
+                <p className="text-muted-foreground text-xs leading-[1.75]">
+                  Starring Gurpreet Ghuggi, Debi Makhsoospuri & more. Music by Beat Minister.
                 </p>
               </div>
 
