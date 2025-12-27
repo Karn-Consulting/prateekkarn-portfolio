@@ -19,7 +19,7 @@ const SELECT_WORKS = [
     description: 'Unified data pipeline ingesting API data into BigQuery for cross-channel comparison and budget optimization.',
     outcome: 'Shifted 30% budget to high-performing channels',
     techStack: ['BigQuery', 'Looker', 'Python'],
-    link: null,
+    link: '/mywork/end-to-end-attribution',
     image: '/work-attribution.png'
   },
   {
@@ -39,8 +39,8 @@ const SELECT_WORKS = [
     description: 'Real-time KPI dashboard consolidating spend, leads, and pipeline metrics for C-suite visibility.',
     outcome: 'Reduced reporting overhead by 70%',
     techStack: ['Looker', 'BigQuery', 'SQL'],
-    link: null,
-    image: '/work-dashboard.png'
+    link: '/mywork/executive-dashboard',
+    image: '/work-executive-dashboard-new.png'
   }
 ];
 

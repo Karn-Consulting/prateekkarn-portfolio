@@ -181,7 +181,7 @@ const CONTENT = {
       problem: 'CEO needed a single view of growth health without logging into 5 different platforms.',
       system: 'Centralized Looker Studio dashboard aggregating spend, leads, and revenue in real-time.',
       outcome: 'Became the default Monday morning meeting screen for the leadership team.',
-      image: '/executive-dashboard-preview.png'
+      image: '/work-executive-dashboard-new.png'
     },
     grid: [
       {
