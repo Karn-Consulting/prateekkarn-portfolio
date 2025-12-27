@@ -5,6 +5,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { getPostBySlug, getRelatedPosts, type BlogPost } from '@/data/blogPosts';
 import { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 // Precision Node Icon (matching homepage)
 const PrecisionNodeIcon = () => (
@@ -331,14 +333,36 @@ const InsightPost = () => {
               </div>
             </header>
 
-            {/* Blog Content Placeholder */}
-            <div className="prose prose-lg max-w-none mb-12">
-              <div className="bg-secondary/30 rounded-lg p-8 sm:p-12 text-center">
-                <p className="text-muted-foreground italic">
-                  Content coming soon...
-                </p>
+            {/* Blog Content */}
+            {post.content ? (
+              <div className="prose prose-lg max-w-none mb-12 
+                prose-headings:font-heading prose-headings:text-foreground 
+                prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-10 prose-h2:mb-4
+                prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3
+                prose-p:text-foreground/85 prose-p:leading-relaxed prose-p:mb-4
+                prose-strong:text-foreground prose-strong:font-semibold
+                prose-a:text-accent hover:prose-a:text-accent/80 prose-a:no-underline hover:prose-a:underline
+                prose-li:text-foreground/85 prose-li:mb-2
+                prose-ul:my-4 prose-ol:my-4
+                prose-table:text-sm prose-table:w-full prose-table:border-collapse
+                prose-th:text-foreground prose-th:font-semibold prose-th:text-left prose-th:p-3 prose-th:border prose-th:border-border prose-th:bg-secondary/30
+                prose-td:text-foreground/80 prose-td:p-3 prose-td:border prose-td:border-border
+                prose-blockquote:border-l-accent prose-blockquote:border-l-4 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-muted-foreground
+                prose-code:text-accent prose-code:bg-secondary/50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+              ">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {post.content}
+                </ReactMarkdown>
               </div>
-            </div>
+            ) : (
+              <div className="prose prose-lg max-w-none mb-12">
+                <div className="bg-secondary/30 rounded-lg p-8 sm:p-12 text-center">
+                  <p className="text-muted-foreground italic">
+                    Content coming soon...
+                  </p>
+                </div>
+              </div>
+            )}
 
             {/* Share Buttons */}
             <ShareButtons post={post} />

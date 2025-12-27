@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Linkedin, GraduationCap, Briefcase, MapPin, Award } from 'lucide-react';
+import { ArrowRight, Linkedin, GraduationCap, Briefcase, MapPin, Award, Heart, Film, Shield, Leaf } from 'lucide-react';
 import Footer from '@/components/Footer';
 
 const About = () => {
@@ -109,6 +109,10 @@ const About = () => {
 
             <div className="space-y-5">
               <p className="text-foreground/85 text-sm sm:text-base leading-[1.8]">
+                An alumnus of Panjab University, Chandigarh, with a degree in Electrical and Electronics Engineering, Prateek brings a natural aptitude for problem-solving and a strong bias for execution. His engineering foundation instilled a systems-thinking approach that he now applies to building intelligent business architectures.
+              </p>
+
+              <p className="text-foreground/85 text-sm sm:text-base leading-[1.8]">
                 My path wasn't linear. It started in the trenches of digital marketing — managing ad campaigns, optimizing funnels, and learning what actually moves the needle in customer acquisition. That hands-on experience with performance marketing gave me something invaluable: an obsession with measurable results.
               </p>
 
@@ -117,14 +121,46 @@ const About = () => {
               </p>
 
               <p className="text-foreground/85 text-sm sm:text-base leading-[1.8]">
-                Today, I architect intelligent business systems that integrate AI, automation, and data at every layer. My focus is on building adaptive, intelligence-driven operating systems that continuously learn and improve — enabling modern enterprises to scale with precision, speed, and strategic clarity.
+                Relentless in his pursuit of excellence, Prateek has contributed significantly to his employers' bottom lines and clients' service impact. Today, I architect intelligent business systems that integrate AI, automation, and data at every layer — enabling modern enterprises to scale with precision, speed, and strategic clarity.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Recognition Section - New */}
+        {/* Civic Contribution Section - New */}
         <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex items-center gap-2 mb-8">
+              <Shield className="w-5 h-5 text-accent" />
+              <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
+                Civic Contribution
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-4">
+                <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-md">
+                  <img 
+                    src="/prateek-formal.jpg" 
+                    alt="Prateek Karn - Professional"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+              <div className="lg:col-span-8">
+                <p className="text-foreground/85 text-sm sm:text-base leading-[1.8] mb-4">
+                  Beyond his professional work, Prateek has been involved in supporting government initiatives aimed at strengthening regulatory compliance and fiscal integrity. His analytical expertise has contributed to identifying revenue evasion patterns and non-compliant entities, helping recover rightful revenue for the Indian Government.
+                </p>
+                <p className="text-muted-foreground text-sm leading-[1.75]">
+                  This work reflects his commitment to ethical practice and his belief that business intelligence should serve not just commercial interests, but also the broader public good. His approach combines technical rigor with a strong moral compass — ensuring that data-driven insights are used responsibly and for legitimate purposes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Recognition Section */}
+        <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-2 mb-8">
               <Award className="w-5 h-5 text-accent" />
@@ -160,6 +196,70 @@ const About = () => {
                 <p className="text-muted-foreground text-xs leading-relaxed">
                   Industry recognition for leadership in building scalable digital ecosystems.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Beyond Work Section - New Personal Section */}
+        <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3">
+              Beyond Work
+            </h2>
+            <p className="text-muted-foreground text-xs sm:text-sm max-w-xl mb-8 uppercase tracking-wider">
+              The person behind the professional.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Film & Creative */}
+              <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
+                <div className="flex items-center gap-2 mb-4">
+                  <Film className="w-4 h-4 text-accent" />
+                  <h3 className="font-heading text-base font-semibold text-foreground">Creative Pursuits</h3>
+                </div>
+                <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
+                  <img 
+                    src="/prateek-movie.jpg" 
+                    alt="Prateek Karn on set of Chaali Din"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <p className="text-foreground/85 text-sm leading-[1.75]">
+                  Prateek can also be seen in the upcoming Punjabi film <span className="font-medium text-accent">"Chaali Din"</span>, scheduled for release in April 2025. This creative venture reflects his belief in exploring diverse experiences and stepping outside conventional boundaries.
+                </p>
+              </div>
+
+              {/* Values & Lifestyle */}
+              <div className="space-y-6">
+                {/* Animal Lover */}
+                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Heart className="w-4 h-4 text-accent" />
+                    <h3 className="font-heading text-base font-semibold text-foreground">Animal Lover</h3>
+                  </div>
+                  <div className="aspect-video overflow-hidden rounded-sm mb-4">
+                    <img 
+                      src="/prateek-pet.jpg" 
+                      alt="Prateek's pet"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-[1.75]">
+                    An avid animal lover, Prateek believes in compassion extending beyond human relationships. His connection with animals reflects his gentle nature and respect for all living beings.
+                  </p>
+                </div>
+
+                {/* Sustainable Living */}
+                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Leaf className="w-4 h-4 text-accent" />
+                    <h3 className="font-heading text-base font-semibold text-foreground">Philosophy</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-[1.75]">
+                    A sustainable living advocate, Prateek believes in living a simple life centered on constant learning and staying rooted. Despite his professional achievements, he maintains a grounded perspective — valuing meaningful connections, continuous growth, and making a positive impact over material accumulation.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -265,8 +365,11 @@ const About = () => {
               <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground mb-1">
                 Bachelor's Degree in Electrical and Electronics Engineering
               </h3>
-              <p className="text-accent text-xs font-medium mb-1">Panjab University</p>
-              <p className="text-muted-foreground text-xs">2010 - 2014</p>
+              <p className="text-accent text-xs font-medium mb-1">Panjab University, Chandigarh</p>
+              <p className="text-muted-foreground text-xs mb-3">2010 - 2014</p>
+              <p className="text-foreground/75 text-sm leading-relaxed">
+                The engineering curriculum cultivated a systematic approach to problem-solving and analytical thinking — skills that now form the foundation of his work in designing intelligent business systems and data architectures.
+              </p>
             </div>
           </div>
         </section>
