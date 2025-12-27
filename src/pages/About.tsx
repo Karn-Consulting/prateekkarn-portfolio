@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Linkedin, GraduationCap, Briefcase, MapPin, Award, Heart, Film, Shield, Leaf } from 'lucide-react';
+import { ArrowRight, Linkedin, GraduationCap, MapPin, Award, Heart, Film, Shield, Leaf } from 'lucide-react';
 import Footer from '@/components/Footer';
 
 const About = () => {
@@ -287,80 +287,6 @@ const About = () => {
                     A sustainable living advocate, Prateek believes in living a simple life centered on constant learning and staying rooted. Despite his professional achievements, he maintains a grounded perspective — valuing meaningful connections, continuous growth, and making a positive impact over material accumulation.
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Career Timeline Section - Condensed key roles */}
-        <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-2 mb-8">
-              <Briefcase className="w-5 h-5 text-accent" />
-              <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
-                Career Milestones
-              </h2>
-            </div>
-
-            <div className="space-y-6">
-              {/* Catallyst */}
-              <div className="border-l border-accent/40 pl-5 pb-6">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
-                  <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground">Growth Marketer</h3>
-                  <span className="text-accent text-xs font-medium">Catallyst</span>
-                </div>
-                <p className="text-muted-foreground text-xs mb-2">August 2025 - Present</p>
-                <p className="text-foreground/75 text-sm leading-relaxed">
-                  Leading Performance Marketing Department, driving growth through data-driven strategies and AI-powered optimization.
-                </p>
-              </div>
-
-              {/* StandOut Authority */}
-              <div className="border-l border-accent/40 pl-5 pb-6">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
-                  <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground">Account Manager</h3>
-                  <span className="text-accent text-xs font-medium">StandOut Authority</span>
-                </div>
-                <p className="text-muted-foreground text-xs mb-2">August 2021 - October 2022</p>
-                <p className="text-foreground/75 text-sm leading-relaxed">
-                  Handled LinkedIn branding programs for Fortune 500 leaders, merging analytics, events, and AI automation. Built AI content pipelines reducing production time and boosting post reach.
-                </p>
-              </div>
-
-              {/* WNS */}
-              <div className="border-l border-accent/40 pl-5 pb-6">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
-                  <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground">Google Ads Specialist</h3>
-                  <span className="text-accent text-xs font-medium">WNS Global Services</span>
-                </div>
-                <p className="text-muted-foreground text-xs mb-2">December 2019 - June 2021</p>
-                <p className="text-foreground/75 text-sm leading-relaxed">
-                  Managed B2B/B2C client portfolios, designing Google Ads strategies that increased client ROI by an average of 25%.
-                </p>
-              </div>
-
-              {/* Enterpriser */}
-              <div className="border-l border-accent/40 pl-5 pb-6">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
-                  <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground">Founder</h3>
-                  <span className="text-accent text-xs font-medium">Enterpriser</span>
-                </div>
-                <p className="text-muted-foreground text-xs mb-2">April 2017 - October 2019</p>
-                <p className="text-foreground/75 text-sm leading-relaxed">
-                  Founded and scaled a college-level entrepreneurship program impacting over 10,000 students across India.
-                </p>
-              </div>
-
-              {/* Shiprocket */}
-              <div className="border-l border-accent/40 pl-5">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
-                  <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground">Project Manager</h3>
-                  <span className="text-accent text-xs font-medium">Shiprocket (Kartrocket)</span>
-                </div>
-                <p className="text-muted-foreground text-xs mb-2">October 2015 - April 2017</p>
-                <p className="text-foreground/75 text-sm leading-relaxed">
-                  Led end-to-end project management for enterprise SaaS e-commerce deployments.
-                </p>
               </div>
             </div>
           </div>
