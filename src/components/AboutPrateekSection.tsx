@@ -1,7 +1,15 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { useState } from 'react';
 
 const AboutPrateekSection = () => {
+  const [isColorful, setIsColorful] = useState(false);
+
+  const handleImageClick = () => {
+    // Only toggle on mobile (when grayscale is applied)
+    setIsColorful(!isColorful);
+  };
+
   return (
     <section className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-7xl mx-auto">
@@ -18,15 +26,24 @@ const AboutPrateekSection = () => {
         {/* Content Card - Premium styling with pop/lift hover effect */}
         <div className="group relative p-6 sm:p-8 md:p-10 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all duration-500 hover:-translate-y-1 cursor-pointer">
           <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center md:items-start">
-            {/* Photo */}
+            {/* Photo - Tap to toggle color on mobile */}
             <div className="flex-shrink-0">
-              <div className="w-28 h-36 sm:w-36 sm:h-44 md:w-40 md:h-48 bg-secondary overflow-hidden rounded-sm shadow-md ring-1 ring-accent/20">
+              <div 
+                className="w-28 h-36 sm:w-36 sm:h-44 md:w-40 md:h-48 bg-secondary overflow-hidden rounded-sm shadow-md ring-1 ring-accent/20 cursor-pointer md:cursor-default"
+                onClick={handleImageClick}
+              >
                 <img 
                   src="/prateek-karn-about.jpg" 
                   alt="Prateek Karn - AI Business Architect"
-                  className="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 grayscale md:grayscale-0"
+                  className={`w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 ${
+                    isColorful ? 'grayscale-0' : 'grayscale'
+                  } md:grayscale-0`}
                 />
               </div>
+              {/* Tap hint for mobile */}
+              <p className="text-[10px] text-muted-foreground/60 text-center mt-2 md:hidden">
+                Tap photo to {isColorful ? 'reset' : 'see in color'}
+              </p>
             </div>
 
             {/* Bio Content */}

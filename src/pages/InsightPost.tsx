@@ -346,17 +346,21 @@ const InsightPost = () => {
                 <div className="rounded-lg overflow-hidden bg-secondary/30">
                   <img 
                     src={post.featuredImage} 
-                    alt={`${post.title} - Visual representation of ${post.category.toLowerCase()} concepts by Prateek Karn`}
+                    alt={post.imageAlt || `${post.title} - Visual representation of ${post.category.toLowerCase()} concepts by Prateek Karn`}
                     className="w-full h-auto object-cover"
                     loading="eager"
                   />
                 </div>
                 <figcaption className="mt-3 text-center text-sm text-muted-foreground italic">
-                  {post.category === 'AI Strategy' && 'Conceptual visualization of AI-driven business transformation'}
-                  {post.category === 'Marketing Analytics' && 'Data-driven marketing measurement and optimization framework'}
-                  {post.category === 'Data Visualization' && 'Executive dashboard design principles in action'}
-                  {post.category === 'Growth Systems' && 'Systematic approach to scalable business growth'}
-                  {post.category === 'MarTech' && 'Modern marketing technology architecture and integration'}
+                  {post.imageCaption || (
+                    <>
+                      {post.category === 'AI Strategy' && 'Conceptual visualization of AI-driven business transformation'}
+                      {post.category === 'Marketing Analytics' && 'Data-driven marketing measurement and optimization framework'}
+                      {post.category === 'Data Visualization' && 'Executive dashboard design principles in action'}
+                      {post.category === 'Growth Systems' && 'Systematic approach to scalable business growth'}
+                      {post.category === 'MarTech' && 'Modern marketing technology architecture and integration'}
+                    </>
+                  )}
                 </figcaption>
               </figure>
             )}

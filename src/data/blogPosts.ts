@@ -14,6 +14,8 @@ export interface BlogPost {
   };
   featuredImage?: string;
   cardImage?: string;
+  imageAlt?: string;
+  imageCaption?: string;
   content: string;
 }
 
@@ -46,6 +48,8 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     featuredImage: '/blog/agentic-ai-featured.png',
     cardImage: '/blog/agentic-ai-v2.png',
+    imageAlt: 'Futuristic AI agent operating autonomous systems with holographic displays showing planning, reasoning, and execution workflows',
+    imageCaption: 'Autonomous AI agents orchestrating complex business workflows through planning, reasoning, and execution',
     content: `
 ## What is Agentic AI?
 
@@ -103,6 +107,8 @@ From there, it's about starting small, building a proof-of-concept, and iteratin
     },
     featuredImage: '/blog/attribution-featured.png',
     cardImage: '/blog/attribution-death-v2.png',
+    imageAlt: 'Multi-touch attribution data streams converging from various marketing channels into unified measurement system',
+    imageCaption: 'The evolution from last-click to multi-touch attribution: Capturing the full customer journey',
     content: `
 ## The Attribution Crisis
 
@@ -156,6 +162,8 @@ The death of last-click attribution is not a crisis—it's an opportunity. It's 
     },
     featuredImage: '/blog/data-science-featured.png',
     cardImage: '/blog/marketing-data-science-v2.png',
+    imageAlt: 'Data scientist analyzing 3D marketing analytics visualizations with predictive models and customer insights',
+    imageCaption: 'From descriptive dashboards to predictive models: The marketing data science evolution',
     content: `
 ## Beyond Dashboards
 
@@ -232,6 +240,8 @@ It also requires a culture of experimentation, where data science insights are t
     },
     featuredImage: '/blog/dashboards-featured.png',
     cardImage: '/blog/executive-dashboards-v2.png',
+    imageAlt: 'Executive marketing command center with real-time KPI dashboards, pipeline metrics, and revenue visualizations',
+    imageCaption: 'Designing executive dashboards that drive decisions, not just display data',
     content: `
 ## The Dashboard Graveyard
 
@@ -299,6 +309,8 @@ The ultimate test of a good dashboard is simple: Does it get used? If your execu
     },
     featuredImage: '/blog/storytelling-featured.png',
     cardImage: '/blog/data-storytelling-v2.png',
+    imageAlt: 'Data visualization transforming raw numbers into compelling narrative with charts, graphs, and executive insights',
+    imageCaption: 'The art of data storytelling: Transforming metrics into executive-ready narratives',
     content: `
 ## The Data Storytelling Gap
 
@@ -375,6 +387,8 @@ Data without story is just noise. Story without data is just opinion. But data a
     },
     featuredImage: '/blog/growth-featured.png',
     cardImage: '/blog/hacking-growth-v2.png',
+    imageAlt: 'Growth hacking rocket launching with data-driven experiments, A/B tests, and viral loops visualization',
+    imageCaption: 'Scientific growth hacking: Systematic experimentation for breakout business success',
     content: `
 ## The Growth Hacking Mindset
 
@@ -431,6 +445,8 @@ The growth hacking methodology is more than just a collection of tactics; it is 
     },
     featuredImage: '/blog/revenue-featured.png',
     cardImage: '/blog/predictable-revenue-v2.png',
+    imageAlt: 'Revenue machine converting leads through SDR, AE, and CSM stages with predictable pipeline metrics',
+    imageCaption: 'Building the predictable revenue machine: From art to science in B2B sales',
     content: `
 ## The Core Principle: Specialization of Roles
 
@@ -487,6 +503,8 @@ By combining a systematic approach with a relentless mindset, you can transform 
     },
     featuredImage: '/blog/martech-featured.png',
     cardImage: '/blog/martech-stack-v2.png',
+    imageAlt: 'Modern MarTech stack architecture with interconnected CRM, CDP, analytics, and automation platforms',
+    imageCaption: 'Architecting the composable MarTech stack: Integration over accumulation',
     content: `
 ## The MarTech Explosion
 
@@ -569,6 +587,8 @@ Building a modern MarTech stack is not about having the most tools—it's about 
     },
     featuredImage: '/blog/cdp-featured.png',
     cardImage: '/blog/cdp-implementation-v2.png',
+    imageAlt: 'Customer Data Platform hub unifying data streams from web, mobile, social, and email channels',
+    imageCaption: 'CDP implementation: Unifying customer data from chaos to clarity',
     content: `
 ## The Promise of CDPs
 
@@ -650,7 +670,9 @@ A CDP can be transformational, but only if it's implemented thoughtfully. Start 
       title: 'AI Business Architect'
     },
     featuredImage: '/blog/art-possible-featured.png',
-    cardImage: '/blog/art-of-possible.png',
+    cardImage: '/blog/art-possible-v2.png',
+    imageAlt: 'Strategic framework for identifying high-value AI use cases with value vs complexity matrix',
+    imageCaption: 'Finding high-value AI use cases: The art of the possible framework',
     content: `
 ## Beyond the Hype: Finding Real-World AI Value
 
