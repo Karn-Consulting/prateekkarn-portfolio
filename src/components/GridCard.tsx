@@ -28,7 +28,7 @@ export const GridCard = ({
   const imageToShow = image || imagePlaceholder;
   return (
     <div 
-      className="group relative bg-white rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-md border border-[#e8e6e1] h-full flex flex-col"
+      className="group relative bg-white rounded-sm overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-lg hover:shadow-accent/5 hover:border-accent/30 hover:-translate-y-1 border border-[#e8e6e1] h-full flex flex-col"
       onClick={onClick}
     >
       {/* Image Section - responsive aspect ratio */}

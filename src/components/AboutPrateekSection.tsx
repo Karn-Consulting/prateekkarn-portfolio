@@ -15,19 +15,10 @@ const AboutPrateekSection = () => {
           </p>
         </div>
 
-        {/* Content Card - Premium styling with bubble hover effect */}
-        <div className="group relative p-6 sm:p-8 md:p-10 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all duration-500 hover:-translate-y-1 overflow-hidden cursor-pointer">
-          {/* Subtle bubbling effect on hover - matching TestimonialsSection */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-            <div className="absolute -bottom-2 left-1/4 w-3 h-3 bg-accent/10 rounded-full animate-[bubble_2s_ease-in-out_infinite]" style={{ animationDelay: '0s' }} />
-            <div className="absolute -bottom-2 left-1/2 w-2 h-2 bg-accent/15 rounded-full animate-[bubble_2.5s_ease-in-out_infinite]" style={{ animationDelay: '0.3s' }} />
-            <div className="absolute -bottom-2 left-3/4 w-2.5 h-2.5 bg-accent/10 rounded-full animate-[bubble_2.2s_ease-in-out_infinite]" style={{ animationDelay: '0.6s' }} />
-            <div className="absolute -bottom-2 left-1/3 w-1.5 h-1.5 bg-accent/20 rounded-full animate-[bubble_3s_ease-in-out_infinite]" style={{ animationDelay: '0.9s' }} />
-            <div className="absolute -bottom-2 left-2/3 w-2 h-2 bg-accent/10 rounded-full animate-[bubble_2.8s_ease-in-out_infinite]" style={{ animationDelay: '1.2s' }} />
-          </div>
-          
-          <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center md:items-start relative z-10">
-            {/* Photo - Grayscale on mobile, colored on hover, matching testimonials */}
+        {/* Content Card - Premium styling with pop/lift hover effect */}
+        <div className="group relative p-6 sm:p-8 md:p-10 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all duration-500 hover:-translate-y-1 cursor-pointer">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center md:items-start">
+            {/* Photo */}
             <div className="flex-shrink-0">
               <div className="w-28 h-36 sm:w-36 sm:h-44 md:w-40 md:h-48 bg-secondary overflow-hidden rounded-sm shadow-md ring-1 ring-accent/20">
                 <img 
@@ -50,7 +41,7 @@ const AboutPrateekSection = () => {
                 From scaling ad campaigns to building enterprise-grade AI systems, his journey spans every layer of the modern growth stack — giving him a rare perspective that bridges technical depth with strategic vision.
               </p>
 
-              {/* CTA Button - Matching hero section "Request a Consultation" button */}
+              {/* CTA Button */}
               <div>
                 <Link 
                   to="/about"

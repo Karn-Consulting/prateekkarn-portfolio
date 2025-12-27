@@ -91,7 +91,7 @@ export const HeroCard = ({
     return (
       <Link 
         to={link}
-        className="group relative bg-[#f8f7f4] rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg block"
+        className="group relative bg-[#f8f7f4] rounded-sm overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 block"
       >
         <CardContent />
       </Link>
@@ -100,7 +100,7 @@ export const HeroCard = ({
 
   return (
     <div 
-      className="group relative bg-[#f8f7f4] rounded-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg"
+      className="group relative bg-[#f8f7f4] rounded-sm overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1"
       onClick={onClick}
     >
       <CardContent />

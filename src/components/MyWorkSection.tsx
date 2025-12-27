@@ -97,7 +97,7 @@ const SelectWorkCard = ({ work }: { work: typeof SELECT_WORKS[0] }) => {
     return (
       <Link 
         to={work.link}
-        className="bg-white rounded-lg border border-[#e5e5dc] shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group block"
+        className="bg-white rounded-lg border border-[#e5e5dc] shadow-sm hover:shadow-lg hover:shadow-accent/5 hover:border-accent/30 hover:-translate-y-1 transition-all duration-500 overflow-hidden group block"
       >
         <CardContent />
       </Link>
@@ -105,7 +105,7 @@ const SelectWorkCard = ({ work }: { work: typeof SELECT_WORKS[0] }) => {
   }
 
   return (
-    <div className="bg-white rounded-lg border border-[#e5e5dc] shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group">
+    <div className="bg-white rounded-lg border border-[#e5e5dc] shadow-sm hover:shadow-lg hover:shadow-accent/5 hover:border-accent/30 hover:-translate-y-1 transition-all duration-500 overflow-hidden group cursor-pointer">
       <CardContent />
     </div>
   );
