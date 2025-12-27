@@ -242,6 +242,18 @@ const About = () => {
                   <Film className="w-4 h-4 text-accent" />
                   <h3 className="font-heading text-base font-semibold text-foreground">Creative Pursuits</h3>
                 </div>
+                {/* Original photo */}
+                <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
+                  <img 
+                    src="/prateek-movie.jpg" 
+                    alt="Prateek Karn on set of Chaali Din"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <p className="text-foreground/85 text-sm leading-[1.75] mb-4">
+                  Prateek makes a special appearance in the upcoming Punjabi film <span className="font-medium text-accent">"Chaali Din"</span>, adapted from the bestselling novel by Gurpreet S. Dhugga. Directed by Tarnvir Singh Jagpal, the film releases <span className="font-medium">April 3, 2026</span>.
+                </p>
+                {/* Movie poster */}
                 <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
                   <img 
                     src={chaaliDinPoster}
@@ -249,9 +261,6 @@ const About = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="text-foreground/85 text-sm leading-[1.75] mb-3">
-                  Prateek makes a special appearance in the upcoming Punjabi film <span className="font-medium text-accent">"Chaali Din"</span>, adapted from the bestselling novel by Gurpreet S. Dhugga. Directed by Tarnvir Singh Jagpal, the film releases <span className="font-medium">April 3, 2026</span>.
-                </p>
                 <p className="text-foreground/85 text-sm leading-[1.75] mb-3">
                   In a heartwarming twist, his beloved dog <span className="font-medium text-accent">Nobo</span> plays the character of <span className="font-medium">Keesha</span> from the novel — making this a truly personal creative venture for Prateek.
                 </p>
