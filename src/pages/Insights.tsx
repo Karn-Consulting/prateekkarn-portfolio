@@ -109,11 +109,19 @@ const PrecisionNodeIcon = () => (
 // Blog Card Component
 const BlogCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: number }) => (
   <article className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-500 flex flex-col">
-    {/* Abstract Graphic */}
+    {/* Featured Image or Abstract Graphic */}
     <div className="aspect-[16/10] bg-muted/30 relative overflow-hidden">
-      <div className="absolute inset-0 p-8">
-        <AbstractGraphic variant={index} />
-      </div>
+      {post.featuredImage ? (
+        <img 
+          src={post.featuredImage} 
+          alt={post.title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      ) : (
+        <div className="absolute inset-0 p-8">
+          <AbstractGraphic variant={index} />
+        </div>
+      )}
     </div>
     
     {/* Content */}

@@ -42,6 +42,7 @@ export const BLOG_POSTS: BlogPost[] = [
       name: 'Prateek Karn',
       title: 'AI Business Architect'
     },
+    featuredImage: '/blog/kinetic-enterprise.png',
     content: `
 ## The Digital Nervous System
 
@@ -94,6 +95,7 @@ As we stand at the cusp of this new era, the companies that will thrive are thos
       name: 'Prateek Karn',
       title: 'AI Business Architect'
     },
+    featuredImage: '/blog/agentic-ai.png',
     content: `
 ## What is Agentic AI?
 
@@ -149,6 +151,7 @@ From there, it's about starting small, building a proof-of-concept, and iteratin
       name: 'Prateek Karn',
       title: 'AI Business Architect'
     },
+    featuredImage: '/blog/attribution-death.png',
     content: `
 ## The Attribution Crisis
 
@@ -200,6 +203,7 @@ The death of last-click attribution is not a crisis—it's an opportunity. It's 
       name: 'Prateek Karn',
       title: 'AI Business Architect'
     },
+    featuredImage: '/blog/marketing-data-science.png',
     content: `
 ## Beyond Dashboards
 
@@ -274,6 +278,7 @@ It also requires a culture of experimentation, where data science insights are t
       name: 'Prateek Karn',
       title: 'AI Business Architect'
     },
+    featuredImage: '/blog/executive-dashboards.png',
     content: `
 ## The Dashboard Graveyard
 
@@ -339,6 +344,7 @@ The ultimate test of a good dashboard is simple: Does it get used? If your execu
       name: 'Prateek Karn',
       title: 'AI Business Architect'
     },
+    featuredImage: '/blog/data-storytelling.png',
     content: `
 ## The Data Storytelling Gap
 
@@ -413,6 +419,7 @@ Data without story is just noise. Story without data is just opinion. But data a
       name: 'Prateek Karn',
       title: 'AI Business Architect'
     },
+    featuredImage: '/blog/hacking-growth.png',
     content: `
 ## The Growth Hacking Mindset
 
@@ -467,6 +474,7 @@ The growth hacking methodology is more than just a collection of tactics; it is 
       name: 'Prateek Karn',
       title: 'AI Business Architect'
     },
+    featuredImage: '/blog/predictable-revenue.png',
     content: `
 ## The Core Principle: Specialization of Roles
 
@@ -521,6 +529,7 @@ By combining a systematic approach with a relentless mindset, you can transform 
       name: 'Prateek Karn',
       title: 'AI Business Architect'
     },
+    featuredImage: '/blog/martech-stack.png',
     content: `
 ## The MarTech Explosion
 
@@ -601,6 +610,7 @@ Building a modern MarTech stack is not about having the most tools—it's about 
       name: 'Prateek Karn',
       title: 'AI Business Architect'
     },
+    featuredImage: '/blog/cdp-implementation.png',
     content: `
 ## The Promise of CDPs
 
