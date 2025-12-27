@@ -199,32 +199,37 @@ export default function EndToEndAttribution() {
         </div>
       </section>
 
-      {/* Interactive Demo Placeholder */}
+      {/* Interactive Attribution Simulator */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
-        <div className="container max-w-6xl mx-auto">
+        <div className="container max-w-7xl mx-auto">
           <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-4 text-center">Attribution Simulator</h2>
           <p className="text-center text-[#6a6a6a] mb-8 max-w-2xl mx-auto">
             Explore how different attribution models reshape budget decisions with this interactive simulator.
           </p>
           
-          {/* Embed Placeholder - Replace with actual Lovable embed */}
-          <div className="bg-[#f8f7f5] border-2 border-dashed border-[#d5d5d0] rounded-sm p-12 text-center">
-            <div className="max-w-md mx-auto">
-              <BarChart3 className="w-12 h-12 text-[#8b7355] mx-auto mb-4" />
-              <h3 className="font-heading text-xl text-[#1a1a1a] mb-2">Interactive Demo Coming Soon</h3>
-              <p className="text-sm text-[#6a6a6a] mb-6">
-                An interactive attribution simulator will be embedded here, allowing you to explore different models and see how they affect budget allocation decisions.
-              </p>
-              <a 
-                href="https://attri-insight.lovable.app/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#8b7355] text-white px-6 py-3 rounded-sm text-sm hover:bg-[#6b5a45] transition-colors"
-              >
-                <span>View Prototype</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
+          {/* Embedded Attribution Simulator */}
+          <div className="bg-[#f8f7f5] rounded-sm overflow-hidden border border-[#e5e5e0]">
+            <iframe 
+              src="https://attri-insight-clone.vercel.app/"
+              className="w-full border-0"
+              style={{ height: '800px', minHeight: '600px' }}
+              title="End-to-End Marketing Attribution Simulator"
+              loading="lazy"
+              allow="clipboard-write"
+            />
+          </div>
+          
+          {/* Open in new tab option */}
+          <div className="mt-4 text-center">
+            <a 
+              href="https://attri-insight-clone.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-[#8b7355] hover:text-[#6b5a45] transition-colors"
+            >
+              <span>Open simulator in new tab for full experience</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>
