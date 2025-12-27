@@ -180,7 +180,8 @@ const CONTENT = {
       link: '/mywork/executive-dashboard',
       problem: 'CEO needed a single view of growth health without logging into 5 different platforms.',
       system: 'Centralized Looker Studio dashboard aggregating spend, leads, and revenue in real-time.',
-      outcome: 'Became the default Monday morning meeting screen for the leadership team.'
+      outcome: 'Became the default Monday morning meeting screen for the leadership team.',
+      image: '/executive-dashboard-preview.png'
     },
     grid: [
       {
@@ -331,6 +332,7 @@ export default function MyWork() {
               ctaText={currentContent.hero.ctaText}
               link={currentContent.hero.link}
               logoImage={currentContent.hero.logoImage}
+              imagePlaceholder={currentContent.hero.image}
               onClick={currentContent.hero.link ? undefined : () => setSelectedCase(currentContent.hero)}
             />
           )}
