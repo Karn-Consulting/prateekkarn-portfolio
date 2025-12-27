@@ -106,9 +106,21 @@ const PrecisionNodeIcon = () => (
   </svg>
 );
 
-// Blog Card Component
+// Blog Card Component with bubble hover effect
 const BlogCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: number }) => (
-  <Link to={`/insights/${post.slug}`} className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-500 flex flex-col cursor-pointer">
+  <Link 
+    to={`/insights/${post.slug}`} 
+    className="group relative bg-card border border-border rounded-lg overflow-hidden hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all duration-500 flex flex-col cursor-pointer hover:-translate-y-1"
+  >
+    {/* Subtle bubbling effect on hover - matching TestimonialsSection */}
+    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10">
+      <div className="absolute -bottom-2 left-1/4 w-3 h-3 bg-accent/10 rounded-full animate-[bubble_2s_ease-in-out_infinite]" style={{ animationDelay: '0s' }} />
+      <div className="absolute -bottom-2 left-1/2 w-2 h-2 bg-accent/15 rounded-full animate-[bubble_2.5s_ease-in-out_infinite]" style={{ animationDelay: '0.3s' }} />
+      <div className="absolute -bottom-2 left-3/4 w-2.5 h-2.5 bg-accent/10 rounded-full animate-[bubble_2.2s_ease-in-out_infinite]" style={{ animationDelay: '0.6s' }} />
+      <div className="absolute -bottom-2 left-1/3 w-1.5 h-1.5 bg-accent/20 rounded-full animate-[bubble_3s_ease-in-out_infinite]" style={{ animationDelay: '0.9s' }} />
+      <div className="absolute -bottom-2 left-2/3 w-2 h-2 bg-accent/10 rounded-full animate-[bubble_2.8s_ease-in-out_infinite]" style={{ animationDelay: '1.2s' }} />
+    </div>
+    
     {/* Featured Image or Abstract Graphic */}
     <div className="aspect-[16/10] bg-muted/30 relative overflow-hidden">
       {post.featuredImage ? (
@@ -125,7 +137,7 @@ const BlogCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: number }
     </div>
     
     {/* Content */}
-    <div className="p-4 sm:p-6 flex flex-col flex-grow">
+    <div className="p-4 sm:p-6 flex flex-col flex-grow relative z-10">
       {/* Category & Read Time */}
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs font-medium tracking-[0.15em] uppercase text-accent">
@@ -226,7 +238,7 @@ const Insights = () => {
 
             {/* Category Filter */}
             <div className="mb-8 sm:mb-12 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide">
-              <div className="flex gap-2 sm:gap-3 min-w-max md:min-w-0 md:flex-wrap">
+              <div className="flex gap-2 sm:gap-3 min-w-max sm:min-w-0 sm:flex-wrap">
                 {CATEGORIES.map((category) => (
                   <button
                     key={category}
