@@ -8,38 +8,28 @@ import { GridCard } from '@/components/GridCard';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { X } from 'lucide-react';
 
-// Tab Data
+// NEW 3-PILLAR STRUCTURE
 const TABS = [
   {
-    id: 'ai-frameworks',
-    label: 'AI & Decision Frameworks',
-    description: 'Executive diagnostics used to assess AI readiness, quantify ROI, and prevent pilot-to-scale failure before capital or credibility is lost.'
+    id: 'intelligent-systems',
+    label: 'Intelligent Systems',
+    description: 'AI-powered decision engines and diagnostic frameworks that prevent costly mistakes and accelerate strategic clarity.'
   },
   {
-    id: 'marketing-data',
-    label: 'Marketing Data Science & AI Systems',
-    description: 'Applied data engineering, analytics, and AI systems that convert fragmented marketing signals into decision-grade intelligence.'
+    id: 'data-architecture',
+    label: 'Data Architecture',
+    description: 'From raw data to actionable insights — unified pipelines, attribution systems, and executive dashboards.'
   },
   {
-    id: 'paid-media',
-    label: 'Paid Media Case Studies',
-    description: 'Execution-level case studies showing how strategy, constraints, and unit economics interact at scale.'
-  },
-  {
-    id: 'dashboards',
-    label: 'Dashboards & BI',
-    description: 'Executive dashboards designed to compress complexity and accelerate leadership decision-making.'
-  },
-  {
-    id: 'creative',
-    label: 'Foundational Creative Work',
-    description: 'Early-career hands-on creative execution that informs how I design realistic, execution-aware systems today.'
+    id: 'growth-engineering',
+    label: 'Growth Engineering',
+    description: 'Scaling with precision — performance marketing systems and conversion optimization at scale.'
   }
 ];
 
-// Content Data with hero items marked
+// CONSOLIDATED CONTENT - Only high-value case studies
 const CONTENT = {
-  'ai-frameworks': {
+  'intelligent-systems': {
     hero: {
       title: 'Enterprise AI Preparedness Check',
       context: 'Strategic Diagnostic Tool',
@@ -85,7 +75,7 @@ const CONTENT = {
       }
     ]
   },
-  'marketing-data': {
+  'data-architecture': {
     hero: {
       title: 'End-to-End Marketing Attribution System',
       context: 'Data Infrastructure',
@@ -100,6 +90,17 @@ const CONTENT = {
       outcome: 'Revealed true customer acquisition cost, shifting 30% of budget to under-credited high-performing channels.'
     },
     grid: [
+      {
+        title: 'Executive Marketing Command Dashboard',
+        context: 'C-Suite Reporting',
+        description: 'Centralized Looker Studio dashboard aggregating spend, leads, and revenue in real-time. CEO needed a single view of growth health without logging into 5 different platforms.',
+        outcome: 'Became the default Monday morning meeting screen for the leadership team.',
+        techStack: ['Looker', 'BigQuery', 'SQL'],
+        problem: 'CEO needed a single view of growth health without logging into 5 different platforms.',
+        system: 'Centralized Looker Studio dashboard aggregating spend, leads, and revenue in real-time.',
+        image: '/work-executive-dashboard-new.png',
+        link: '/mywork/executive-dashboard'
+      },
       {
         title: 'Predictive Lead & Spend Forecasting Model',
         context: 'Financial Planning',
@@ -121,32 +122,41 @@ const CONTENT = {
         image: '/work-llm-analyst.png'
       },
       {
-        title: 'C-Suite Personal Branding',
-        context: 'Executive Visibility',
-        description: 'Strategic personal brand architecture for C-Suite executives, transforming leadership presence into measurable business influence. Executives lacked systematic approaches to thought leadership, limiting their ability to attract talent, investors, and strategic partnerships.',
-        outcome: 'Elevated executive profiles resulting in 3x LinkedIn engagement, speaking invitations, and inbound partnership inquiries.',
-        techStack: ['LinkedIn Strategy', 'Content Architecture', 'Thought Leadership'],
-        problem: 'Executives lacked systematic approaches to thought leadership, limiting their ability to attract talent, investors, and strategic partnerships.',
-        system: 'Strategic personal brand architecture transforming leadership presence into measurable business influence.',
-        image: '/work-csuite-branding.png'
+        title: 'CAC–LTV Cohort Analysis',
+        context: 'Unit Economics',
+        description: 'Cohort-based visualization tracking payback period and LTV evolution over time. Blended CAC hid the fact that recent cohorts were unprofitable.',
+        outcome: 'Shifted focus from "cheap leads" to "high-LTV channels" like organic search.',
+        techStack: ['SQL', 'Tableau', 'dbt'],
+        problem: 'Blended CAC hid the fact that recent cohorts were unprofitable.',
+        system: 'Cohort-based visualization tracking payback period and LTV evolution over time.'
       }
     ]
   },
-  'paid-media': {
+  'growth-engineering': {
     hero: {
-      title: 'Meta Ads Performance Case Study — $40K USD Spend',
+      title: 'Meta Ads Performance Case Study — $50K/mo Scaling',
       context: 'Scale & Efficiency',
       description: 'Structured creative testing framework + broad targeting with CBO to manage creative fatigue. Scaling spend beyond $10k/mo caused CPA to skyrocket due to audience saturation.',
-      impact: 'Scaled to $40k/mo while maintaining stable ROAS, unlocking new growth tier.',
+      impact: 'Scaled to $50k/mo while maintaining stable ROAS, unlocking new growth tier.',
       techStack: ['Meta Ads', 'GA4', 'Google Sheets', 'Looker'],
       ctaText: 'View Case Study',
       link: '/mywork/meta-ads-performance',
       problem: 'Scaling spend beyond $10k/mo caused CPA to skyrocket due to audience saturation.',
       system: 'Structured creative testing framework + broad targeting with CBO to manage creative fatigue.',
-      outcome: 'Scaled to $40k/mo while maintaining stable ROAS, unlocking new growth tier.',
+      outcome: 'Scaled to $50k/mo while maintaining stable ROAS, unlocking new growth tier.',
       logoImage: '/work-meta-ads-hero.png'
     },
     grid: [
+      {
+        title: 'Revenue Engineering & Psychological Architecture',
+        context: 'Conversion Psychology',
+        description: 'Leveraging behavioral economics and pattern interrupts to engineer retention loops. Traditional "creative" copy fails to address the subconscious friction points that kill conversion at scale.',
+        outcome: 'Reduced CPA by 30% through psychological hooks and structured narrative testing.',
+        techStack: ['Behavioral Economics', 'A/B Testing', 'Copy Frameworks'],
+        problem: 'Traditional "creative" copy fails to address the subconscious friction points that kill conversion at scale.',
+        system: 'Leveraging behavioral economics and pattern interrupts to engineer retention loops.',
+        link: '/mywork/revenue-engineering'
+      },
       {
         title: 'Google Ads Budget Optimization Simulator',
         context: 'Scenario Planning',
@@ -168,99 +178,6 @@ const CONTENT = {
         image: '/work-roas-stabilization.png'
       }
     ]
-  },
-  'dashboards': {
-    hero: {
-      title: 'Executive Marketing Command Dashboard',
-      context: 'C-Suite Reporting',
-      description: 'Centralized Looker Studio dashboard aggregating spend, leads, and revenue in real-time. CEO needed a single view of growth health without logging into 5 different platforms.',
-      impact: 'Became the default Monday morning meeting screen for the leadership team.',
-      techStack: ['Looker Studio', 'BigQuery', 'Supermetrics'],
-      ctaText: 'View Case Study',
-      link: '/mywork/executive-dashboard',
-      problem: 'CEO needed a single view of growth health without logging into 5 different platforms.',
-      system: 'Centralized Looker Studio dashboard aggregating spend, leads, and revenue in real-time.',
-      outcome: 'Became the default Monday morning meeting screen for the leadership team.',
-      image: '/work-executive-dashboard-new.png'
-    },
-    grid: [
-      {
-        title: 'CAC–LTV Cohort Analysis',
-        context: 'Unit Economics',
-        description: 'Cohort-based visualization tracking payback period and LTV evolution over time. Blended CAC hid the fact that recent cohorts were unprofitable.',
-        outcome: 'Shifted focus from "cheap leads" to "high-LTV channels" like organic search.',
-        techStack: ['SQL', 'Tableau', 'dbt'],
-        problem: 'Blended CAC hid the fact that recent cohorts were unprofitable.',
-        system: 'Cohort-based visualization tracking payback period and LTV evolution over time.'
-      },
-      {
-        title: 'Funnel Drop-Off Diagnostics',
-        context: 'CRO Analytics',
-        description: 'Granular step-by-step funnel visualization identifying friction points. High traffic but low conversion; unclear where users were leaking.',
-        outcome: 'Pinpointed a form validation error causing 15% drop-off on mobile.',
-        techStack: ['GA4', 'Mixpanel', 'Hotjar'],
-        problem: 'High traffic but low conversion; unclear where users were leaking.',
-        system: 'Granular step-by-step funnel visualization identifying friction points.'
-      },
-      {
-        title: 'Board-Level KPI Summary',
-        context: 'Investor Relations',
-        description: 'Automated slide-ready data tables updating automatically from the warehouse. Board deck preparation was a manual, error-prone monthly fire drill.',
-        outcome: 'Eliminated data discrepancies and reduced prep time by 90%.',
-        techStack: ['Google Sheets', 'BigQuery', 'Slides API'],
-        problem: 'Board deck preparation was a manual, error-prone monthly fire drill.',
-        system: 'Automated slide-ready data tables updating automatically from the warehouse.'
-      }
-    ]
-  },
-  'creative': {
-    hero: {
-      title: 'Revenue Engineering & Psychological Architecture',
-      context: 'Conversion Psychology',
-      description: 'Leveraging behavioral economics and pattern interrupts to engineer retention loops. Traditional "creative" copy fails to address the subconscious friction points that kill conversion at scale.',
-      impact: 'Reduced CPA by 30% through psychological hooks and structured narrative testing.',
-      techStack: ['Behavioral Economics', 'A/B Testing', 'Copy Frameworks'],
-      ctaText: 'View Case Study',
-      link: '/mywork/revenue-engineering',
-      problem: 'Traditional "creative" copy fails to address the subconscious friction points that kill conversion at scale.',
-      system: 'Leveraging behavioral economics and pattern interrupts to engineer retention loops.',
-      outcome: 'Reduced CPA by 30% through psychological hooks and structured narrative testing.'
-    },
-    grid: [
-      {
-        title: 'High-Velocity Web Infrastructure',
-        context: 'Systems Architecture',
-        description: 'Conversion-first development prioritizing Core Web Vitals and sub-second load times. Replaced aesthetic-driven bloat with lean, scalable code architectures.',
-        outcome: 'Deployed high-speed assets in 5 days vs 4 weeks, achieving 99/100 performance scores.',
-        techStack: ['React', 'Next.js', 'Tailwind'],
-        problem: 'Aesthetic-driven bloat created slow, conversion-killing web experiences.',
-        system: 'Conversion-first development prioritizing Core Web Vitals and sub-second load times.',
-        image: '/work-web-infrastructure.png',
-        link: '/mywork/web-infrastructure'
-      },
-      {
-        title: 'Graphic Design Portfolio',
-        context: 'Visual Communication',
-        description: 'Clean, isometric diagramming style to visualize system architectures. Complex technical concepts were hard to explain in text.',
-        outcome: 'Standardized the visual language for all technical documentation.',
-        techStack: ['Illustrator', 'Photoshop', 'Figma'],
-        problem: 'Complex technical concepts were hard to explain in text.',
-        system: 'Clean, isometric diagramming style to visualize system architectures.',
-        image: '/work-graphic-design.png'
-      },
-      {
-        title: 'Motion & Ad Creatives',
-        context: 'Performance Creative',
-        description: 'Motion graphic templates allowing rapid iteration of hooks and CTAs. Static ads suffered from banner blindness.',
-        outcome: 'Increased click-through rates by 45% on cold audiences.',
-        techStack: ['After Effects', 'Lottie', 'Media Encoder'],
-        problem: 'Static ads suffered from banner blindness.',
-        system: 'Motion graphic templates allowing rapid iteration of hooks and CTAs.',
-        image: '/work-motion-creatives.png',
-        link: 'https://www.youtube.com/watch?v=D0egLS5y3CU',
-        isExternal: true
-      }
-    ]
   }
 };
 
@@ -269,11 +186,11 @@ export default function MyWork() {
   const navigate = useNavigate();
   const [selectedCase, setSelectedCase] = useState<any>(null);
 
-  // Get tab from URL hash or default to 'ai-frameworks'
+  // Get tab from URL hash or default to 'intelligent-systems'
   const getTabFromHash = () => {
     const hash = location.hash.replace('#', '');
     const validTabs = TABS.map(t => t.id);
-    return validTabs.includes(hash) ? hash : 'ai-frameworks';
+    return validTabs.includes(hash) ? hash : 'intelligent-systems';
   };
 
   const [activeTab, setActiveTab] = useState(getTabFromHash);
@@ -290,7 +207,7 @@ export default function MyWork() {
   // Update URL when tab changes
   const handleTabChange = (tabId: string) => {
     setActiveTab(tabId);
-    navigate(`/mywork#${tabId}`, { replace: true });
+    navigate(\`/mywork#\${tabId}\`, { replace: true });
   };
 
   const currentContent = CONTENT[activeTab as keyof typeof CONTENT];
@@ -306,7 +223,7 @@ export default function MyWork() {
             My Work
           </h1>
           <p className="font-body text-[#5a5a5a] text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed">
-            A curated body of AI decision frameworks, data systems, and growth architectures — organized by impact and maturity.
+            A curated body of AI decision frameworks, data systems, and growth architectures — organized by strategic impact.
           </p>
         </div>
       </section>
@@ -353,20 +270,33 @@ export default function MyWork() {
                     onClick={item.link ? undefined : () => setSelectedCase(item)}
                   />
                 );
-                
+
+                // If item has a link, wrap in appropriate element
                 if (item.link) {
+                  if (item.isExternal) {
+                    return (
+                      <a 
+                        key={index} 
+                        href={item.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        {cardContent}
+                      </a>
+                    );
+                  }
                   return (
                     <a 
                       key={index} 
-                      href={item.link} 
-                      className="block h-full cursor-pointer"
-                      target={item.isExternal ? "_blank" : undefined}
-                      rel={item.isExternal ? "noopener noreferrer" : undefined}
+                      href={item.link}
+                      className="block"
                     >
                       {cardContent}
                     </a>
                   );
                 }
+
                 return cardContent;
               })}
             </div>
@@ -374,48 +304,54 @@ export default function MyWork() {
         </div>
       </main>
 
-      <Footer />
-
-      {/* Case Detail Modal - Responsive */}
-      <Dialog open={!!selectedCase} onOpenChange={(open) => !open && setSelectedCase(null)}>
-        <DialogContent className="max-w-[95vw] sm:max-w-xl md:max-w-2xl lg:max-w-3xl max-h-[90vh] overflow-y-auto bg-[#fafaf8] border-[#e8e6e1] p-4 sm:p-6">
+      {/* Case Study Modal */}
+      <Dialog open={!!selectedCase} onOpenChange={() => setSelectedCase(null)}>
+        <DialogContent className="max-w-2xl bg-white border-[#e5e5dc]">
           <DialogHeader>
-            <DialogTitle className="font-heading text-xl sm:text-2xl md:text-3xl text-[#1a1a1a] mb-1 sm:mb-2 pr-8">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-medium text-[#8b7355] uppercase tracking-wider">
+                {selectedCase?.context}
+              </span>
+              <button 
+                onClick={() => setSelectedCase(null)}
+                className="p-1 hover:bg-[#f5f5f0] rounded-full transition-colors"
+              >
+                <X className="w-4 h-4 text-[#5a5a5a]" />
+              </button>
+            </div>
+            <DialogTitle className="font-heading text-2xl text-[#1a1a1a] pr-8">
               {selectedCase?.title}
             </DialogTitle>
-            <DialogDescription className="font-body text-[#8b8578] text-xs sm:text-sm uppercase tracking-wider">
-              {selectedCase?.context}
-            </DialogDescription>
           </DialogHeader>
           
-          <div className="space-y-5 sm:space-y-6 md:space-y-8 py-4 sm:py-6">
-            <div className="space-y-2 sm:space-y-3">
-              <h4 className="font-heading text-base sm:text-lg md:text-xl text-[#1a1a1a] border-b border-[#e8e6e1] pb-2">Problem Framing</h4>
-              <p className="font-body text-[#5a5a5a] text-sm sm:text-base leading-relaxed">
-                {selectedCase?.problem}
-              </p>
+          <div className="space-y-6 pt-4">
+            {/* Problem */}
+            <div>
+              <h4 className="text-xs font-semibold text-[#8b7355] uppercase tracking-wider mb-2">The Problem</h4>
+              <p className="text-[#5a5a5a] text-sm leading-relaxed">{selectedCase?.problem}</p>
             </div>
-
-            <div className="space-y-2 sm:space-y-3">
-              <h4 className="font-heading text-base sm:text-lg md:text-xl text-[#1a1a1a] border-b border-[#e8e6e1] pb-2">System / Architecture</h4>
-              <p className="font-body text-[#5a5a5a] text-sm sm:text-base leading-relaxed">
-                {selectedCase?.system}
-              </p>
+            
+            {/* System */}
+            <div>
+              <h4 className="text-xs font-semibold text-[#8b7355] uppercase tracking-wider mb-2">The System</h4>
+              <p className="text-[#5a5a5a] text-sm leading-relaxed">{selectedCase?.system}</p>
             </div>
-
-            <div className="space-y-2 sm:space-y-3">
-              <h4 className="font-heading text-base sm:text-lg md:text-xl text-[#1a1a1a] border-b border-[#e8e6e1] pb-2">Decision Impact</h4>
-              <p className="font-body text-[#5a5a5a] text-sm sm:text-base leading-relaxed">
-                {selectedCase?.outcome || selectedCase?.impact}
-              </p>
+            
+            {/* Outcome */}
+            <div>
+              <h4 className="text-xs font-semibold text-[#8b7355] uppercase tracking-wider mb-2">The Outcome</h4>
+              <p className="text-[#2a2a2a] text-sm leading-relaxed font-medium">{selectedCase?.outcome}</p>
             </div>
-
+            
+            {/* Tech Stack */}
             {selectedCase?.techStack && (
-              <div className="bg-[#f0ede8] p-3 sm:p-4 rounded-sm">
-                <h4 className="font-heading text-xs sm:text-sm text-[#1a1a1a] mb-2 sm:mb-3 uppercase tracking-wider">Tech Stack</h4>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {selectedCase.techStack.map((tech: string, i: number) => (
-                    <span key={i} className="text-[10px] sm:text-xs font-medium uppercase tracking-wider text-[#6a6a6a] bg-white px-2 sm:px-3 py-0.5 sm:py-1 rounded-sm border border-[#e8e6e1]">
+              <div className="pt-4 border-t border-[#e5e5dc]">
+                <div className="flex flex-wrap gap-2">
+                  {selectedCase.techStack.map((tech: string, index: number) => (
+                    <span 
+                      key={index}
+                      className="px-3 py-1.5 text-xs bg-[#f5f5f0] text-[#5a5a5a] rounded-full border border-[#e5e5dc]"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -425,6 +361,8 @@ export default function MyWork() {
           </div>
         </DialogContent>
       </Dialog>
+
+      <Footer />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
-// Curated 4 high-impact projects for the 2x2 grid
+// Curated 4 high-impact projects for the 2x2 grid - NEW 3-PILLAR STRUCTURE
 const SELECT_WORKS = [
   {
     id: 1,
     title: 'Enterprise AI Preparedness Check',
-    category: 'Decision Frameworks',
+    category: 'Intelligent Systems',
     description: 'Multi-dimensional scoring model evaluating data governance, talent density, and technical debt across the enterprise.',
     outcome: 'Prevented premature $200k investment',
     techStack: ['Python', 'Scoring Models', 'Data Analysis'],
@@ -15,7 +15,7 @@ const SELECT_WORKS = [
   {
     id: 2,
     title: 'End-to-End Marketing Attribution',
-    category: 'Data Science',
+    category: 'Data Architecture',
     description: 'Unified data pipeline ingesting API data into BigQuery for cross-channel comparison and budget optimization.',
     outcome: 'Shifted 30% budget to high-performing channels',
     techStack: ['BigQuery', 'Looker', 'Python'],
@@ -25,17 +25,17 @@ const SELECT_WORKS = [
   {
     id: 3,
     title: 'Meta Ads — $50K/mo Scaling',
-    category: 'Paid Media',
+    category: 'Growth Engineering',
     description: 'Structured creative testing framework with broad targeting and CBO to manage creative fatigue at scale.',
     outcome: 'Scaled to $50k/mo with stable ROAS',
     techStack: ['Meta Ads', 'GA4', 'Looker'],
-    link: null,
+    link: '/mywork/meta-ads-performance',
     image: '/work-meta-ads.png'
   },
   {
     id: 4,
     title: 'Executive Marketing Dashboard',
-    category: 'Dashboards & BI',
+    category: 'Data Architecture',
     description: 'Real-time KPI dashboard consolidating spend, leads, and pipeline metrics for C-suite visibility.',
     outcome: 'Reduced reporting overhead by 70%',
     techStack: ['Looker', 'BigQuery', 'SQL'],
