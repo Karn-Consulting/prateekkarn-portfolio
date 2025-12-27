@@ -168,11 +168,11 @@ const RelatedPostCard = ({ post, index }: { post: BlogPost, index: number }) => 
 // Author Box Component
 const AuthorBox = ({ author }: { author: BlogPost['author'] }) => (
   <div className="flex items-center gap-4 p-6 bg-secondary/30 rounded-lg mt-12">
-    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-secondary">
       <img 
         src="/prateek-headshot.jpg" 
         alt={author.name}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover object-top scale-110"
       />
     </div>
     <div>
@@ -334,6 +334,27 @@ const InsightPost = () => {
                 <span>By {post.author.name}</span>
               </div>
             </header>
+
+            {/* Featured Image with Caption */}
+            {post.featuredImage && (
+              <figure className="mb-10 sm:mb-12">
+                <div className="rounded-lg overflow-hidden bg-secondary/30">
+                  <img 
+                    src={post.featuredImage} 
+                    alt={`${post.title} - Visual representation of ${post.category.toLowerCase()} concepts by Prateek Karn`}
+                    className="w-full h-auto object-cover"
+                    loading="eager"
+                  />
+                </div>
+                <figcaption className="mt-3 text-center text-sm text-muted-foreground italic">
+                  {post.category === 'AI Strategy' && 'Conceptual visualization of AI-driven business transformation'}
+                  {post.category === 'Marketing Analytics' && 'Data-driven marketing measurement and optimization framework'}
+                  {post.category === 'Data Visualization' && 'Executive dashboard design principles in action'}
+                  {post.category === 'Growth Systems' && 'Systematic approach to scalable business growth'}
+                  {post.category === 'MarTech' && 'Modern marketing technology architecture and integration'}
+                </figcaption>
+              </figure>
+            )}
 
             {/* Blog Content */}
             {post.content ? (
