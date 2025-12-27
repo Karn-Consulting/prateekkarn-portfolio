@@ -1226,15 +1226,14 @@ const ExecVentureGaugeApp = () => {
                   </div>
                   <div className="mt-2 flex items-center justify-between border-t border-dashed border-border pt-3 text-xs text-muted-foreground">
                     <span>ROI is contingent on adoption and behavioural change.</span>
-                    <Button
-                      variant="outline"
-                      size="sm"
+                    <button
                       onClick={() => {
                         window.print();
                       }}
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#8b7355] text-white hover:bg-[#7a6548] rounded-md transition-all duration-200 font-medium shadow-md hover:shadow-lg"
                     >
                       Export board pack (PDF)
-                    </Button>
+                    </button>
                   </div>
                 </CardContent>
               </Card>

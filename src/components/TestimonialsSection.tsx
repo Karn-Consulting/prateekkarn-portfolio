@@ -50,7 +50,15 @@ interface Testimonial {
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
-    <div className="flex flex-col p-6 sm:p-8 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
+    <div className="group relative flex flex-col p-6 sm:p-8 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+      {/* Subtle bubbling effect on hover */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+        <div className="absolute -bottom-2 left-1/4 w-3 h-3 bg-accent/10 rounded-full animate-[bubble_2s_ease-in-out_infinite]" style={{ animationDelay: '0s' }} />
+        <div className="absolute -bottom-2 left-1/2 w-2 h-2 bg-accent/15 rounded-full animate-[bubble_2.5s_ease-in-out_infinite]" style={{ animationDelay: '0.3s' }} />
+        <div className="absolute -bottom-2 left-3/4 w-2.5 h-2.5 bg-accent/10 rounded-full animate-[bubble_2.2s_ease-in-out_infinite]" style={{ animationDelay: '0.6s' }} />
+        <div className="absolute -bottom-2 left-1/3 w-1.5 h-1.5 bg-accent/20 rounded-full animate-[bubble_3s_ease-in-out_infinite]" style={{ animationDelay: '0.9s' }} />
+        <div className="absolute -bottom-2 left-2/3 w-2 h-2 bg-accent/10 rounded-full animate-[bubble_2.8s_ease-in-out_infinite]" style={{ animationDelay: '1.2s' }} />
+      </div>
       {/* B&W Photo with subtle gold border */}
       <div className="relative w-28 h-36 sm:w-32 sm:h-40 lg:w-36 lg:h-44 mb-8 mx-auto">
         <div className="w-full h-full bg-secondary overflow-hidden ring-1 ring-accent/20">

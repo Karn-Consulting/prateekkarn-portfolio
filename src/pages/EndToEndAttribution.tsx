@@ -6,7 +6,7 @@ export default function EndToEndAttribution() {
   return (
     <div className="min-h-screen bg-[#f8f7f5]">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-[#f8f7f5]/95 backdrop-blur-sm border-b border-[#e5e5e0]">
+      <header className="sticky top-0 z-50 bg-[#f5f0e8]/95 backdrop-blur-sm border-b border-[#d9d4cc]">
         <div className="container max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <Link to="/" className="font-heading text-lg sm:text-xl text-[#1a1a1a] hover:text-[#8b7355] transition-colors">
             Prateek Karn
@@ -22,19 +22,19 @@ export default function EndToEndAttribution() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-12 px-4 sm:px-6">
+      <section className="pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-12 px-4 sm:px-6 bg-gradient-to-b from-[#f5f0e8] to-[#f8f7f5]">
         <div className="container max-w-6xl mx-auto">
           <div className="max-w-4xl">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#8b7355] mb-4">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#8b7355] mb-4 font-medium">
               Data Infrastructure
             </p>
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1a1a] mb-6">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2d2a26] mb-6 leading-tight">
               End-to-End Marketing Attribution System
             </h1>
-            <p className="text-lg sm:text-xl text-[#4a4a4a] leading-relaxed mb-8">
+            <p className="text-lg sm:text-xl text-[#5a5550] leading-relaxed mb-8">
               Unified data pipeline ingesting API data into BigQuery for cross-channel comparison and budget optimization.
             </p>
-            <div className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white px-4 py-2 rounded-sm text-sm">
+            <div className="inline-flex items-center gap-2 bg-[#8b7355] text-white px-5 py-3 rounded-md text-sm font-medium shadow-md">
               <Target className="w-4 h-4" />
               <span>→ Shifted 30% budget to high-performing channels</span>
             </div>

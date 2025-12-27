@@ -18,13 +18,13 @@ const AboutPrateekSection = () => {
         {/* Content Card - Premium styling matching other cards */}
         <div className="p-6 sm:p-8 md:p-10 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
           <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center md:items-start">
-            {/* Photo - Colored, matching premium aesthetic */}
+            {/* Photo - Grayscale on mobile, colored on hover, matching testimonials */}
             <div className="flex-shrink-0">
-              <div className="w-36 h-44 sm:w-40 sm:h-48 bg-secondary overflow-hidden rounded-sm shadow-md ring-1 ring-border/30">
+              <div className="w-36 h-44 sm:w-40 sm:h-48 bg-secondary overflow-hidden rounded-sm shadow-md ring-1 ring-accent/20">
                 <img 
                   src="/prateek-karn-about.jpg" 
                   alt="Prateek Karn - AI Business Architect"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-top grayscale md:grayscale-0 hover:grayscale-0 transition-all duration-500"
                 />
               </div>
             </div>
