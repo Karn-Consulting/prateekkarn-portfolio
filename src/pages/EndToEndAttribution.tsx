@@ -220,15 +220,15 @@ export default function EndToEndAttribution() {
           </div>
           
           {/* Open in new tab option */}
-          <div className="mt-4 text-center">
+          <div className="mt-6 text-center">
             <a 
               href="https://attribution.prateekkarn.com/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-[#8b7355] hover:text-[#6b5a45] transition-colors"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#8b7355] text-white font-medium text-base rounded-sm hover:bg-[#6b5a45] transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              <span>Open simulator in new tab for full experience</span>
-              <ExternalLink className="w-4 h-4" />
+              <span>Open Simulator in New Tab for Full Experience</span>
+              <ExternalLink className="w-5 h-5" />
             </a>
           </div>
         </div>

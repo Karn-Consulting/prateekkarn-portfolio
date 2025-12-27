@@ -224,8 +224,8 @@ const Insights = () => {
             </div>
 
             {/* Category Filter */}
-            <div className="mb-8 sm:mb-12 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
-              <div className="flex gap-2 sm:gap-3 min-w-max sm:flex-wrap">
+            <div className="mb-8 sm:mb-12 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide">
+              <div className="flex gap-2 sm:gap-3 min-w-max md:min-w-0 md:flex-wrap">
                 {CATEGORIES.map((category) => (
                   <button
                     key={category}
