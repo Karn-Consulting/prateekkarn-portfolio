@@ -226,7 +226,7 @@ const About = () => {
                   />
                 </div>
                 <p className="text-foreground/85 text-sm leading-[1.75]">
-                  Prateek can also be seen in the upcoming Punjabi film <span className="font-medium text-accent">"Chaali Din"</span>, scheduled for release in April 2025. This creative venture reflects his belief in exploring diverse experiences and stepping outside conventional boundaries.
+                  Prateek can also be seen in the upcoming Punjabi film <span className="font-medium text-accent">"Chaali Din"</span>, expected to launch in 2026. This creative venture reflects his belief in exploring diverse experiences and stepping outside conventional boundaries.
                 </p>
               </div>
 
@@ -254,7 +254,14 @@ const About = () => {
                 <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
                   <div className="flex items-center gap-2 mb-4">
                     <Leaf className="w-4 h-4 text-accent" />
-                    <h3 className="font-heading text-base font-semibold text-foreground">Philosophy</h3>
+                    <h3 className="font-heading text-base font-semibold text-foreground">Sustainability Advocate</h3>
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-sm mb-4">
+                    <img 
+                      src="/prateek-sustainability.jpg" 
+                      alt="Prateek Karn - Sustainability Advocate in nature"
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
                   <p className="text-muted-foreground text-sm leading-[1.75]">
                     A sustainable living advocate, Prateek believes in living a simple life centered on constant learning and staying rooted. Despite his professional achievements, he maintains a grounded perspective — valuing meaningful connections, continuous growth, and making a positive impact over material accumulation.
