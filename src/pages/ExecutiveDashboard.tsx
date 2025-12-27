@@ -232,24 +232,42 @@ export default function ExecutiveDashboard() {
         </div>
       </section>
 
-      {/* Interactive Demo Placeholder */}
+      {/* Live Interactive Dashboard */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
         <div className="container max-w-6xl mx-auto">
-          <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-4 text-center">Interactive Demo</h2>
+          <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-4 text-center">Live Interactive Dashboard</h2>
           <p className="text-center text-[#6a6a6a] mb-8 max-w-2xl mx-auto">
-            Experience the dashboard with synthetic data to see how executives consume marketing intelligence.
+            Experience the dashboard with synthetic data to see how executives consume marketing intelligence. Fully interactive with real-time KPIs, anomaly detection, and drill-down capabilities.
           </p>
           
-          {/* Embed Placeholder */}
-          <div className="bg-[#f8f7f5] border-2 border-dashed border-[#d5d5d0] rounded-sm p-12 text-center">
-            <div className="max-w-md mx-auto">
-              <BarChart3 className="w-12 h-12 text-[#8b7355] mx-auto mb-4" />
-              <h3 className="font-heading text-xl text-[#1a1a1a] mb-2">Interactive Demo Coming Soon</h3>
-              <p className="text-sm text-[#6a6a6a] mb-6">
-                A fully interactive executive dashboard will be embedded here, demonstrating real-time KPIs, anomaly detection, and drill-down capabilities.
-              </p>
+          {/* Live Dashboard Link */}
+          <div className="text-center mb-8">
+            <a 
+              href="https://dashboard.prateekkarn.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white px-6 py-3 rounded-sm text-sm font-medium transition-all duration-200 hover:bg-[#8b7355] hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Open Full Dashboard
+            </a>
+          </div>
+          
+          {/* Dashboard Preview */}
+          <div className="bg-[#f8f7f5] border border-[#e5e5e0] rounded-sm overflow-hidden">
+            <div className="aspect-video w-full">
+              <iframe 
+                src="https://dashboard.prateekkarn.com" 
+                className="w-full h-full border-0"
+                title="Executive Marketing Command Dashboard"
+                loading="lazy"
+              />
             </div>
           </div>
+          
+          <p className="text-center text-xs text-[#8b7355] mt-4">
+            Built with React, TypeScript, Recharts, and Tailwind CSS. Data refreshes every 15 minutes.
+          </p>
         </div>
       </section>
 
