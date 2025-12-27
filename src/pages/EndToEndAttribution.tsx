@@ -210,7 +210,7 @@ export default function EndToEndAttribution() {
           {/* Embedded Attribution Simulator */}
           <div className="bg-[#f8f7f5] rounded-sm overflow-hidden border border-[#e5e5e0]">
             <iframe 
-              src="https://attri-insight-clone.vercel.app/"
+              src="https://attribution.prateekkarn.com/"
               className="w-full border-0"
               style={{ height: '800px', minHeight: '600px' }}
               title="End-to-End Marketing Attribution Simulator"
@@ -222,7 +222,7 @@ export default function EndToEndAttribution() {
           {/* Open in new tab option */}
           <div className="mt-4 text-center">
             <a 
-              href="https://attri-insight-clone.vercel.app/" 
+              href="https://attribution.prateekkarn.com/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-[#8b7355] hover:text-[#6b5a45] transition-colors"
