@@ -108,7 +108,7 @@ const PrecisionNodeIcon = () => (
 
 // Blog Card Component
 const BlogCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: number }) => (
-  <article className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-500 flex flex-col">
+  <Link to={`/insights/${post.slug}`} className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-500 flex flex-col cursor-pointer">
     {/* Featured Image or Abstract Graphic */}
     <div className="aspect-[16/10] bg-muted/30 relative overflow-hidden">
       {post.featuredImage ? (
@@ -152,8 +152,7 @@ const BlogCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: number }
         <span className="text-xs text-muted-foreground">
           {post.date}
         </span>
-        <Link 
-          to={`/insights/${post.slug}`}
+        <span 
           className="
             group/btn
             inline-flex items-center
@@ -163,16 +162,16 @@ const BlogCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: number }
             border border-[#8b7355]
             rounded-sm
             transition-all duration-300
-            hover:bg-[#8b7355]
-            hover:text-white
+            group-hover:bg-[#8b7355]
+            group-hover:text-white
           "
         >
           <span className="tracking-[0.15em]">READ</span>
-          <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
-        </Link>
+          <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </span>
       </div>
     </div>
-  </article>
+  </Link>
 );
 
 const POSTS_PER_PAGE = 9;
@@ -181,10 +180,12 @@ const Insights = () => {
   const [activeCategory, setActiveCategory] = useState<Category>('All');
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Filter posts by category
+  // Filter and sort posts by date (latest first)
   const filteredPosts = useMemo(() => {
-    if (activeCategory === 'All') return BLOG_POSTS;
-    return BLOG_POSTS.filter(post => post.category === activeCategory);
+    const posts = activeCategory === 'All' 
+      ? [...BLOG_POSTS] 
+      : BLOG_POSTS.filter(post => post.category === activeCategory);
+    return posts.sort((a, b) => new Date(b.dateISO).getTime() - new Date(a.dateISO).getTime());
   }, [activeCategory]);
 
   // Paginate posts

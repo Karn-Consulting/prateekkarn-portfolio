@@ -168,10 +168,12 @@ const RelatedPostCard = ({ post, index }: { post: BlogPost, index: number }) => 
 // Author Box Component
 const AuthorBox = ({ author }: { author: BlogPost['author'] }) => (
   <div className="flex items-center gap-4 p-6 bg-secondary/30 rounded-lg mt-12">
-    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-muted to-secondary flex items-center justify-center flex-shrink-0">
-      <span className="text-xl font-heading font-light text-muted-foreground/60">
-        {author.name.split(' ').map(n => n[0]).join('')}
-      </span>
+    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+      <img 
+        src="/prateek-headshot.jpg" 
+        alt={author.name}
+        className="w-full h-full object-cover"
+      />
     </div>
     <div>
       <p className="font-heading font-semibold text-foreground">{author.name}</p>
