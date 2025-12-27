@@ -13,6 +13,7 @@ export interface BlogPost {
     image?: string;
   };
   featuredImage?: string;
+  cardImage?: string;
   content: string;
 }
 
@@ -44,6 +45,7 @@ export const BLOG_POSTS: BlogPost[] = [
       title: 'AI Business Architect'
     },
     featuredImage: '/blog/agentic-ai-featured.png',
+    cardImage: '/blog/agentic-ai-v2.png',
     content: `
 ## What is Agentic AI?
 
@@ -100,6 +102,7 @@ From there, it's about starting small, building a proof-of-concept, and iteratin
       title: 'AI Business Architect'
     },
     featuredImage: '/blog/attribution-featured.png',
+    cardImage: '/blog/attribution-death-v2.png',
     content: `
 ## The Attribution Crisis
 
@@ -152,6 +155,7 @@ The death of last-click attribution is not a crisis—it's an opportunity. It's 
       title: 'AI Business Architect'
     },
     featuredImage: '/blog/data-science-featured.png',
+    cardImage: '/blog/marketing-data-science-v2.png',
     content: `
 ## Beyond Dashboards
 
@@ -227,6 +231,7 @@ It also requires a culture of experimentation, where data science insights are t
       title: 'AI Business Architect'
     },
     featuredImage: '/blog/dashboards-featured.png',
+    cardImage: '/blog/executive-dashboards-v2.png',
     content: `
 ## The Dashboard Graveyard
 
@@ -293,6 +298,7 @@ The ultimate test of a good dashboard is simple: Does it get used? If your execu
       title: 'AI Business Architect'
     },
     featuredImage: '/blog/storytelling-featured.png',
+    cardImage: '/blog/data-storytelling-v2.png',
     content: `
 ## The Data Storytelling Gap
 
@@ -368,6 +374,7 @@ Data without story is just noise. Story without data is just opinion. But data a
       title: 'AI Business Architect'
     },
     featuredImage: '/blog/growth-featured.png',
+    cardImage: '/blog/hacking-growth-v2.png',
     content: `
 ## The Growth Hacking Mindset
 
@@ -423,6 +430,7 @@ The growth hacking methodology is more than just a collection of tactics; it is 
       title: 'AI Business Architect'
     },
     featuredImage: '/blog/revenue-featured.png',
+    cardImage: '/blog/predictable-revenue-v2.png',
     content: `
 ## The Core Principle: Specialization of Roles
 
@@ -478,6 +486,7 @@ By combining a systematic approach with a relentless mindset, you can transform 
       title: 'AI Business Architect'
     },
     featuredImage: '/blog/martech-featured.png',
+    cardImage: '/blog/martech-stack-v2.png',
     content: `
 ## The MarTech Explosion
 
@@ -559,6 +568,7 @@ Building a modern MarTech stack is not about having the most tools—it's about 
       title: 'AI Business Architect'
     },
     featuredImage: '/blog/cdp-featured.png',
+    cardImage: '/blog/cdp-implementation-v2.png',
     content: `
 ## The Promise of CDPs
 
@@ -640,6 +650,7 @@ A CDP can be transformational, but only if it's implemented thoughtfully. Start 
       title: 'AI Business Architect'
     },
     featuredImage: '/blog/art-possible-featured.png',
+    cardImage: '/blog/art-of-possible.png',
     content: `
 ## Beyond the Hype: Finding Real-World AI Value
 

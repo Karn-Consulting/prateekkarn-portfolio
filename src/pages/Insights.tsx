@@ -114,9 +114,9 @@ const BlogCard = ({ post, index }: { post: typeof BLOG_POSTS[0], index: number }
   >
     {/* Featured Image or Abstract Graphic */}
     <div className="aspect-[16/10] bg-muted/30 relative overflow-hidden">
-      {post.featuredImage ? (
+      {post.cardImage ? (
         <img 
-          src={post.featuredImage} 
+          src={post.cardImage} 
           alt={post.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -236,13 +236,14 @@ const Insights = () => {
                     onClick={() => handleCategoryChange(category)}
                     className={`
                       px-4 sm:px-5 py-2 sm:py-2.5
-                      text-xs sm:text-sm font-medium tracking-wide
+                      text-xs sm:text-sm font-semibold tracking-wide
                       rounded-sm
                       transition-all duration-300
                       whitespace-nowrap
+                      group
                       ${activeCategory === category
                         ? 'bg-[#8b7355] text-white border border-[#8b7355]'
-                        : 'bg-transparent text-[#8b7355] border border-[#8b7355]/40 hover:border-[#8b7355] hover:bg-[#8b7355]/5'
+                        : 'bg-transparent text-[#8b7355] border border-[#8b7355] hover:bg-[#8b7355] hover:text-white'
                       }
                     `}
                   >

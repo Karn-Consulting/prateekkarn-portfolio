@@ -138,7 +138,7 @@ const ShareButtons = ({ post }: { post: BlogPost }) => {
 const RelatedPostCard = ({ post, index }: { post: BlogPost, index: number }) => (
   <Link 
     to={`/insights/${post.slug}`}
-    className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col"
+    className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg hover:shadow-accent/5 hover:border-accent/30 hover:-translate-y-1 transition-all duration-300 flex flex-col"
   >
     <div className="aspect-[16/9] bg-muted/30 relative overflow-hidden">
       <div className="absolute inset-0 p-6">
@@ -167,19 +167,24 @@ const RelatedPostCard = ({ post, index }: { post: BlogPost, index: number }) => 
 
 // Author Box Component
 const AuthorBox = ({ author }: { author: BlogPost['author'] }) => (
-  <div className="flex items-center gap-4 p-6 bg-secondary/30 rounded-lg mt-12">
-    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-secondary">
+  <a 
+    href="https://www.linkedin.com/in/prateek-karn/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-4 p-6 bg-secondary/30 rounded-lg mt-12 hover:bg-secondary/50 transition-colors duration-300 cursor-pointer group"
+  >
+    <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-secondary border-2 border-transparent group-hover:border-accent/30 transition-all duration-300">
       <img 
         src="/prateek-headshot.jpg" 
         alt={author.name}
-        className="w-full h-full object-cover object-top scale-110"
+        className="w-full h-full object-cover object-[center_15%]"
       />
     </div>
     <div>
-      <p className="font-heading font-semibold text-foreground">{author.name}</p>
+      <p className="font-heading font-semibold text-foreground group-hover:text-accent transition-colors duration-300">{author.name}</p>
       <p className="text-sm text-muted-foreground">{author.title}</p>
     </div>
-  </div>
+  </a>
 );
 
 // CTA Section Component

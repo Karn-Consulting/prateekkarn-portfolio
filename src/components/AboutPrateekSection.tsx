@@ -24,7 +24,7 @@ const AboutPrateekSection = () => {
                 <img 
                   src="/prateek-karn-about.jpg" 
                   alt="Prateek Karn - AI Business Architect"
-                  className="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 grayscale md:grayscale-0"
                 />
               </div>
             </div>
