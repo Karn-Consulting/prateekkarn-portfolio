@@ -20,11 +20,11 @@ const AboutPrateekSection = () => {
           <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center md:items-start">
             {/* Photo - Grayscale on mobile, colored on hover, matching testimonials */}
             <div className="flex-shrink-0">
-              <div className="w-36 h-44 sm:w-40 sm:h-48 bg-secondary overflow-hidden rounded-sm shadow-md ring-1 ring-accent/20">
+              <div className="w-28 h-36 sm:w-36 sm:h-44 md:w-40 md:h-48 bg-secondary overflow-hidden rounded-sm shadow-md ring-1 ring-accent/20">
                 <img 
                   src="/prateek-karn-about.jpg" 
                   alt="Prateek Karn - AI Business Architect"
-                  className="w-full h-full object-cover object-top grayscale md:grayscale-0 hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover object-top transition-all duration-500 hover:scale-105"
                 />
               </div>
             </div>

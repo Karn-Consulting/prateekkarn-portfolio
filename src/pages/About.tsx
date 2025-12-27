@@ -51,7 +51,7 @@ const About = () => {
               {/* Photo Column - Smaller, more refined */}
               <div className="lg:col-span-4 flex justify-center lg:justify-start">
                 <div className="relative">
-                  <div className="w-56 h-64 sm:w-64 sm:h-72 overflow-hidden rounded-sm shadow-md">
+                  <div className="w-40 h-48 sm:w-56 sm:h-64 md:w-64 md:h-72 overflow-hidden rounded-sm shadow-md">
                     <img 
                       src="/prateek-karn-about.jpg" 
                       alt="Prateek Karn - AI Business Architect"
@@ -176,7 +176,7 @@ const About = () => {
                   <img 
                     src="/prateek-award-1.jpg" 
                     alt="Prateek Karn receiving recognition award"
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
                   />
                 </div>
                 <p className="text-muted-foreground text-xs leading-relaxed">
@@ -190,7 +190,7 @@ const About = () => {
                   <img 
                     src="/prateek-award-2.jpg" 
                     alt="Prateek Karn at industry recognition event"
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
                   />
                 </div>
                 <p className="text-muted-foreground text-xs leading-relaxed">
