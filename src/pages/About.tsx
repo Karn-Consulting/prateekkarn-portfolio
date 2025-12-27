@@ -8,7 +8,7 @@ const About = () => {
     <>
       <Helmet>
         <title>About Prateek Karn | AI Business Architect</title>
-        <meta name="description" content="From digital marketer to AI architect — learn about Prateek Karn's journey building intelligent systems for enterprise growth." />
+        <meta name="description" content="From Suratgarh to AI architecture — discover Prateek Karn's journey from entrepreneur to building intelligent systems for enterprise growth." />
       </Helmet>
 
       <main className="min-h-screen bg-background">
@@ -40,10 +40,10 @@ const About = () => {
           <div className="max-w-5xl mx-auto">
             {/* Page Title */}
             <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-              About Prateek
+              The Architect's Journey
             </h1>
             <p className="text-muted-foreground text-base sm:text-lg max-w-xl mb-12">
-              The story behind the systems.
+              From humble roots to AI-driven systems.
             </p>
 
             {/* Two Column Layout - Photo and Intro */}
@@ -68,11 +68,11 @@ const About = () => {
                 </h2>
 
                 <p className="text-foreground/85 text-sm sm:text-base leading-[1.8] mb-4">
-                  I help organizations evolve from traditional marketing to intelligent business systems — architectures where data, automation, and AI work together to drive measurable growth.
+                  Prateek Karn's story is one of relentless evolution — a journey that winds from the quiet town of Suratgarh, Rajasthan, to the bustling tech hubs of India, with deep roots in the cultural heart of Madhubani, Bihar.
                 </p>
 
                 <p className="text-muted-foreground text-sm leading-[1.75] mb-6">
-                  As an AI Business Architect, I design Intelligent MarTech ecosystems that connect sensing, prediction, and action — giving enterprises real-time insight, faster decision-making, and higher marketing ROI.
+                  His life has been a tapestry of highs and lows, but a constant thread runs through it: an unwavering pursuit of excellence and a deep-seated drive to build things that matter.
                 </p>
 
                 {/* Location and LinkedIn moved below description */}
@@ -97,37 +97,57 @@ const About = () => {
           </div>
         </section>
 
-        {/* The Journey Section - Tighter */}
+        {/* The Story Section - Narrative driven */}
         <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3">
-              The Journey
+              The Story
             </h2>
             <p className="text-muted-foreground text-xs sm:text-sm max-w-xl mb-8 uppercase tracking-wider">
-              From performance marketing to enterprise AI architecture.
+              From diligent student to sought-after strategist.
             </p>
 
             <div className="space-y-5">
               <p className="text-foreground/85 text-sm sm:text-base leading-[1.8]">
-                An alumnus of Panjab University, Chandigarh, with a degree in Electrical and Electronics Engineering, Prateek brings a natural aptitude for problem-solving and a strong bias for execution. His engineering foundation instilled a systems-thinking approach that he now applies to building intelligent business architectures.
+                His path began not in a boardroom, but with the diligent focus of a student at Panjab University, where he earned a B.Tech in Electrical and Electronics Engineering. This technical foundation instilled a systems-thinking mindset that would become the bedrock of his career. During his time in Punjab, he immersed himself in local community events, where the principles of service and humility — deeply influenced by Sikhism and other local cultures — shaped his worldview.
+              </p>
+
+              <div className="my-8 p-6 border-l-4 border-accent bg-card/30 rounded-r-lg">
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">The Entrepreneur's Crucible</h3>
+                <p className="text-foreground/85 text-sm sm:text-base leading-[1.8]">
+                  Before he built systems for enterprises, Prateek tried to build entrepreneurs. His first venture, <span className="font-semibold text-accent">Enterpriser</span>, was born from a desire to empower college students. With limited capital but boundless energy, he created programs that impacted over <span className="font-semibold">10,000 students across India</span>, teaching them the fundamentals of building a business.
+                </p>
+                <p className="text-muted-foreground text-sm leading-[1.75] mt-3">
+                  Though the venture ultimately failed to achieve commercial scale, it was a profound success in forging Prateek's character. It taught him resilience, the value of scrappy execution, and that failure is merely data for the next iteration.
+                </p>
+              </div>
+
+              <p className="text-foreground/85 text-sm sm:text-base leading-[1.8]">
+                He never looked back. Prateek dove into the marketing trenches, managing large-scale campaigns and leading teams of over 40 people. It was here, amidst the chaos of massive datasets and complex funnels, that he identified a critical gap. The sheer volume of campaign data was overwhelming traditional marketing approaches. It needed a more scientific, structured methodology to extract real value.
               </p>
 
               <p className="text-foreground/85 text-sm sm:text-base leading-[1.8]">
-                My path wasn't linear. It started in the trenches of digital marketing — managing ad campaigns, optimizing funnels, and learning what actually moves the needle in customer acquisition. That hands-on experience with performance marketing gave me something invaluable: an obsession with measurable results.
+                This realization was the catalyst for his next evolution. Drawn to the elegance and power of data science, he upskilled himself, mastering the tools to clean, analyze, and interpret large-scale information. He was no longer just a marketer; he was becoming a <span className="font-semibold">MarTech professional</span> — a bridge between the art of communication and the science of data.
               </p>
 
-              <p className="text-foreground/85 text-sm sm:text-base leading-[1.8]">
-                From there, I moved into data engineering and analytics, building the infrastructure that turns raw data into actionable intelligence. I learned that the best marketing isn't about creativity alone — it's about systems that learn, adapt, and improve.
-              </p>
+              <div className="my-8 p-6 border-l-4 border-accent bg-card/30 rounded-r-lg">
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">The Synthesis: An AI Business Architect</h3>
+                <p className="text-foreground/85 text-sm sm:text-base leading-[1.8]">
+                  With the rise of AI, all the pieces of Prateek's journey clicked into place. His engineering background provided the architectural thinking, his marketing experience supplied the real-world context, and his data science expertise offered the analytical rigor. He began to weave these threads together, creating a new kind of system where AI, data, and marketing worked in concert.
+                </p>
+                <p className="text-muted-foreground text-sm leading-[1.75] mt-3">
+                  Today, he doesn't just build campaigns; he designs intelligent ecosystems that drive measurable growth. He is a rare professional who has seen all faces of the business lifecycle — from the hopeful student to the determined entrepreneur, the hands-on employee, and now, the sought-after strategist.
+                </p>
+              </div>
 
               <p className="text-foreground/85 text-sm sm:text-base leading-[1.8]">
-                Relentless in his pursuit of excellence, Prateek has contributed significantly to his employers' bottom lines and clients' service impact. Today, I architect intelligent business systems that integrate AI, automation, and data at every layer — enabling modern enterprises to scale with precision, speed, and strategic clarity.
+                An avid reader and a quiet suburban dweller, Prateek remains grounded, his focus squarely on his work and the impact it creates. His journey is a testament to the power of continuous learning, adaptation, and the relentless pursuit of turning complex problems into elegant, intelligent solutions.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Civic Contribution Section - New */}
+        {/* Civic Contribution Section */}
         <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-2 mb-8">
@@ -201,7 +221,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Beyond Work Section - New Personal Section */}
+        {/* Beyond Work Section - Personal Section */}
         <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3">
@@ -272,13 +292,13 @@ const About = () => {
           </div>
         </section>
 
-        {/* Career Timeline Section - More compact */}
+        {/* Career Timeline Section - Condensed key roles */}
         <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-2 mb-8">
               <Briefcase className="w-5 h-5 text-accent" />
               <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
-                Career Trajectory
+                Career Milestones
               </h2>
             </div>
 
@@ -301,7 +321,7 @@ const About = () => {
                   <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground">Account Manager</h3>
                   <span className="text-accent text-xs font-medium">StandOut Authority</span>
                 </div>
-                <p className="text-muted-foreground text-xs mb-2">August 2021 - October 2022 · 1 year 3 months</p>
+                <p className="text-muted-foreground text-xs mb-2">August 2021 - October 2022</p>
                 <p className="text-foreground/75 text-sm leading-relaxed">
                   Handled LinkedIn branding programs for Fortune 500 leaders, merging analytics, events, and AI automation. Built AI content pipelines reducing production time and boosting post reach.
                 </p>
@@ -313,9 +333,9 @@ const About = () => {
                   <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground">Google Ads Specialist</h3>
                   <span className="text-accent text-xs font-medium">WNS Global Services</span>
                 </div>
-                <p className="text-muted-foreground text-xs mb-2">December 2019 - June 2021 · 1 year 7 months</p>
+                <p className="text-muted-foreground text-xs mb-2">December 2019 - June 2021</p>
                 <p className="text-foreground/75 text-sm leading-relaxed">
-                  Managed a portfolio of B2B/B2C client accounts, designing and executing Google Ads strategies that increased client ROI by an average of 25%. Handled the full sales cycle from outbound prospecting to high-value contract closure.
+                  Managed B2B/B2C client portfolios, designing Google Ads strategies that increased client ROI by an average of 25%.
                 </p>
               </div>
 
@@ -325,33 +345,21 @@ const About = () => {
                   <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground">Founder</h3>
                   <span className="text-accent text-xs font-medium">Enterpriser</span>
                 </div>
-                <p className="text-muted-foreground text-xs mb-2">April 2017 - October 2019 · 2 years 7 months</p>
+                <p className="text-muted-foreground text-xs mb-2">April 2017 - October 2019</p>
                 <p className="text-foreground/75 text-sm leading-relaxed">
-                  Founded and scaled a college-level entrepreneurship program connecting over 10,000 students with industry leaders for mentorship. Recruited and managed a team of 30 campus representatives across multiple universities.
+                  Founded and scaled a college-level entrepreneurship program impacting over 10,000 students across India.
                 </p>
               </div>
 
               {/* Shiprocket */}
-              <div className="border-l border-accent/40 pl-5 pb-6">
+              <div className="border-l border-accent/40 pl-5">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
                   <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground">Project Manager</h3>
                   <span className="text-accent text-xs font-medium">Shiprocket (Kartrocket)</span>
                 </div>
-                <p className="text-muted-foreground text-xs mb-2">October 2015 - April 2017 · 1 year 7 months</p>
+                <p className="text-muted-foreground text-xs mb-2">October 2015 - April 2017</p>
                 <p className="text-foreground/75 text-sm leading-relaxed">
-                  Led end-to-end project management for enterprise SaaS e-commerce deployments. Directed a design team to develop user-friendly interfaces and implemented foundational SEO procedures for new clients.
-                </p>
-              </div>
-
-              {/* Akosha */}
-              <div className="border-l border-accent/40 pl-5">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
-                  <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground">Brand Expert</h3>
-                  <span className="text-accent text-xs font-medium">Akosha India</span>
-                </div>
-                <p className="text-muted-foreground text-xs mb-2">February 2015 - October 2015 · 9 months</p>
-                <p className="text-foreground/75 text-sm leading-relaxed">
-                  Provided real-time solutions to customer issues via a chat support platform, improving brand-consumer relations for multiple national brands.
+                  Led end-to-end project management for enterprise SaaS e-commerce deployments.
                 </p>
               </div>
             </div>
