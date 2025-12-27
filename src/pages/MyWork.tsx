@@ -207,7 +207,7 @@ export default function MyWork() {
   // Update URL when tab changes
   const handleTabChange = (tabId: string) => {
     setActiveTab(tabId);
-    navigate(\`/mywork#\${tabId}\`, { replace: true });
+    navigate(`/mywork#${tabId}`, { replace: true });
   };
 
   const currentContent = CONTENT[activeTab as keyof typeof CONTENT];
