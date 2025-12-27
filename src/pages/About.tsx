@@ -2,8 +2,11 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, GraduationCap, MapPin, Award, Heart, Film, Shield, Leaf } from 'lucide-react';
 import Footer from '@/components/Footer';
+import { useConsultationModal } from '@/contexts/ConsultationModalContext';
 
 const About = () => {
+  const { openModal } = useConsultationModal();
+
   return (
     <>
       <Helmet>
@@ -324,13 +327,13 @@ const About = () => {
             <p className="text-muted-foreground text-sm sm:text-base mb-8 max-w-xl mx-auto">
               Whether you're reimagining your data infrastructure or exploring AI-driven growth, I'd welcome the conversation.
             </p>
-            <a 
-              href="mailto:prateek.karn@prateekkarn.com"
+            <button 
+              onClick={openModal}
               className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-background hover:bg-accent/90 transition-all duration-300 text-xs tracking-wider uppercase font-medium group"
             >
               Start a Conversation
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
+            </button>
           </div>
         </section>
 

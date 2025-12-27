@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Brain, Zap, Target, TrendingUp, Eye, MessageSquare, ArrowRight, CheckCircle } from 'lucide-react';
 import Footer from '@/components/Footer';
+import { useConsultationModal } from '@/contexts/ConsultationModalContext';
 
 export default function RevenueEngineering() {
+  const { openModal } = useConsultationModal();
+
   return (
     <div className="min-h-screen bg-[#f8f7f5]">
       {/* Header */}
@@ -390,12 +393,12 @@ export default function RevenueEngineering() {
           <p className="text-[#6a6a6a] mb-8 max-w-xl mx-auto">
             Whether you're optimizing landing pages or building a systematic testing framework, I'd welcome the conversation.
           </p>
-          <Link 
-            to="/about#contact"
+          <button 
+            onClick={openModal}
             className="inline-flex items-center gap-2 bg-[#8b7355] text-white px-8 py-4 rounded-sm hover:bg-[#6b5a45] transition-colors"
           >
             Start a Conversation
-          </Link>
+          </button>
         </div>
       </section>
 

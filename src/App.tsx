@@ -1,10 +1,11 @@
-// Build version: 2.5.0 - 2025-12-26T13:30:00Z - Added case study pages
+// Build version: 2.6.0 - 2025-12-27T13:15:00Z - Added consultation form modal
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { ConsultationModalProvider } from "@/contexts/ConsultationModalContext";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -33,28 +34,30 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-            <Route path="/mywork" element={<MyWork />} />
-            <Route path="/mywork/enterprise-ai-preparedness" element={<EnterpriseAIPreparedness />} />
-            <Route path="/mywork/web-infrastructure" element={<WebInfrastructure />} />
-            <Route path="/mywork/exec-venture-gauge" element={<ExecVentureGauge />} />
-            <Route path="/mywork/exec-venture-gauge/app" element={<ExecVentureGaugeApp />} />
-            <Route path="/mywork/end-to-end-attribution" element={<EndToEndAttribution />} />
-            <Route path="/mywork/executive-dashboard" element={<ExecutiveDashboard />} />
-            <Route path="/mywork/meta-ads-performance" element={<MetaAdsPerformance />} />
-            <Route path="/mywork/revenue-engineering" element={<RevenueEngineering />} />
-            {/* Insights/Blog Routes */}
-            <Route path="/insights" element={<Insights />} />
-            <Route path="/insights/:slug" element={<InsightPost />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <CookieConsent />
+          <ConsultationModalProvider>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+              <Route path="/mywork" element={<MyWork />} />
+              <Route path="/mywork/enterprise-ai-preparedness" element={<EnterpriseAIPreparedness />} />
+              <Route path="/mywork/web-infrastructure" element={<WebInfrastructure />} />
+              <Route path="/mywork/exec-venture-gauge" element={<ExecVentureGauge />} />
+              <Route path="/mywork/exec-venture-gauge/app" element={<ExecVentureGaugeApp />} />
+              <Route path="/mywork/end-to-end-attribution" element={<EndToEndAttribution />} />
+              <Route path="/mywork/executive-dashboard" element={<ExecutiveDashboard />} />
+              <Route path="/mywork/meta-ads-performance" element={<MetaAdsPerformance />} />
+              <Route path="/mywork/revenue-engineering" element={<RevenueEngineering />} />
+              {/* Insights/Blog Routes */}
+              <Route path="/insights" element={<Insights />} />
+              <Route path="/insights/:slug" element={<InsightPost />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <CookieConsent />
+          </ConsultationModalProvider>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

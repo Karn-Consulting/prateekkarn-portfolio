@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/prateek-hero.jpg";
+import { useConsultationModal } from "@/contexts/ConsultationModalContext";
 
 const HeroSection = () => {
+  const { openModal } = useConsultationModal();
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 lg:py-0">
       <div className="max-w-7xl mx-auto w-full">
@@ -39,20 +42,15 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="mt-8 lg:mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start order-4 lg:order-none">
               {/* Primary CTA - Request a Consultation */}
-              <a 
-                href="https://calendly.com/prateekkarn5/free-consultationhighlevel"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button 
+                variant="cta" 
+                size="lg"
+                onClick={openModal}
+                className="font-semibold text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto group bg-[#8b7355] text-white hover:bg-[#7a6548]"
               >
-                <Button 
-                  variant="cta" 
-                  size="lg"
-                  className="font-semibold text-sm sm:text-base px-6 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto group bg-[#8b7355] text-white hover:bg-[#7a6548]"
-                >
-                  Request a Consultation
-                  <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
-                </Button>
-              </a>
+                Request a Consultation
+                <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Button>
               
               {/* Secondary CTA - View My Work */}
               <Link to="/mywork">

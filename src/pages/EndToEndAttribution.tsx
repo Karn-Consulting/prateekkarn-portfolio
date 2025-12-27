@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Database, GitBranch, BarChart3, Target, TrendingUp, Layers } from 'lucide-react';
 import Footer from '@/components/Footer';
+import { useConsultationModal } from '@/contexts/ConsultationModalContext';
 
 export default function EndToEndAttribution() {
+  const { openModal } = useConsultationModal();
+
   return (
     <div className="min-h-screen bg-[#f8f7f5]">
       {/* Header */}
@@ -320,12 +323,12 @@ export default function EndToEndAttribution() {
           <p className="text-[#6a6a6a] mb-8 max-w-xl mx-auto">
             Whether you're reimagining your data infrastructure or exploring unified attribution, I'd welcome the conversation.
           </p>
-          <Link 
-            to="/about#contact"
+          <button 
+            onClick={openModal}
             className="inline-flex items-center gap-2 bg-[#8b7355] text-white px-8 py-4 rounded-sm hover:bg-[#6b5a45] transition-colors"
           >
             Start a Conversation
-          </Link>
+          </button>
         </div>
       </section>
 
