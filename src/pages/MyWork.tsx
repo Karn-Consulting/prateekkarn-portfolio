@@ -62,7 +62,7 @@ const CONTENT = {
         outcome: 'Case study in development — launching Q1 2025.',
         techStack: ['LangChain', 'OpenAI', 'Automation', 'Real Estate'],
         isComingSoon: true,
-        image: '/images/real-estate-ai-new.jpg'
+        image: '/images/real-estate-ai-v2.webp'
       }
     ]
   },
@@ -99,7 +99,7 @@ const CONTENT = {
         outcome: 'Case study in development — achieved 50% open rates in pilot.',
         techStack: ['Python', 'ML Models', 'Email Automation', 'Predictive Analytics'],
         isComingSoon: true,
-        image: '/images/predictive-email-new-v2.webp'
+        image: '/images/predictive-email-v3.webp'
       }
     ]
   },
