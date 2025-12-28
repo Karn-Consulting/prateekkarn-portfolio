@@ -40,7 +40,7 @@ const SELECT_WORKS = [
     outcome: 'Reduced reporting overhead by 70%',
     techStack: ['Looker', 'BigQuery', 'SQL'],
     link: '/mywork/executive-dashboard',
-    image: '/work-executive-dashboard-new.png'
+    image: '/work-executive-dashboard-home.png'
   }
 ];
 
