@@ -123,55 +123,60 @@ const CONTENT = {
 
 // Coming Soon Card Component
 const ComingSoonCard = ({ item }: { item: any }) => (
-  <div className="bg-white/60 rounded-lg border border-dashed border-[#8b7355]/40 relative overflow-hidden">
-    {/* Image */}
+  <div className="group relative bg-white rounded-sm overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-lg hover:shadow-accent/5 hover:border-accent/30 hover:-translate-y-1 border border-dashed border-[#8b7355]/40 h-full flex flex-col">
+    {/* Image - matching GridCard aspect ratio */}
     {item.image && (
-      <div className="w-full aspect-video overflow-hidden">
+      <div className="relative aspect-[4/3] sm:aspect-[16/10] md:aspect-[4/3] bg-[#f0ede8] overflow-hidden flex-shrink-0">
         <img 
           src={item.image} 
           alt={item.title}
-          className="w-full h-full object-cover opacity-70"
+          className="w-full h-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-105 group-hover:opacity-90"
         />
+        {/* Coming Soon Badge */}
+        <div className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1 bg-white/95 rounded-full shadow-sm">
+          <Clock className="w-3.5 h-3.5 text-[#8b7355]" />
+          <span className="text-xs font-medium text-[#8b7355] uppercase tracking-wider">Coming Soon</span>
+        </div>
       </div>
     )}
     
-    <div className="p-6">
-      {/* Coming Soon Badge */}
-      <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-white/90 rounded-full shadow-sm">
-        <Clock className="w-3.5 h-3.5 text-[#8b7355]" />
-        <span className="text-xs font-medium text-[#8b7355] uppercase tracking-wider">Coming Soon</span>
-      </div>
-      
+    {/* Content Section - matching GridCard padding */}
+    <div className="p-4 sm:p-5 flex flex-col flex-grow">
       {/* Context */}
-      <span className="text-xs font-medium text-[#8b7355]/60 uppercase tracking-wider">
+      <span className="text-[9px] sm:text-[10px] font-medium tracking-[0.12em] sm:tracking-[0.15em] uppercase text-[#8b8578] mb-2 sm:mb-3">
         {item.context}
       </span>
       
       {/* Title */}
-      <h3 className="font-heading text-lg font-semibold text-[#1a1a1a]/70 mt-2 mb-3">
+      <h3 className="font-heading text-base sm:text-lg text-[#1a1a1a]/80 mb-2 sm:mb-3 leading-snug group-hover:text-[#4a4a4a] transition-colors">
         {item.title}
       </h3>
       
       {/* Description */}
-      <p className="text-sm text-[#5a5a5a]/70 leading-relaxed mb-4">
+      <p className="font-body text-[#6a6a6a]/80 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-3">
         {item.description}
       </p>
       
       {/* Outcome */}
-      <div className="text-sm text-[#5a5a5a]/60 italic mb-4">
-        {item.outcome}
+      <div className="mb-3 sm:mb-4">
+        <span className="text-[10px] sm:text-xs text-[#6a6a6a]/70 italic">{item.outcome}</span>
       </div>
       
-      {/* Tech Stack */}
-      <div className="flex flex-wrap gap-2">
-        {item.techStack.map((tech: string, index: number) => (
+      {/* Tech Stack Tags - matching GridCard style */}
+      <div className="flex flex-wrap gap-1 sm:gap-1.5 pt-3 border-t border-[#e8e6e1] mt-auto">
+        {item.techStack.slice(0, 3).map((tech: string, index: number) => (
           <span 
             key={index}
-            className="px-2.5 py-1 text-xs bg-[#f5f5f0]/80 text-[#5a5a5a]/60 rounded-full border border-[#e5e5dc]/60"
+            className="inline-flex items-center px-1.5 sm:px-2 py-0.5 text-[8px] sm:text-[10px] font-medium uppercase tracking-wider bg-[#f5f4f1] text-[#6a6a6a]/70 rounded-sm"
           >
             {tech}
           </span>
         ))}
+        {item.techStack.length > 3 && (
+          <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 text-[8px] sm:text-[10px] font-medium text-[#8b8578]">
+            +{item.techStack.length - 3}
+          </span>
+        )}
       </div>
     </div>
   </div>
