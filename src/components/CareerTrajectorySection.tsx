@@ -1,7 +1,7 @@
 const CareerTrajectorySection = () => {
   const experiences = [
     {
-      period: "Jun 2023 – Present",
+      period: "Nov 2022 – Present",
       title: "Principal, AI & MarTech Transformation",
       company: "Karn Consulting",
       website: "https://karnconsulting.co",
@@ -12,7 +12,7 @@ const CareerTrajectorySection = () => {
       ]
     },
     {
-      period: "Aug 2021 – Jun 2023",
+      period: "Aug 2021 – Oct 2022",
       title: "Client Account Manager",
       company: "Standout Authority",
       website: "https://standoutauthority.com/",

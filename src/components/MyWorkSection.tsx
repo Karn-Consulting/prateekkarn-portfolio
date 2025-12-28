@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-// Curated 4 high-impact projects for the 2x2 grid - NEW 3-PILLAR STRUCTURE
+// Curated 4 LIVE high-impact projects for the 2x2 grid
 const SELECT_WORKS = [
   {
     id: 1,
@@ -24,10 +24,10 @@ const SELECT_WORKS = [
   },
   {
     id: 3,
-    title: 'Meta Ads — $50K/mo Scaling',
+    title: 'Meta Ads — $40K/mo Scaling',
     category: 'Growth Engineering',
     description: 'Structured creative testing framework with broad targeting and CBO to manage creative fatigue at scale.',
-    outcome: 'Scaled to $50k/mo with stable ROAS',
+    outcome: 'Scaled to $40k/mo with stable ROAS',
     techStack: ['Meta Ads', 'GA4', 'Looker'],
     link: '/mywork/meta-ads-performance',
     image: '/work-meta-ads.png'
@@ -132,7 +132,7 @@ const MyWorkSection = () => {
           ))}
         </div>
 
-        {/* View All Work Button - Minimalist with generous padding */}
+        {/* View All Work Button */}
         <div className="mt-16 sm:mt-20 flex justify-center">
           <Link 
             to="/mywork"

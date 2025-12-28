@@ -264,9 +264,19 @@ const About = () => {
                 <p className="text-foreground/85 text-sm leading-[1.75] mb-3">
                   In a heartwarming twist, his beloved dog <span className="font-medium text-accent">Nobo</span> plays the character of <span className="font-medium">Keesha</span> from the novel — making this a truly personal creative venture for Prateek.
                 </p>
-                <p className="text-muted-foreground text-xs leading-[1.75]">
+                <p className="text-muted-foreground text-xs leading-[1.75] mb-4">
                   Starring Gurpreet Ghuggi, Debi Makhsoospuri & more. Music by Beat Minister.
                 </p>
+                
+                {/* Foundational Creative Skills */}
+                <div className="pt-4 border-t border-border/30">
+                  <p className="text-foreground/85 text-sm leading-[1.75] mb-3">
+                    Beyond film, Prateek has hands-on experience in <span className="font-medium text-accent">graphic design</span>, <span className="font-medium text-accent">motion graphics & video editing</span>, and <span className="font-medium text-accent">web development</span> — foundational skills that inform how he architects execution-aware systems today.
+                  </p>
+                  <p className="text-muted-foreground text-xs leading-[1.75] italic">
+                    "Understanding the craft of execution makes me a better architect of systems that actually get built."
+                  </p>
+                </div>
               </div>
 
               {/* Values & Lifestyle */}

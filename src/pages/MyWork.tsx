@@ -5,10 +5,10 @@ import Footer from '@/components/Footer';
 import { TabNavigation } from '@/components/TabNavigation';
 import { HeroCard } from '@/components/HeroCard';
 import { GridCard } from '@/components/GridCard';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { X } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { X, Clock } from 'lucide-react';
 
-// NEW 3-PILLAR STRUCTURE
+// 3-PILLAR STRUCTURE - Only 4 live case studies + 2 coming soon
 const TABS = [
   {
     id: 'intelligent-systems',
@@ -27,7 +27,7 @@ const TABS = [
   }
 ];
 
-// CONSOLIDATED CONTENT - Only high-value case studies
+// CONTENT - 4 LIVE case studies + 2 COMING SOON
 const CONTENT = {
   'intelligent-systems': {
     hero: {
@@ -56,22 +56,12 @@ const CONTENT = {
         link: '/mywork/exec-venture-gauge'
       },
       {
-        title: 'AI vs Automation Decision Matrix',
-        context: 'Operational Strategy',
-        description: 'A 2x2 decision framework categorizing tasks by complexity and variability to select the optimal tech stack. Teams confuse deterministic automation with probabilistic AI, applying the wrong tool to the wrong problem.',
-        outcome: 'Redirected engineering efforts from LLMs to simple scripts for 40% of use cases, saving 3 months of dev time.',
-        techStack: ['Decision Theory', 'Process Mapping', 'LucidChart'],
-        problem: 'Teams confuse deterministic automation with probabilistic AI, applying the wrong tool to the wrong problem.',
-        system: 'A 2x2 decision framework categorizing tasks by complexity and variability to select the optimal tech stack.'
-      },
-      {
-        title: 'Pilot-to-Scale Gate Framework',
-        context: 'Implementation Governance',
-        description: 'A stage-gate process requiring specific KPI thresholds (accuracy, cost, speed) before full deployment. Successful pilots often fail at scale due to ignored unit economics and latency constraints.',
-        outcome: 'Standardized deployment protocol adopted by a 50-person engineering team.',
-        techStack: ['Governance', 'Jira', 'Agile Methodology'],
-        problem: 'Successful pilots often fail at scale due to ignored unit economics and latency constraints.',
-        system: 'A stage-gate process requiring specific KPI thresholds (accuracy, cost, speed) before full deployment.'
+        title: 'AI Agentic Workflow for Real Estate',
+        context: 'Coming Soon',
+        description: 'Autonomous AI agents orchestrating property research, lead qualification, and market analysis. Reducing manual research time while improving deal flow quality.',
+        outcome: 'Case study in development — launching Q1 2025.',
+        techStack: ['LangChain', 'OpenAI', 'Automation', 'Real Estate'],
+        isComingSoon: true
       }
     ]
   },
@@ -102,84 +92,75 @@ const CONTENT = {
         link: '/mywork/executive-dashboard'
       },
       {
-        title: 'Predictive Lead & Spend Forecasting Model',
-        context: 'Financial Planning',
-        description: 'Time-series forecasting model (Prophet) predicting future CPA based on historical spend and seasonality. Marketing finance teams relied on trailing 30-day averages, missing seasonal trends and saturation points.',
-        outcome: 'Improved quarterly budget accuracy by 18%, reducing wasted end-of-quarter spend.',
-        techStack: ['Python', 'Prophet', 'Pandas'],
-        problem: 'Marketing finance teams relied on trailing 30-day averages, missing seasonal trends and saturation points.',
-        system: 'Time-series forecasting model (Prophet) predicting future CPA based on historical spend and seasonality.',
-        image: '/work-forecasting.png'
-      },
-      {
-        title: 'LLM-Powered Campaign Performance Analyst',
-        context: 'AI Application',
-        description: 'Agentic workflow fetching API data, summarizing trends, and generating draft executive briefs. Weekly reporting took 10 hours of manual data pasting and commentary writing.',
-        outcome: 'Reduced reporting time to 15 minutes per week, freeing up strategic thinking time.',
-        techStack: ['OpenAI API', 'Python', 'LangChain'],
-        problem: 'Weekly reporting took 10 hours of manual data pasting and commentary writing.',
-        system: 'Agentic workflow fetching API data, summarizing trends, and generating draft executive briefs.',
-        image: '/work-llm-analyst.png'
-      },
-      {
-        title: 'CAC–LTV Cohort Analysis',
-        context: 'Unit Economics',
-        description: 'Cohort-based visualization tracking payback period and LTV evolution over time. Blended CAC hid the fact that recent cohorts were unprofitable.',
-        outcome: 'Shifted focus from "cheap leads" to "high-LTV channels" like organic search.',
-        techStack: ['SQL', 'Tableau', 'dbt'],
-        problem: 'Blended CAC hid the fact that recent cohorts were unprofitable.',
-        system: 'Cohort-based visualization tracking payback period and LTV evolution over time.'
+        title: 'Predictive Email Marketing — 50% Open Rate',
+        context: 'Coming Soon',
+        description: 'Machine learning model predicting optimal send times, subject lines, and audience segments. Transforming email from batch-and-blast to precision-targeted communication.',
+        outcome: 'Case study in development — achieved 50% open rates in pilot.',
+        techStack: ['Python', 'ML Models', 'Email Automation', 'Predictive Analytics'],
+        isComingSoon: true
       }
     ]
   },
   'growth-engineering': {
     hero: {
-      title: 'Meta Ads Performance Case Study — $50K/mo Scaling',
+      title: 'Meta Ads Performance Case Study — $40K/mo Scaling',
       context: 'Scale & Efficiency',
       description: 'Structured creative testing framework + broad targeting with CBO to manage creative fatigue. Scaling spend beyond $10k/mo caused CPA to skyrocket due to audience saturation.',
-      impact: 'Scaled to $50k/mo while maintaining stable ROAS, unlocking new growth tier.',
+      impact: 'Scaled to $40k/mo while maintaining stable ROAS, unlocking new growth tier.',
       techStack: ['Meta Ads', 'GA4', 'Google Sheets', 'Looker'],
       ctaText: 'View Case Study',
       link: '/mywork/meta-ads-performance',
       problem: 'Scaling spend beyond $10k/mo caused CPA to skyrocket due to audience saturation.',
       system: 'Structured creative testing framework + broad targeting with CBO to manage creative fatigue.',
-      outcome: 'Scaled to $50k/mo while maintaining stable ROAS, unlocking new growth tier.',
+      outcome: 'Scaled to $40k/mo while maintaining stable ROAS, unlocking new growth tier.',
       logoImage: '/work-meta-ads-hero.png'
     },
-    grid: [
-      {
-        title: 'Revenue Engineering & Psychological Architecture',
-        context: 'Conversion Psychology',
-        description: 'Leveraging behavioral economics and pattern interrupts to engineer retention loops. Traditional "creative" copy fails to address the subconscious friction points that kill conversion at scale.',
-        outcome: 'Reduced CPA by 30% through psychological hooks and structured narrative testing.',
-        techStack: ['Behavioral Economics', 'A/B Testing', 'Copy Frameworks'],
-        problem: 'Traditional "creative" copy fails to address the subconscious friction points that kill conversion at scale.',
-        system: 'Leveraging behavioral economics and pattern interrupts to engineer retention loops.',
-        link: '/mywork/revenue-engineering'
-      },
-      {
-        title: 'Google Ads Budget Optimization Simulator',
-        context: 'Scenario Planning',
-        description: 'Simulation tool modeling the diminishing returns curve of each campaign to optimize allocation. Client unsure how budget cuts would impact total conversion volume across campaigns.',
-        outcome: 'Identified optimal split that maintained 90% of conversions with 75% of the budget.',
-        techStack: ['Google Ads Scripts', 'JavaScript', 'Data Studio'],
-        problem: 'Client unsure how budget cuts would impact total conversion volume across campaigns.',
-        system: 'Simulation tool modeling the diminishing returns curve of each campaign to optimize allocation.',
-        image: '/work-google-ads-simulator.png'
-      },
-      {
-        title: 'ROAS Stabilization Framework',
-        context: 'Performance Recovery',
-        description: 'Protocol defining "normal volatility" vs "structural decline" to govern optimization decisions. Volatile performance caused panic-pausing of campaigns, resetting learning phases.',
-        outcome: 'Reduced manual interventions by 60%, allowing algorithms to stabilize and improve.',
-        techStack: ['Statistical Analysis', 'Media Buying Strategy'],
-        problem: 'Volatile performance caused panic-pausing of campaigns, resetting learning phases.',
-        system: 'Protocol defining "normal volatility" vs "structural decline" to govern optimization decisions.',
-        image: '/work-roas-stabilization.png'
-      }
-    ]
+    grid: []
   }
 };
+
+// Coming Soon Card Component
+const ComingSoonCard = ({ item }: { item: any }) => (
+  <div className="bg-white/60 rounded-lg border border-dashed border-[#8b7355]/40 p-6 relative overflow-hidden">
+    {/* Coming Soon Badge */}
+    <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-[#8b7355]/10 rounded-full">
+      <Clock className="w-3.5 h-3.5 text-[#8b7355]" />
+      <span className="text-xs font-medium text-[#8b7355] uppercase tracking-wider">Coming Soon</span>
+    </div>
+    
+    {/* Context */}
+    <span className="text-xs font-medium text-[#8b7355]/60 uppercase tracking-wider">
+      {item.context}
+    </span>
+    
+    {/* Title */}
+    <h3 className="font-heading text-lg font-semibold text-[#1a1a1a]/70 mt-2 mb-3">
+      {item.title}
+    </h3>
+    
+    {/* Description */}
+    <p className="text-sm text-[#5a5a5a]/70 leading-relaxed mb-4">
+      {item.description}
+    </p>
+    
+    {/* Outcome */}
+    <div className="text-sm text-[#5a5a5a]/60 italic mb-4">
+      {item.outcome}
+    </div>
+    
+    {/* Tech Stack */}
+    <div className="flex flex-wrap gap-2">
+      {item.techStack.map((tech: string, index: number) => (
+        <span 
+          key={index}
+          className="px-2.5 py-1 text-xs bg-[#f5f5f0]/80 text-[#5a5a5a]/60 rounded-full border border-[#e5e5dc]/60"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+);
 
 export default function MyWork() {
   const location = useLocation();
@@ -216,7 +197,7 @@ export default function MyWork() {
     <div className="min-h-screen bg-[#f5f5f0]">
       <Header />
       
-      {/* Hero Section - Responsive padding and typography */}
+      {/* Hero Section */}
       <section className="pt-8 sm:pt-12 md:pt-16 pb-4 sm:pb-6 md:pb-8 px-4 sm:px-6">
         <div className="container max-w-6xl mx-auto">
           <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[#1a1a1a] mb-4 sm:mb-5 md:mb-6">
@@ -235,7 +216,7 @@ export default function MyWork() {
         onTabChange={handleTabChange} 
       />
 
-      {/* Main Content - Responsive grid and spacing */}
+      {/* Main Content */}
       <main className="container max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
         <div className="space-y-6 sm:space-y-8 md:space-y-12 animate-in fade-in duration-500">
           
@@ -254,10 +235,15 @@ export default function MyWork() {
             />
           )}
 
-          {/* Grid Cards - Responsive grid: 1 col mobile, 2 col tablet, 3 col desktop */}
+          {/* Grid Cards */}
           {currentContent?.grid && currentContent.grid.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
               {currentContent.grid.map((item, index) => {
+                // Render Coming Soon card
+                if (item.isComingSoon) {
+                  return <ComingSoonCard key={index} item={item} />;
+                }
+
                 const cardContent = (
                   <GridCard
                     key={index}
@@ -271,21 +257,8 @@ export default function MyWork() {
                   />
                 );
 
-                // If item has a link, wrap in appropriate element
+                // If item has a link, wrap in anchor
                 if (item.link) {
-                  if (item.isExternal) {
-                    return (
-                      <a 
-                        key={index} 
-                        href={item.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="block"
-                      >
-                        {cardContent}
-                      </a>
-                    );
-                  }
                   return (
                     <a 
                       key={index} 
