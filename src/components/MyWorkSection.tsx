@@ -24,13 +24,13 @@ const SELECT_WORKS = [
   },
   {
     id: 3,
-    title: 'Meta Ads — $40K/mo Scaling',
-    category: 'Growth Engineering',
-    description: 'Structured creative testing framework with broad targeting and CBO to manage creative fatigue at scale.',
-    outcome: 'Scaled to $40k/mo with stable ROAS',
-    techStack: ['Meta Ads', 'GA4', 'Looker'],
+    title: 'Meta Ads Turnaround: 2.37 ROAS in 10 Days',
+    category: 'PROFITABLE TURNAROUND',
+    description: 'Re-architecting a $40K/month account for profitability and scale by implementing an intelligent, multi-layered advertising system.',
+    outcome: '2.37 ROAS achieved in 10 days',
+    techStack: ['Meta Ads', 'CBO', 'ASC+'],
     link: '/mywork/meta-ads-performance',
-    image: '/work-meta-ads.png'
+    image: '/work-meta-ads-hero.png'
   },
   {
     id: 4,
