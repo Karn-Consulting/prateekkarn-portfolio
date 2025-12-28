@@ -40,10 +40,7 @@ const AboutPrateekSection = () => {
                   } md:grayscale-0`}
                 />
               </div>
-              {/* Tap hint for mobile */}
-              <p className="text-[10px] text-muted-foreground/60 text-center mt-2 md:hidden">
-                Tap photo to {isColorful ? 'reset' : 'see in color'}
-              </p>
+
             </div>
 
             {/* Bio Content */}

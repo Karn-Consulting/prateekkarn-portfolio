@@ -57,9 +57,9 @@ const About = () => {
                 <div className="relative">
                   <div className="w-40 h-48 sm:w-56 sm:h-64 md:w-64 md:h-72 overflow-hidden rounded-sm shadow-md">
                     <img 
-                      src="/prateek-karn-about.jpg" 
+                      src="/prateek-formal.jpg" 
                       alt="Prateek Karn - AI Business Architect"
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-cover object-top"
                     />
                   </div>
                 </div>
@@ -161,17 +161,17 @@ const About = () => {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-4">
-                <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-md">
-                  <img 
-                    src="/prateek-formal.jpg" 
-                    alt="Prateek Karn - Professional"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-              </div>
-              <div className="lg:col-span-8">
+            {/* Parliament Building Image */}
+            <div className="aspect-[21/9] overflow-hidden rounded-sm shadow-md mb-8">
+              <img 
+                src="/parliament-building.jpg" 
+                alt="Indian Parliament House - Sansad Bhavan, New Delhi"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <div className="lg:col-span-12">
                 <p className="text-foreground/85 text-sm sm:text-base leading-[1.8] mb-4">
                   Beyond his professional work, Prateek has been involved in supporting government initiatives aimed at strengthening regulatory compliance and fiscal integrity. His analytical expertise has contributed to identifying revenue evasion patterns and non-compliant entities, helping recover rightful revenue for the Indian Government.
                 </p>
@@ -236,79 +236,43 @@ const About = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Film & Creative - Chaali Din */}
-              <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
-                <div className="flex items-center gap-2 mb-4">
-                  <Film className="w-4 h-4 text-accent" />
-                  <h3 className="font-heading text-base font-semibold text-foreground">Creative Pursuits</h3>
-                </div>
-                {/* Original photo */}
-                <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
-                  <img 
-                    src="/prateek-movie.jpg" 
-                    alt="Prateek Karn on set of Chaali Din"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-                <p className="text-foreground/85 text-sm leading-[1.75] mb-4">
-                  Prateek makes a special appearance in the upcoming Punjabi film <span className="font-medium text-accent">"Chaali Din"</span>, adapted from the bestselling novel by Gurpreet S. Dhugga. Directed by Tarnvir Singh Jagpal, the film releases <span className="font-medium">April 3, 2026</span>.
-                </p>
-                {/* Movie poster */}
-                <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
-                  <img 
-                    src={chaaliDinPoster}
-                    alt="Chaali Din Movie Poster - Punjabi Film releasing April 2026"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <p className="text-foreground/85 text-sm leading-[1.75] mb-3">
-                  In a heartwarming twist, Prateek's beloved dog <span className="font-medium text-accent">Nobo</span> plays the character of <span className="font-medium">Keesha</span> from the novel — making this a truly personal creative venture for Prateek.
-                </p>
-                <p className="text-muted-foreground text-xs leading-[1.75]">
-                  Starring Gurpreet Ghuggi, Debi Makhsoospuri & more.
-                </p>
-              </div>
-
-              {/* Values & Lifestyle Column */}
+              {/* Left Column - Chaali Din + Foundational Skills */}
               <div className="flex flex-col gap-6">
-                {/* Animal Lover */}
+                {/* Film & Creative - Chaali Din */}
                 <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
                   <div className="flex items-center gap-2 mb-4">
-                    <Heart className="w-4 h-4 text-accent" />
-                    <h3 className="font-heading text-base font-semibold text-foreground">Animal Lover</h3>
+                    <Film className="w-4 h-4 text-accent" />
+                    <h3 className="font-heading text-base font-semibold text-foreground">Creative Pursuits</h3>
                   </div>
-                  <div className="aspect-video overflow-hidden rounded-sm mb-4">
+                  {/* Original photo */}
+                  <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
                     <img 
-                      src="/prateek-pet.jpg" 
-                      alt="Prateek's pet"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-muted-foreground text-sm leading-[1.75]">
-                    An avid animal lover, Prateek believes in compassion extending beyond human relationships. His connection with animals reflects his gentle nature and respect for all living beings.
-                  </p>
-                </div>
-
-                {/* Sustainable Living */}
-                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Leaf className="w-4 h-4 text-accent" />
-                    <h3 className="font-heading text-base font-semibold text-foreground">Sustainability Advocate</h3>
-                  </div>
-                  <div className="aspect-video overflow-hidden rounded-sm mb-4">
-                    <img 
-                      src="/prateek-sustainability.jpg" 
-                      alt="Prateek Karn - Sustainability Advocate in nature"
+                      src="/prateek-movie.jpg" 
+                      alt="Prateek Karn on set of Chaali Din"
                       className="w-full h-full object-cover object-top"
                     />
                   </div>
-                  <p className="text-muted-foreground text-sm leading-[1.75]">
-                    A sustainable living advocate, Prateek believes in living a simple life centered on constant learning and staying rooted. Despite his professional achievements, he maintains a grounded perspective — valuing meaningful connections, continuous growth, and making a positive impact over material accumulation.
+                  <p className="text-foreground/85 text-sm leading-[1.75] mb-4">
+                    Prateek makes a special appearance in the upcoming Punjabi film <span className="font-medium text-accent">"Chaali Din"</span>, adapted from the bestselling novel by Gurpreet S. Dhugga. Directed by Tarnvir Singh Jagpal, the film releases <span className="font-medium">April 3, 2026</span>.
+                  </p>
+                  {/* Movie poster */}
+                  <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
+                    <img 
+                      src={chaaliDinPoster}
+                      alt="Chaali Din Movie Poster - Punjabi Film releasing April 2026"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="text-foreground/85 text-sm leading-[1.75] mb-3">
+                    In a heartwarming twist, Prateek's beloved dog <span className="font-medium text-accent">Nobo</span> plays the character of <span className="font-medium">Keesha</span> from the novel — making this a truly personal creative venture for Prateek.
+                  </p>
+                  <p className="text-muted-foreground text-xs leading-[1.75]">
+                    Starring Gurpreet Ghuggi, Debi Makhsoospuri & more.
                   </p>
                 </div>
 
-                {/* Foundational Creative Skills - New Card */}
-                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out flex-grow">
+                {/* Foundational Creative Skills - Aligned at bottom with right column */}
+                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
                   <div className="flex items-center gap-2 mb-4">
                     <Palette className="w-4 h-4 text-accent" />
                     <h3 className="font-heading text-base font-semibold text-foreground">Foundational Creative Skills</h3>
@@ -345,6 +309,45 @@ const About = () => {
                       <span>Web Infrastructure</span>
                     </Link>
                   </div>
+                </div>
+              </div>
+
+              {/* Right Column - Animal Lover + Sustainability */}
+              <div className="flex flex-col gap-6">
+                {/* Animal Lover */}
+                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Heart className="w-4 h-4 text-accent" />
+                    <h3 className="font-heading text-base font-semibold text-foreground">Animal Lover</h3>
+                  </div>
+                  <div className="aspect-video overflow-hidden rounded-sm mb-4">
+                    <img 
+                      src="/prateek-pet.jpg" 
+                      alt="Prateek's pet"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-[1.75]">
+                    An avid animal lover, Prateek believes in compassion extending beyond human relationships. His connection with animals reflects his gentle nature and respect for all living beings.
+                  </p>
+                </div>
+
+                {/* Sustainable Living - Full image */}
+                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out flex-grow">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Leaf className="w-4 h-4 text-accent" />
+                    <h3 className="font-heading text-base font-semibold text-foreground">Sustainability Advocate</h3>
+                  </div>
+                  <div className="overflow-hidden rounded-sm mb-4">
+                    <img 
+                      src="/prateek-sustainability.jpg" 
+                      alt="Prateek Karn - Sustainability Advocate in nature"
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-[1.75]">
+                    A sustainable living advocate, Prateek believes in living a simple life centered on constant learning and staying rooted. Despite his professional achievements, he maintains a grounded perspective — valuing meaningful connections, continuous growth, and making a positive impact over material accumulation.
+                  </p>
                 </div>
               </div>
             </div>
