@@ -236,7 +236,7 @@ const About = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Left Column - Chaali Din + Foundational Skills */}
+              {/* Left Column - Chaali Din only */}
               <div className="flex flex-col gap-6">
                 {/* Film & Creative - Chaali Din */}
                 <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
@@ -270,8 +270,47 @@ const About = () => {
                     Starring Gurpreet Ghuggi, Debi Makhsoospuri & more.
                   </p>
                 </div>
+              </div>
 
-                {/* Foundational Creative Skills - Aligned at bottom with right column */}
+              {/* Right Column - Animal Lover + Sustainability + Foundational Skills */}
+              <div className="flex flex-col gap-6">
+                {/* Animal Lover */}
+                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Heart className="w-4 h-4 text-accent" />
+                    <h3 className="font-heading text-base font-semibold text-foreground">Animal Lover</h3>
+                  </div>
+                  <div className="aspect-video overflow-hidden rounded-sm mb-4">
+                    <img 
+                      src="/prateek-pet.jpg" 
+                      alt="Prateek's pet"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-[1.75]">
+                    An avid animal lover, Prateek believes in compassion extending beyond human relationships. His connection with animals reflects his gentle nature and respect for all living beings.
+                  </p>
+                </div>
+
+                {/* Sustainable Living */}
+                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Leaf className="w-4 h-4 text-accent" />
+                    <h3 className="font-heading text-base font-semibold text-foreground">Sustainability Advocate</h3>
+                  </div>
+                  <div className="aspect-[4/3] overflow-hidden rounded-sm mb-4">
+                    <img 
+                      src="/prateek-sustainability.jpg" 
+                      alt="Prateek Karn - Sustainability Advocate in nature"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-[1.75]">
+                    A sustainable living advocate, Prateek believes in living a simple life centered on constant learning and staying rooted. Despite his professional achievements, he maintains a grounded perspective — valuing meaningful connections, continuous growth, and making a positive impact over material accumulation.
+                  </p>
+                </div>
+
+                {/* Foundational Creative Skills */}
                 <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
                   <div className="flex items-center gap-2 mb-4">
                     <Palette className="w-4 h-4 text-accent" />
@@ -309,45 +348,6 @@ const About = () => {
                       <span>Web Infrastructure</span>
                     </Link>
                   </div>
-                </div>
-              </div>
-
-              {/* Right Column - Animal Lover + Sustainability */}
-              <div className="flex flex-col gap-6">
-                {/* Animal Lover */}
-                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Heart className="w-4 h-4 text-accent" />
-                    <h3 className="font-heading text-base font-semibold text-foreground">Animal Lover</h3>
-                  </div>
-                  <div className="aspect-video overflow-hidden rounded-sm mb-4">
-                    <img 
-                      src="/prateek-pet.jpg" 
-                      alt="Prateek's pet"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-muted-foreground text-sm leading-[1.75]">
-                    An avid animal lover, Prateek believes in compassion extending beyond human relationships. His connection with animals reflects his gentle nature and respect for all living beings.
-                  </p>
-                </div>
-
-                {/* Sustainable Living - Full image */}
-                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out flex-grow">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Leaf className="w-4 h-4 text-accent" />
-                    <h3 className="font-heading text-base font-semibold text-foreground">Sustainability Advocate</h3>
-                  </div>
-                  <div className="overflow-hidden rounded-sm mb-4">
-                    <img 
-                      src="/prateek-sustainability.jpg" 
-                      alt="Prateek Karn - Sustainability Advocate in nature"
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                  <p className="text-muted-foreground text-sm leading-[1.75]">
-                    A sustainable living advocate, Prateek believes in living a simple life centered on constant learning and staying rooted. Despite his professional achievements, he maintains a grounded perspective — valuing meaningful connections, continuous growth, and making a positive impact over material accumulation.
-                  </p>
                 </div>
               </div>
             </div>
