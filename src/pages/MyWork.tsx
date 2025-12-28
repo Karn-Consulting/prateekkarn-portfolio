@@ -99,7 +99,7 @@ const CONTENT = {
         outcome: 'Case study in development — achieved 50% open rates in pilot.',
         techStack: ['Python', 'ML Models', 'Email Automation', 'Predictive Analytics'],
         isComingSoon: true,
-        image: '/images/predictive-email-new.jpg'
+        image: '/images/predictive-email-new-v2.webp'
       }
     ]
   },
