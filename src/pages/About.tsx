@@ -308,12 +308,22 @@ const About = () => {
                     <Palette className="w-4 h-4 text-accent" />
                     <h3 className="font-heading text-base font-semibold text-foreground">Foundational Creative Skills</h3>
                   </div>
+                  
+                  {/* Blueprint Image - moved above text description */}
+                  <div className="-mx-6 mb-4 overflow-hidden">
+                    <img 
+                      src="/execution-blueprint.jpg" 
+                      alt="Execution framework blueprint - Design, Development, Delivery"
+                      className="w-full h-auto block"
+                    />
+                  </div>
+                  
                   <p className="text-foreground/85 text-sm leading-[1.75] mb-4">
                     Beyond film, Prateek has hands-on experience in <span className="font-medium text-accent">graphic design</span>, <span className="font-medium text-accent">motion graphics & video editing</span>, and <span className="font-medium text-accent">web development</span> — foundational skills that inform how he architects execution-aware systems today.
                   </p>
                   
                   {/* Portfolio Links */}
-                  <div className="space-y-2 mb-4">
+                  <div className="space-y-2">
                     <a 
                       href="https://www.youtube.com/watch?v=D0egLS5y3CU" 
                       target="_blank" 
@@ -334,15 +344,6 @@ const About = () => {
                       <ExternalLink className="w-3.5 h-3.5" />
                       <span>Web Infrastructure</span>
                     </Link>
-                  </div>
-
-                  {/* Supporting Blueprint Image - full width, no excess whitespace */}
-                  <div className="-mx-6 -mb-6 overflow-hidden rounded-b-lg">
-                    <img 
-                      src="/execution-blueprint.jpg" 
-                      alt="Execution framework blueprint - Design, Development, Delivery"
-                      className="w-full h-auto block"
-                    />
                   </div>
                 </div>
 
