@@ -225,7 +225,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Beyond Work Section - Personal Section */}
+        {/* Beyond Work Section - Personal Section - Two Column Grid Layout */}
         <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3">
@@ -235,137 +235,134 @@ const About = () => {
               The person behind the professional.
             </p>
 
-            {/* ROW 1: 3-column grid - Animal Lover, Foundational Skills, Sustainability */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-              {/* Column 1: Animal Lover */}
-              <div className="flex flex-col p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
-                <div className="flex items-center gap-2 mb-4">
-                  <Heart className="w-4 h-4 text-accent" />
-                  <h3 className="font-heading text-base font-semibold text-foreground">Animal Lover</h3>
-                </div>
-                <div className="aspect-video overflow-hidden rounded-sm mb-4">
-                  <img 
-                    src="/prateek-pet.jpg" 
-                    alt="Prateek's pet"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <p className="text-muted-foreground text-sm leading-[1.75] flex-grow">
-                  An avid animal lover, Prateek believes in compassion extending beyond human relationships. His connection with animals reflects his gentle nature and respect for all living beings.
-                </p>
-              </div>
-
-              {/* Column 2: Foundational Creative Skills */}
-              <div className="flex flex-col p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
-                <div className="flex items-center gap-2 mb-4">
-                  <Palette className="w-4 h-4 text-accent" />
-                  <h3 className="font-heading text-base font-semibold text-foreground">Foundational Creative Skills</h3>
-                </div>
-                <p className="text-foreground/85 text-sm leading-[1.75] mb-4">
-                  Beyond film, Prateek has hands-on experience in <span className="font-medium text-accent">graphic design</span>, <span className="font-medium text-accent">motion graphics & video editing</span>, and <span className="font-medium text-accent">web development</span> — foundational skills that inform how he architects execution-aware systems today.
-                </p>
-                
-                {/* Portfolio Links */}
-                <div className="space-y-2 mb-4">
-                  <a 
-                    href="https://www.youtube.com/watch?v=D0egLS5y3CU" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-accent hover:text-accent/80 transition-colors"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    <span>Video Portfolio</span>
-                  </a>
-                  <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    <span>Graphic Design Portfolio — Coming Soon</span>
-                  </span>
-                  <Link 
-                    to="/mywork/web-infrastructure"
-                    className="flex items-center gap-2 text-sm text-accent hover:text-accent/80 transition-colors"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    <span>Web Infrastructure</span>
-                  </Link>
-                </div>
-
-                {/* Supporting Blueprint Image - positioned towards lower half */}
-                <div className="mt-auto overflow-hidden rounded-sm">
-                  <img 
-                    src="/execution-blueprint.jpg" 
-                    alt="Execution framework blueprint - Design, Development, Delivery"
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
-
-              {/* Column 3: Sustainability Advocate */}
-              <div className="flex flex-col p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
-                <div className="flex items-center gap-2 mb-4">
-                  <Leaf className="w-4 h-4 text-accent" />
-                  <h3 className="font-heading text-base font-semibold text-foreground">Sustainability Advocate</h3>
-                </div>
-                {/* Full image - no cropping, contain-style */}
-                <div className="overflow-hidden rounded-sm mb-4">
-                  <img 
-                    src="/prateek-sustainability.jpg" 
-                    alt="Prateek Karn - Sustainability Advocate in nature"
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-                <p className="text-muted-foreground text-sm leading-[1.75]">
-                  A sustainable living advocate, Prateek believes in living a simple life centered on constant learning and staying rooted. Despite his professional achievements, he maintains a grounded perspective — valuing meaningful connections, continuous growth, and making a positive impact over material accumulation.
-                </p>
-              </div>
-            </div>
-
-            {/* ROW 2: Full-width Creative Pursuits + Chaali Din card spanning all 3 columns */}
-            <div className="grid grid-cols-1">
-              <div className="p-6 md:p-8 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl transition-all duration-300 ease-out">
+            {/* Two-column grid: Column 1 = Creative Pursuits + Chaali Din, Column 2 = Animal Lover, Foundational Skills, Sustainability */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+              
+              {/* Column 1: Creative Pursuits + Chaali Din */}
+              <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl transition-all duration-300 ease-out">
                 <div className="flex items-center gap-2 mb-6">
                   <Film className="w-5 h-5 text-accent" />
                   <h3 className="font-heading text-lg font-semibold text-foreground">Creative Pursuits</h3>
                 </div>
                 
-                {/* Horizontal layout for desktop */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                  {/* Left: Photo on set */}
-                  <div className="flex flex-col">
-                    <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
-                      <img 
-                        src="/prateek-movie.jpg" 
-                        alt="Prateek Karn on set of Chaali Din"
-                        className="w-full h-full object-cover object-top"
-                      />
-                    </div>
-                    <p className="text-foreground/85 text-sm leading-[1.75]">
-                      Prateek makes a special appearance in the upcoming Punjabi film <span className="font-medium text-accent">"Chaali Din"</span>, adapted from the bestselling novel by Gurpreet S. Dhugga. Directed by Tarnvir Singh Jagpal, the film releases <span className="font-medium">April 3, 2026</span>.
-                    </p>
+                {/* Vertical stack: Portrait photo, text, movie poster, caption */}
+                <div className="flex flex-col">
+                  {/* Portrait photo */}
+                  <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
+                    <img 
+                      src="/prateek-movie.jpg" 
+                      alt="Prateek Karn on set of Chaali Din"
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
+                  <p className="text-foreground/85 text-sm leading-[1.75] mb-6">
+                    Prateek makes a special appearance in the upcoming Punjabi film <span className="font-medium text-accent">"Chaali Din"</span>, adapted from the bestselling novel by Gurpreet S. Dhugga. Directed by Tarnvir Singh Jagpal, the film releases <span className="font-medium">April 3, 2026</span>.
+                  </p>
                   
-                  {/* Center: Movie Poster */}
-                  <div className="flex flex-col">
-                    <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
-                      <img 
-                        src={chaaliDinPoster}
-                        alt="Chaali Din Movie Poster - Punjabi Film releasing April 2026"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <p className="text-muted-foreground text-xs leading-[1.75]">
-                      Starring Gurpreet Ghuggi, Debi Makhsoospuri & more.
-                    </p>
+                  {/* Movie Poster */}
+                  <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
+                    <img 
+                      src={chaaliDinPoster}
+                      alt="Chaali Din Movie Poster - Punjabi Film releasing April 2026"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
+                  <p className="text-muted-foreground text-xs leading-[1.75] mb-4">
+                    Starring Gurpreet Ghuggi, Debi Makhsoospuri & more.
+                  </p>
                   
-                  {/* Right: Story about Nobo */}
-                  <div className="flex flex-col justify-center">
-                    <p className="text-foreground/85 text-sm leading-[1.75] mb-4">
-                      In a heartwarming twist, Prateek's beloved dog <span className="font-medium text-accent">Nobo</span> plays the character of <span className="font-medium">Keesha</span> from the novel — making this a truly personal creative venture for Prateek.
-                    </p>
-                    <p className="text-muted-foreground text-sm leading-[1.75] italic">
-                      A story of life's journey, family bonds, and the simple joys that define us.
-                    </p>
+                  {/* Caption about Nobo - directly below movie poster */}
+                  <p className="text-foreground/85 text-sm leading-[1.75] mb-4">
+                    In a heartwarming twist, Prateek's beloved dog <span className="font-medium text-accent">Nobo</span> plays the character of <span className="font-medium">Keesha</span> from the novel — making this a truly personal creative venture for Prateek.
+                  </p>
+                  <p className="text-muted-foreground text-sm leading-[1.75] italic">
+                    A story of life's journey, family bonds, and the simple joys that define us.
+                  </p>
+                </div>
+              </div>
+
+              {/* Column 2: Animal Lover, Foundational Creative Skills, Sustainability Advocate - stacked vertically */}
+              <div className="flex flex-col gap-6">
+                
+                {/* Card 1: Animal Lover */}
+                <div className="flex flex-col p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Heart className="w-4 h-4 text-accent" />
+                    <h3 className="font-heading text-base font-semibold text-foreground">Animal Lover</h3>
                   </div>
+                  <div className="aspect-video overflow-hidden rounded-sm mb-4">
+                    <img 
+                      src="/prateek-pet.jpg" 
+                      alt="Prateek's pet"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-[1.75]">
+                    An avid animal lover, Prateek believes in compassion extending beyond human relationships. His connection with animals reflects his gentle nature and respect for all living beings.
+                  </p>
+                </div>
+
+                {/* Card 2: Foundational Creative Skills */}
+                <div className="flex flex-col p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Palette className="w-4 h-4 text-accent" />
+                    <h3 className="font-heading text-base font-semibold text-foreground">Foundational Creative Skills</h3>
+                  </div>
+                  <p className="text-foreground/85 text-sm leading-[1.75] mb-4">
+                    Beyond film, Prateek has hands-on experience in <span className="font-medium text-accent">graphic design</span>, <span className="font-medium text-accent">motion graphics & video editing</span>, and <span className="font-medium text-accent">web development</span> — foundational skills that inform how he architects execution-aware systems today.
+                  </p>
+                  
+                  {/* Portfolio Links */}
+                  <div className="space-y-2 mb-4">
+                    <a 
+                      href="https://www.youtube.com/watch?v=D0egLS5y3CU" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-accent hover:text-accent/80 transition-colors"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span>Video Portfolio</span>
+                    </a>
+                    <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span>Graphic Design Portfolio — Coming Soon</span>
+                    </span>
+                    <Link 
+                      to="/mywork/web-infrastructure"
+                      className="flex items-center gap-2 text-sm text-accent hover:text-accent/80 transition-colors"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span>Web Infrastructure</span>
+                    </Link>
+                  </div>
+
+                  {/* Supporting Blueprint Image - full width, no excess whitespace */}
+                  <div className="-mx-6 -mb-6 overflow-hidden rounded-b-lg">
+                    <img 
+                      src="/execution-blueprint.jpg" 
+                      alt="Execution framework blueprint - Design, Development, Delivery"
+                      className="w-full h-auto block"
+                    />
+                  </div>
+                </div>
+
+                {/* Card 3: Sustainability Advocate */}
+                <div className="flex flex-col p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-out">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Leaf className="w-4 h-4 text-accent" />
+                    <h3 className="font-heading text-base font-semibold text-foreground">Sustainability Advocate</h3>
+                  </div>
+                  {/* Full image - no cropping, contain-style */}
+                  <div className="overflow-hidden rounded-sm mb-4">
+                    <img 
+                      src="/prateek-sustainability.jpg" 
+                      alt="Prateek Karn - Sustainability Advocate in nature"
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-[1.75]">
+                    A sustainable living advocate, Prateek believes in living a simple life centered on constant learning and staying rooted. Despite his professional achievements, he maintains a grounded perspective — valuing meaningful connections, continuous growth, and making a positive impact over material accumulation.
+                  </p>
                 </div>
               </div>
             </div>
