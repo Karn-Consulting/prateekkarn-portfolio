@@ -30,7 +30,7 @@ const SELECT_WORKS = [
     outcome: '2.37 ROAS achieved in 10 days',
     techStack: ['Meta Ads', 'CBO', 'ASC+'],
     link: '/mywork/meta-ads-performance',
-    image: '/work-meta-ads-hero.png'
+    image: '/work-meta-ads-new.png'
   },
   {
     id: 4,

@@ -45,6 +45,28 @@ export default function MetaAdsPerformance() {
         </div>
       </section>
 
+      {/* Video Walkthrough Section */}
+      <section className="py-8 sm:py-12 px-4 sm:px-6">
+        <div className="container max-w-4xl mx-auto">
+          <div className="bg-white rounded-sm border border-[#e5e5e0] overflow-hidden shadow-sm">
+            {/* Video Placeholder */}
+            <div className="aspect-video bg-[#1a1a1a] flex items-center justify-center relative">
+              {/* Replace the div below with your video embed */}
+              <div className="text-center">
+                <svg className="w-16 h-16 text-[#8b7355] mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <p className="text-[#6a6a6a] text-sm">Video Walkthrough Coming Soon</p>
+              </div>
+            </div>
+            <div className="p-4 bg-[#f8f7f5] border-t border-[#e5e5e0]">
+              <p className="text-sm text-[#6a6a6a] text-center">Watch the full walkthrough of the Meta Ads account turnaround</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Problem/Solution Section */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
         <div className="container max-w-6xl mx-auto">
