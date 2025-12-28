@@ -89,7 +89,7 @@ const CONTENT = {
         techStack: ['Looker', 'BigQuery', 'SQL'],
         problem: 'CEO needed a single view of growth health without logging into 5 different platforms.',
         system: 'Centralized Looker Studio dashboard aggregating spend, leads, and revenue in real-time.',
-        image: '/work-executive-dashboard.png',
+        image: '/work-executive-dashboard-home.png',
         link: '/mywork/executive-dashboard'
       },
       {

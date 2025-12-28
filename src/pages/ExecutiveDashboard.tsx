@@ -49,6 +49,14 @@ export default function ExecutiveDashboard() {
               <span className="text-xs text-[#6a6a6a] font-medium">Best viewed on desktop</span>
             </div>
           </div>
+          {/* Hero Image */}
+          <div className="mt-12">
+            <img 
+              src="/work-executive-dashboard-mywork.webp" 
+              alt="Executive Marketing Command Dashboard" 
+              className="w-full rounded-sm shadow-lg"
+            />
+          </div>
         </div>
       </section>
 
