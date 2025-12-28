@@ -62,7 +62,7 @@ const CONTENT = {
         outcome: 'Case study in development — launching Q1 2025.',
         techStack: ['LangChain', 'OpenAI', 'Automation', 'Real Estate'],
         isComingSoon: true,
-        image: '/images/real-estate-ai.jpg'
+        image: '/images/real-estate-ai-new.jpg'
       }
     ]
   },
@@ -99,7 +99,7 @@ const CONTENT = {
         outcome: 'Case study in development — achieved 50% open rates in pilot.',
         techStack: ['Python', 'ML Models', 'Email Automation', 'Predictive Analytics'],
         isComingSoon: true,
-        image: '/images/predictive-email.jpg'
+        image: '/images/predictive-email-new.jpg'
       }
     ]
   },
@@ -115,7 +115,7 @@ const CONTENT = {
       problem: 'Scaling spend beyond $10k/mo caused CPA to skyrocket due to audience saturation.',
       system: 'Structured creative testing framework + broad targeting with CBO to manage creative fatigue.',
       outcome: 'Scaled to $40k/mo while maintaining stable ROAS, unlocking new growth tier.',
-      logoImage: '/images/meta-ads-soft.jpg'
+      logoImage: '/images/meta-ads-new.jpg'
     },
     grid: []
   }
@@ -126,7 +126,7 @@ const ComingSoonCard = ({ item }: { item: any }) => (
   <div className="bg-white/60 rounded-lg border border-dashed border-[#8b7355]/40 relative overflow-hidden">
     {/* Image */}
     {item.image && (
-      <div className="w-full h-40 overflow-hidden">
+      <div className="w-full aspect-video overflow-hidden">
         <img 
           src={item.image} 
           alt={item.title}
