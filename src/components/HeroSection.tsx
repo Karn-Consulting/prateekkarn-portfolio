@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/prateek-hero-new.jpg";
+import heroImage from "@/assets/prateek-hero.jpg";
 import { useConsultationModal } from "@/contexts/ConsultationModalContext";
 
 const HeroSection = () => {
