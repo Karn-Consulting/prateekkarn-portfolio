@@ -237,35 +237,35 @@ export default function ExecutiveDashboard() {
 
       {/* Live Interactive Dashboard */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
-        <div className="container max-w-6xl mx-auto">
+        <div className="container max-w-7xl mx-auto">
           <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-4 text-center">Live Interactive Dashboard</h2>
           <p className="text-center text-[#6a6a6a] mb-8 max-w-2xl mx-auto">
             Experience the dashboard with synthetic data to see how executives consume marketing intelligence. Fully interactive with real-time KPIs, anomaly detection, and drill-down capabilities.
           </p>
           
-          {/* Live Dashboard Link */}
-          <div className="text-center mb-8">
+          {/* Embedded Dashboard */}
+          <div className="bg-[#f8f7f5] rounded-sm overflow-hidden border border-[#e5e5e0]">
+            <iframe 
+              src="https://dashboard.prateekkarn.com" 
+              className="w-full border-0"
+              style={{ height: '800px', minHeight: '600px' }}
+              title="Executive Marketing Command Dashboard"
+              loading="lazy"
+              allow="clipboard-write"
+            />
+          </div>
+          
+          {/* Open in new tab option */}
+          <div className="mt-6 text-center">
             <a 
               href="https://dashboard.prateekkarn.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white px-6 py-3 rounded-sm text-sm font-medium transition-all duration-200 hover:bg-[#8b7355] hover:-translate-y-0.5 hover:shadow-lg"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#8b7355] text-white font-medium text-base rounded-sm hover:bg-[#6b5a45] transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              <ExternalLink className="w-4 h-4" />
-              Open Full Dashboard
+              <span>Open Dashboard in New Tab for Full Experience</span>
+              <ExternalLink className="w-5 h-5" />
             </a>
-          </div>
-          
-          {/* Dashboard Preview */}
-          <div className="bg-[#f8f7f5] border border-[#e5e5e0] rounded-sm overflow-hidden">
-            <div className="aspect-video w-full">
-              <iframe 
-                src="https://dashboard.prateekkarn.com" 
-                className="w-full h-full border-0"
-                title="Executive Marketing Command Dashboard"
-                loading="lazy"
-              />
-            </div>
           </div>
           
           <p className="text-center text-xs text-[#8b7355] mt-4">
