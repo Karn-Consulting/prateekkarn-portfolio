@@ -173,7 +173,7 @@ const About = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-12">
                 <p className="text-foreground/85 text-sm sm:text-base leading-[1.8] mb-4">
-                  Beyond his professional work, Prateek has been involved in supporting government initiatives aimed at strengthening regulatory compliance and fiscal integrity. His analytical expertise has contributed to identifying revenue evasion patterns and non-compliant entities, helping recover rightful revenue for the Indian Government.
+                  Prateek has been actively involved in supporting government initiatives aimed at strengthening regulatory compliance and fiscal integrity. His analytical expertise has contributed to identifying revenue evasion patterns and non-compliant entities, helping recover rightful revenue for the Indian Government.
                 </p>
                 <p className="text-muted-foreground text-sm leading-[1.75]">
                   This work reflects his commitment to ethical practice and his belief that business intelligence should serve not just commercial interests, but also the broader public good. His approach combines technical rigor with a strong moral compass — ensuring that data-driven insights are used responsibly and for legitimate purposes.
@@ -229,7 +229,7 @@ const About = () => {
         <section className="py-14 sm:py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3">
-              Beyond Work
+              Life Beyond the Desk
             </h2>
             <p className="text-muted-foreground text-xs sm:text-sm max-w-xl mb-8 uppercase tracking-wider">
               The person behind the professional.
