@@ -61,7 +61,8 @@ const CONTENT = {
         description: 'Autonomous AI agents orchestrating property research, lead qualification, and market analysis. Reducing manual research time while improving deal flow quality.',
         outcome: 'Case study in development — launching Q1 2025.',
         techStack: ['LangChain', 'OpenAI', 'Automation', 'Real Estate'],
-        isComingSoon: true
+        isComingSoon: true,
+        image: '/images/real-estate-ai.jpg'
       }
     ]
   },
@@ -97,7 +98,8 @@ const CONTENT = {
         description: 'Machine learning model predicting optimal send times, subject lines, and audience segments. Transforming email from batch-and-blast to precision-targeted communication.',
         outcome: 'Case study in development — achieved 50% open rates in pilot.',
         techStack: ['Python', 'ML Models', 'Email Automation', 'Predictive Analytics'],
-        isComingSoon: true
+        isComingSoon: true,
+        image: '/images/predictive-email.jpg'
       }
     ]
   },
@@ -113,7 +115,7 @@ const CONTENT = {
       problem: 'Scaling spend beyond $10k/mo caused CPA to skyrocket due to audience saturation.',
       system: 'Structured creative testing framework + broad targeting with CBO to manage creative fatigue.',
       outcome: 'Scaled to $40k/mo while maintaining stable ROAS, unlocking new growth tier.',
-      logoImage: '/work-meta-ads-hero.png'
+      logoImage: '/images/meta-ads-soft.jpg'
     },
     grid: []
   }
@@ -121,43 +123,56 @@ const CONTENT = {
 
 // Coming Soon Card Component
 const ComingSoonCard = ({ item }: { item: any }) => (
-  <div className="bg-white/60 rounded-lg border border-dashed border-[#8b7355]/40 p-6 relative overflow-hidden">
-    {/* Coming Soon Badge */}
-    <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-[#8b7355]/10 rounded-full">
-      <Clock className="w-3.5 h-3.5 text-[#8b7355]" />
-      <span className="text-xs font-medium text-[#8b7355] uppercase tracking-wider">Coming Soon</span>
-    </div>
+  <div className="bg-white/60 rounded-lg border border-dashed border-[#8b7355]/40 relative overflow-hidden">
+    {/* Image */}
+    {item.image && (
+      <div className="w-full h-40 overflow-hidden">
+        <img 
+          src={item.image} 
+          alt={item.title}
+          className="w-full h-full object-cover opacity-70"
+        />
+      </div>
+    )}
     
-    {/* Context */}
-    <span className="text-xs font-medium text-[#8b7355]/60 uppercase tracking-wider">
-      {item.context}
-    </span>
-    
-    {/* Title */}
-    <h3 className="font-heading text-lg font-semibold text-[#1a1a1a]/70 mt-2 mb-3">
-      {item.title}
-    </h3>
-    
-    {/* Description */}
-    <p className="text-sm text-[#5a5a5a]/70 leading-relaxed mb-4">
-      {item.description}
-    </p>
-    
-    {/* Outcome */}
-    <div className="text-sm text-[#5a5a5a]/60 italic mb-4">
-      {item.outcome}
-    </div>
-    
-    {/* Tech Stack */}
-    <div className="flex flex-wrap gap-2">
-      {item.techStack.map((tech: string, index: number) => (
-        <span 
-          key={index}
-          className="px-2.5 py-1 text-xs bg-[#f5f5f0]/80 text-[#5a5a5a]/60 rounded-full border border-[#e5e5dc]/60"
-        >
-          {tech}
-        </span>
-      ))}
+    <div className="p-6">
+      {/* Coming Soon Badge */}
+      <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-white/90 rounded-full shadow-sm">
+        <Clock className="w-3.5 h-3.5 text-[#8b7355]" />
+        <span className="text-xs font-medium text-[#8b7355] uppercase tracking-wider">Coming Soon</span>
+      </div>
+      
+      {/* Context */}
+      <span className="text-xs font-medium text-[#8b7355]/60 uppercase tracking-wider">
+        {item.context}
+      </span>
+      
+      {/* Title */}
+      <h3 className="font-heading text-lg font-semibold text-[#1a1a1a]/70 mt-2 mb-3">
+        {item.title}
+      </h3>
+      
+      {/* Description */}
+      <p className="text-sm text-[#5a5a5a]/70 leading-relaxed mb-4">
+        {item.description}
+      </p>
+      
+      {/* Outcome */}
+      <div className="text-sm text-[#5a5a5a]/60 italic mb-4">
+        {item.outcome}
+      </div>
+      
+      {/* Tech Stack */}
+      <div className="flex flex-wrap gap-2">
+        {item.techStack.map((tech: string, index: number) => (
+          <span 
+            key={index}
+            className="px-2.5 py-1 text-xs bg-[#f5f5f0]/80 text-[#5a5a5a]/60 rounded-full border border-[#e5e5dc]/60"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
     </div>
   </div>
 );

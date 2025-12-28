@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Linkedin, GraduationCap, MapPin, Award, Heart, Film, Shield, Leaf } from 'lucide-react';
+import { ArrowRight, Linkedin, GraduationCap, MapPin, Award, Heart, Film, Shield, Leaf, Palette } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useConsultationModal } from '@/contexts/ConsultationModalContext';
 import chaaliDinPoster from '@/assets/chaali-din-poster.jpg';
@@ -235,15 +235,16 @@ const About = () => {
               The person behind the professional.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Film & Creative */}
+            {/* 2x2 Grid Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Film & Creative - Chaali Din */}
               <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
                 <div className="flex items-center gap-2 mb-4">
                   <Film className="w-4 h-4 text-accent" />
                   <h3 className="font-heading text-base font-semibold text-foreground">Creative Pursuits</h3>
                 </div>
                 {/* Original photo */}
-                <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
+                <div className="aspect-video overflow-hidden rounded-sm mb-4">
                   <img 
                     src="/prateek-movie.jpg" 
                     alt="Prateek Karn on set of Chaali Din"
@@ -264,58 +265,72 @@ const About = () => {
                 <p className="text-foreground/85 text-sm leading-[1.75] mb-3">
                   In a heartwarming twist, his beloved dog <span className="font-medium text-accent">Nobo</span> plays the character of <span className="font-medium">Keesha</span> from the novel — making this a truly personal creative venture for Prateek.
                 </p>
-                <p className="text-muted-foreground text-xs leading-[1.75] mb-4">
+                <p className="text-muted-foreground text-xs leading-[1.75]">
                   Starring Gurpreet Ghuggi, Debi Makhsoospuri & more. Music by Beat Minister.
                 </p>
-                
-                {/* Foundational Creative Skills */}
-                <div className="pt-4 border-t border-border/30">
-                  <p className="text-foreground/85 text-sm leading-[1.75] mb-3">
-                    Beyond film, Prateek has hands-on experience in <span className="font-medium text-accent">graphic design</span>, <span className="font-medium text-accent">motion graphics & video editing</span>, and <span className="font-medium text-accent">web development</span> — foundational skills that inform how he architects execution-aware systems today.
-                  </p>
-                  <p className="text-muted-foreground text-xs leading-[1.75] italic">
-                    "Understanding the craft of execution makes me a better architect of systems that actually get built."
-                  </p>
-                </div>
               </div>
 
-              {/* Values & Lifestyle */}
-              <div className="space-y-6">
-                {/* Animal Lover */}
-                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Heart className="w-4 h-4 text-accent" />
-                    <h3 className="font-heading text-base font-semibold text-foreground">Animal Lover</h3>
-                  </div>
-                  <div className="aspect-video overflow-hidden rounded-sm mb-4">
-                    <img 
-                      src="/prateek-pet.jpg" 
-                      alt="Prateek's pet"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-muted-foreground text-sm leading-[1.75]">
-                    An avid animal lover, Prateek believes in compassion extending beyond human relationships. His connection with animals reflects his gentle nature and respect for all living beings.
-                  </p>
+              {/* Foundational Skills - NEW CARD */}
+              <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
+                <div className="flex items-center gap-2 mb-4">
+                  <Palette className="w-4 h-4 text-accent" />
+                  <h3 className="font-heading text-base font-semibold text-foreground">Foundational Skills</h3>
                 </div>
+                <div className="aspect-video overflow-hidden rounded-sm mb-4">
+                  <img 
+                    src="/images/foundational-skills.jpg" 
+                    alt="Graphic Design, Video Editing, Web Development"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="text-foreground/85 text-sm leading-[1.75] mb-4">
+                  Beyond strategy, Prateek has hands-on experience in <span className="font-medium text-accent">graphic design</span>, <span className="font-medium text-accent">motion graphics & video editing</span>, and <span className="font-medium text-accent">web development</span> — foundational skills that inform how he architects execution-aware systems today.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 text-xs bg-accent/10 text-accent rounded-full">Graphic Design</span>
+                  <span className="px-3 py-1 text-xs bg-accent/10 text-accent rounded-full">Motion Graphics</span>
+                  <span className="px-3 py-1 text-xs bg-accent/10 text-accent rounded-full">Video Editing</span>
+                  <span className="px-3 py-1 text-xs bg-accent/10 text-accent rounded-full">Web Development</span>
+                </div>
+                <p className="text-muted-foreground text-xs leading-[1.75] italic border-t border-border/30 pt-4">
+                  "Understanding the craft of execution makes me a better architect of systems that actually get built."
+                </p>
+              </div>
 
-                {/* Sustainable Living */}
-                <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Leaf className="w-4 h-4 text-accent" />
-                    <h3 className="font-heading text-base font-semibold text-foreground">Sustainability Advocate</h3>
-                  </div>
-                  <div className="aspect-square overflow-hidden rounded-sm mb-4">
-                    <img 
-                      src="/prateek-sustainability.jpg" 
-                      alt="Prateek Karn - Sustainability Advocate in nature"
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
-                  <p className="text-muted-foreground text-sm leading-[1.75]">
-                    A sustainable living advocate, Prateek believes in living a simple life centered on constant learning and staying rooted. Despite his professional achievements, he maintains a grounded perspective — valuing meaningful connections, continuous growth, and making a positive impact over material accumulation.
-                  </p>
+              {/* Animal Lover */}
+              <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
+                <div className="flex items-center gap-2 mb-4">
+                  <Heart className="w-4 h-4 text-accent" />
+                  <h3 className="font-heading text-base font-semibold text-foreground">Animal Lover</h3>
                 </div>
+                <div className="aspect-video overflow-hidden rounded-sm mb-4">
+                  <img 
+                    src="/prateek-pet.jpg" 
+                    alt="Prateek's pet"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="text-muted-foreground text-sm leading-[1.75]">
+                  An avid animal lover, Prateek believes in compassion extending beyond human relationships. His connection with animals reflects his gentle nature and respect for all living beings.
+                </p>
+              </div>
+
+              {/* Sustainable Living */}
+              <div className="p-6 bg-card/50 border border-border/50 rounded-lg hover:border-accent/20 transition-all duration-300">
+                <div className="flex items-center gap-2 mb-4">
+                  <Leaf className="w-4 h-4 text-accent" />
+                  <h3 className="font-heading text-base font-semibold text-foreground">Sustainability Advocate</h3>
+                </div>
+                <div className="aspect-video overflow-hidden rounded-sm mb-4">
+                  <img 
+                    src="/prateek-sustainability.jpg" 
+                    alt="Prateek Karn - Sustainability Advocate in nature"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <p className="text-muted-foreground text-sm leading-[1.75]">
+                  A sustainable living advocate, Prateek believes in living a simple life centered on constant learning and staying rooted. Despite his professional achievements, he maintains a grounded perspective — valuing meaningful connections, continuous growth, and making a positive impact over material accumulation.
+                </p>
               </div>
             </div>
           </div>
