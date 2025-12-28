@@ -1,0 +1,24 @@
+Key Findings for Changes:
+
+1. HERO IMAGE:
+   - Current: src/assets/prateek-hero.jpg
+   - Used in: src/components/HeroSection.tsx (line 3)
+   - Need to: Replace with brown suit image (prateek-formal.jpg from public/)
+
+2. CIVIC CONTRIBUTION SECTION IMAGE:
+   - Current: /prateek-formal.jpg (brown suit - the one we want for hero)
+   - Location: src/pages/About.tsx (line 168)
+   - Need to: Replace with government building/Indian flag image (to be generated)
+
+3. BEYOND WORK SECTION:
+   - Location: src/pages/About.tsx (lines 228-322)
+   - Issues:
+     a) Layout needs fixing - cards not aligned properly
+     b) Need to add card for graphic design/motion graphics/web development skills
+     c) Text change: "his beloved dog" -> "Prateek's beloved dog" (line 265)
+     d) Remove "Music by Beat Minister" from line 268
+
+4. IMAGE FILES:
+   - Hero image: src/assets/prateek-hero.jpg
+   - Brown suit: public/prateek-formal.jpg
+   - Need to generate: Government building/Indian flag for Civic Contribution

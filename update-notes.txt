@@ -1,0 +1,16 @@
+Beyond Work Section Update Notes
+=================================
+
+Links to add:
+1. YT Video Portfolio: https://www.youtube.com/watch?v=D0egLS5y3CU
+2. Graphic Design Portfolio: Coming Soon (will add later)
+3. Web Infrastructure: /mywork/web-infrastructure (internal route)
+
+Text changes:
+- Remove "Music by Beat Minister"
+- Change "his beloved dog" to "Prateek's beloved dog"
+
+Card requirements:
+- New "Foundational Creative Skills" card below Sustainability Advocate
+- Must align at bottom with Chaali Din card
+- Add hover/popping effect to all cards
