@@ -175,7 +175,7 @@ const AuthorBox = ({ author }: { author: BlogPost['author'] }) => (
   >
     <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-secondary border-2 border-transparent group-hover:border-accent/30 transition-all duration-300">
       <img 
-        src="/prateek-headshot.jpg" 
+        src="/prateek-formal.jpg" 
         alt={author.name}
         className="w-full h-full object-cover object-[center_15%]"
       />

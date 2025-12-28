@@ -670,7 +670,7 @@ A CDP can be transformational, but only if it's implemented thoughtfully. Start 
       title: 'AI Business Architect'
     },
     featuredImage: '/blog/art-possible-featured.png',
-    cardImage: '/blog/art-possible-v2.png',
+    cardImage: '/blog/art-of-possible.png',
     imageAlt: 'Strategic framework for identifying high-value AI use cases with value vs complexity matrix',
     imageCaption: 'Finding high-value AI use cases: The art of the possible framework',
     content: `
