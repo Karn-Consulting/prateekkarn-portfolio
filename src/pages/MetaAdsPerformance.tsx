@@ -32,14 +32,14 @@ export default function MetaAdsPerformance() {
               Paid Media Turnaround
             </p>
             <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2d2a26] mb-6 leading-tight">
-              Meta Ads Turnaround: From Inefficient Spend to 2.37 ROAS in 10 Days
+              Meta Ads Turnaround: From Inefficient Spend to 2.37 ROAS in Under 2 Weeks
             </h1>
             <p className="text-lg sm:text-xl text-[#5a5550] leading-relaxed mb-8">
               Re-architecting a $40K/month account for profitability and scale by implementing an intelligent, multi-layered advertising system.
             </p>
             <div className="inline-flex items-center gap-2 bg-[#8b7355] text-white px-5 py-3 rounded-md text-sm font-medium shadow-md">
               <TrendingUp className="w-4 h-4" />
-              <span>→ 2.37 ROAS achieved in 10 days</span>
+              <span>→ 2.37 ROAS achieved within first 2 weeks</span>
             </div>
           </div>
         </div>
@@ -217,8 +217,8 @@ export default function MetaAdsPerformance() {
               <p className="text-sm text-[#6a6a6a]">Increase in Purchases</p>
             </div>
             <div className="text-center">
-              <p className="font-heading text-4xl sm:text-5xl text-[#8b7355] mb-2">10</p>
-              <p className="text-sm text-[#6a6a6a]">Days to Profitability</p>
+              <p className="font-heading text-4xl sm:text-5xl text-[#8b7355] mb-2">&lt;2</p>
+              <p className="text-sm text-[#6a6a6a]">Weeks to Profitability</p>
             </div>
             <div className="text-center">
               <p className="font-heading text-4xl sm:text-5xl text-[#8b7355] mb-2">3.59</p>
@@ -252,7 +252,7 @@ export default function MetaAdsPerformance() {
                 </ul>
               </div>
               <div>
-                <h4 className="text-sm font-medium text-[#8b7355] uppercase tracking-wide mb-4">After (10 Days)</h4>
+                <h4 className="text-sm font-medium text-[#8b7355] uppercase tracking-wide mb-4">After (First 2 Weeks)</h4>
                 <ul className="space-y-3 text-sm text-[#4a4a4a]">
                   <li className="flex items-start gap-3">
                     <span className="w-1.5 h-1.5 bg-[#8b7355] rounded-full mt-2 flex-shrink-0"></span>
