@@ -24,10 +24,10 @@ const SELECT_WORKS = [
   },
   {
     id: 3,
-    title: 'Meta Ads Turnaround: 2.37 ROAS in 10 Days',
+    title: 'Meta Ads Turnaround: 2.37 ROAS in Under 2 Weeks',
     category: 'PROFITABLE TURNAROUND',
     description: 'Re-architecting a $40K/month account for profitability and scale by implementing an intelligent, multi-layered advertising system.',
-    outcome: '2.37 ROAS achieved in 10 days',
+    outcome: '2.37 ROAS achieved within first 2 weeks',
     techStack: ['Meta Ads', 'CBO', 'ASC+'],
     link: '/mywork/meta-ads-performance',
     image: '/work-meta-ads-new.png'
