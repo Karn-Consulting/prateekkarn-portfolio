@@ -105,16 +105,16 @@ const CONTENT = {
   },
   'growth-engineering': {
     hero: {
-      title: 'Meta Ads Performance Case Study — $40K/mo Scaling',
-      context: 'Scale & Efficiency',
-      description: 'Structured creative testing framework + broad targeting with CBO to manage creative fatigue. Scaling spend beyond $10k/mo caused CPA to skyrocket due to audience saturation.',
-      impact: 'Scaled to $40k/mo while maintaining stable ROAS, unlocking new growth tier.',
+      title: 'Meta Ads Performance Case Study — $40K/mo Turnaround',
+      context: 'Profitable Turnaround',
+      description: 'Re-architected a $40K/month account struggling below break-even. Implemented proper CBO structure, separated prospecting from retargeting, and applied cost cap optimization.',
+      impact: 'Achieved 2.37 ROAS within 2 weeks, turning an unprofitable account into a growth engine.',
       techStack: ['Meta Ads', 'GA4', 'Google Sheets', 'Looker'],
       ctaText: 'View Case Study',
       link: '/mywork/meta-ads-performance',
-      problem: 'Scaling spend beyond $10k/mo caused CPA to skyrocket due to audience saturation.',
-      system: 'Structured creative testing framework + broad targeting with CBO to manage creative fatigue.',
-      outcome: 'Scaled to $40k/mo while maintaining stable ROAS, unlocking new growth tier.',
+      problem: 'Inherited a $40K/mo account with ROAS below 1.75 break-even threshold due to poor CBO setup.',
+      system: 'Re-architected campaign structure with ASC+ cost caps, clean prospecting, and multi-layer retargeting.',
+      outcome: 'Achieved 2.37 ROAS within 2 weeks, with top campaigns hitting 3.59 ROAS.',
       logoImage: '/images/meta-ads-new.jpg'
     },
     grid: []
