@@ -82,7 +82,7 @@ export default function BofuIntentIntelligence() {
           </Link>
           <Link 
             to="/mywork#data-architecture" 
-            className="inline-flex items-center gap-2 text-sm text-[#8b7355] hover:text-[#6b5a45] transition-colors border border-[#8b7355] px-4 py-2 rounded-sm"
+            className="inline-flex items-center gap-2 text-sm font-medium text-[#8b7355] border border-[#8b7355] px-4 py-2 rounded-sm hover:bg-[#8b7355] hover:text-white transition-all duration-200"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to My Work
