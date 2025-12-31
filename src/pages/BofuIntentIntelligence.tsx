@@ -1,10 +1,70 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Mail, Users, TrendingUp, Target, Zap, BarChart3, MessageSquare, Calendar } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Mail, Users, TrendingUp, Target, Zap, BarChart3, MessageSquare, Calendar, ChevronLeft, ChevronRight, DollarSign, Inbox } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useConsultationModal } from '@/contexts/ConsultationModalContext';
 
 export default function BofuIntentIntelligence() {
   const { openModal } = useConsultationModal();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Case study carousel data
+  const caseStudySlides = [
+    {
+      id: 1,
+      title: "Outreach Performance: Nov-Dec Campaign",
+      subtitle: "1 Inbox Used | ET 500 Targeting",
+      image: "/case-studies/leadgen-1.png",
+      description: "Email campaign metrics showing open rates ranging from 14% to 81% across targeted segments"
+    },
+    {
+      id: 2,
+      title: "Campaign Results Continued",
+      subtitle: "High-Intent Cohort Performance",
+      image: "/case-studies/leadgen-2.png",
+      description: "Highlighted exceptional performance: 40-81% open rates, 20-69% click rates on high-intent segments"
+    },
+    {
+      id: 3,
+      title: "ET 500 Company Reply #1",
+      subtitle: "EA to CMD & CEO Response",
+      image: "/case-studies/email-reply-1-1.png",
+      description: "Original outreach email: 'What top CEOs are doing differently to make digital actually scale'"
+    },
+    {
+      id: 4,
+      title: "ET 500 Company Reply #1 - Response",
+      subtitle: "Executive Assistant, CMD Office",
+      image: "/case-studies/email-reply-1-2.png",
+      description: "Response within 24 hours expressing interest in learning more about the approach"
+    },
+    {
+      id: 5,
+      title: "ET 500 Company Reply #2",
+      subtitle: "Senior Vice President Response",
+      image: "/case-studies/email-reply-2-1.png",
+      description: "Original outreach email: 'Big AI vision, slow movement?' targeting C-suite executives"
+    },
+    {
+      id: 6,
+      title: "ET 500 Company Reply #2 - Response",
+      subtitle: "Senior Vice President",
+      image: "/case-studies/email-reply-2-2.png",
+      description: "SVP response requesting a call to understand the proposition"
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % caseStudySlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + caseStudySlides.length) % caseStudySlides.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
 
   return (
     <div className="min-h-screen bg-[#f8f7f5]">
@@ -52,7 +112,117 @@ export default function BofuIntentIntelligence() {
                 <Target className="w-4 h-4" />
                 <span>ET 500 & Public Companies</span>
               </div>
+              <div className="inline-flex items-center gap-2 bg-green-700 text-white px-4 py-2 rounded-sm text-sm">
+                <DollarSign className="w-4 h-4" />
+                <span>$3 Million Avg Deal Value</span>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Study Carousel Section */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-b from-[#1a1a1a] to-[#2d2d2d]">
+        <div className="container max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="font-heading text-2xl sm:text-3xl text-white mb-4">Case Study: Live Campaign Results</h2>
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
+              <div className="inline-flex items-center gap-2 bg-[#8b7355] text-white px-4 py-2 rounded-sm text-sm">
+                <Inbox className="w-4 h-4" />
+                <span>Outreach for Nov-Dec | 1 Inbox Used</span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-sm text-sm">
+                <DollarSign className="w-4 h-4" />
+                <span>$3 Million Avg Dollar Value</span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-sm text-sm">
+                <Mail className="w-4 h-4" />
+                <span>2 ET 500 Company Replies</span>
+              </div>
+            </div>
+            <p className="text-white/70 text-sm">Navigate with arrows or dots to view campaign data and actual email replies from ET 500 company representatives</p>
+          </div>
+
+          {/* Carousel Container */}
+          <div className="relative">
+            {/* Main Carousel */}
+            <div className="relative bg-white rounded-lg overflow-hidden shadow-2xl">
+              {/* Slide Header */}
+              <div className="bg-[#f8f7f5] px-6 py-4 border-b border-[#e5e5e0]">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="font-heading text-lg text-[#1a1a1a]">{caseStudySlides[currentSlide].title}</h3>
+                    <p className="text-sm text-[#8b7355]">{caseStudySlides[currentSlide].subtitle}</p>
+                  </div>
+                  <div className="text-sm text-[#6a6a6a]">
+                    {currentSlide + 1} / {caseStudySlides.length}
+                  </div>
+                </div>
+              </div>
+
+              {/* Image Container */}
+              <div className="relative aspect-[16/10] bg-[#fafafa] flex items-center justify-center overflow-hidden">
+                <img
+                  src={caseStudySlides[currentSlide].image}
+                  alt={caseStudySlides[currentSlide].title}
+                  className="max-w-full max-h-full object-contain p-4"
+                />
+              </div>
+
+              {/* Slide Description */}
+              <div className="px-6 py-4 bg-white border-t border-[#e5e5e0]">
+                <p className="text-sm text-[#4a4a4a]">{caseStudySlides[currentSlide].description}</p>
+              </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#f8f7f5] transition-colors z-10"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-6 h-6 text-[#1a1a1a]" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#f8f7f5] transition-colors z-10"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-6 h-6 text-[#1a1a1a]" />
+            </button>
+          </div>
+
+          {/* Dot Navigation */}
+          <div className="flex justify-center gap-2 mt-6">
+            {caseStudySlides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  currentSlide === index 
+                    ? 'bg-[#8b7355] w-8' 
+                    : 'bg-white/30 hover:bg-white/50'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Slide Labels */}
+          <div className="flex flex-wrap justify-center gap-2 mt-6">
+            {caseStudySlides.map((slide, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`px-3 py-1 text-xs rounded-full transition-all ${
+                  currentSlide === index 
+                    ? 'bg-[#8b7355] text-white' 
+                    : 'bg-white/10 text-white/70 hover:bg-white/20'
+                }`}
+              >
+                {index < 2 ? 'Campaign Data' : index < 4 ? 'Reply #1' : 'Reply #2'}
+              </button>
+            ))}
           </div>
         </div>
       </section>
@@ -190,7 +360,7 @@ export default function BofuIntentIntelligence() {
                   <span className="text-sm font-medium text-[#1a1a1a]">36-40% Open Rate</span>
                 </div>
                 <div className="flex items-center justify-between py-2">
-                  <span className="text-sm text-[#4a4a4a]">Broad Campaigns</span>
+                  <span className="text-sm text-[#4a4a4a]">Cold Outreach Baseline</span>
                   <span className="text-sm font-medium text-[#1a1a1a]">15-24% Open Rate</span>
                 </div>
               </div>
@@ -205,7 +375,7 @@ export default function BofuIntentIntelligence() {
         <div className="container max-w-6xl mx-auto">
           <h2 className="font-heading text-2xl sm:text-3xl text-white mb-8 text-center">Outcomes</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-sm text-center">
               <p className="text-4xl font-heading text-white mb-2">80%</p>
               <p className="text-sm text-white/70">Peak Open Rate on High-Intent Cohorts</p>
@@ -214,13 +384,17 @@ export default function BofuIntentIntelligence() {
               <p className="text-4xl font-heading text-white mb-2">2</p>
               <p className="text-sm text-white/70">Inbound High-Value B2B Leads (ET 500 Companies)</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-sm text-6 text-center">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-sm text-center">
               <p className="text-4xl font-heading text-white mb-2">10+</p>
               <p className="text-sm text-white/70">Meetings Booked via Intent-Triggered Outreach</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-sm text-center">
               <p className="text-4xl font-heading text-white mb-2">12</p>
               <p className="text-sm text-white/70">Total Sales Conversations Initiated</p>
+            </div>
+            <div className="bg-green-600/20 backdrop-blur-sm p-6 rounded-sm text-center border border-green-500/30">
+              <p className="text-4xl font-heading text-green-400 mb-2">$3M</p>
+              <p className="text-sm text-white/70">Avg Dollar Value per Lead Generated</p>
             </div>
           </div>
           
