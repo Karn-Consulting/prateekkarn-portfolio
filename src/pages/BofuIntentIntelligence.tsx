@@ -8,49 +8,55 @@ export default function BofuIntentIntelligence() {
   const { openModal } = useConsultationModal();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Case study carousel data
+  // Case study carousel data - Reordered: Nov first, then Dec
   const caseStudySlides = [
     {
       id: 1,
-      title: "Outreach Performance: Nov-Dec Campaign",
+      title: "Nov Campaign Performance",
       subtitle: "1 Inbox Used | ET 500 Targeting",
-      image: "/case-studies/leadgen-1.png",
-      description: "Email campaign metrics showing open rates ranging from 14% to 81% across targeted segments"
+      image: "/case-studies/leadgen-2.png",
+      description: "November campaign metrics showing exceptional open rates up to 81% and click rates up to 69% on high-intent segments",
+      category: "Nov Campaign"
     },
     {
       id: 2,
-      title: "Campaign Results Continued",
-      subtitle: "High-Intent Cohort Performance",
-      image: "/case-studies/leadgen-2.png",
-      description: "Highlighted exceptional performance: 40-81% open rates, 20-69% click rates on high-intent segments"
+      title: "Dec Campaign Performance",
+      subtitle: "1 Inbox Used | ET 500 Targeting",
+      image: "/case-studies/leadgen-1.png",
+      description: "December campaign metrics showing open rates ranging from 14% to 57% across targeted C-suite segments",
+      category: "Dec Campaign"
     },
     {
       id: 3,
-      title: "ET 500 Company Reply #1",
-      subtitle: "EA to CMD & CEO Response",
+      title: "Outreach Email 1",
+      subtitle: "Subject: What top CEOs are doing differently",
       image: "/case-studies/email-reply-1-1.png",
-      description: "Original outreach email: 'What top CEOs are doing differently to make digital actually scale'"
+      description: "Original outreach email targeting C-suite executives on digital transformation and leadership alignment",
+      category: "Outreach Email 1"
     },
     {
       id: 4,
-      title: "ET 500 Company Reply #1 - Response",
-      subtitle: "Executive Assistant, CMD Office",
+      title: "Lead Reply 1",
+      subtitle: "EA to CMD & CEO Response",
       image: "/case-studies/email-reply-1-2.png",
-      description: "Response within 24 hours expressing interest in learning more about the approach"
+      description: "Response within 24 hours from Executive Assistant, CMD Office expressing interest in learning more",
+      category: "Lead Reply 1"
     },
     {
       id: 5,
-      title: "ET 500 Company Reply #2",
-      subtitle: "Senior Vice President Response",
+      title: "Outreach Email 2",
+      subtitle: "Subject: Big AI vision, slow movement?",
       image: "/case-studies/email-reply-2-1.png",
-      description: "Original outreach email: 'Big AI vision, slow movement?' targeting C-suite executives"
+      description: "Second outreach email targeting C-suite executives on AI transformation challenges",
+      category: "Outreach Email 2"
     },
     {
       id: 6,
-      title: "ET 500 Company Reply #2 - Response",
-      subtitle: "Senior Vice President",
+      title: "Lead Reply 2",
+      subtitle: "Senior Vice President Response",
       image: "/case-studies/email-reply-2-2.png",
-      description: "SVP response requesting a call to understand the proposition"
+      description: "SVP response requesting a call to understand the proposition",
+      category: "Lead Reply 2"
     }
   ];
 
@@ -114,7 +120,7 @@ export default function BofuIntentIntelligence() {
               </div>
               <div className="inline-flex items-center gap-2 bg-green-700 text-white px-4 py-2 rounded-sm text-sm">
                 <DollarSign className="w-4 h-4" />
-                <span>$3 Million Avg Deal Value</span>
+                <span>$3 Million Annual Deal Value</span>
               </div>
             </div>
           </div>
@@ -133,7 +139,7 @@ export default function BofuIntentIntelligence() {
               </div>
               <div className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-sm text-sm">
                 <DollarSign className="w-4 h-4" />
-                <span>$3 Million Avg Dollar Value</span>
+                <span>$3 Million Annual Deal Value</span>
               </div>
               <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-sm text-sm">
                 <Mail className="w-4 h-4" />
@@ -220,7 +226,7 @@ export default function BofuIntentIntelligence() {
                     : 'bg-white/10 text-white/70 hover:bg-white/20'
                 }`}
               >
-                {index < 2 ? 'Campaign Data' : index < 4 ? 'Reply #1' : 'Reply #2'}
+                {slide.category}
               </button>
             ))}
           </div>
@@ -394,7 +400,7 @@ export default function BofuIntentIntelligence() {
             </div>
             <div className="bg-green-600/20 backdrop-blur-sm p-6 rounded-sm text-center border border-green-500/30">
               <p className="text-4xl font-heading text-green-400 mb-2">$3M</p>
-              <p className="text-sm text-white/70">Avg Dollar Value per Lead Generated</p>
+              <p className="text-sm text-white/70">Annual Deal Value per Lead Generated</p>
             </div>
           </div>
           
