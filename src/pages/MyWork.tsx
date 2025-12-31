@@ -93,13 +93,15 @@ const CONTENT = {
         link: '/mywork/executive-dashboard'
       },
       {
-        title: 'Predictive Email Marketing — 50% Open Rate',
-        context: 'Coming Soon',
-        description: 'Machine learning model predicting optimal send times, subject lines, and audience segments. Transforming email from batch-and-blast to precision-targeted communication.',
-        outcome: 'Case study in development — achieved 50% open rates in pilot.',
-        techStack: ['Python', 'ML Models', 'Email Automation', 'Predictive Analytics'],
-        isComingSoon: true,
-        image: '/images/predictive-email-v3.webp'
+        title: 'BOFU Intent Intelligence System — 80% Peak Open Rate',
+        context: 'Revenue Architecture',
+        description: 'AI-driven BOFU intent intelligence system that transformed email engagement into prioritized sales outreach for ET 500 and publicly traded Indian enterprises. Email functioned as a decision sensor, while sales acted as the conversion actuator at the moment of peak intent.',
+        outcome: '80% peak open rate | 2 inbound high-value B2B leads from ET 500 companies | 12 sales conversations initiated via intent-triggered outreach',
+        techStack: ['Intent Signals', 'Email Automation', 'Sales Enablement', 'Revenue Intelligence'],
+        problem: 'BOFU prospects were engaging passively but not initiating conversations. Sales lacked visibility into who was genuinely ready to engage.',
+        system: 'Revenue intelligence loop combining behavioral email signals, timing-based prioritization, and intent-triggered sales outreach.',
+        image: '/images/predictive-email-v3.webp',
+        link: '/mywork/bofu-intent-intelligence'
       }
     ]
   },
