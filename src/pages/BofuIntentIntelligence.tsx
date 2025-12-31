@@ -293,6 +293,74 @@ export default function BofuIntentIntelligence() {
         </div>
       </section>
 
+      {/* Evidence Gallery Section */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-[#f8f7f5]">
+        <div className="container max-w-6xl mx-auto">
+          <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-4 text-center">Evidence Gallery</h2>
+          <p className="text-center text-[#6a6a6a] mb-8 max-w-2xl mx-auto">Campaign performance dashboards and sample lead responses (sensitive information redacted)</p>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {/* Email Dashboard 1 */}
+            <div className="bg-white rounded-sm border border-[#e5e5e0] overflow-hidden shadow-sm">
+              <div className="p-3 bg-[#f5f3ef] border-b border-[#e5e5e0]">
+                <p className="text-xs font-medium text-[#6a6a6a] uppercase tracking-wide">Email Campaign Dashboard - November</p>
+              </div>
+              <div className="p-2">
+                <img 
+                  src="/images/case-studies/email-dashboard-1.png" 
+                  alt="Email campaign performance dashboard showing open rates" 
+                  className="w-full h-auto rounded-sm"
+                />
+              </div>
+            </div>
+            
+            {/* Email Dashboard 2 */}
+            <div className="bg-white rounded-sm border border-[#e5e5e0] overflow-hidden shadow-sm">
+              <div className="p-3 bg-[#f5f3ef] border-b border-[#e5e5e0]">
+                <p className="text-xs font-medium text-[#6a6a6a] uppercase tracking-wide">Email Campaign Dashboard - December</p>
+              </div>
+              <div className="p-2">
+                <img 
+                  src="/images/case-studies/email-dashboard-2.png" 
+                  alt="Email campaign performance dashboard showing open rates" 
+                  className="w-full h-auto rounded-sm"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Lead Response 1 - Himadri */}
+            <div className="bg-white rounded-sm border border-[#e5e5e0] overflow-hidden shadow-sm">
+              <div className="p-3 bg-[#f5f3ef] border-b border-[#e5e5e0]">
+                <p className="text-xs font-medium text-[#6a6a6a] uppercase tracking-wide">Lead Response - ET 500 Chemical Company</p>
+              </div>
+              <div className="p-2">
+                <img 
+                  src="/images/case-studies/lead-response-himadri.png" 
+                  alt="Email response from ET 500 company executive" 
+                  className="w-full h-auto rounded-sm"
+                />
+              </div>
+            </div>
+            
+            {/* Lead Response 2 - Emami */}
+            <div className="bg-white rounded-sm border border-[#e5e5e0] overflow-hidden shadow-sm">
+              <div className="p-3 bg-[#f5f3ef] border-b border-[#e5e5e0]">
+                <p className="text-xs font-medium text-[#6a6a6a] uppercase tracking-wide">Lead Response - Major FMCG Conglomerate</p>
+              </div>
+              <div className="p-2">
+                <img 
+                  src="/images/case-studies/lead-response-emami.png" 
+                  alt="Email response from FMCG company CIO" 
+                  className="w-full h-auto rounded-sm"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Business Insight Section */}
       <section className="py-12 sm:py-16 px-4 sm:px-6">
         <div className="container max-w-6xl mx-auto">
