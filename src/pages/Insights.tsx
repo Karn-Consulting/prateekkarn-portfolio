@@ -207,9 +207,18 @@ const Insights = () => {
   return (
     <>
       <Helmet>
-        <title>Karn Insights | Prateek Karn</title>
-        <meta name="description" content="Frameworks, strategies, and lessons learned from building AI and MarTech systems." />
+        <title>Karn Insights | Prateek Karn - AI Business Architect</title>
+        <meta name="description" content="Frameworks, strategies, and lessons learned from building AI and MarTech systems. Expert insights on AI strategy, marketing analytics, and growth systems." />
         <link rel="canonical" href="https://prateekkarn.com/insights" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://prateekkarn.com/insights" />
+        <meta property="og:title" content="Karn Insights | AI & MarTech Strategy" />
+        <meta property="og:description" content="Frameworks, strategies, and lessons learned from building AI and MarTech systems." />
+        <meta property="og:image" content="https://prateekkarn.com/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Karn Insights | Prateek Karn" />
+        <meta name="twitter:description" content="Expert insights on AI strategy, marketing analytics, and growth systems." />
       </Helmet>
 
       <div className="min-h-screen bg-background">

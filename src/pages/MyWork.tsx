@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { TabNavigation } from '@/components/TabNavigation';
@@ -224,8 +225,23 @@ export default function MyWork() {
   const currentContent = CONTENT[activeTab as keyof typeof CONTENT];
 
   return (
-    <div className="min-h-screen bg-[#f5f5f0]">
-      <Header />
+    <>
+      <Helmet>
+        <title>My Work | Prateek Karn - AI Business Architect</title>
+        <meta name="description" content="A curated body of AI decision frameworks, data systems, and growth architectures — organized by strategic impact. Case studies from Prateek Karn." />
+        <link rel="canonical" href="https://prateekkarn.com/mywork" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://prateekkarn.com/mywork" />
+        <meta property="og:title" content="My Work | Prateek Karn - AI Business Architect" />
+        <meta property="og:description" content="A curated body of AI decision frameworks, data systems, and growth architectures — organized by strategic impact." />
+        <meta property="og:image" content="https://prateekkarn.com/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="My Work | Prateek Karn" />
+        <meta name="twitter:description" content="AI decision frameworks, data systems, and growth architectures." />
+      </Helmet>
+      <div className="min-h-screen bg-[#f5f5f0]">
+        <Header />
       
       {/* Hero Section */}
       <section className="pt-8 sm:pt-12 md:pt-16 pb-4 sm:pb-6 md:pb-8 px-4 sm:px-6">
@@ -366,6 +382,7 @@ export default function MyWork() {
       </Dialog>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

@@ -13,6 +13,16 @@ const About = () => {
       <Helmet>
         <title>About Prateek Karn | AI Business Architect</title>
         <meta name="description" content="From Suratgarh to AI architecture — discover Prateek Karn's journey from entrepreneur to building intelligent systems for enterprise growth." />
+        <link rel="canonical" href="https://prateekkarn.com/about" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content="https://prateekkarn.com/about" />
+        <meta property="og:title" content="About Prateek Karn | AI Business Architect" />
+        <meta property="og:description" content="From Suratgarh to AI architecture — discover Prateek Karn's journey from entrepreneur to building intelligent systems for enterprise growth." />
+        <meta property="og:image" content="https://prateekkarn.com/prateek-formal.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Prateek Karn | AI Business Architect" />
+        <meta name="twitter:description" content="From Suratgarh to AI architecture — discover Prateek Karn's journey." />
       </Helmet>
 
       <main className="min-h-screen bg-background">

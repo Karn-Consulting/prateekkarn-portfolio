@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import ArticleStructuredData from '@/components/ArticleStructuredData';
 import { ChevronRight, Linkedin, Link2, ArrowLeft } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -296,10 +297,30 @@ const InsightPost = () => {
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://prateekkarn.com/insights/${post.slug}`} />
+        <meta property="og:image" content={post.featuredImage ? `https://prateekkarn.com${post.featuredImage}` : 'https://prateekkarn.com/og-image.png'} />
+        <meta property="og:image:alt" content={post.imageAlt || post.title} />
         <meta property="article:published_time" content={post.dateISO} />
         <meta property="article:author" content={post.author.name} />
         <meta property="article:section" content={post.category} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${post.title} | Karn Insights`} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={post.featuredImage ? `https://prateekkarn.com${post.featuredImage}` : 'https://prateekkarn.com/og-image.png'} />
       </Helmet>
+      
+      {/* Article Structured Data for Rich Snippets */}
+      <ArticleStructuredData
+        title={post.title}
+        description={post.excerpt}
+        slug={post.slug}
+        datePublished={post.dateISO}
+        authorName={post.author.name}
+        authorTitle={post.author.title}
+        category={post.category}
+        featuredImage={post.featuredImage}
+        imageAlt={post.imageAlt}
+        readTime={post.readTime}
+      />
 
       <div className="min-h-screen bg-background">
         <Header />
