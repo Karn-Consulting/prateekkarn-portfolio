@@ -1,19 +1,24 @@
 {
-    "name": "Prateek Karn - Growth Architect",
-    "short_name": "PK",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#f5f5dc",
-    "background_color": "#f5f5dc",
-    "display": "standalone"
+  "name": "Prateek Karn - AI Business Architect",
+  "short_name": "Prateek Karn",
+  "description": "AI Business Architect & MarTech Strategist - Designing intelligent growth systems for enterprises",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f5dc",
+  "theme_color": "#f5f5dc",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

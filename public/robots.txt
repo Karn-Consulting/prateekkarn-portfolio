@@ -1,14 +1,32 @@
+# robots.txt for prateekkarn.com
+# AI Business Architect & MarTech Strategist
+
+# Sitemap location
+Sitemap: https://prateekkarn.com/sitemap.xml
+
+# Google specific
 User-agent: Googlebot
 Allow: /
 
+# Bing specific
 User-agent: Bingbot
 Allow: /
 
-User-agent: Twitterbot
+# LinkedIn Bot - Important for social sharing
+User-agent: LinkedInBot
 Allow: /
 
+# Facebook crawler
 User-agent: facebookexternalhit
 Allow: /
 
+# Twitter crawler
+User-agent: Twitterbot
+Allow: /
+
+# Allow all other crawlers
 User-agent: *
 Allow: /
+
+# Disallow admin and private paths (if any)
+Disallow: /api/
