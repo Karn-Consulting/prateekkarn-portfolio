@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 /**
  * JSON-LD Structured Data Component for Prateekkarn.com
  * Implements Person, Organization, WebSite, and ProfessionalService schemas
+ * Updated to fix Google Rich Results validation errors
  */
 
 // Person Schema - Prateek Karn
@@ -14,12 +15,18 @@ const personSchema = {
   "givenName": "Prateek",
   "familyName": "Karn",
   "url": "https://prateekkarn.com",
-  "image": "https://prateekkarn.com/prateek-karn-about.jpg",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://prateekkarn.com/prateek-karn-about.jpg",
+    "width": 400,
+    "height": 400
+  },
   "sameAs": [
     "https://www.linkedin.com/in/prateekkarn/"
   ],
   "jobTitle": "AI Business Architect",
   "description": "AI Business Architect who designs intelligent MarTech systems, AI-powered automation, and data pipelines for enterprise growth.",
+  "email": "prateek.karn@prateekkarn.com",
   "knowsAbout": [
     "AI Business Architecture",
     "MarTech Systems",
@@ -33,12 +40,11 @@ const personSchema = {
     "Marketing Analytics"
   ],
   "worksFor": {
-    "@type": "Organization",
     "@id": "https://prateekkarn.com/#organization"
   }
 };
 
-// Organization Schema - Karn Consulting
+// Organization Schema - Karn Consulting (Fixed for Google validation)
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -46,31 +52,32 @@ const organizationSchema = {
   "name": "Karn Consulting",
   "alternateName": "Prateek Karn Consulting",
   "url": "https://prateekkarn.com",
-  "logo": "https://prateekkarn.com/pk-logo.png",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://prateekkarn.com/pk-logo.png",
+    "width": 512,
+    "height": 512
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://prateekkarn.com/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
   "description": "AI Business Architecture and MarTech consulting for enterprise transformation.",
+  "email": "prateek.karn@prateekkarn.com",
   "founder": {
-    "@type": "Person",
     "@id": "https://prateekkarn.com/#person"
   },
-  "areaServed": [
-    {
-      "@type": "Country",
-      "name": "United States"
-    },
-    {
-      "@type": "Country",
-      "name": "United Kingdom"
-    },
-    {
-      "@type": "Country",
-      "name": "India"
-    }
+  "sameAs": [
+    "https://www.linkedin.com/in/prateekkarn/"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "contactType": "Business Inquiries",
+    "contactType": "customer service",
+    "email": "prateek.karn@prateekkarn.com",
     "url": "https://prateekkarn.com",
-    "availableLanguage": "English"
+    "availableLanguage": ["English", "Hindi"]
   }
 };
 
@@ -84,13 +91,12 @@ const websiteSchema = {
   "url": "https://prateekkarn.com",
   "description": "AI Business Architecture and MarTech consulting for enterprise transformation.",
   "publisher": {
-    "@type": "Person",
-    "@id": "https://prateekkarn.com/#person"
+    "@id": "https://prateekkarn.com/#organization"
   },
   "inLanguage": "en-US"
 };
 
-// ProfessionalService Schema
+// ProfessionalService Schema (LocalBusiness subtype for rich results)
 const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -98,9 +104,24 @@ const professionalServiceSchema = {
   "name": "AI Business Architecture Consulting",
   "description": "Expert consulting services for AI transformation, MarTech architecture, marketing attribution, and enterprise growth systems.",
   "url": "https://prateekkarn.com",
-  "provider": {
-    "@type": "Person",
-    "@id": "https://prateekkarn.com/#person"
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://prateekkarn.com/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "priceRange": "$$$$",
+  "email": "prateek.karn@prateekkarn.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Amritsar",
+    "addressRegion": "Punjab",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 31.6340,
+    "longitude": 74.8723
   },
   "areaServed": [
     {
@@ -169,18 +190,18 @@ const professionalServiceSchema = {
         }
       }
     ]
-  },
-  "priceRange": "$$$$"
+  }
 };
 
-// Combined Graph for all schemas
+// Combined Graph for all schemas (using @graph to avoid duplicate @context issues)
 const combinedSchema = {
   "@context": "https://schema.org",
   "@graph": [
-    personSchema,
-    organizationSchema,
-    websiteSchema,
-    professionalServiceSchema
+    // Remove @context from individual schemas when in @graph
+    { ...personSchema, "@context": undefined },
+    { ...organizationSchema, "@context": undefined },
+    { ...websiteSchema, "@context": undefined },
+    { ...professionalServiceSchema, "@context": undefined }
   ]
 };
 
@@ -237,7 +258,12 @@ export const generateArticleSchema = ({
     },
     "publisher": {
       "@type": "Organization",
-      "@id": "https://prateekkarn.com/#organization"
+      "@id": "https://prateekkarn.com/#organization",
+      "name": "Karn Consulting",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://prateekkarn.com/pk-logo.png"
+      }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
