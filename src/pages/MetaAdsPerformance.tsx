@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, TrendingUp, Target, Zap, RefreshCw, Users, Layers, ShieldCheck, BarChart3 } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useConsultationModal } from '@/contexts/ConsultationModalContext';
+import PasswordProtectedVideo from '@/components/PasswordProtectedVideo';
 
 export default function MetaAdsPerformance() {
   const { openModal } = useConsultationModal();
@@ -48,25 +49,11 @@ export default function MetaAdsPerformance() {
       {/* Video Walkthrough Section */}
       <section className="py-8 sm:py-12 px-4 sm:px-6">
         <div className="container max-w-4xl mx-auto">
-          <div className="bg-white rounded-sm border border-[#e5e5e0] overflow-hidden shadow-sm">
-            {/* Video Walkthrough */}
-            <div className="aspect-video bg-[#1a1a1a] relative">
-              <video 
-                className="w-full h-full object-contain"
-                controls
-                controlsList="nodownload nofullscreen noremoteplayback"
-                disablePictureInPicture
-                onContextMenu={(e) => e.preventDefault()}
-                preload="metadata"
-              >
-                <source src="/meta-ads-walkthrough.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div className="p-4 bg-[#f8f7f5] border-t border-[#e5e5e0]">
-              <p className="text-sm text-[#6a6a6a] text-center">Watch the full walkthrough of the Meta Ads account turnaround</p>
-            </div>
-          </div>
+          <PasswordProtectedVideo
+            videoSrc="/meta-ads-walkthrough.mp4"
+            password="ROAS237"
+            caption="Watch the full walkthrough of the Meta Ads account turnaround"
+          />
         </div>
       </section>
 
