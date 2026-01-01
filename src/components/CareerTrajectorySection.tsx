@@ -17,9 +17,9 @@ const CareerTrajectorySection = () => {
       company: "Standout Authority",
       website: "https://standoutauthority.com/",
       achievements: [
-        "Designed and implemented personal branding and digital strategy for Fortune 500 C-level executives, integrating content analytics, AI-driven automation, and event activation.",
-        "Built virality-prediction models that successfully increased executive content reach by +30%.",
-        "Automated complex content-to-social workflows, reducing manual publishing and analytics effort by 45%."
+        "Managed personal LinkedIn accounts of C-Suite executives from Fortune 500 companies, renowned authors, and publicly traded CEOs across the United States, driving engagement and deal pipeline growth.",
+        "Built and operated a content production system ensuring consistent, high-quality LinkedIn posts that strengthened executive thought leadership and audience engagement.",
+        "Utilized virality-prediction models to optimize content timing and messaging, helping clients achieve significant visibility growth and expanded professional reach."
       ]
     },
     {
