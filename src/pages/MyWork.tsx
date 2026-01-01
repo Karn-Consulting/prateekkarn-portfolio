@@ -59,7 +59,7 @@ const CONTENT = {
         title: 'AI Agentic Workflow for Real Estate',
         context: 'Coming Soon',
         description: 'Autonomous AI agents orchestrating property research, lead qualification, and market analysis. Reducing manual research time while improving deal flow quality.',
-        outcome: 'Case study in development — launching Q1 2025.',
+        outcome: 'Case study in development — launching Q1 2026.',
         techStack: ['LangChain', 'OpenAI', 'Automation', 'Real Estate'],
         isComingSoon: true,
         image: '/images/real-estate-ai-v2.webp'
