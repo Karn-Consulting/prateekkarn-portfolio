@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Lock, Eye, EyeOff, Check } from 'lucide-react';
+import { Lock, Eye, EyeOff, Check, Sparkles } from 'lucide-react';
 
 interface PasswordProtectedVideoProps {
   videoSrc: string;
@@ -60,9 +60,9 @@ export default function PasswordProtectedVideo({
           <div className="w-16 h-16 bg-[#8b7355]/20 rounded-full flex items-center justify-center mx-auto mb-6">
             <Lock className="w-8 h-8 text-[#8b7355]" />
           </div>
-          <h3 className="text-xl font-heading text-white mb-2">Password Protected Content</h3>
+          <h3 className="text-xl font-heading text-white mb-2">Exclusive Content</h3>
           <p className="text-sm text-[#a0a0a0] mb-6">
-            Enter the password to unlock this exclusive case study walkthrough.
+            This detailed case study walkthrough is available exclusively to those with access. Enter the password shared with you to view.
           </p>
           
           <form onSubmit={handleUnlock} className="space-y-4">
@@ -101,14 +101,11 @@ export default function PasswordProtectedVideo({
         </div>
       </div>
       
-      {/* Password Hint Section */}
+      {/* Exclusive Access Notice */}
       <div className="p-4 bg-[#f8f7f5] border-t border-[#e5e5e0]">
         <div className="flex items-center justify-center gap-2 text-sm">
-          <Lock className="w-4 h-4 text-[#8b7355]" />
-          <span className="text-[#6a6a6a]">Password:</span>
-          <code className="bg-[#e5e5e0] px-2 py-0.5 rounded text-[#2d2a26] font-mono text-sm font-medium">
-            {password}
-          </code>
+          <Sparkles className="w-4 h-4 text-[#8b7355]" />
+          <span className="text-[#6a6a6a]">Password shared to view — exclusive access only</span>
         </div>
       </div>
     </div>
