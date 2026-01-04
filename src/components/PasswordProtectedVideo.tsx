@@ -34,7 +34,7 @@ export default function PasswordProtectedVideo({
           <video 
             className="w-full h-full object-contain"
             controls
-            controlsList="nodownload nofullscreen noremoteplayback"
+            controlsList="nodownload noremoteplayback"
             disablePictureInPicture
             onContextMenu={(e) => e.preventDefault()}
             preload="metadata"

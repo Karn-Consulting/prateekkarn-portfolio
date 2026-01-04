@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle, Mail, Users, TrendingUp, Target, Zap, BarChart3, MessageSquare, Calendar, ChevronLeft, ChevronRight, DollarSign, Inbox, Phone } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useConsultationModal } from '@/contexts/ConsultationModalContext';
+import PasswordProtectedPage from '@/components/PasswordProtectedPage';
 
 export default function BofuIntentIntelligence() {
   const { openModal } = useConsultationModal();
@@ -73,7 +74,12 @@ export default function BofuIntentIntelligence() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8f7f5]">
+    <PasswordProtectedPage 
+      password="CSUITE12"
+      title="Exclusive Case Study"
+      description="This detailed case study walkthrough is available exclusively to those with access. Enter the password shared with you to view."
+    >
+      <div className="min-h-screen bg-[#f8f7f5]">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-[#f8f7f5]/95 backdrop-blur-sm border-b border-[#e5e5e0]">
         <div className="container max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
@@ -558,6 +564,7 @@ export default function BofuIntentIntelligence() {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </PasswordProtectedPage>
   );
 }
