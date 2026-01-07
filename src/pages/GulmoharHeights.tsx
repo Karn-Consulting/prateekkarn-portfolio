@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, TrendingUp, Target, Zap, Users, Building2, Radio, Newspaper, MapPin, Phone, Mail, Bot, MessageSquare, BarChart3, DollarSign, Megaphone } from 'lucide-react';
+import { ArrowLeft, TrendingUp, Target, Zap, Users, Building2, Radio, Newspaper, MapPin, Phone, Mail, Bot, MessageSquare, BarChart3, DollarSign, Megaphone, Download, Maximize2, FileText } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useConsultationModal } from '@/contexts/ConsultationModalContext';
+import { useState } from 'react';
 
 export default function GulmoharHeights() {
   const { openModal } = useConsultationModal();
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const openFullscreen = () => {
+    window.open('/case-studies/gulmohar-heights/Gulmohar_Heights_360_Marketing_Plan.pdf', '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-[#f8f7f5]">
@@ -27,48 +33,77 @@ export default function GulmoharHeights() {
       {/* Hero Section */}
       <section className="pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-12 px-4 sm:px-6 bg-gradient-to-b from-[#f5f0e8] to-[#f8f7f5]">
         <div className="container max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="max-w-xl">
-              <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#8b7355] mb-4 font-medium">
-                360° Real Estate Marketing
-              </p>
-              <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#2d2a26] mb-6 leading-tight">
-                Gulmohar Heights: ₹30 Cr/Month Revenue Engine
-              </h1>
-              <p className="text-lg sm:text-xl text-[#5a5550] leading-relaxed mb-8">
-                A comprehensive omnichannel marketing strategy for luxury real estate in Jaipur, combining digital precision with offline brand building and AI-driven lead nurturing.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <div className="inline-flex items-center gap-2 bg-[#8b7355] text-white px-5 py-3 rounded-md text-sm font-medium shadow-md">
-                  <TrendingUp className="w-4 h-4" />
-                  <span>₹30 Cr Monthly Revenue Target</span>
-                </div>
-                <div className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white px-5 py-3 rounded-md text-sm font-medium shadow-md">
-                  <BarChart3 className="w-4 h-4" />
-                  <span>~97x Projected ROI</span>
-                </div>
+          <div className="max-w-4xl">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#8b7355] mb-4 font-medium">
+              360° Real Estate Marketing
+            </p>
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#2d2a26] mb-6 leading-tight">
+              Luxury Real Estate Marketing: ₹30 Cr/Month Revenue Engine
+            </h1>
+            <p className="text-lg sm:text-xl text-[#5a5550] leading-relaxed mb-8">
+              A comprehensive omnichannel marketing strategy for a premium real estate company in Jaipur, combining digital precision with offline brand building and AI-driven lead nurturing.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <div className="inline-flex items-center gap-2 bg-[#8b7355] text-white px-5 py-3 rounded-md text-sm font-medium shadow-md">
+                <TrendingUp className="w-4 h-4" />
+                <span>₹30 Cr Monthly Revenue Target</span>
               </div>
-            </div>
-            <div className="flex justify-center">
-              <img 
-                src="/case-studies/gulmohar-heights/chordia-logo.png" 
-                alt="Chordia Group Logo" 
-                className="max-h-64 object-contain"
-              />
+              <div className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white px-5 py-3 rounded-md text-sm font-medium shadow-md">
+                <BarChart3 className="w-4 h-4" />
+                <span>~97x Projected ROI</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Project Overview */}
+      {/* Embedded Presentation Section */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
+        <div className="container max-w-6xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
+            <div>
+              <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-2">Complete Marketing Strategy</h2>
+              <p className="text-[#6a6a6a]">View the full 360° marketing plan presentation</p>
+            </div>
+            <div className="flex gap-3">
+              <button
+                onClick={openFullscreen}
+                className="inline-flex items-center gap-2 text-sm font-medium text-[#8b7355] border border-[#8b7355] px-4 py-2 rounded-sm hover:bg-[#8b7355] hover:text-white transition-all duration-200"
+              >
+                <Maximize2 className="w-4 h-4" />
+                View Fullscreen
+              </button>
+              <a
+                href="/case-studies/gulmohar-heights/Gulmohar_Heights_360_Marketing_Plan.pdf"
+                download
+                className="inline-flex items-center gap-2 text-sm font-medium bg-[#1a1a1a] text-white px-4 py-2 rounded-sm hover:bg-[#333] transition-all duration-200"
+              >
+                <Download className="w-4 h-4" />
+                Download PDF
+              </a>
+            </div>
+          </div>
+          
+          {/* PDF Embed */}
+          <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] overflow-hidden">
+            <iframe
+              src="/case-studies/gulmohar-heights/Gulmohar_Heights_360_Marketing_Plan.pdf"
+              className="w-full h-[600px] sm:h-[700px]"
+              title="Gulmohar Heights 360° Marketing Plan"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Project Overview */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6">
         <div className="container max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             <div>
               <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-6">The Project</h2>
               <div className="space-y-4 text-[#4a4a4a]">
                 <p>
-                  Gulmohar Heights by Chordia Group is a premium residential project in Jaipur featuring luxury 3 & 4 BHK apartments and independent villas, priced at approximately ₹1 Cr per unit.
+                  A premium residential project by a leading real estate company in Jaipur featuring luxury 3 & 4 BHK apartments and independent villas, priced at approximately ₹1 Cr per unit.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
@@ -97,22 +132,22 @@ export default function GulmoharHeights() {
                   Design a 360° marketing strategy capable of generating ₹30 Cr in monthly sales (30 units) through an optimized mix of digital performance marketing, traditional media, and AI-powered lead nurturing.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mt-6">
-                  <div className="bg-[#f8f7f5] p-4 rounded-sm">
+                  <div className="bg-white p-4 rounded-sm border border-[#e5e5e0]">
                     <Target className="w-5 h-5 text-[#8b7355] mb-2" />
                     <p className="text-sm font-medium text-[#1a1a1a]">Revenue Target</p>
                     <p className="text-xs text-[#6a6a6a]">₹30 Cr/month at capacity</p>
                   </div>
-                  <div className="bg-[#f8f7f5] p-4 rounded-sm">
+                  <div className="bg-white p-4 rounded-sm border border-[#e5e5e0]">
                     <Zap className="w-5 h-5 text-[#8b7355] mb-2" />
                     <p className="text-sm font-medium text-[#1a1a1a]">Budget Efficiency</p>
                     <p className="text-xs text-[#6a6a6a]">~1% marketing load</p>
                   </div>
-                  <div className="bg-[#f8f7f5] p-4 rounded-sm">
+                  <div className="bg-white p-4 rounded-sm border border-[#e5e5e0]">
                     <Users className="w-5 h-5 text-[#8b7355] mb-2" />
                     <p className="text-sm font-medium text-[#1a1a1a]">Lead Volume</p>
                     <p className="text-xs text-[#6a6a6a]">2,400+ leads/month</p>
                   </div>
-                  <div className="bg-[#f8f7f5] p-4 rounded-sm">
+                  <div className="bg-white p-4 rounded-sm border border-[#e5e5e0]">
                     <Bot className="w-5 h-5 text-[#8b7355] mb-2" />
                     <p className="text-sm font-medium text-[#1a1a1a]">AI Automation</p>
                     <p className="text-xs text-[#6a6a6a]">Voice + WhatsApp + Email</p>
@@ -125,14 +160,14 @@ export default function GulmoharHeights() {
       </section>
 
       {/* Monthly Budget Breakdown */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
         <div className="container max-w-6xl mx-auto">
           <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-8 text-center">Monthly Budget Architecture</h2>
           <p className="text-center text-[#6a6a6a] mb-8 max-w-2xl mx-auto">
             ₹31 Lakhs/month total investment (including 20% contingency) to drive ₹30 Cr in monthly revenue
           </p>
           
-          <div className="bg-white rounded-sm border border-[#e5e5e0] p-6 sm:p-8">
+          <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6 sm:p-8">
             <div className="grid md:grid-cols-2 gap-8">
               {/* Digital Channels */}
               <div>
@@ -218,17 +253,17 @@ export default function GulmoharHeights() {
                 AI-Driven Marketing & Tools
               </h3>
               <div className="grid sm:grid-cols-3 gap-4">
-                <div className="bg-[#f8f7f5] p-4 rounded-sm">
+                <div className="bg-white p-4 rounded-sm border border-[#e5e5e0]">
                   <p className="font-medium text-[#1a1a1a] mb-1">WhatsApp Marketing</p>
                   <p className="text-xs text-[#6a6a6a] mb-2">Automated nurture sequences</p>
                   <span className="font-heading text-[#8b7355]">₹15,000</span>
                 </div>
-                <div className="bg-[#f8f7f5] p-4 rounded-sm">
+                <div className="bg-white p-4 rounded-sm border border-[#e5e5e0]">
                   <p className="font-medium text-[#1a1a1a] mb-1">Email Marketing</p>
                   <p className="text-xs text-[#6a6a6a] mb-2">Drip campaigns & automation</p>
                   <span className="font-heading text-[#8b7355]">₹17,500</span>
                 </div>
-                <div className="bg-[#f8f7f5] p-4 rounded-sm">
+                <div className="bg-white p-4 rounded-sm border border-[#e5e5e0]">
                   <p className="font-medium text-[#1a1a1a] mb-1">Database Purchase</p>
                   <p className="text-xs text-[#6a6a6a] mb-2">HNI contact acquisition</p>
                   <span className="font-heading text-[#8b7355]">₹20,000</span>
@@ -251,7 +286,7 @@ export default function GulmoharHeights() {
       </section>
 
       {/* AI-Driven Lead Nurturing */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
+      <section className="py-12 sm:py-16 px-4 sm:px-6">
         <div className="container max-w-6xl mx-auto">
           <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-4 text-center">AI-Driven Lead Nurturing System</h2>
           <p className="text-center text-[#6a6a6a] mb-8 max-w-2xl mx-auto">
@@ -260,8 +295,8 @@ export default function GulmoharHeights() {
           
           <div className="grid md:grid-cols-3 gap-6">
             {/* Voice Calls */}
-            <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6">
-              <div className="w-12 h-12 bg-white rounded-sm flex items-center justify-center mb-4 shadow-sm">
+            <div className="bg-white rounded-sm border border-[#e5e5e0] p-6">
+              <div className="w-12 h-12 bg-[#f8f7f5] rounded-sm flex items-center justify-center mb-4">
                 <Phone className="w-6 h-6 text-[#8b7355]" />
               </div>
               <h3 className="font-heading text-lg text-[#1a1a1a] mb-2">Automated Voice Calls</h3>
@@ -285,8 +320,8 @@ export default function GulmoharHeights() {
             </div>
 
             {/* WhatsApp */}
-            <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6">
-              <div className="w-12 h-12 bg-white rounded-sm flex items-center justify-center mb-4 shadow-sm">
+            <div className="bg-white rounded-sm border border-[#e5e5e0] p-6">
+              <div className="w-12 h-12 bg-[#f8f7f5] rounded-sm flex items-center justify-center mb-4">
                 <MessageSquare className="w-6 h-6 text-[#8b7355]" />
               </div>
               <h3 className="font-heading text-lg text-[#1a1a1a] mb-2">WhatsApp Nurture Sequences</h3>
@@ -310,8 +345,8 @@ export default function GulmoharHeights() {
             </div>
 
             {/* Email */}
-            <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6">
-              <div className="w-12 h-12 bg-white rounded-sm flex items-center justify-center mb-4 shadow-sm">
+            <div className="bg-white rounded-sm border border-[#e5e5e0] p-6">
+              <div className="w-12 h-12 bg-[#f8f7f5] rounded-sm flex items-center justify-center mb-4">
                 <Mail className="w-6 h-6 text-[#8b7355]" />
               </div>
               <h3 className="font-heading text-lg text-[#1a1a1a] mb-2">Email Marketing Campaigns</h3>
@@ -338,11 +373,11 @@ export default function GulmoharHeights() {
       </section>
 
       {/* Lead Funnel */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
         <div className="container max-w-6xl mx-auto">
           <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-8 text-center">Lead-to-Booking Funnel</h2>
           
-          <div className="bg-white rounded-sm border border-[#e5e5e0] p-6 sm:p-8">
+          <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6 sm:p-8">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
               <div className="p-4">
                 <p className="font-heading text-3xl sm:text-4xl text-[#8b7355] mb-2">2,400+</p>
@@ -383,11 +418,11 @@ export default function GulmoharHeights() {
       </section>
 
       {/* Revenue Projection */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
+      <section className="py-12 sm:py-16 px-4 sm:px-6">
         <div className="container max-w-6xl mx-auto">
           <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-8 text-center">Progressive Revenue Model</h2>
           
-          <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6 sm:p-8">
+          <div className="bg-white rounded-sm border border-[#e5e5e0] p-6 sm:p-8">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
@@ -461,24 +496,24 @@ export default function GulmoharHeights() {
       </section>
 
       {/* Key Metrics */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
         <div className="container max-w-6xl mx-auto">
           <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-8 text-center">Key Performance Metrics</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-white rounded-sm border border-[#e5e5e0] p-6 text-center">
+            <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6 text-center">
               <p className="font-heading text-4xl sm:text-5xl text-[#8b7355] mb-2">₹250-300</p>
               <p className="text-sm text-[#6a6a6a]">Meta CPL</p>
             </div>
-            <div className="bg-white rounded-sm border border-[#e5e5e0] p-6 text-center">
+            <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6 text-center">
               <p className="font-heading text-4xl sm:text-5xl text-[#8b7355] mb-2">₹1,000-1,500</p>
               <p className="text-sm text-[#6a6a6a]">Google CPL</p>
             </div>
-            <div className="bg-white rounded-sm border border-[#e5e5e0] p-6 text-center">
+            <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6 text-center">
               <p className="font-heading text-4xl sm:text-5xl text-[#8b7355] mb-2">~97x</p>
               <p className="text-sm text-[#6a6a6a]">Projected ROI</p>
             </div>
-            <div className="bg-white rounded-sm border border-[#e5e5e0] p-6 text-center">
+            <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6 text-center">
               <p className="font-heading text-4xl sm:text-5xl text-[#8b7355] mb-2">~1%</p>
               <p className="text-sm text-[#6a6a6a]">Marketing Load</p>
             </div>

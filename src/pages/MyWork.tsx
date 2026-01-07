@@ -129,7 +129,7 @@ const CONTENT = {
         techStack: ['Meta Ads', 'Google Ads', 'AI Automation', 'Omnichannel'],
         problem: 'Design a 360° marketing strategy capable of generating ₹30 Cr in monthly sales through optimized digital + offline mix.',
         system: 'Multi-channel architecture with AI-powered voice calls, WhatsApp nurturing, and integrated offline media.',
-        image: '/case-studies/gulmohar-heights/chordia-logo.png',
+        image: '/case-studies/gulmohar-heights/card-image-v2.png',
         link: '/mywork/gulmohar-heights'
       }
     ]
