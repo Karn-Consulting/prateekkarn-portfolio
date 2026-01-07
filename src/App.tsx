@@ -21,6 +21,7 @@ import ExecutiveDashboard from "./pages/ExecutiveDashboard";
 import MetaAdsPerformance from "./pages/MetaAdsPerformance";
 import RevenueEngineering from "./pages/RevenueEngineering";
 import BofuIntentIntelligence from "./pages/BofuIntentIntelligence";
+import GulmoharHeights from "./pages/GulmoharHeights";
 import Insights from "./pages/Insights";
 import InsightPost from "./pages/InsightPost";
 import CookieConsent from "./components/CookieConsent";
@@ -52,6 +53,7 @@ const App = () => (
               <Route path="/mywork/meta-ads-performance" element={<MetaAdsPerformance />} />
               <Route path="/mywork/revenue-engineering" element={<RevenueEngineering />} />
               <Route path="/mywork/bofu-intent-intelligence" element={<BofuIntentIntelligence />} />
+              <Route path="/mywork/gulmohar-heights" element={<GulmoharHeights />} />
               {/* Insights/Blog Routes */}
               <Route path="/insights" element={<Insights />} />
               <Route path="/insights/:slug" element={<InsightPost />} />

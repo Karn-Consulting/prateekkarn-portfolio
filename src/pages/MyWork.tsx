@@ -120,7 +120,19 @@ const CONTENT = {
       outcome: 'Achieved 2.37 ROAS within 2 weeks, with top campaigns hitting 3.59 ROAS.',
       logoImage: '/images/meta-ads-new.jpg'
     },
-    grid: []
+    grid: [
+      {
+        title: 'Gulmohar Heights — ₹30 Cr/Month Revenue Engine',
+        context: '360° Real Estate Marketing',
+        description: 'Comprehensive omnichannel marketing strategy for luxury real estate in Jaipur, combining digital precision with offline brand building and AI-driven lead nurturing.',
+        outcome: '₹30 Cr monthly revenue target with ~97x projected ROI at ~1% marketing load.',
+        techStack: ['Meta Ads', 'Google Ads', 'AI Automation', 'Omnichannel'],
+        problem: 'Design a 360° marketing strategy capable of generating ₹30 Cr in monthly sales through optimized digital + offline mix.',
+        system: 'Multi-channel architecture with AI-powered voice calls, WhatsApp nurturing, and integrated offline media.',
+        image: '/case-studies/gulmohar-heights/chordia-logo.png',
+        link: '/mywork/gulmohar-heights'
+      }
+    ]
   }
 };
 
