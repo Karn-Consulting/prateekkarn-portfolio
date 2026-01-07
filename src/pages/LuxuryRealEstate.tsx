@@ -4,12 +4,12 @@ import Footer from '@/components/Footer';
 import { useConsultationModal } from '@/contexts/ConsultationModalContext';
 import { useState } from 'react';
 
-export default function GulmoharHeights() {
+export default function LuxuryRealEstate() {
   const { openModal } = useConsultationModal();
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const openFullscreen = () => {
-    window.open('/case-studies/gulmohar-heights/Gulmohar_Heights_360_Marketing_Plan.pdf', '_blank');
+    window.open('/case-studies/luxury-real-estate/Gulmohar_Heights_360_Marketing_Plan.pdf', '_blank');
   };
 
   return (
@@ -74,7 +74,7 @@ export default function GulmoharHeights() {
                 View Fullscreen
               </button>
               <a
-                href="/case-studies/gulmohar-heights/Gulmohar_Heights_360_Marketing_Plan.pdf"
+                href="/case-studies/luxury-real-estate/Gulmohar_Heights_360_Marketing_Plan.pdf"
                 download
                 className="inline-flex items-center gap-2 text-sm font-medium bg-[#1a1a1a] text-white px-4 py-2 rounded-sm hover:bg-[#333] transition-all duration-200"
               >
@@ -87,7 +87,7 @@ export default function GulmoharHeights() {
           {/* PDF Embed */}
           <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] overflow-hidden">
             <iframe
-              src="/case-studies/gulmohar-heights/Gulmohar_Heights_360_Marketing_Plan.pdf"
+              src="/case-studies/luxury-real-estate/Gulmohar_Heights_360_Marketing_Plan.pdf"
               className="w-full h-[600px] sm:h-[700px]"
               title="360° Marketing Plan"
             />
