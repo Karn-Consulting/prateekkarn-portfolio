@@ -2,15 +2,10 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, TrendingUp, Target, Zap, Users, Building2, Radio, Newspaper, MapPin, Phone, Mail, Bot, MessageSquare, BarChart3, DollarSign, Megaphone, Download, Maximize2, FileText } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useConsultationModal } from '@/contexts/ConsultationModalContext';
-import { useState } from 'react';
+import PasswordProtectedPDF from '@/components/PasswordProtectedPDF';
 
 export default function LuxuryRealEstate() {
   const { openModal } = useConsultationModal();
-  const [isFullscreen, setIsFullscreen] = useState(false);
-
-  const openFullscreen = () => {
-    window.open('/case-studies/luxury-real-estate/Gulmohar_Heights_360_Marketing_Plan.pdf', '_blank');
-  };
 
   return (
     <div className="min-h-screen bg-[#f8f7f5]">
@@ -57,41 +52,16 @@ export default function LuxuryRealEstate() {
         </div>
       </section>
 
-      {/* Embedded Presentation Section */}
+      {/* Password Protected Presentation Section */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
         <div className="container max-w-6xl mx-auto">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
-            <div>
-              <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-2">Complete Marketing Strategy</h2>
-              <p className="text-[#6a6a6a]">View the full 360° marketing plan presentation</p>
-            </div>
-            <div className="flex gap-3">
-              <button
-                onClick={openFullscreen}
-                className="inline-flex items-center gap-2 text-sm font-medium text-[#8b7355] border border-[#8b7355] px-4 py-2 rounded-sm hover:bg-[#8b7355] hover:text-white transition-all duration-200"
-              >
-                <Maximize2 className="w-4 h-4" />
-                View Fullscreen
-              </button>
-              <a
-                href="/case-studies/luxury-real-estate/Gulmohar_Heights_360_Marketing_Plan.pdf"
-                download
-                className="inline-flex items-center gap-2 text-sm font-medium bg-[#1a1a1a] text-white px-4 py-2 rounded-sm hover:bg-[#333] transition-all duration-200"
-              >
-                <Download className="w-4 h-4" />
-                Download PDF
-              </a>
-            </div>
-          </div>
-          
-          {/* PDF Embed */}
-          <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] overflow-hidden">
-            <iframe
-              src="/case-studies/luxury-real-estate/Gulmohar_Heights_360_Marketing_Plan.pdf"
-              className="w-full h-[600px] sm:h-[700px]"
-              title="360° Marketing Plan"
-            />
-          </div>
+          <PasswordProtectedPDF
+            pdfSrc="/case-studies/luxury-real-estate/Gulmohar_Heights_360_Marketing_Plan.pdf"
+            password="GULMOHAR360"
+            title="Complete Marketing Strategy"
+            caption="View the full 360° marketing plan presentation"
+            allowDownload={true}
+          />
         </div>
       </section>
 
