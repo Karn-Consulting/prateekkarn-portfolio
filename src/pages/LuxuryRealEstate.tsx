@@ -163,8 +163,11 @@ export default function LuxuryRealEstate() {
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
         <div className="container max-w-6xl mx-auto">
           <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-8 text-center">Monthly Budget Architecture</h2>
-          <p className="text-center text-[#6a6a6a] mb-8 max-w-2xl mx-auto">
-            ₹31 Lakhs/month base investment (including 20% contingency) to drive ₹30 Cr in monthly revenue
+          <p className="text-center text-[#6a6a6a] mb-4 max-w-2xl mx-auto">
+            ₹29.55 Lakhs/month base investment (including 20% contingency) to drive ₹30 Cr in monthly revenue
+          </p>
+          <p className="text-center text-[#2E7D32] text-sm mb-8 max-w-2xl mx-auto bg-[#E8F5E9] py-2 px-4 rounded-sm">
+            🏠 <strong>In-House Execution:</strong> Digital marketing managed by Marketing Manager. Only offline media (Newspaper, Hoardings, Radio, PR) requires external vendors.
           </p>
           
           <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6 sm:p-8">
@@ -193,16 +196,16 @@ export default function LuxuryRealEstate() {
                   <div className="flex justify-between items-center py-3 border-b border-[#e5e5e0] bg-[#FFF9F0] -mx-2 px-2">
                     <div>
                       <p className="font-medium text-[#1a1a1a]">MagicBricks</p>
-                      <p className="text-xs text-[#8b7355] font-medium">3-month package: ₹2.7L upfront</p>
+                      <p className="text-xs text-[#8b7355] font-medium">3-month package: ₹90K upfront</p>
                     </div>
-                    <span className="font-heading text-lg text-[#8b7355]">₹90,000/mo*</span>
+                    <span className="font-heading text-lg text-[#8b7355]">₹30,000/mo*</span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-[#e5e5e0] bg-[#FFF9F0] -mx-2 px-2">
                     <div>
                       <p className="font-medium text-[#1a1a1a]">99 Acres</p>
-                      <p className="text-xs text-[#8b7355] font-medium">3-month package: ₹2.7L upfront</p>
+                      <p className="text-xs text-[#8b7355] font-medium">3-month package: ₹90K upfront</p>
                     </div>
-                    <span className="font-heading text-lg text-[#8b7355]">₹90,000/mo*</span>
+                    <span className="font-heading text-lg text-[#8b7355]">₹30,000/mo*</span>
                   </div>
                 </div>
               </div>
@@ -274,8 +277,8 @@ export default function LuxuryRealEstate() {
             {/* Quarterly Note */}
             <div className="mt-6 p-4 bg-[#FFF9F0] border border-[#C4956A] rounded-sm">
               <p className="text-sm text-[#5a5550]">
-                <strong className="text-[#8b7355]">📦 Quarterly Portal Payments:</strong> MagicBricks + 99 Acres are 3-month packages (₹2.7L each). 
-                <br/>Month 1 & 4 cash outflow = ₹34.6L (includes ₹5.4L portal upfront). Regular months = ₹31L.
+                <strong className="text-[#8b7355]">📦 Quarterly Portal Payments:</strong> MagicBricks + 99 Acres are 3-month packages (₹90K each). 
+                <br/>Month 1 & 4 cash outflow = ₹30.75L (includes ₹1.2L portal upfront). Regular months = ₹29.55L.
               </p>
             </div>
 
@@ -284,9 +287,9 @@ export default function LuxuryRealEstate() {
               <div className="flex justify-between items-center">
                 <div>
                   <p className="font-heading text-xl text-[#1a1a1a]">Total Monthly Investment</p>
-                  <p className="text-sm text-[#6a6a6a]">Including 20% contingency fund (₹5.16L)</p>
+                  <p className="text-sm text-[#6a6a6a]">Including 20% contingency fund (₹4.93L)</p>
                 </div>
-                <span className="font-heading text-3xl text-[#8b7355]">₹30,99,000</span>
+                <span className="font-heading text-3xl text-[#8b7355]">₹29,55,000</span>
               </div>
             </div>
           </div>

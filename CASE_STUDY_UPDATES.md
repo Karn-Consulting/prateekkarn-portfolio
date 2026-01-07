@@ -43,8 +43,8 @@ Update revenue target from ₹30 Cr to ₹35 Cr per month
 | Newspaper | ₹4,00,000 | 12.9% | Dainik Bhaskar + Patrika |
 | Google Ads | ₹2,50,000 | 8.1% | CPL ₹1,000-1,500, ~200 leads |
 | PR (ET Realty) | ₹2,50,000 | 8.1% | Advertorials |
-| MagicBricks | ₹90,000 | 2.9% | 3-mo package (₹2.7L upfront) |
-| 99 Acres | ₹90,000 | 2.9% | 3-mo package (₹2.7L upfront) |
+| MagicBricks | ₹30,000 | 1.0% | 3-mo package (₹90K upfront) |
+| 99 Acres | ₹30,000 | 1.0% | 3-mo package (₹90K upfront) |
 | WhatsApp Marketing | ₹15,000 | 0.5% | Automated sequences |
 | Email Marketing | ₹17,500 | 0.6% | Drip campaigns |
 | Database Purchase | ₹20,000 | 0.6% | HNI contacts |
