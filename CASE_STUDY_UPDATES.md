@@ -39,7 +39,7 @@ Update revenue target from ₹30 Cr to ₹35 Cr per month
 |---------|--------|---|-------|
 | Meta Ads (FB + IG) | ₹6,00,000 | 19.4% | CPL ₹250-300, ~2,000 leads |
 | Radio Jingles | ₹4,50,000 | 14.5% | My FM + Big FM |
-| Hoardings | ₹4,00,000 | 12.9% | 14 strategic locations |
+| Hoardings | ₹4,00,000 | 12.9% | 22 strategic locations |
 | Newspaper | ₹4,00,000 | 12.9% | Dainik Bhaskar + Patrika |
 | Google Ads | ₹2,50,000 | 8.1% | CPL ₹1,000-1,500, ~200 leads |
 | PR (ET Realty) | ₹2,50,000 | 8.1% | Advertorials |

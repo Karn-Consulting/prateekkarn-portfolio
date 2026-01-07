@@ -217,7 +217,7 @@ export default function GulmoharHeights() {
                   <div className="flex justify-between items-center py-3 border-b border-[#e5e5e0]">
                     <div>
                       <p className="font-medium text-[#1a1a1a]">Hoardings</p>
-                      <p className="text-xs text-[#6a6a6a]">14 strategic locations</p>
+                      <p className="text-xs text-[#6a6a6a]">22 strategic locations</p>
                     </div>
                     <span className="font-heading text-lg text-[#8b7355]">₹4,00,000</span>
                   </div>
