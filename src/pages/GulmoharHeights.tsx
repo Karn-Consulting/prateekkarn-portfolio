@@ -38,10 +38,10 @@ export default function GulmoharHeights() {
               360° Real Estate Marketing
             </p>
             <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#2d2a26] mb-6 leading-tight">
-              Luxury Real Estate Marketing: ₹30 Cr/Month Revenue Engine
+              Luxury Real Estate: ₹30 Cr/Month Revenue Engine
             </h1>
             <p className="text-lg sm:text-xl text-[#5a5550] leading-relaxed mb-8">
-              A comprehensive omnichannel marketing strategy for a premium real estate company in Jaipur, combining digital precision with offline brand building and AI-driven lead nurturing.
+              A comprehensive omnichannel marketing strategy for a premium real estate project in Jaipur, combining digital precision with offline brand building and AI-driven lead nurturing.
             </p>
             <div className="flex flex-wrap gap-3">
               <div className="inline-flex items-center gap-2 bg-[#8b7355] text-white px-5 py-3 rounded-md text-sm font-medium shadow-md">
@@ -50,7 +50,7 @@ export default function GulmoharHeights() {
               </div>
               <div className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white px-5 py-3 rounded-md text-sm font-medium shadow-md">
                 <BarChart3 className="w-4 h-4" />
-                <span>~97x Projected ROI</span>
+                <span>~92x Projected ROI</span>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function GulmoharHeights() {
             <iframe
               src="/case-studies/gulmohar-heights/Gulmohar_Heights_360_Marketing_Plan.pdf"
               className="w-full h-[600px] sm:h-[700px]"
-              title="Gulmohar Heights 360° Marketing Plan"
+              title="360° Marketing Plan"
             />
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function GulmoharHeights() {
               <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-6">The Project</h2>
               <div className="space-y-4 text-[#4a4a4a]">
                 <p>
-                  A premium residential project by a leading real estate company in Jaipur featuring luxury 3 & 4 BHK apartments and independent villas, priced at approximately ₹1 Cr per unit.
+                  A premium residential project by a leading real estate developer in Jaipur featuring luxury 3 & 4 BHK apartments and independent villas, priced at approximately ₹1 Cr per unit.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
@@ -164,7 +164,7 @@ export default function GulmoharHeights() {
         <div className="container max-w-6xl mx-auto">
           <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-8 text-center">Monthly Budget Architecture</h2>
           <p className="text-center text-[#6a6a6a] mb-8 max-w-2xl mx-auto">
-            ₹31 Lakhs/month total investment (including 20% contingency) to drive ₹30 Cr in monthly revenue
+            ₹31 Lakhs/month base investment (including 20% contingency) to drive ₹30 Cr in monthly revenue
           </p>
           
           <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6 sm:p-8">
@@ -190,19 +190,19 @@ export default function GulmoharHeights() {
                     </div>
                     <span className="font-heading text-lg text-[#8b7355]">₹2,50,000</span>
                   </div>
-                  <div className="flex justify-between items-center py-3 border-b border-[#e5e5e0]">
+                  <div className="flex justify-between items-center py-3 border-b border-[#e5e5e0] bg-[#FFF9F0] -mx-2 px-2">
                     <div>
                       <p className="font-medium text-[#1a1a1a]">MagicBricks</p>
-                      <p className="text-xs text-[#6a6a6a]">Premium property listing</p>
+                      <p className="text-xs text-[#8b7355] font-medium">3-month package: ₹2.7L upfront</p>
                     </div>
-                    <span className="font-heading text-lg text-[#8b7355]">₹90,000</span>
+                    <span className="font-heading text-lg text-[#8b7355]">₹90,000/mo*</span>
                   </div>
-                  <div className="flex justify-between items-center py-3 border-b border-[#e5e5e0]">
+                  <div className="flex justify-between items-center py-3 border-b border-[#e5e5e0] bg-[#FFF9F0] -mx-2 px-2">
                     <div>
                       <p className="font-medium text-[#1a1a1a]">99 Acres</p>
-                      <p className="text-xs text-[#6a6a6a]">Premium property listing</p>
+                      <p className="text-xs text-[#8b7355] font-medium">3-month package: ₹2.7L upfront</p>
                     </div>
-                    <span className="font-heading text-lg text-[#8b7355]">₹90,000</span>
+                    <span className="font-heading text-lg text-[#8b7355]">₹90,000/mo*</span>
                   </div>
                 </div>
               </div>
@@ -271,8 +271,16 @@ export default function GulmoharHeights() {
               </div>
             </div>
 
+            {/* Quarterly Note */}
+            <div className="mt-6 p-4 bg-[#FFF9F0] border border-[#C4956A] rounded-sm">
+              <p className="text-sm text-[#5a5550]">
+                <strong className="text-[#8b7355]">📦 Quarterly Portal Payments:</strong> MagicBricks + 99 Acres are 3-month packages (₹2.7L each). 
+                <br/>Month 1 & 4 cash outflow = ₹34.6L (includes ₹5.4L portal upfront). Regular months = ₹31L.
+              </p>
+            </div>
+
             {/* Total */}
-            <div className="mt-8 pt-6 border-t-2 border-[#8b7355]">
+            <div className="mt-6 pt-6 border-t-2 border-[#8b7355]">
               <div className="flex justify-between items-center">
                 <div>
                   <p className="font-heading text-xl text-[#1a1a1a]">Total Monthly Investment</p>
@@ -430,17 +438,17 @@ export default function GulmoharHeights() {
                     <th className="text-left py-3 px-4 font-heading text-[#1a1a1a]">Month</th>
                     <th className="text-right py-3 px-4 font-heading text-[#1a1a1a]">Revenue Target</th>
                     <th className="text-right py-3 px-4 font-heading text-[#1a1a1a]">Units</th>
-                    <th className="text-right py-3 px-4 font-heading text-[#1a1a1a]">Investment</th>
+                    <th className="text-right py-3 px-4 font-heading text-[#1a1a1a]">Cash Outflow</th>
                     <th className="text-right py-3 px-4 font-heading text-[#1a1a1a]">ROI</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-[#e5e5e0]">
-                    <td className="py-3 px-4 text-[#4a4a4a]">Month 1 <span className="text-xs text-[#8b7355]">(Launch)</span></td>
+                  <tr className="border-b border-[#e5e5e0] bg-[#FFF9F0]">
+                    <td className="py-3 px-4 text-[#4a4a4a]">Month 1 <span className="text-xs text-[#8b7355]">(Launch + Q1 Portal)</span></td>
                     <td className="py-3 px-4 text-right font-medium text-[#8b7355]">₹15 Cr</td>
                     <td className="py-3 px-4 text-right text-[#4a4a4a]">15</td>
-                    <td className="py-3 px-4 text-right text-[#4a4a4a]">₹31 L</td>
-                    <td className="py-3 px-4 text-right text-[#4a4a4a]">48x</td>
+                    <td className="py-3 px-4 text-right text-[#4a4a4a]"><strong>₹34.6 L*</strong></td>
+                    <td className="py-3 px-4 text-right text-[#4a4a4a]">43x</td>
                   </tr>
                   <tr className="border-b border-[#e5e5e0]">
                     <td className="py-3 px-4 text-[#4a4a4a]">Month 2 <span className="text-xs text-[#8b7355]">(Optimize)</span></td>
@@ -456,12 +464,12 @@ export default function GulmoharHeights() {
                     <td className="py-3 px-4 text-right text-[#4a4a4a]">₹31 L</td>
                     <td className="py-3 px-4 text-right text-[#4a4a4a]">97x</td>
                   </tr>
-                  <tr className="border-b border-[#e5e5e0]">
-                    <td className="py-3 px-4 text-[#4a4a4a]">Month 4 <span className="text-xs text-[#27ae60]">(+10%)</span></td>
+                  <tr className="border-b border-[#e5e5e0] bg-[#FFF9F0]">
+                    <td className="py-3 px-4 text-[#4a4a4a]">Month 4 <span className="text-xs text-[#27ae60]">(+10%)</span> <span className="text-xs text-[#8b7355]">(Q2 Portal)</span></td>
                     <td className="py-3 px-4 text-right font-medium text-[#8b7355]">₹33 Cr</td>
                     <td className="py-3 px-4 text-right text-[#4a4a4a]">33</td>
-                    <td className="py-3 px-4 text-right text-[#4a4a4a]">₹31 L</td>
-                    <td className="py-3 px-4 text-right text-[#4a4a4a]">106x</td>
+                    <td className="py-3 px-4 text-right text-[#4a4a4a]"><strong>₹34.6 L*</strong></td>
+                    <td className="py-3 px-4 text-right text-[#4a4a4a]">95x</td>
                   </tr>
                   <tr className="border-b border-[#e5e5e0]">
                     <td className="py-3 px-4 text-[#4a4a4a]">Month 5 <span className="text-xs text-[#27ae60]">(+10%)</span></td>
@@ -481,15 +489,15 @@ export default function GulmoharHeights() {
                     <td className="py-4 px-4 font-heading">6-Month Total</td>
                     <td className="py-4 px-4 text-right font-heading text-[#C4956A]">₹176.7 Cr</td>
                     <td className="py-4 px-4 text-right">177</td>
-                    <td className="py-4 px-4 text-right">₹1.86 Cr</td>
-                    <td className="py-4 px-4 text-right font-heading text-[#C4956A]">~95x</td>
+                    <td className="py-4 px-4 text-right">₹1.93 Cr</td>
+                    <td className="py-4 px-4 text-right font-heading text-[#C4956A]">~92x</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             
             <p className="text-xs text-[#888] text-center mt-6 italic">
-              * Numbers may vary based on market conditions
+              * Includes ₹5.4L quarterly portal payment (MagicBricks + 99 Acres). Numbers may vary based on market conditions.
             </p>
           </div>
         </div>
@@ -510,7 +518,7 @@ export default function GulmoharHeights() {
               <p className="text-sm text-[#6a6a6a]">Google CPL</p>
             </div>
             <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6 text-center">
-              <p className="font-heading text-4xl sm:text-5xl text-[#8b7355] mb-2">~97x</p>
+              <p className="font-heading text-4xl sm:text-5xl text-[#8b7355] mb-2">~92x</p>
               <p className="text-sm text-[#6a6a6a]">Projected ROI</p>
             </div>
             <div className="bg-[#f8f7f5] rounded-sm border border-[#e5e5e0] p-6 text-center">

@@ -122,9 +122,9 @@ const CONTENT = {
     },
     grid: [
       {
-        title: 'Gulmohar Heights — ₹30 Cr/Month Revenue Engine',
+        title: 'Luxury Real Estate — ₹30 Cr/Month Revenue Engine',
         context: '360° Real Estate Marketing',
-        description: 'Comprehensive omnichannel marketing strategy for luxury real estate in Jaipur, combining digital precision with offline brand building and AI-driven lead nurturing.',
+        description: 'Comprehensive omnichannel marketing strategy for a premium real estate project in Jaipur, combining digital precision with offline brand building and AI-driven lead nurturing.',
         outcome: '₹30 Cr monthly revenue target with ~97x projected ROI at ~1% marketing load.',
         techStack: ['Meta Ads', 'Google Ads', 'AI Automation', 'Omnichannel'],
         problem: 'Design a 360° marketing strategy capable of generating ₹30 Cr in monthly sales through optimized digital + offline mix.',
