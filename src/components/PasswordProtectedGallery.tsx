@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Lock, Eye, EyeOff, Sparkles, Image, Download, X } from 'lucide-react';
+import { Lock, Eye, EyeOff, Sparkles, Image, Download, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 interface GalleryImage {
   src: string;
@@ -31,7 +31,9 @@ export default function PasswordProtectedGallery({
   const [inputPassword, setInputPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
-  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const [activeTheme, setActiveTheme] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const handleUnlock = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,6 +43,26 @@ export default function PasswordProtectedGallery({
     } else {
       setError('Incorrect password. Please try again.');
     }
+  };
+
+  const currentTheme = themes[activeTheme];
+  const totalSlides = currentTheme?.images.length || 0;
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  const changeTheme = (index: number) => {
+    setActiveTheme(index);
+    setCurrentSlide(0);
   };
 
   const downloadImage = (src: string, filename: string) => {
@@ -53,6 +75,8 @@ export default function PasswordProtectedGallery({
   };
 
   if (isUnlocked) {
+    const currentImage = currentTheme?.images[currentSlide];
+
     return (
       <div className="bg-white rounded-sm border border-[#e5e5e0] overflow-hidden shadow-sm">
         {/* Header */}
@@ -60,81 +84,179 @@ export default function PasswordProtectedGallery({
           <h3 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-2">{title}</h3>
           <p className="text-sm text-[#6a6a6a]">{caption}</p>
         </div>
-        
-        {/* Gallery Content */}
-        <div className="p-6 sm:p-8 space-y-12">
-          {themes.map((theme, themeIndex) => (
-            <div key={themeIndex}>
-              {/* Theme Header */}
-              <div className="mb-6">
-                <div 
-                  className="inline-block px-4 py-2 rounded-sm mb-3"
-                  style={{ backgroundColor: theme.color }}
-                >
-                  <span className="text-white font-medium text-sm">{theme.name}</span>
-                </div>
-                <p className="text-[#6a6a6a] text-sm italic">{theme.tagline}</p>
-              </div>
+
+        {/* Theme Tabs */}
+        <div className="flex flex-wrap gap-2 p-4 sm:p-6 bg-[#fafafa] border-b border-[#e5e5e0]">
+          {themes.map((theme, index) => (
+            <button
+              key={index}
+              onClick={() => changeTheme(index)}
+              className={`px-4 py-2 rounded-sm text-sm font-medium transition-all ${
+                activeTheme === index
+                  ? 'text-white shadow-md'
+                  : 'bg-white text-[#4a4a4a] border border-[#e5e5e0] hover:border-[#8b7355]'
+              }`}
+              style={activeTheme === index ? { backgroundColor: theme.color } : {}}
+            >
+              {theme.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Slideshow Container */}
+        <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#2d2a26]">
+          {/* Theme Info */}
+          <div className="absolute top-4 left-4 z-10">
+            <span 
+              className="inline-block px-3 py-1.5 rounded-sm text-white text-xs font-medium"
+              style={{ backgroundColor: currentTheme.color }}
+            >
+              {currentTheme.name}
+            </span>
+            <p className="text-white/60 text-xs mt-2 italic">{currentTheme.tagline}</p>
+          </div>
+
+          {/* Slide Counter */}
+          <div className="absolute top-4 right-4 z-10 bg-black/50 px-3 py-1.5 rounded-sm">
+            <span className="text-white text-sm font-medium">
+              {currentSlide + 1} / {totalSlides}
+            </span>
+          </div>
+
+          {/* Main Slide */}
+          <div className="relative flex items-center justify-center py-8 px-16 min-h-[500px] sm:min-h-[600px]">
+            {/* Previous Button */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Image */}
+            <div className="relative max-w-md w-full">
+              <img
+                src={currentImage?.src}
+                alt={currentImage?.label}
+                className="w-full h-auto rounded-sm shadow-2xl cursor-pointer transition-transform hover:scale-[1.02]"
+                onClick={() => setLightboxOpen(true)}
+              />
               
-              {/* Images Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {theme.images.map((image, imageIndex) => (
-                  <div 
-                    key={imageIndex}
-                    className="group relative bg-[#f8f7f5] rounded-sm overflow-hidden border border-[#e5e5e0] hover:shadow-lg transition-shadow"
-                  >
-                    <div className="aspect-square relative overflow-hidden">
-                      <img 
-                        src={image.src} 
-                        alt={image.label}
-                        className="w-full h-full object-cover cursor-pointer transition-transform group-hover:scale-105"
-                        onClick={() => setLightboxImage(image.src)}
-                      />
-                      {/* Overlay on hover */}
-                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
-                        <button
-                          onClick={() => setLightboxImage(image.src)}
-                          className="p-3 bg-white rounded-full hover:bg-[#8b7355] hover:text-white transition-colors"
-                        >
-                          <Eye className="w-5 h-5" />
-                        </button>
-                        <button
-                          onClick={() => downloadImage(image.src, `gulmohar-heights-${theme.name.toLowerCase().replace(/\s+/g, '-')}-${imageIndex + 1}.png`)}
-                          className="p-3 bg-white rounded-full hover:bg-[#8b7355] hover:text-white transition-colors"
-                        >
-                          <Download className="w-5 h-5" />
-                        </button>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <p className="font-medium text-[#1a1a1a] text-sm mb-1">{image.label}</p>
-                      <p className="text-xs text-[#8b7355]">CTA: {image.cta}</p>
-                    </div>
-                  </div>
-                ))}
+              {/* Image Info Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 rounded-b-sm">
+                <p className="text-white font-medium">{currentImage?.label}</p>
+                <p className="text-[#d4af37] text-sm">CTA: {currentImage?.cta} 9024200400</p>
               </div>
             </div>
+
+            {/* Next Button */}
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Thumbnail Navigation */}
+          <div className="flex justify-center gap-2 pb-6 px-4 overflow-x-auto">
+            {currentTheme.images.map((image, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`flex-shrink-0 w-16 h-16 rounded-sm overflow-hidden border-2 transition-all ${
+                  currentSlide === index
+                    ? 'border-[#d4af37] shadow-lg scale-110'
+                    : 'border-transparent opacity-60 hover:opacity-100'
+                }`}
+              >
+                <img
+                  src={image.src}
+                  alt={image.label}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex justify-center gap-4 pb-6">
+            <button
+              onClick={() => setLightboxOpen(true)}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-sm text-sm font-medium transition-colors"
+            >
+              <Eye className="w-4 h-4" />
+              View Full Size
+            </button>
+            <button
+              onClick={() => downloadImage(
+                currentImage?.src || '',
+                `gulmohar-heights-${currentTheme.name.toLowerCase().replace(/\s+/g, '-')}-${currentSlide + 1}.png`
+              )}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#d4af37] hover:bg-[#c4a030] text-[#1a1a1a] rounded-sm text-sm font-medium transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              Download
+            </button>
+          </div>
+        </div>
+
+        {/* Dot Navigation */}
+        <div className="flex justify-center gap-2 py-4 bg-[#f8f7f5] border-t border-[#e5e5e0]">
+          {currentTheme.images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${
+                currentSlide === index
+                  ? 'bg-[#8b7355] w-6'
+                  : 'bg-[#d9d4cc] hover:bg-[#8b7355]/50'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
           ))}
         </div>
 
         {/* Lightbox */}
-        {lightboxImage && (
+        {lightboxOpen && currentImage && (
           <div 
-            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-            onClick={() => setLightboxImage(null)}
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+            onClick={() => setLightboxOpen(false)}
           >
             <button
-              onClick={() => setLightboxImage(null)}
-              className="absolute top-4 right-4 p-2 text-white hover:text-[#8b7355] transition-colors"
+              onClick={() => setLightboxOpen(false)}
+              className="absolute top-4 right-4 p-2 text-white hover:text-[#d4af37] transition-colors"
             >
               <X className="w-8 h-8" />
             </button>
+            
+            <button
+              onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+              className="absolute left-4 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+            >
+              <ChevronLeft className="w-8 h-8" />
+            </button>
+
             <img 
-              src={lightboxImage} 
-              alt="Full size preview"
+              src={currentImage.src} 
+              alt={currentImage.label}
               className="max-w-full max-h-[90vh] object-contain"
               onClick={(e) => e.stopPropagation()}
             />
+
+            <button
+              onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+              className="absolute right-4 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+            >
+              <ChevronRight className="w-8 h-8" />
+            </button>
+
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center">
+              <p className="text-white font-medium">{currentImage.label}</p>
+              <p className="text-[#d4af37] text-sm">{currentSlide + 1} / {totalSlides}</p>
+            </div>
           </div>
         )}
       </div>
@@ -158,7 +280,7 @@ export default function PasswordProtectedGallery({
           </div>
           <h3 className="text-2xl font-heading text-white mb-3">Meta Ads Creative Library</h3>
           <p className="text-sm text-[#a0a0a0] mb-8 leading-relaxed">
-            15 premium ad creatives across 3 color themes. Enter the access code to view and download the complete creative library.
+            15 premium ad creatives across 3 color themes. Enter the access code to view the complete creative slideshow.
           </p>
           
           <form onSubmit={handleUnlock} className="space-y-4">
@@ -191,7 +313,7 @@ export default function PasswordProtectedGallery({
               className="w-full bg-[#d4af37] hover:bg-[#c4a030] text-[#1a1a1a] py-3.5 px-6 rounded-md font-medium transition-colors flex items-center justify-center gap-2"
             >
               <Lock className="w-4 h-4" />
-              Unlock Creative Library
+              Unlock Creative Slideshow
             </button>
           </form>
         </div>
