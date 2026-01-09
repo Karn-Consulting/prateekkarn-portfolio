@@ -80,18 +80,18 @@ export default function PasswordProtectedGallery({
     return (
       <div className="bg-white rounded-sm border border-[#e5e5e0] overflow-hidden shadow-sm">
         {/* Header */}
-        <div className="p-6 sm:p-8 bg-[#f8f7f5] border-b border-[#e5e5e0]">
-          <h3 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-2">{title}</h3>
-          <p className="text-sm text-[#6a6a6a]">{caption}</p>
+        <div className="p-4 sm:p-6 md:p-8 bg-[#f8f7f5] border-b border-[#e5e5e0]">
+          <h3 className="font-heading text-xl sm:text-2xl md:text-3xl text-[#1a1a1a] mb-2">{title}</h3>
+          <p className="text-xs sm:text-sm text-[#6a6a6a]">{caption}</p>
         </div>
 
-        {/* Theme Tabs */}
-        <div className="flex flex-wrap gap-2 p-4 sm:p-6 bg-[#fafafa] border-b border-[#e5e5e0]">
+        {/* Theme Tabs - Scrollable on mobile */}
+        <div className="flex gap-2 p-3 sm:p-4 md:p-6 bg-[#fafafa] border-b border-[#e5e5e0] overflow-x-auto">
           {themes.map((theme, index) => (
             <button
               key={index}
               onClick={() => changeTheme(index)}
-              className={`px-4 py-2 rounded-sm text-sm font-medium transition-all ${
+              className={`flex-shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-sm text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
                 activeTheme === index
                   ? 'text-white shadow-md'
                   : 'bg-white text-[#4a4a4a] border border-[#e5e5e0] hover:border-[#8b7355]'
@@ -105,8 +105,8 @@ export default function PasswordProtectedGallery({
 
         {/* Slideshow Container */}
         <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#2d2a26]">
-          {/* Theme Info */}
-          <div className="absolute top-4 left-4 z-10">
+          {/* Theme Info - Hidden on very small screens */}
+          <div className="hidden sm:block absolute top-4 left-4 z-10">
             <span 
               className="inline-block px-3 py-1.5 rounded-sm text-white text-xs font-medium"
               style={{ backgroundColor: currentTheme.color }}
@@ -117,25 +117,25 @@ export default function PasswordProtectedGallery({
           </div>
 
           {/* Slide Counter */}
-          <div className="absolute top-4 right-4 z-10 bg-black/50 px-3 py-1.5 rounded-sm">
-            <span className="text-white text-sm font-medium">
+          <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-10 bg-black/50 px-2 sm:px-3 py-1 sm:py-1.5 rounded-sm">
+            <span className="text-white text-xs sm:text-sm font-medium">
               {currentSlide + 1} / {totalSlides}
             </span>
           </div>
 
-          {/* Main Slide */}
-          <div className="relative flex items-center justify-center py-8 px-16 min-h-[500px] sm:min-h-[600px]">
+          {/* Main Slide Area */}
+          <div className="relative flex items-center justify-center py-4 sm:py-6 md:py-8 px-8 sm:px-12 md:px-16 min-h-[300px] sm:min-h-[400px] md:min-h-[500px]">
             {/* Previous Button */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+              className="absolute left-1 sm:left-2 md:left-4 z-10 p-2 sm:p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
               aria-label="Previous slide"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
 
-            {/* Image */}
-            <div className="max-w-md w-full">
+            {/* Image Only - No overlay text */}
+            <div className="max-w-xs sm:max-w-sm md:max-w-md w-full">
               <img
                 src={currentImage?.src}
                 alt={currentImage?.label}
@@ -147,28 +147,28 @@ export default function PasswordProtectedGallery({
             {/* Next Button */}
             <button
               onClick={nextSlide}
-              className="absolute right-4 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+              className="absolute right-1 sm:right-2 md:right-4 z-10 p-2 sm:p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
               aria-label="Next slide"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
           </div>
 
-          {/* Image Info - Below the slide */}
-          <div className="text-center py-4 bg-[#1a1a1a]">
-            <p className="text-white font-medium text-lg">{currentImage?.label}</p>
-            <p className="text-[#d4af37] text-sm">CTA: {currentImage?.cta} 9024200400</p>
+          {/* Image Info - Separate section below the image */}
+          <div className="text-center py-3 sm:py-4 px-4 bg-[#1a1a1a] border-t border-white/10">
+            <p className="text-white font-medium text-sm sm:text-base md:text-lg">{currentImage?.label}</p>
+            <p className="text-[#d4af37] text-xs sm:text-sm mt-1">CTA: {currentImage?.cta} 9024200400</p>
           </div>
 
-          {/* Thumbnail Navigation */}
-          <div className="flex justify-center gap-2 pb-6 px-4 overflow-x-auto">
+          {/* Thumbnail Navigation - Scrollable */}
+          <div className="flex justify-start sm:justify-center gap-1.5 sm:gap-2 py-3 sm:py-4 px-3 sm:px-4 overflow-x-auto bg-[#1a1a1a]">
             {currentTheme.images.map((image, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`flex-shrink-0 w-16 h-16 rounded-sm overflow-hidden border-2 transition-all ${
+                className={`flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-sm overflow-hidden border-2 transition-all ${
                   currentSlide === index
-                    ? 'border-[#d4af37] shadow-lg scale-110'
+                    ? 'border-[#d4af37] shadow-lg scale-105 sm:scale-110'
                     : 'border-transparent opacity-60 hover:opacity-100'
                 }`}
               >
@@ -182,10 +182,10 @@ export default function PasswordProtectedGallery({
           </div>
 
           {/* Action Buttons */}
-          <div className="flex justify-center gap-4 pb-6">
+          <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 p-4 sm:pb-6 bg-[#1a1a1a]">
             <button
               onClick={() => setLightboxOpen(true)}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-sm text-sm font-medium transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-2 bg-white/10 hover:bg-white/20 text-white rounded-sm text-sm font-medium transition-colors"
             >
               <Eye className="w-4 h-4" />
               View Full Size
@@ -195,7 +195,7 @@ export default function PasswordProtectedGallery({
                 currentImage?.src || '',
                 `gulmohar-heights-${currentTheme.name.toLowerCase().replace(/\s+/g, '-')}-${currentSlide + 1}.png`
               )}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#d4af37] hover:bg-[#c4a030] text-[#1a1a1a] rounded-sm text-sm font-medium transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-2 bg-[#d4af37] hover:bg-[#c4a030] text-[#1a1a1a] rounded-sm text-sm font-medium transition-colors"
             >
               <Download className="w-4 h-4" />
               Download
@@ -204,14 +204,14 @@ export default function PasswordProtectedGallery({
         </div>
 
         {/* Dot Navigation */}
-        <div className="flex justify-center gap-2 py-4 bg-[#f8f7f5] border-t border-[#e5e5e0]">
+        <div className="flex justify-center gap-1.5 sm:gap-2 py-3 sm:py-4 bg-[#f8f7f5] border-t border-[#e5e5e0]">
           {currentTheme.images.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${
+              className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all ${
                 currentSlide === index
-                  ? 'bg-[#8b7355] w-6'
+                  ? 'bg-[#8b7355] w-4 sm:w-6'
                   : 'bg-[#d9d4cc] hover:bg-[#8b7355]/50'
               }`}
               aria-label={`Go to slide ${index + 1}`}
@@ -219,43 +219,43 @@ export default function PasswordProtectedGallery({
           ))}
         </div>
 
-        {/* Lightbox */}
+        {/* Lightbox - Mobile optimized */}
         {lightboxOpen && currentImage && (
           <div 
-            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-2 sm:p-4"
             onClick={() => setLightboxOpen(false)}
           >
             <button
               onClick={() => setLightboxOpen(false)}
-              className="absolute top-4 right-4 p-2 text-white hover:text-[#d4af37] transition-colors"
+              className="absolute top-2 sm:top-4 right-2 sm:right-4 p-2 text-white hover:text-[#d4af37] transition-colors z-20"
             >
-              <X className="w-8 h-8" />
+              <X className="w-6 h-6 sm:w-8 sm:h-8" />
             </button>
             
             <button
               onClick={(e) => { e.stopPropagation(); prevSlide(); }}
-              className="absolute left-4 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+              className="absolute left-1 sm:left-4 p-2 sm:p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors z-20"
             >
-              <ChevronLeft className="w-8 h-8" />
+              <ChevronLeft className="w-5 h-5 sm:w-8 sm:h-8" />
             </button>
 
             <img 
               src={currentImage.src} 
               alt={currentImage.label}
-              className="max-w-full max-h-[90vh] object-contain"
+              className="max-w-full max-h-[80vh] sm:max-h-[90vh] object-contain"
               onClick={(e) => e.stopPropagation()}
             />
 
             <button
               onClick={(e) => { e.stopPropagation(); nextSlide(); }}
-              className="absolute right-4 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+              className="absolute right-1 sm:right-4 p-2 sm:p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors z-20"
             >
-              <ChevronRight className="w-8 h-8" />
+              <ChevronRight className="w-5 h-5 sm:w-8 sm:h-8" />
             </button>
 
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center">
-              <p className="text-white font-medium">{currentImage.label}</p>
-              <p className="text-[#d4af37] text-sm">{currentSlide + 1} / {totalSlides}</p>
+            <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 text-center z-20">
+              <p className="text-white font-medium text-sm sm:text-base">{currentImage.label}</p>
+              <p className="text-[#d4af37] text-xs sm:text-sm">{currentSlide + 1} / {totalSlides}</p>
             </div>
           </div>
         )}
@@ -266,7 +266,7 @@ export default function PasswordProtectedGallery({
   return (
     <div className="bg-white rounded-sm border border-[#e5e5e0] overflow-hidden shadow-sm">
       {/* Locked Overlay */}
-      <div className="h-[400px] sm:h-[500px] bg-gradient-to-br from-[#1a3a6e] to-[#0a3d2e] relative flex items-center justify-center">
+      <div className="h-[350px] sm:h-[400px] md:h-[500px] bg-gradient-to-br from-[#1a3a6e] to-[#0a3d2e] relative flex items-center justify-center">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -274,16 +274,16 @@ export default function PasswordProtectedGallery({
           }}></div>
         </div>
         
-        <div className="relative z-10 text-center px-6 max-w-md">
-          <div className="w-20 h-20 bg-[#d4af37]/20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Image className="w-10 h-10 text-[#d4af37]" />
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-md">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#d4af37]/20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+            <Image className="w-8 h-8 sm:w-10 sm:h-10 text-[#d4af37]" />
           </div>
-          <h3 className="text-2xl font-heading text-white mb-3">Meta Ads Creative Library</h3>
-          <p className="text-sm text-[#a0a0a0] mb-8 leading-relaxed">
+          <h3 className="text-xl sm:text-2xl font-heading text-white mb-2 sm:mb-3">Meta Ads Creative Library</h3>
+          <p className="text-xs sm:text-sm text-[#a0a0a0] mb-6 sm:mb-8 leading-relaxed">
             15 premium ad creatives across 3 color themes. Enter the access code to view the complete creative slideshow.
           </p>
           
-          <form onSubmit={handleUnlock} className="space-y-4">
+          <form onSubmit={handleUnlock} className="space-y-3 sm:space-y-4">
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
@@ -293,24 +293,24 @@ export default function PasswordProtectedGallery({
                   setError('');
                 }}
                 placeholder="Enter access code"
-                className="w-full px-4 py-3.5 pr-12 bg-white/10 border border-white/20 rounded-md text-white placeholder-white/50 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] transition-all text-center tracking-widest font-medium"
+                className="w-full px-4 py-3 sm:py-3.5 pr-12 bg-white/10 border border-white/20 rounded-md text-white placeholder-white/50 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] transition-all text-center tracking-widest font-medium text-sm sm:text-base"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors"
               >
-                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                {showPassword ? <EyeOff className="w-4 h-4 sm:w-5 sm:h-5" /> : <Eye className="w-4 h-4 sm:w-5 sm:h-5" />}
               </button>
             </div>
             
             {error && (
-              <p className="text-red-400 text-sm">{error}</p>
+              <p className="text-red-400 text-xs sm:text-sm">{error}</p>
             )}
             
             <button
               type="submit"
-              className="w-full bg-[#d4af37] hover:bg-[#c4a030] text-[#1a1a1a] py-3.5 px-6 rounded-md font-medium transition-colors flex items-center justify-center gap-2"
+              className="w-full bg-[#d4af37] hover:bg-[#c4a030] text-[#1a1a1a] py-3 sm:py-3.5 px-6 rounded-md font-medium transition-colors flex items-center justify-center gap-2 text-sm sm:text-base"
             >
               <Lock className="w-4 h-4" />
               Unlock Creative Slideshow
@@ -320,13 +320,12 @@ export default function PasswordProtectedGallery({
       </div>
       
       {/* Footer Notice */}
-      <div className="p-4 bg-[#f8f7f5] border-t border-[#e5e5e0]">
-        <div className="flex items-center justify-center gap-2 text-sm">
-          <Sparkles className="w-4 h-4 text-[#d4af37]" />
+      <div className="p-3 sm:p-4 bg-[#f8f7f5] border-t border-[#e5e5e0]">
+        <div className="flex items-center justify-center gap-2 text-xs sm:text-sm">
+          <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-[#d4af37]" />
           <span className="text-[#6a6a6a]">Exclusive creative assets — authorized access only</span>
         </div>
       </div>
     </div>
   );
 }
-// Slideshow component v2 - Fri Jan  9 00:51:34 EST 2026
