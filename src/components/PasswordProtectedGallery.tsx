@@ -135,19 +135,13 @@ export default function PasswordProtectedGallery({
             </button>
 
             {/* Image */}
-            <div className="relative max-w-md w-full">
+            <div className="max-w-md w-full">
               <img
                 src={currentImage?.src}
                 alt={currentImage?.label}
                 className="w-full h-auto rounded-sm shadow-2xl cursor-pointer transition-transform hover:scale-[1.02]"
                 onClick={() => setLightboxOpen(true)}
               />
-              
-              {/* Image Info Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 rounded-b-sm">
-                <p className="text-white font-medium">{currentImage?.label}</p>
-                <p className="text-[#d4af37] text-sm">CTA: {currentImage?.cta} 9024200400</p>
-              </div>
             </div>
 
             {/* Next Button */}
@@ -158,6 +152,12 @@ export default function PasswordProtectedGallery({
             >
               <ChevronRight className="w-6 h-6" />
             </button>
+          </div>
+
+          {/* Image Info - Below the slide */}
+          <div className="text-center py-4 bg-[#1a1a1a]">
+            <p className="text-white font-medium text-lg">{currentImage?.label}</p>
+            <p className="text-[#d4af37] text-sm">CTA: {currentImage?.cta} 9024200400</p>
           </div>
 
           {/* Thumbnail Navigation */}
