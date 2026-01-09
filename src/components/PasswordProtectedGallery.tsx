@@ -329,3 +329,4 @@ export default function PasswordProtectedGallery({
     </div>
   );
 }
+// Slideshow component v2 - Fri Jan  9 00:51:34 EST 2026
