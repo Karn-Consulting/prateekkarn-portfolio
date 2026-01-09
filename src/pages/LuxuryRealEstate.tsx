@@ -3,6 +3,7 @@ import { ArrowLeft, TrendingUp, Target, Zap, Users, Building2, Radio, Newspaper,
 import Footer from '@/components/Footer';
 import { useConsultationModal } from '@/contexts/ConsultationModalContext';
 import PasswordProtectedPDF from '@/components/PasswordProtectedPDF';
+import PasswordProtectedGallery from '@/components/PasswordProtectedGallery';
 
 export default function LuxuryRealEstate() {
   const { openModal } = useConsultationModal();
@@ -499,6 +500,65 @@ export default function LuxuryRealEstate() {
               <p className="text-sm text-[#6a6a6a]">Marketing Load</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Meta Ads Creative Library Section */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-b from-[#f8f7f5] to-white">
+        <div className="container max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#8b7355] mb-4 font-medium">
+              Creative Assets
+            </p>
+            <h2 className="font-heading text-2xl sm:text-3xl text-[#1a1a1a] mb-4">Meta Ads Creative Library</h2>
+            <p className="text-[#6a6a6a] max-w-2xl mx-auto">
+              15 premium ad creatives designed for Meta platforms (Facebook & Instagram) across 3 distinct color themes.
+            </p>
+          </div>
+          
+          <PasswordProtectedGallery
+            password="GULMOHARADS"
+            title="Gulmohar Heights - Meta Ads Creatives"
+            caption="15 Ad Creatives | 3 Color Themes | CTA: CALL NOW 9024200400"
+            themes={[
+              {
+                name: "Theme 1: Dark Red & Gold",
+                color: "#8b0000",
+                tagline: "Luxury | Passion | Elegance",
+                images: [
+                  { src: "/case-studies/luxury-real-estate/meta-ads/page1_v1.png", label: "Lifestyle - Twilight Exterior", cta: "CALL NOW" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/page1_v2.png", label: "Lifestyle - Interior", cta: "BOOK SITE VISIT" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/page1_v3.png", label: "Lifestyle - Aerial View", cta: "ENQUIRE NOW" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/page2_v1.png", label: "Amenities - Infinity Pool", cta: "CALL NOW" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/page2_v2.png", label: "Amenities - Private Theatre", cta: "BOOK SITE VISIT" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/page2_v3.png", label: "Amenities - Clubhouse", cta: "ENQUIRE NOW" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/page3_v1.png", label: "Exclusivity - Night Exterior", cta: "CALL NOW" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/page3_v2.png", label: "Exclusivity - Grand Lobby", cta: "BOOK SITE VISIT" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/page3_v3.png", label: "Exclusivity - Penthouse", cta: "ENQUIRE NOW" },
+                ]
+              },
+              {
+                name: "Theme 2: Royal Blue & Gold",
+                color: "#1a3a6e",
+                tagline: "Trust | Sophistication | Prestige",
+                images: [
+                  { src: "/case-studies/luxury-real-estate/meta-ads/blue_v1.png", label: "Building Exterior", cta: "CALL NOW" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/blue_v2.png", label: "Infinity Pool", cta: "BOOK SITE VISIT" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/blue_v3.png", label: "Night Exterior", cta: "ENQUIRE NOW" },
+                ]
+              },
+              {
+                name: "Theme 3: Emerald Green & Gold",
+                color: "#0a3d2e",
+                tagline: "Nature | Freshness | Luxury",
+                images: [
+                  { src: "/case-studies/luxury-real-estate/meta-ads/green_v1.png", label: "Building with Gardens", cta: "CALL NOW" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/green_v2.png", label: "Pool with Gulmohar", cta: "BOOK SITE VISIT" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/green_v3.png", label: "Night Exterior", cta: "ENQUIRE NOW" },
+                ]
+              }
+            ]}
+          />
         </div>
       </section>
 
