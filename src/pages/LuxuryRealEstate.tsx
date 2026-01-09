@@ -527,13 +527,13 @@ export default function LuxuryRealEstate() {
                 tagline: "Luxury | Passion | Elegance",
                 images: [
                   { src: "/case-studies/luxury-real-estate/meta-ads/page1_v1.png", label: "Lifestyle - Twilight Exterior", cta: "CALL NOW" },
-                  { src: "/case-studies/luxury-real-estate/meta-ads/page1_v2.png", label: "Lifestyle - Interior", cta: "BOOK SITE VISIT" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/page1_v2.png", label: "Lifestyle - Interior", cta: "Book A Site Visit" },
                   { src: "/case-studies/luxury-real-estate/meta-ads/page1_v3.png", label: "Lifestyle - Aerial View", cta: "ENQUIRE NOW" },
                   { src: "/case-studies/luxury-real-estate/meta-ads/page2_v1.png", label: "Amenities - Infinity Pool", cta: "CALL NOW" },
-                  { src: "/case-studies/luxury-real-estate/meta-ads/page2_v2.png", label: "Amenities - Private Theatre", cta: "BOOK SITE VISIT" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/page2_v2.png", label: "Amenities - Private Theatre", cta: "Book A Site Visit" },
                   { src: "/case-studies/luxury-real-estate/meta-ads/page2_v3.png", label: "Amenities - Clubhouse", cta: "ENQUIRE NOW" },
                   { src: "/case-studies/luxury-real-estate/meta-ads/page3_v1.png", label: "Exclusivity - Night Exterior", cta: "CALL NOW" },
-                  { src: "/case-studies/luxury-real-estate/meta-ads/page3_v2.png", label: "Exclusivity - Grand Lobby", cta: "BOOK SITE VISIT" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/page3_v2.png", label: "Exclusivity - Grand Lobby", cta: "Book A Site Visit" },
                   { src: "/case-studies/luxury-real-estate/meta-ads/page3_v3.png", label: "Exclusivity - Penthouse", cta: "ENQUIRE NOW" },
                 ]
               },
@@ -543,7 +543,7 @@ export default function LuxuryRealEstate() {
                 tagline: "Trust | Sophistication | Prestige",
                 images: [
                   { src: "/case-studies/luxury-real-estate/meta-ads/blue_v1.png", label: "Building Exterior", cta: "CALL NOW" },
-                  { src: "/case-studies/luxury-real-estate/meta-ads/blue_v2.png", label: "Infinity Pool", cta: "BOOK SITE VISIT" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/blue_v2.png", label: "Infinity Pool", cta: "Book A Site Visit" },
                   { src: "/case-studies/luxury-real-estate/meta-ads/blue_v3.png", label: "Night Exterior", cta: "ENQUIRE NOW" },
                 ]
               },
@@ -553,7 +553,7 @@ export default function LuxuryRealEstate() {
                 tagline: "Nature | Freshness | Luxury",
                 images: [
                   { src: "/case-studies/luxury-real-estate/meta-ads/green_v1.png", label: "Building with Gardens", cta: "CALL NOW" },
-                  { src: "/case-studies/luxury-real-estate/meta-ads/green_v2.png", label: "Pool with Gulmohar", cta: "BOOK SITE VISIT" },
+                  { src: "/case-studies/luxury-real-estate/meta-ads/green_v2.png", label: "Pool with Gulmohar", cta: "Book A Site Visit" },
                   { src: "/case-studies/luxury-real-estate/meta-ads/green_v3.png", label: "Night Exterior", cta: "ENQUIRE NOW" },
                 ]
               }
