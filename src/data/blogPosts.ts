@@ -46,7 +46,7 @@ export const BLOG_POSTS: BlogPost[] = [
       name: 'Prateek Karn',
       title: 'AI Business Architect'
     },
-    featuredImage: '/blog/agentic-ai-featured.png',
+    featuredImage: '/blog/agentic-ai-featured-v2.png',
     cardImage: '/blog/agentic-ai-marketing-v2.png',
     imageAlt: 'Agentic AI system orchestrating marketing workflows with autonomous decision-making and real-time optimization',
     imageCaption: 'Agentic AI in marketing: From predictive models to autonomous systems that reason, plan, and execute',
