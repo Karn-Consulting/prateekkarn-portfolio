@@ -1,4 +1,4 @@
-// Build version: 2.6.0 - 2025-12-27T13:15:00Z - Added consultation form modal
+// Build version: 2.7.0 - 2025-02-02T12:00:00Z - Added Chordia Credentials internal page
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -24,6 +24,7 @@ import BofuIntentIntelligence from "./pages/BofuIntentIntelligence";
 import LuxuryRealEstate from "./pages/LuxuryRealEstate";
 import Insights from "./pages/Insights";
 import InsightPost from "./pages/InsightPost";
+import ChordiaCredentials from "./pages/ChordiaCredentials";
 import CookieConsent from "./components/CookieConsent";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -57,6 +58,8 @@ const App = () => (
               {/* Insights/Blog Routes */}
               <Route path="/insights" element={<Insights />} />
               <Route path="/insights/:slug" element={<InsightPost />} />
+              {/* Internal Pages - Not linked from navigation, access via direct URL only */}
+              <Route path="/Chordia/Credentials" element={<ChordiaCredentials />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
