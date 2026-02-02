@@ -4,11 +4,9 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Progress } from "@/components/ui/progress";
 import { 
   Globe, 
-  FileText, 
   Building2, 
   Lock,
   Save,
@@ -58,7 +56,7 @@ interface AgencyData {
   notes: string;
 }
 
-const STORAGE_KEY = 'chordia-credentials-data-v3';
+const STORAGE_KEY = 'chordia-credentials-data-v4';
 
 const ChordiaCredentials = () => {
   const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
@@ -103,21 +101,6 @@ const ChordiaCredentials = () => {
     { id: 'ppc', agencyName: '', agencyUrl: '', service: 'PPC / Performance Marketing', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
   ]);
 
-  // Strategy Documents
-  const [strategyDocs, setStrategyDocs] = useState([
-    { id: 'plan', name: 'Marketing Plan', location: '', lastUpdated: '', status: 'pending' },
-    { id: 'brand', name: 'Brand Guidelines', location: '', lastUpdated: '', status: 'pending' },
-    { id: 'content', name: 'Content Strategy', location: '', lastUpdated: '', status: 'pending' },
-    { id: 'social', name: 'Social Media Strategy', location: '', lastUpdated: '', status: 'pending' },
-    { id: 'seo', name: 'SEO Strategy', location: '', lastUpdated: '', status: 'pending' },
-    { id: 'paid', name: 'Paid Advertising Strategy', location: '', lastUpdated: '', status: 'pending' },
-    { id: 'research', name: 'Market Research', location: '', lastUpdated: '', status: 'pending' },
-    { id: 'budget', name: 'Marketing Budget', location: '', lastUpdated: '', status: 'pending' },
-  ]);
-
-  // Additional Notes
-  const [additionalNotes, setAdditionalNotes] = useState('');
-
   // Load data from localStorage
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -127,8 +110,6 @@ const ChordiaCredentials = () => {
         if (data.credentials) setCredentials(data.credentials);
         if (data.propertyPortals) setPropertyPortals(data.propertyPortals);
         if (data.agencies) setAgencies(data.agencies);
-        if (data.strategyDocs) setStrategyDocs(data.strategyDocs);
-        if (data.additionalNotes) setAdditionalNotes(data.additionalNotes);
       } catch (e) {
         console.error('Failed to load saved data');
       }
@@ -137,14 +118,14 @@ const ChordiaCredentials = () => {
 
   // Save data
   const handleSave = () => {
-    const data = { credentials, propertyPortals, agencies, strategyDocs, additionalNotes };
+    const data = { credentials, propertyPortals, agencies };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     toast.success('Data saved successfully!');
   };
 
   // Export data
   const handleExport = () => {
-    const data = { credentials, propertyPortals, agencies, strategyDocs, additionalNotes, exportDate: new Date().toISOString() };
+    const data = { credentials, propertyPortals, agencies, exportDate: new Date().toISOString() };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -170,11 +151,6 @@ const ChordiaCredentials = () => {
     setAgencies(prev => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
   };
 
-  // Update strategy doc
-  const updateStrategyDoc = (id: string, field: string, value: string) => {
-    setStrategyDocs(prev => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
-  };
-
   // Toggle password visibility
   const togglePassword = (id: string) => {
     setShowPasswords(prev => ({ ...prev, [id]: !prev[id] }));
@@ -185,10 +161,9 @@ const ChordiaCredentials = () => {
     const filledCreds = credentials.filter(c => c.username.trim() !== '' || c.url.trim() !== '').length;
     const filledPortals = propertyPortals.filter(p => p.username.trim() !== '' || p.dashboardUrl.trim() !== '').length;
     const filledAgencies = agencies.filter(a => a.agencyName.trim() !== '' || a.contactPerson.trim() !== '').length;
-    const filledDocs = strategyDocs.filter(d => d.location.trim() !== '').length;
     
-    const total = credentials.length + propertyPortals.length + agencies.length + strategyDocs.length;
-    const filled = filledCreds + filledPortals + filledAgencies + filledDocs;
+    const total = credentials.length + propertyPortals.length + agencies.length;
+    const filled = filledCreds + filledPortals + filledAgencies;
     
     return Math.round((filled / total) * 100);
   };
@@ -230,7 +205,7 @@ const ChordiaCredentials = () => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-8">
         <Tabs defaultValue="credentials" className="space-y-6">
-          <TabsList className="grid w-full max-w-3xl grid-cols-4 bg-white">
+          <TabsList className="grid w-full max-w-2xl grid-cols-3 bg-white">
             <TabsTrigger value="credentials" className="gap-2">
               <Globe className="w-4 h-4" />
               Credentials
@@ -242,10 +217,6 @@ const ChordiaCredentials = () => {
             <TabsTrigger value="agencies" className="gap-2">
               <Building2 className="w-4 h-4" />
               Agencies
-            </TabsTrigger>
-            <TabsTrigger value="strategy" className="gap-2">
-              <FileText className="w-4 h-4" />
-              Strategy
             </TabsTrigger>
           </TabsList>
 
@@ -317,7 +288,7 @@ const ChordiaCredentials = () => {
             </div>
           </TabsContent>
 
-          {/* Property Portals Tab - NEW SEPARATE SECTION */}
+          {/* Property Portals Tab */}
           <TabsContent value="portals">
             <div className="space-y-6">
               {propertyPortals.map((portal) => (
@@ -433,7 +404,7 @@ const ChordiaCredentials = () => {
             </div>
           </TabsContent>
 
-          {/* Agencies Tab - With Agency Name and URL */}
+          {/* Agencies Tab */}
           <TabsContent value="agencies">
             <div className="space-y-6">
               {agencies.map((agency) => (
@@ -533,79 +504,6 @@ const ChordiaCredentials = () => {
                 </Card>
               ))}
             </div>
-          </TabsContent>
-
-          {/* Strategy Tab */}
-          <TabsContent value="strategy">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-amber-600" />
-                  Strategy Documents
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Document</TableHead>
-                      <TableHead>Location / Link</TableHead>
-                      <TableHead>Last Updated</TableHead>
-                      <TableHead>Status</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {strategyDocs.map((doc) => (
-                      <TableRow key={doc.id}>
-                        <TableCell className="font-medium">{doc.name}</TableCell>
-                        <TableCell>
-                          <Input
-                            placeholder="Drive link / folder path"
-                            value={doc.location}
-                            onChange={(e) => updateStrategyDoc(doc.id, 'location', e.target.value)}
-                            className="max-w-xs"
-                          />
-                        </TableCell>
-                        <TableCell>
-                          <Input
-                            type="date"
-                            value={doc.lastUpdated}
-                            onChange={(e) => updateStrategyDoc(doc.id, 'lastUpdated', e.target.value)}
-                            className="max-w-[150px]"
-                          />
-                        </TableCell>
-                        <TableCell>
-                          <select
-                            value={doc.status}
-                            onChange={(e) => updateStrategyDoc(doc.id, 'status', e.target.value)}
-                            className="px-2 py-1 border rounded text-sm"
-                          >
-                            <option value="pending">Pending</option>
-                            <option value="received">Received</option>
-                            <option value="na">N/A</option>
-                          </select>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </CardContent>
-            </Card>
-
-            {/* Additional Notes */}
-            <Card className="mt-6">
-              <CardHeader>
-                <CardTitle>Additional Notes</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Textarea
-                  placeholder="Any other important information, pending items, upcoming deadlines..."
-                  value={additionalNotes}
-                  onChange={(e) => setAdditionalNotes(e.target.value)}
-                  rows={6}
-                />
-              </CardContent>
-            </Card>
           </TabsContent>
         </Tabs>
       </main>
