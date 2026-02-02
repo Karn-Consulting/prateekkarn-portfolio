@@ -8,14 +8,14 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Progress } from "@/components/ui/progress";
 import { 
   Globe, 
-  BarChart3, 
   FileText, 
   Building2, 
   Lock,
   Save,
   Download,
   Eye,
-  EyeOff
+  EyeOff,
+  Home
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -31,9 +31,23 @@ interface PlatformCredential {
   notes: string;
 }
 
+interface PropertyPortal {
+  id: string;
+  portal: string;
+  dashboardUrl: string;
+  username: string;
+  password: string;
+  accountManager: string;
+  managerPhone: string;
+  managerEmail: string;
+  monthlySpend: string;
+  notes: string;
+}
+
 interface AgencyData {
   id: string;
-  name: string;
+  agencyName: string;
+  agencyUrl: string;
   service: string;
   contactPerson: string;
   email: string;
@@ -44,41 +58,49 @@ interface AgencyData {
   notes: string;
 }
 
-const STORAGE_KEY = 'chordia-credentials-data-v2';
+const STORAGE_KEY = 'chordia-credentials-data-v3';
 
 const ChordiaCredentials = () => {
   const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
 
-  // Platform Credentials with separate URL, Username, Password fields
+  // Platform Credentials - Digital Marketing Assets
   const [credentials, setCredentials] = useState<PlatformCredential[]>([
     { id: 'cms', platform: 'Website CMS (WordPress/Other)', url: '', username: '', password: '', notes: '' },
     { id: 'hosting', platform: 'Website Hosting (cPanel)', url: '', username: '', password: '', notes: '' },
     { id: 'domain', platform: 'Domain Registrar', url: '', username: '', password: '', notes: '' },
-    { id: 'ga', platform: 'Google Analytics', url: '', username: '', password: '', notes: '' },
-    { id: 'gsc', platform: 'Google Search Console', url: '', username: '', password: '', notes: '' },
-    { id: 'gads', platform: 'Google Ads', url: '', username: '', password: '', notes: '' },
-    { id: 'fbm', platform: 'Facebook Business Manager', url: '', username: '', password: '', notes: '' },
-    { id: 'meta', platform: 'Meta Ads Manager', url: '', username: '', password: '', notes: '' },
-    { id: 'instagram', platform: 'Instagram Business', url: '', username: '', password: '', notes: '' },
+    { id: 'ga', platform: 'Google Analytics', url: 'https://analytics.google.com', username: '', password: '', notes: '' },
+    { id: 'gsc', platform: 'Google Search Console', url: 'https://search.google.com/search-console', username: '', password: '', notes: '' },
+    { id: 'gads', platform: 'Google Ads', url: 'https://ads.google.com', username: '', password: '', notes: '' },
+    { id: 'fbm', platform: 'Facebook Business Manager', url: 'https://business.facebook.com', username: '', password: '', notes: '' },
+    { id: 'meta', platform: 'Meta Ads Manager', url: 'https://adsmanager.facebook.com', username: '', password: '', notes: '' },
+    { id: 'instagram', platform: 'Instagram Business', url: 'https://instagram.com', username: '', password: '', notes: '' },
     { id: 'linkedin', platform: 'LinkedIn Company Page', url: '', username: '', password: '', notes: '' },
-    { id: 'twitter', platform: 'Twitter/X', url: '', username: '', password: '', notes: '' },
+    { id: 'twitter', platform: 'Twitter/X', url: 'https://x.com', username: '', password: '', notes: '' },
     { id: 'youtube', platform: 'YouTube Channel', url: '', username: '', password: '', notes: '' },
-    { id: 'gmb', platform: 'Google Business Profile', url: '', username: '', password: '', notes: '' },
+    { id: 'gmb', platform: 'Google Business Profile', url: 'https://business.google.com', username: '', password: '', notes: '' },
     { id: 'email', platform: 'Email Marketing (MailChimp/ActiveCampaign)', url: '', username: '', password: '', notes: '' },
     { id: 'crm', platform: 'CRM System', url: '', username: '', password: '', notes: '' },
     { id: 'smm', platform: 'Social Media Management Tool', url: '', username: '', password: '', notes: '' },
-    { id: 'magicbricks', platform: 'Magicbricks', url: '', username: '', password: '', notes: '' },
-    { id: 'homeonline', platform: 'Homeonline', url: '', username: '', password: '', notes: '' },
-    { id: 'whatsapp', platform: 'WhatsApp Business / Vennet Media', url: '', username: '', password: '', notes: '' },
+    { id: 'whatsapp', platform: 'WhatsApp Business API', url: '', username: '', password: '', notes: '' },
   ]);
 
-  // Agency Data
+  // Property Portals - Separate Section
+  const [propertyPortals, setPropertyPortals] = useState<PropertyPortal[]>([
+    { id: 'magicbricks', portal: 'Magicbricks', dashboardUrl: 'https://www.magicbricks.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
+    { id: 'homeonline', portal: 'Homeonline', dashboardUrl: 'https://www.homeonline.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
+    { id: '99acres', portal: '99acres', dashboardUrl: 'https://www.99acres.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
+    { id: 'housing', portal: 'Housing.com', dashboardUrl: 'https://www.housing.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
+    { id: 'nobroker', portal: 'NoBroker', dashboardUrl: 'https://www.nobroker.in', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
+    { id: 'squareyards', portal: 'Square Yards', dashboardUrl: 'https://www.squareyards.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
+  ]);
+
+  // Agency Data - With editable name and URL
   const [agencies, setAgencies] = useState<AgencyData[]>([
-    { id: 'web', name: 'Website Development Agency', service: 'Website design, development & maintenance', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
-    { id: 'smm', name: 'SMM & Creative Agency', service: 'Social media, creative content & video', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
-    { id: 'leadgen', name: 'Lead Gen (Magicbricks, Homeonline)', service: 'Real estate portal lead generation', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
-    { id: 'seo', name: 'SEO Agency', service: 'Search engine optimization', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
-    { id: 'vennet', name: 'Vennet Media', service: 'WhatsApp & RCS messaging', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
+    { id: 'web', agencyName: '', agencyUrl: '', service: 'Website Development & Maintenance', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
+    { id: 'smm', agencyName: '', agencyUrl: '', service: 'SMM, Creative & Video Production', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
+    { id: 'seo', agencyName: '', agencyUrl: '', service: 'SEO & Content Marketing', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
+    { id: 'vennet', agencyName: 'Vennet Media', agencyUrl: '', service: 'WhatsApp & RCS Messaging', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
+    { id: 'ppc', agencyName: '', agencyUrl: '', service: 'PPC / Performance Marketing', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
   ]);
 
   // Strategy Documents
@@ -93,17 +115,6 @@ const ChordiaCredentials = () => {
     { id: 'budget', name: 'Marketing Budget', location: '', lastUpdated: '', status: 'pending' },
   ]);
 
-  // KPIs
-  const [kpis, setKpis] = useState([
-    { id: 'traffic', name: 'Monthly Website Traffic', value: '', target: '' },
-    { id: 'organic', name: 'Organic Traffic', value: '', target: '' },
-    { id: 'leads', name: 'Monthly Leads', value: '', target: '' },
-    { id: 'cpl', name: 'Cost Per Lead (₹)', value: '', target: '' },
-    { id: 'conversion', name: 'Lead to Visit Conversion (%)', value: '', target: '' },
-    { id: 'social', name: 'Social Media Followers', value: '', target: '' },
-    { id: 'engagement', name: 'Engagement Rate (%)', value: '', target: '' },
-  ]);
-
   // Additional Notes
   const [additionalNotes, setAdditionalNotes] = useState('');
 
@@ -114,9 +125,9 @@ const ChordiaCredentials = () => {
       try {
         const data = JSON.parse(saved);
         if (data.credentials) setCredentials(data.credentials);
+        if (data.propertyPortals) setPropertyPortals(data.propertyPortals);
         if (data.agencies) setAgencies(data.agencies);
         if (data.strategyDocs) setStrategyDocs(data.strategyDocs);
-        if (data.kpis) setKpis(data.kpis);
         if (data.additionalNotes) setAdditionalNotes(data.additionalNotes);
       } catch (e) {
         console.error('Failed to load saved data');
@@ -126,14 +137,14 @@ const ChordiaCredentials = () => {
 
   // Save data
   const handleSave = () => {
-    const data = { credentials, agencies, strategyDocs, kpis, additionalNotes };
+    const data = { credentials, propertyPortals, agencies, strategyDocs, additionalNotes };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     toast.success('Data saved successfully!');
   };
 
   // Export data
   const handleExport = () => {
-    const data = { credentials, agencies, strategyDocs, kpis, additionalNotes, exportDate: new Date().toISOString() };
+    const data = { credentials, propertyPortals, agencies, strategyDocs, additionalNotes, exportDate: new Date().toISOString() };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -149,6 +160,11 @@ const ChordiaCredentials = () => {
     setCredentials(prev => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
   };
 
+  // Update property portal
+  const updatePropertyPortal = (id: string, field: keyof PropertyPortal, value: string) => {
+    setPropertyPortals(prev => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
+  };
+
   // Update agency
   const updateAgency = (id: string, field: keyof AgencyData, value: string) => {
     setAgencies(prev => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
@@ -159,11 +175,6 @@ const ChordiaCredentials = () => {
     setStrategyDocs(prev => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
   };
 
-  // Update KPI
-  const updateKpi = (id: string, field: string, value: string) => {
-    setKpis(prev => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
-  };
-
   // Toggle password visibility
   const togglePassword = (id: string) => {
     setShowPasswords(prev => ({ ...prev, [id]: !prev[id] }));
@@ -172,12 +183,12 @@ const ChordiaCredentials = () => {
   // Calculate completion
   const calculateCompletion = () => {
     const filledCreds = credentials.filter(c => c.username.trim() !== '' || c.url.trim() !== '').length;
-    const filledAgencies = agencies.filter(a => a.contactPerson.trim() !== '' || a.email.trim() !== '').length;
+    const filledPortals = propertyPortals.filter(p => p.username.trim() !== '' || p.dashboardUrl.trim() !== '').length;
+    const filledAgencies = agencies.filter(a => a.agencyName.trim() !== '' || a.contactPerson.trim() !== '').length;
     const filledDocs = strategyDocs.filter(d => d.location.trim() !== '').length;
-    const filledKpis = kpis.filter(k => k.value.trim() !== '').length;
     
-    const total = credentials.length + agencies.length + strategyDocs.length + kpis.length;
-    const filled = filledCreds + filledAgencies + filledDocs + filledKpis;
+    const total = credentials.length + propertyPortals.length + agencies.length + strategyDocs.length;
+    const filled = filledCreds + filledPortals + filledAgencies + filledDocs;
     
     return Math.round((filled / total) * 100);
   };
@@ -219,10 +230,14 @@ const ChordiaCredentials = () => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-8">
         <Tabs defaultValue="credentials" className="space-y-6">
-          <TabsList className="grid w-full max-w-2xl grid-cols-4 bg-white">
+          <TabsList className="grid w-full max-w-3xl grid-cols-4 bg-white">
             <TabsTrigger value="credentials" className="gap-2">
               <Globe className="w-4 h-4" />
               Credentials
+            </TabsTrigger>
+            <TabsTrigger value="portals" className="gap-2">
+              <Home className="w-4 h-4" />
+              Property Portals
             </TabsTrigger>
             <TabsTrigger value="agencies" className="gap-2">
               <Building2 className="w-4 h-4" />
@@ -232,13 +247,9 @@ const ChordiaCredentials = () => {
               <FileText className="w-4 h-4" />
               Strategy
             </TabsTrigger>
-            <TabsTrigger value="kpis" className="gap-2">
-              <BarChart3 className="w-4 h-4" />
-              KPIs
-            </TabsTrigger>
           </TabsList>
 
-          {/* Credentials Tab - Now with proper separate fields */}
+          {/* Credentials Tab */}
           <TabsContent value="credentials">
             <div className="space-y-4">
               {credentials.map((cred) => (
@@ -306,17 +317,156 @@ const ChordiaCredentials = () => {
             </div>
           </TabsContent>
 
-          {/* Agencies Tab */}
+          {/* Property Portals Tab - NEW SEPARATE SECTION */}
+          <TabsContent value="portals">
+            <div className="space-y-6">
+              {propertyPortals.map((portal) => (
+                <Card key={portal.id} className="bg-white">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="flex items-center gap-2 text-lg font-semibold text-slate-800">
+                      <Home className="w-5 h-5 text-amber-600" />
+                      {portal.portal}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Dashboard URL</label>
+                        <Input
+                          type="url"
+                          placeholder="https://..."
+                          value={portal.dashboardUrl}
+                          onChange={(e) => updatePropertyPortal(portal.id, 'dashboardUrl', e.target.value)}
+                          className="bg-slate-50"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Username / Email</label>
+                        <Input
+                          type="text"
+                          placeholder="Username or email"
+                          value={portal.username}
+                          onChange={(e) => updatePropertyPortal(portal.id, 'username', e.target.value)}
+                          className="bg-slate-50"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Password</label>
+                        <div className="relative">
+                          <Input
+                            type={showPasswords[`portal-${portal.id}`] ? 'text' : 'password'}
+                            placeholder="••••••••"
+                            value={portal.password}
+                            onChange={(e) => updatePropertyPortal(portal.id, 'password', e.target.value)}
+                            className="bg-slate-50 pr-10"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => togglePassword(`portal-${portal.id}`)}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                          >
+                            {showPasswords[`portal-${portal.id}`] ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="border-t pt-4 mt-4">
+                      <p className="text-sm font-medium text-slate-600 mb-3">Account Manager Details</p>
+                      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div className="space-y-1">
+                          <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Account Manager Name</label>
+                          <Input
+                            type="text"
+                            placeholder="Name"
+                            value={portal.accountManager}
+                            onChange={(e) => updatePropertyPortal(portal.id, 'accountManager', e.target.value)}
+                            className="bg-slate-50"
+                          />
+                        </div>
+                        <div className="space-y-1">
+                          <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Manager Phone</label>
+                          <Input
+                            type="tel"
+                            placeholder="+91 XXXXX XXXXX"
+                            value={portal.managerPhone}
+                            onChange={(e) => updatePropertyPortal(portal.id, 'managerPhone', e.target.value)}
+                            className="bg-slate-50"
+                          />
+                        </div>
+                        <div className="space-y-1">
+                          <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Manager Email</label>
+                          <Input
+                            type="email"
+                            placeholder="email@portal.com"
+                            value={portal.managerEmail}
+                            onChange={(e) => updatePropertyPortal(portal.id, 'managerEmail', e.target.value)}
+                            className="bg-slate-50"
+                          />
+                        </div>
+                        <div className="space-y-1">
+                          <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Monthly Spend</label>
+                          <Input
+                            type="text"
+                            placeholder="₹ Amount"
+                            value={portal.monthlySpend}
+                            onChange={(e) => updatePropertyPortal(portal.id, 'monthlySpend', e.target.value)}
+                            className="bg-slate-50"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 space-y-1">
+                      <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Notes</label>
+                      <Input
+                        type="text"
+                        placeholder="Package details, listing count, special arrangements..."
+                        value={portal.notes}
+                        onChange={(e) => updatePropertyPortal(portal.id, 'notes', e.target.value)}
+                        className="bg-slate-50"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+
+          {/* Agencies Tab - With Agency Name and URL */}
           <TabsContent value="agencies">
             <div className="space-y-6">
               {agencies.map((agency) => (
                 <Card key={agency.id}>
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Building2 className="w-5 h-5 text-amber-600" />
-                      {agency.name}
-                    </CardTitle>
-                    <p className="text-sm text-slate-500">{agency.service}</p>
+                    <div className="flex items-start gap-3">
+                      <Building2 className="w-5 h-5 text-amber-600 mt-1" />
+                      <div className="flex-1">
+                        <p className="text-sm text-slate-500 mb-2">{agency.service}</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div className="space-y-1">
+                            <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Agency Name</label>
+                            <Input
+                              type="text"
+                              placeholder="Enter agency name"
+                              value={agency.agencyName}
+                              onChange={(e) => updateAgency(agency.id, 'agencyName', e.target.value)}
+                              className="bg-slate-50 font-semibold"
+                            />
+                          </div>
+                          <div className="space-y-1">
+                            <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Agency Website</label>
+                            <Input
+                              type="url"
+                              placeholder="https://..."
+                              value={agency.agencyUrl}
+                              onChange={(e) => updateAgency(agency.id, 'agencyUrl', e.target.value)}
+                              className="bg-slate-50"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </CardHeader>
                   <CardContent>
                     <div className="grid md:grid-cols-3 gap-4">
@@ -454,52 +604,6 @@ const ChordiaCredentials = () => {
                   onChange={(e) => setAdditionalNotes(e.target.value)}
                   rows={6}
                 />
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          {/* KPIs Tab */}
-          <TabsContent value="kpis">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-amber-600" />
-                  Current Performance Metrics
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Metric</TableHead>
-                      <TableHead>Current Value</TableHead>
-                      <TableHead>Target</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {kpis.map((kpi) => (
-                      <TableRow key={kpi.id}>
-                        <TableCell className="font-medium">{kpi.name}</TableCell>
-                        <TableCell>
-                          <Input
-                            placeholder="Current value"
-                            value={kpi.value}
-                            onChange={(e) => updateKpi(kpi.id, 'value', e.target.value)}
-                            className="max-w-[150px]"
-                          />
-                        </TableCell>
-                        <TableCell>
-                          <Input
-                            placeholder="Target"
-                            value={kpi.target}
-                            onChange={(e) => updateKpi(kpi.id, 'target', e.target.value)}
-                            className="max-w-[150px]"
-                          />
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
               </CardContent>
             </Card>
           </TabsContent>
