@@ -3,35 +3,32 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Progress } from "@/components/ui/progress";
 import { 
   Globe, 
-  Users, 
   BarChart3, 
   FileText, 
   Building2, 
   Lock,
   Save,
   Download,
-  CheckCircle2,
-  Clock,
-  AlertCircle
+  Eye,
+  EyeOff
 } from "lucide-react";
 import { toast } from "sonner";
 
 // This page is intentionally not linked from navigation - access only via direct URL
 // Route: /Chordia/Credentials
 
-interface CredentialField {
+interface PlatformCredential {
   id: string;
-  label: string;
-  value: string;
-  type: 'text' | 'password' | 'email' | 'url';
-  placeholder: string;
+  platform: string;
+  url: string;
+  username: string;
+  password: string;
+  notes: string;
 }
 
 interface AgencyData {
@@ -47,27 +44,32 @@ interface AgencyData {
   notes: string;
 }
 
-const STORAGE_KEY = 'chordia-credentials-data';
+const STORAGE_KEY = 'chordia-credentials-data-v2';
 
 const ChordiaCredentials = () => {
-  // Digital Assets Credentials
-  const [digitalAssets, setDigitalAssets] = useState<CredentialField[]>([
-    { id: 'cms', label: 'Website CMS', value: '', type: 'text', placeholder: 'Login URL / Username' },
-    { id: 'hosting', label: 'Website Hosting (cPanel)', value: '', type: 'text', placeholder: 'cPanel URL / Username' },
-    { id: 'domain', label: 'Domain Registrar', value: '', type: 'text', placeholder: 'Registrar / Login' },
-    { id: 'ga', label: 'Google Analytics', value: '', type: 'email', placeholder: 'Account Email' },
-    { id: 'gsc', label: 'Google Search Console', value: '', type: 'email', placeholder: 'Account Email' },
-    { id: 'gads', label: 'Google Ads', value: '', type: 'email', placeholder: 'Account Email / ID' },
-    { id: 'fbm', label: 'Facebook Business Manager', value: '', type: 'text', placeholder: 'Business Manager ID' },
-    { id: 'meta', label: 'Meta Ads Manager', value: '', type: 'text', placeholder: 'Ad Account ID' },
-    { id: 'instagram', label: 'Instagram Business', value: '', type: 'text', placeholder: 'Username' },
-    { id: 'linkedin', label: 'LinkedIn Company Page', value: '', type: 'url', placeholder: 'Page URL' },
-    { id: 'twitter', label: 'Twitter/X', value: '', type: 'text', placeholder: 'Username' },
-    { id: 'youtube', label: 'YouTube Channel', value: '', type: 'url', placeholder: 'Channel URL' },
-    { id: 'gmb', label: 'Google Business Profile', value: '', type: 'email', placeholder: 'Account Email' },
-    { id: 'email', label: 'Email Marketing Platform', value: '', type: 'text', placeholder: 'Platform / Login' },
-    { id: 'crm', label: 'CRM System', value: '', type: 'text', placeholder: 'Platform / Login' },
-    { id: 'smm', label: 'Social Media Management Tool', value: '', type: 'text', placeholder: 'Platform / Login' },
+  const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
+
+  // Platform Credentials with separate URL, Username, Password fields
+  const [credentials, setCredentials] = useState<PlatformCredential[]>([
+    { id: 'cms', platform: 'Website CMS (WordPress/Other)', url: '', username: '', password: '', notes: '' },
+    { id: 'hosting', platform: 'Website Hosting (cPanel)', url: '', username: '', password: '', notes: '' },
+    { id: 'domain', platform: 'Domain Registrar', url: '', username: '', password: '', notes: '' },
+    { id: 'ga', platform: 'Google Analytics', url: '', username: '', password: '', notes: '' },
+    { id: 'gsc', platform: 'Google Search Console', url: '', username: '', password: '', notes: '' },
+    { id: 'gads', platform: 'Google Ads', url: '', username: '', password: '', notes: '' },
+    { id: 'fbm', platform: 'Facebook Business Manager', url: '', username: '', password: '', notes: '' },
+    { id: 'meta', platform: 'Meta Ads Manager', url: '', username: '', password: '', notes: '' },
+    { id: 'instagram', platform: 'Instagram Business', url: '', username: '', password: '', notes: '' },
+    { id: 'linkedin', platform: 'LinkedIn Company Page', url: '', username: '', password: '', notes: '' },
+    { id: 'twitter', platform: 'Twitter/X', url: '', username: '', password: '', notes: '' },
+    { id: 'youtube', platform: 'YouTube Channel', url: '', username: '', password: '', notes: '' },
+    { id: 'gmb', platform: 'Google Business Profile', url: '', username: '', password: '', notes: '' },
+    { id: 'email', platform: 'Email Marketing (MailChimp/ActiveCampaign)', url: '', username: '', password: '', notes: '' },
+    { id: 'crm', platform: 'CRM System', url: '', username: '', password: '', notes: '' },
+    { id: 'smm', platform: 'Social Media Management Tool', url: '', username: '', password: '', notes: '' },
+    { id: 'magicbricks', platform: 'Magicbricks', url: '', username: '', password: '', notes: '' },
+    { id: 'homeonline', platform: 'Homeonline', url: '', username: '', password: '', notes: '' },
+    { id: 'whatsapp', platform: 'WhatsApp Business / Vennet Media', url: '', username: '', password: '', notes: '' },
   ]);
 
   // Agency Data
@@ -96,10 +98,10 @@ const ChordiaCredentials = () => {
     { id: 'traffic', name: 'Monthly Website Traffic', value: '', target: '' },
     { id: 'organic', name: 'Organic Traffic', value: '', target: '' },
     { id: 'leads', name: 'Monthly Leads', value: '', target: '' },
-    { id: 'cpl', name: 'Cost Per Lead', value: '', target: '' },
-    { id: 'conversion', name: 'Lead to Visit Conversion', value: '', target: '' },
+    { id: 'cpl', name: 'Cost Per Lead (₹)', value: '', target: '' },
+    { id: 'conversion', name: 'Lead to Visit Conversion (%)', value: '', target: '' },
     { id: 'social', name: 'Social Media Followers', value: '', target: '' },
-    { id: 'engagement', name: 'Engagement Rate', value: '', target: '' },
+    { id: 'engagement', name: 'Engagement Rate (%)', value: '', target: '' },
   ]);
 
   // Additional Notes
@@ -111,7 +113,7 @@ const ChordiaCredentials = () => {
     if (saved) {
       try {
         const data = JSON.parse(saved);
-        if (data.digitalAssets) setDigitalAssets(data.digitalAssets);
+        if (data.credentials) setCredentials(data.credentials);
         if (data.agencies) setAgencies(data.agencies);
         if (data.strategyDocs) setStrategyDocs(data.strategyDocs);
         if (data.kpis) setKpis(data.kpis);
@@ -124,14 +126,14 @@ const ChordiaCredentials = () => {
 
   // Save data
   const handleSave = () => {
-    const data = { digitalAssets, agencies, strategyDocs, kpis, additionalNotes };
+    const data = { credentials, agencies, strategyDocs, kpis, additionalNotes };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     toast.success('Data saved successfully!');
   };
 
   // Export data
   const handleExport = () => {
-    const data = { digitalAssets, agencies, strategyDocs, kpis, additionalNotes, exportDate: new Date().toISOString() };
+    const data = { credentials, agencies, strategyDocs, kpis, additionalNotes, exportDate: new Date().toISOString() };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -142,9 +144,9 @@ const ChordiaCredentials = () => {
     toast.success('Data exported!');
   };
 
-  // Update digital asset
-  const updateDigitalAsset = (id: string, value: string) => {
-    setDigitalAssets(prev => prev.map(item => item.id === id ? { ...item, value } : item));
+  // Update credential
+  const updateCredential = (id: string, field: keyof PlatformCredential, value: string) => {
+    setCredentials(prev => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
   };
 
   // Update agency
@@ -162,15 +164,20 @@ const ChordiaCredentials = () => {
     setKpis(prev => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
   };
 
+  // Toggle password visibility
+  const togglePassword = (id: string) => {
+    setShowPasswords(prev => ({ ...prev, [id]: !prev[id] }));
+  };
+
   // Calculate completion
   const calculateCompletion = () => {
-    const filledAssets = digitalAssets.filter(a => a.value.trim() !== '').length;
+    const filledCreds = credentials.filter(c => c.username.trim() !== '' || c.url.trim() !== '').length;
     const filledAgencies = agencies.filter(a => a.contactPerson.trim() !== '' || a.email.trim() !== '').length;
     const filledDocs = strategyDocs.filter(d => d.location.trim() !== '').length;
     const filledKpis = kpis.filter(k => k.value.trim() !== '').length;
     
-    const total = digitalAssets.length + agencies.length + strategyDocs.length + kpis.length;
-    const filled = filledAssets + filledAgencies + filledDocs + filledKpis;
+    const total = credentials.length + agencies.length + strategyDocs.length + kpis.length;
+    const filled = filledCreds + filledAgencies + filledDocs + filledKpis;
     
     return Math.round((filled / total) * 100);
   };
@@ -231,32 +238,72 @@ const ChordiaCredentials = () => {
             </TabsTrigger>
           </TabsList>
 
-          {/* Digital Assets Tab */}
+          {/* Credentials Tab - Now with proper separate fields */}
           <TabsContent value="credentials">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Globe className="w-5 h-5 text-amber-600" />
-                  Digital Marketing Assets & Access
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {digitalAssets.map((asset) => (
-                    <div key={asset.id} className="space-y-2">
-                      <label className="text-sm font-medium text-slate-700">{asset.label}</label>
-                      <Input
-                        type={asset.type}
-                        placeholder={asset.placeholder}
-                        value={asset.value}
-                        onChange={(e) => updateDigitalAsset(asset.id, e.target.value)}
-                        className="bg-white"
-                      />
+            <div className="space-y-4">
+              {credentials.map((cred) => (
+                <Card key={cred.id} className="bg-white">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-base font-semibold text-slate-800">
+                      {cred.platform}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Login URL</label>
+                        <Input
+                          type="url"
+                          placeholder="https://..."
+                          value={cred.url}
+                          onChange={(e) => updateCredential(cred.id, 'url', e.target.value)}
+                          className="bg-slate-50"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Username / Email</label>
+                        <Input
+                          type="text"
+                          placeholder="Username or email"
+                          value={cred.username}
+                          onChange={(e) => updateCredential(cred.id, 'username', e.target.value)}
+                          className="bg-slate-50"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Password</label>
+                        <div className="relative">
+                          <Input
+                            type={showPasswords[cred.id] ? 'text' : 'password'}
+                            placeholder="••••••••"
+                            value={cred.password}
+                            onChange={(e) => updateCredential(cred.id, 'password', e.target.value)}
+                            className="bg-slate-50 pr-10"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => togglePassword(cred.id)}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                          >
+                            {showPasswords[cred.id] ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                          </button>
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Notes</label>
+                        <Input
+                          type="text"
+                          placeholder="Additional info..."
+                          value={cred.notes}
+                          onChange={(e) => updateCredential(cred.id, 'notes', e.target.value)}
+                          className="bg-slate-50"
+                        />
+                      </div>
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </TabsContent>
 
           {/* Agencies Tab */}
@@ -273,16 +320,16 @@ const ChordiaCredentials = () => {
                   </CardHeader>
                   <CardContent>
                     <div className="grid md:grid-cols-3 gap-4">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-slate-700">Contact Person</label>
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Contact Person</label>
                         <Input
                           placeholder="Name"
                           value={agency.contactPerson}
                           onChange={(e) => updateAgency(agency.id, 'contactPerson', e.target.value)}
                         />
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-slate-700">Email</label>
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Email</label>
                         <Input
                           type="email"
                           placeholder="email@agency.com"
@@ -290,32 +337,32 @@ const ChordiaCredentials = () => {
                           onChange={(e) => updateAgency(agency.id, 'email', e.target.value)}
                         />
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-slate-700">Phone</label>
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Phone</label>
                         <Input
                           placeholder="+91 XXXXX XXXXX"
                           value={agency.phone}
                           onChange={(e) => updateAgency(agency.id, 'phone', e.target.value)}
                         />
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-slate-700">Contract Start</label>
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Contract Start</label>
                         <Input
                           type="date"
                           value={agency.contractStart}
                           onChange={(e) => updateAgency(agency.id, 'contractStart', e.target.value)}
                         />
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-slate-700">Contract End</label>
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Contract End</label>
                         <Input
                           type="date"
                           value={agency.contractEnd}
                           onChange={(e) => updateAgency(agency.id, 'contractEnd', e.target.value)}
                         />
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium text-slate-700">Monthly Fee</label>
+                      <div className="space-y-1">
+                        <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Monthly Fee</label>
                         <Input
                           placeholder="₹ Amount"
                           value={agency.monthlyFee}
@@ -323,8 +370,8 @@ const ChordiaCredentials = () => {
                         />
                       </div>
                     </div>
-                    <div className="mt-4 space-y-2">
-                      <label className="text-sm font-medium text-slate-700">Notes / SOW Details</label>
+                    <div className="mt-4 space-y-1">
+                      <label className="text-xs font-medium text-slate-500 uppercase tracking-wide">Notes / SOW Details</label>
                       <Textarea
                         placeholder="Contract details, scope of work, SLAs..."
                         value={agency.notes}
