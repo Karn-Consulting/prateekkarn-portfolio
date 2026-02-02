@@ -15,7 +15,10 @@ import {
   EyeOff,
   Home,
   MessageCircle,
-  ExternalLink
+  ExternalLink,
+  UserPlus,
+  Trash2,
+  Calendar
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -44,23 +47,39 @@ interface PropertyPortal {
   notes: string;
 }
 
+interface AgencyContact {
+  id: string;
+  name: string;
+  role: string;
+  email: string;
+  phone: string;
+}
+
 interface AgencyData {
   id: string;
   agencyName: string;
   agencyUrl: string;
   service: string;
-  contactPerson: string;
-  email: string;
-  phone: string;
+  contacts: AgencyContact[];
   whatsappGroup: string;
   workPortfolioUrl: string;
   contractStart: string;
   contractEnd: string;
   monthlyFee: string;
+  reportCadence: string;
   notes: string;
 }
 
-const STORAGE_KEY = 'chordia-credentials-data-v6';
+const STORAGE_KEY = 'chordia-credentials-data-v8';
+
+// Helper to create a new contact
+const createEmptyContact = (): AgencyContact => ({
+  id: `contact-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+  name: '',
+  role: '',
+  email: '',
+  phone: ''
+});
 
 // Default agency data with pre-filled SOW from proposals
 const DEFAULT_AGENCIES: AgencyData[] = [
@@ -69,14 +88,15 @@ const DEFAULT_AGENCIES: AgencyData[] = [
     agencyName: 'Parken Solution Pvt. Ltd.', 
     agencyUrl: 'https://www.par-ken.com', 
     service: 'Website Development & Maintenance', 
-    contactPerson: 'Prashant Singh', 
-    email: 'prashant@par-ken.com', 
-    phone: '+91 78913-78915', 
+    contacts: [
+      { id: 'web-c1', name: 'Prashant Singh', role: 'Account Manager', email: 'prashant@par-ken.com', phone: '+91 78913-78915' }
+    ],
     whatsappGroup: '',
     workPortfolioUrl: 'https://parkensolution.com/chordias',
     contractStart: '', 
     contractEnd: '', 
-    monthlyFee: '', 
+    monthlyFee: '',
+    reportCadence: 'Weekly',
     notes: `SOW: Website Development (PHP Laravel Framework)
 
 Key Deliverables:
@@ -108,14 +128,15 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
     agencyName: 'TechTail Inc.', 
     agencyUrl: 'https://techtail.in', 
     service: 'SMM, Creative & Video Production', 
-    contactPerson: 'Ayush Sharma', 
-    email: 'ayush@techtail.in', 
-    phone: '+91-7821058873', 
+    contacts: [
+      { id: 'smm-c1', name: 'Ayush Sharma', role: 'Account Manager', email: 'ayush@techtail.in', phone: '+91-7821058873' }
+    ],
     whatsappGroup: '', 
     workPortfolioUrl: '', 
     contractStart: '', 
     contractEnd: '', 
-    monthlyFee: '₹67,500/month + taxes', 
+    monthlyFee: '₹67,500/month + taxes',
+    reportCadence: 'Weekly',
     notes: `SOW: Digital Marketing Services (Chordia Group)
 
 Lead Generation & Visibility:
@@ -162,14 +183,15 @@ Notes:
     agencyName: 'SEO Appoint', 
     agencyUrl: '', 
     service: 'SEO & Content Marketing', 
-    contactPerson: 'Mukesh Prajapati', 
-    email: 'seoappoint@gmail.com', 
-    phone: '+91-9785009245', 
+    contacts: [
+      { id: 'seo-c1', name: 'Mukesh Prajapati', role: 'Account Manager', email: 'seoappoint@gmail.com', phone: '+91-9785009245' }
+    ],
     whatsappGroup: '', 
     workPortfolioUrl: '', 
     contractStart: '', 
     contractEnd: '', 
-    monthlyFee: '₹25,000/month', 
+    monthlyFee: '₹25,000/month',
+    reportCadence: 'Monthly',
     notes: `SOW: Search Engine Optimization (chordiasgroup.com)
 Proposal Date: November 22, 2025
 
@@ -198,14 +220,15 @@ Payment Terms:
     agencyName: 'Venets Media Pvt. Ltd.', 
     agencyUrl: '', 
     service: 'WhatsApp & RCS Messaging', 
-    contactPerson: '', 
-    email: 'accounts@venetsmedia.com', 
-    phone: '80100085100, 9313425050', 
+    contacts: [
+      { id: 'vennet-c1', name: '', role: 'Account Manager', email: 'accounts@venetsmedia.com', phone: '80100085100, 9313425050' }
+    ],
     whatsappGroup: '', 
     workPortfolioUrl: '', 
     contractStart: '', 
     contractEnd: '', 
-    monthlyFee: '', 
+    monthlyFee: '',
+    reportCadence: 'On-demand',
     notes: `SOW: WhatsApp & RCS Messaging Services
 Invoice: VMPL/25-26/PR-51 (10/12/2025)
 GST: 07AAFCV9730NIZO
@@ -235,14 +258,15 @@ Address: R-45 Faraz Complex, Ramesh Park Delhi-110092`
     agencyName: '', 
     agencyUrl: '', 
     service: 'Lead Generation (Property Portals)', 
-    contactPerson: '', 
-    email: '', 
-    phone: '', 
+    contacts: [
+      { id: 'leadgen-c1', name: '', role: 'Account Manager', email: '', phone: '' }
+    ],
     whatsappGroup: '', 
     workPortfolioUrl: '', 
     contractStart: '', 
     contractEnd: '', 
-    monthlyFee: '', 
+    monthlyFee: '',
+    reportCadence: 'Weekly',
     notes: 'Magicbricks, Homeonline, 99acres - See Property Portals tab for details' 
   },
 ];
@@ -296,6 +320,8 @@ function mergeWithDefaults<T extends { id: string }>(saved: T[] | undefined, def
   });
 }
 
+const REPORT_CADENCE_OPTIONS = ['Daily', 'Weekly', 'Bi-weekly', 'Monthly', 'Quarterly', 'On-demand'];
+
 const ChordiaCredentials = () => {
   const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
   const [credentials, setCredentials] = useState<PlatformCredential[]>(DEFAULT_CREDENTIALS);
@@ -348,8 +374,43 @@ const ChordiaCredentials = () => {
   };
 
   // Update agency
-  const updateAgency = (id: string, field: keyof AgencyData, value: string) => {
+  const updateAgency = (id: string, field: keyof AgencyData, value: any) => {
     setAgencies(prev => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
+  };
+
+  // Add contact to agency
+  const addContact = (agencyId: string) => {
+    setAgencies(prev => prev.map(agency => {
+      if (agency.id === agencyId) {
+        return { ...agency, contacts: [...agency.contacts, createEmptyContact()] };
+      }
+      return agency;
+    }));
+  };
+
+  // Remove contact from agency
+  const removeContact = (agencyId: string, contactId: string) => {
+    setAgencies(prev => prev.map(agency => {
+      if (agency.id === agencyId && agency.contacts.length > 1) {
+        return { ...agency, contacts: agency.contacts.filter(c => c.id !== contactId) };
+      }
+      return agency;
+    }));
+  };
+
+  // Update contact in agency
+  const updateContact = (agencyId: string, contactId: string, field: keyof AgencyContact, value: string) => {
+    setAgencies(prev => prev.map(agency => {
+      if (agency.id === agencyId) {
+        return {
+          ...agency,
+          contacts: agency.contacts.map(contact => 
+            contact.id === contactId ? { ...contact, [field]: value } : contact
+          )
+        };
+      }
+      return agency;
+    }));
   };
 
   // Toggle password visibility
@@ -361,7 +422,7 @@ const ChordiaCredentials = () => {
   const calculateCompletion = () => {
     const filledCreds = credentials.filter(c => c.username.trim() !== '' || c.url.trim() !== '').length;
     const filledPortals = propertyPortals.filter(p => p.username.trim() !== '' || p.dashboardUrl.trim() !== '').length;
-    const filledAgencies = agencies.filter(a => a.agencyName.trim() !== '' || a.contactPerson.trim() !== '').length;
+    const filledAgencies = agencies.filter(a => a.agencyName.trim() !== '' || a.contacts.some(c => c.name.trim() !== '')).length;
     
     const total = credentials.length + propertyPortals.length + agencies.length;
     const filled = filledCreds + filledPortals + filledAgencies;
@@ -647,38 +708,82 @@ const ChordiaCredentials = () => {
                     </div>
                   </CardHeader>
                   <CardContent className="px-3 sm:px-6 pb-3 sm:pb-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                      <div className="space-y-1">
-                        <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Contact Person</label>
-                        <Input
-                          placeholder="Name"
-                          value={agency.contactPerson}
-                          onChange={(e) => updateAgency(agency.id, 'contactPerson', e.target.value)}
-                          className="text-sm h-9 sm:h-10"
-                        />
+                    {/* Multiple Contacts Section */}
+                    <div className="border rounded-lg p-3 sm:p-4 bg-slate-50 mb-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <p className="text-xs sm:text-sm font-medium text-slate-700 flex items-center gap-2">
+                          <UserPlus className="w-4 h-4" />
+                          Contacts ({agency.contacts.length})
+                        </p>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => addContact(agency.id)}
+                          className="text-xs h-7 sm:h-8 gap-1"
+                        >
+                          <UserPlus className="w-3 h-3" />
+                          Add Contact
+                        </Button>
                       </div>
-                      <div className="space-y-1">
-                        <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Email</label>
-                        <Input
-                          type="email"
-                          placeholder="email@agency.com"
-                          value={agency.email}
-                          onChange={(e) => updateAgency(agency.id, 'email', e.target.value)}
-                          className="text-sm h-9 sm:h-10"
-                        />
-                      </div>
-                      <div className="space-y-1">
-                        <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Phone</label>
-                        <Input
-                          placeholder="+91 XXXXX XXXXX"
-                          value={agency.phone}
-                          onChange={(e) => updateAgency(agency.id, 'phone', e.target.value)}
-                          className="text-sm h-9 sm:h-10"
-                        />
+                      
+                      <div className="space-y-3">
+                        {agency.contacts.map((contact, idx) => (
+                          <div key={contact.id} className="bg-white rounded-lg p-3 border relative">
+                            {agency.contacts.length > 1 && (
+                              <button
+                                onClick={() => removeContact(agency.id, contact.id)}
+                                className="absolute top-2 right-2 text-slate-400 hover:text-red-500 p-1"
+                                title="Remove contact"
+                              >
+                                <Trash2 className="w-3.5 h-3.5" />
+                              </button>
+                            )}
+                            <div className="text-[10px] text-slate-400 mb-2">Contact {idx + 1}</div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                              <div className="space-y-1">
+                                <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Name</label>
+                                <Input
+                                  placeholder="Contact name"
+                                  value={contact.name}
+                                  onChange={(e) => updateContact(agency.id, contact.id, 'name', e.target.value)}
+                                  className="text-sm h-8 sm:h-9"
+                                />
+                              </div>
+                              <div className="space-y-1">
+                                <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Role</label>
+                                <Input
+                                  placeholder="e.g., Account Manager"
+                                  value={contact.role}
+                                  onChange={(e) => updateContact(agency.id, contact.id, 'role', e.target.value)}
+                                  className="text-sm h-8 sm:h-9"
+                                />
+                              </div>
+                              <div className="space-y-1">
+                                <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Email</label>
+                                <Input
+                                  type="email"
+                                  placeholder="email@agency.com"
+                                  value={contact.email}
+                                  onChange={(e) => updateContact(agency.id, contact.id, 'email', e.target.value)}
+                                  className="text-sm h-8 sm:h-9"
+                                />
+                              </div>
+                              <div className="space-y-1">
+                                <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Phone</label>
+                                <Input
+                                  placeholder="+91 XXXXX XXXXX"
+                                  value={contact.phone}
+                                  onChange={(e) => updateContact(agency.id, contact.id, 'phone', e.target.value)}
+                                  className="text-sm h-8 sm:h-9"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-3 sm:mt-4 pt-3 sm:pt-4 border-t">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-3 sm:pt-4 border-t">
                       <div className="space-y-1">
                         <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide flex items-center gap-1">
                           <MessageCircle className="w-3 h-3" />
@@ -707,7 +812,7 @@ const ChordiaCredentials = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-3 sm:mt-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-3 sm:mt-4">
                       <div className="space-y-1">
                         <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Contract Start</label>
                         <Input
@@ -734,6 +839,22 @@ const ChordiaCredentials = () => {
                           onChange={(e) => updateAgency(agency.id, 'monthlyFee', e.target.value)}
                           className="text-sm h-9 sm:h-10"
                         />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          Report Cadence
+                        </label>
+                        <select
+                          value={agency.reportCadence}
+                          onChange={(e) => updateAgency(agency.id, 'reportCadence', e.target.value)}
+                          className="w-full h-9 sm:h-10 px-3 text-sm border rounded-md bg-amber-50 border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        >
+                          <option value="">Select cadence...</option>
+                          {REPORT_CADENCE_OPTIONS.map(opt => (
+                            <option key={opt} value={opt}>{opt}</option>
+                          ))}
+                        </select>
                       </div>
                     </div>
 
