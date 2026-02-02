@@ -13,7 +13,9 @@ import {
   Download,
   Eye,
   EyeOff,
-  Home
+  Home,
+  MessageCircle,
+  ExternalLink
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -50,13 +52,15 @@ interface AgencyData {
   contactPerson: string;
   email: string;
   phone: string;
+  whatsappGroup: string;
+  workPortfolioUrl: string;
   contractStart: string;
   contractEnd: string;
   monthlyFee: string;
   notes: string;
 }
 
-const STORAGE_KEY = 'chordia-credentials-data-v4';
+const STORAGE_KEY = 'chordia-credentials-data-v5';
 
 const ChordiaCredentials = () => {
   const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
@@ -92,13 +96,51 @@ const ChordiaCredentials = () => {
     { id: 'squareyards', portal: 'Square Yards', dashboardUrl: 'https://www.squareyards.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
   ]);
 
-  // Agency Data - With editable name and URL
+  // Agency Data - With editable name, URL, WhatsApp Group, and Work Portfolio
   const [agencies, setAgencies] = useState<AgencyData[]>([
-    { id: 'web', agencyName: '', agencyUrl: '', service: 'Website Development & Maintenance', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
-    { id: 'smm', agencyName: '', agencyUrl: '', service: 'SMM, Creative & Video Production', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
-    { id: 'seo', agencyName: '', agencyUrl: '', service: 'SEO & Content Marketing', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
-    { id: 'vennet', agencyName: 'Vennet Media', agencyUrl: '', service: 'WhatsApp & RCS Messaging', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
-    { id: 'ppc', agencyName: '', agencyUrl: '', service: 'PPC / Performance Marketing', contactPerson: '', email: '', phone: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
+    { 
+      id: 'web', 
+      agencyName: 'Parken Solution Pvt. Ltd.', 
+      agencyUrl: 'https://www.par-ken.com', 
+      service: 'Website Development & Maintenance', 
+      contactPerson: 'Prashant Singh', 
+      email: 'prashant@par-ken.com', 
+      phone: '+91 78913-78915', 
+      whatsappGroup: '',
+      workPortfolioUrl: 'https://parkensolution.com/chordias',
+      contractStart: '', 
+      contractEnd: '', 
+      monthlyFee: '', 
+      notes: `SOW: Website Development (PHP Laravel Framework)
+
+Key Deliverables:
+• Modern UI/UX Design aligned with Chordia Group brand
+• Responsive Web Design (Mobile, Tablet & Desktop)
+• Complete Web Stack Setup (Front-end + Back-end)
+• Robust CMS with Admin Dashboard
+• Admin control: Projects, Galleries, Inquiry Management, Blog/News, User Management
+• SEO-ready architecture
+• Speed-optimized, secure and scalable
+• Server Setup, Deployment & Testing
+• 1 Year Free Maintenance
+
+Phase-1 Features:
+• Property pages with Google Maps, gallery, Contact Form + WhatsApp
+• User login system
+• Schema markup, Core Web Vitals ready
+• Admin Panel with SEO controls
+• Analytics tracking (GA, Meta Pixel)
+
+Pages: Home, Property Listing, Property Details, About Us, Contact Us, T&C, Privacy, Cookies, FAQs
+
+Tech Stack: React/Next.js (Frontend), Laravel/Node.js (Backend), MySQL/PostgreSQL, AWS S3
+
+Timeline: 45-60 Days | Design mock-up within 1 week` 
+    },
+    { id: 'smm', agencyName: '', agencyUrl: '', service: 'SMM, Creative & Video Production', contactPerson: '', email: '', phone: '', whatsappGroup: '', workPortfolioUrl: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
+    { id: 'seo', agencyName: '', agencyUrl: '', service: 'SEO & Content Marketing', contactPerson: '', email: '', phone: '', whatsappGroup: '', workPortfolioUrl: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
+    { id: 'vennet', agencyName: 'Vennet Media', agencyUrl: '', service: 'WhatsApp & RCS Messaging', contactPerson: '', email: '', phone: '', whatsappGroup: '', workPortfolioUrl: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
+    { id: 'ppc', agencyName: '', agencyUrl: '', service: 'PPC / Performance Marketing', contactPerson: '', email: '', phone: '', whatsappGroup: '', workPortfolioUrl: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
   ]);
 
   // Load data from localStorage
@@ -417,7 +459,7 @@ const ChordiaCredentials = () => {
             </div>
           </TabsContent>
 
-          {/* Agencies Tab - Responsive */}
+          {/* Agencies Tab - With WhatsApp Group and Work Portfolio */}
           <TabsContent value="agencies">
             <div className="space-y-4 sm:space-y-6">
               {agencies.map((agency) => (
@@ -483,6 +525,40 @@ const ChordiaCredentials = () => {
                           className="text-sm h-9 sm:h-10"
                         />
                       </div>
+                    </div>
+
+                    {/* WhatsApp Group and Work Portfolio - NEW FIELDS */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-3 sm:mt-4 pt-3 sm:pt-4 border-t">
+                      <div className="space-y-1">
+                        <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide flex items-center gap-1">
+                          <MessageCircle className="w-3 h-3" />
+                          WhatsApp Group Link
+                        </label>
+                        <Input
+                          type="url"
+                          placeholder="https://chat.whatsapp.com/..."
+                          value={agency.whatsappGroup}
+                          onChange={(e) => updateAgency(agency.id, 'whatsappGroup', e.target.value)}
+                          className="bg-green-50 text-sm h-9 sm:h-10"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide flex items-center gap-1">
+                          <ExternalLink className="w-3 h-3" />
+                          Work Portfolio / Samples URL
+                        </label>
+                        <Input
+                          type="url"
+                          placeholder="https://agency.com/our-work"
+                          value={agency.workPortfolioUrl}
+                          onChange={(e) => updateAgency(agency.id, 'workPortfolioUrl', e.target.value)}
+                          className="bg-blue-50 text-sm h-9 sm:h-10"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Contract Details */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-3 sm:mt-4">
                       <div className="space-y-1">
                         <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Contract Start</label>
                         <Input
@@ -511,15 +587,16 @@ const ChordiaCredentials = () => {
                         />
                       </div>
                     </div>
-                    {/* Notes */}
+
+                    {/* Notes / SOW */}
                     <div className="mt-3 sm:mt-4 space-y-1">
                       <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Notes / SOW Details</label>
                       <Textarea
-                        placeholder="Contract details, scope of work, SLAs..."
+                        placeholder="Contract details, scope of work, SLAs, deliverables..."
                         value={agency.notes}
                         onChange={(e) => updateAgency(agency.id, 'notes', e.target.value)}
-                        rows={2}
-                        className="text-sm resize-none sm:resize-y"
+                        rows={agency.notes.length > 200 ? 8 : 3}
+                        className="text-sm resize-y"
                       />
                     </div>
                   </CardContent>
