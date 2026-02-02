@@ -60,58 +60,24 @@ interface AgencyData {
   notes: string;
 }
 
-const STORAGE_KEY = 'chordia-credentials-data-v5';
+const STORAGE_KEY = 'chordia-credentials-data-v6';
 
-const ChordiaCredentials = () => {
-  const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
-
-  // Platform Credentials - Digital Marketing Assets
-  const [credentials, setCredentials] = useState<PlatformCredential[]>([
-    { id: 'cms', platform: 'Website CMS (WordPress/Other)', url: '', username: '', password: '', notes: '' },
-    { id: 'hosting', platform: 'Website Hosting (cPanel)', url: '', username: '', password: '', notes: '' },
-    { id: 'domain', platform: 'Domain Registrar', url: '', username: '', password: '', notes: '' },
-    { id: 'ga', platform: 'Google Analytics', url: 'https://analytics.google.com', username: '', password: '', notes: '' },
-    { id: 'gsc', platform: 'Google Search Console', url: 'https://search.google.com/search-console', username: '', password: '', notes: '' },
-    { id: 'gads', platform: 'Google Ads', url: 'https://ads.google.com', username: '', password: '', notes: '' },
-    { id: 'fbm', platform: 'Facebook Business Manager', url: 'https://business.facebook.com', username: '', password: '', notes: '' },
-    { id: 'meta', platform: 'Meta Ads Manager', url: 'https://adsmanager.facebook.com', username: '', password: '', notes: '' },
-    { id: 'instagram', platform: 'Instagram Business', url: 'https://instagram.com', username: '', password: '', notes: '' },
-    { id: 'linkedin', platform: 'LinkedIn Company Page', url: '', username: '', password: '', notes: '' },
-    { id: 'twitter', platform: 'Twitter/X', url: 'https://x.com', username: '', password: '', notes: '' },
-    { id: 'youtube', platform: 'YouTube Channel', url: '', username: '', password: '', notes: '' },
-    { id: 'gmb', platform: 'Google Business Profile', url: 'https://business.google.com', username: '', password: '', notes: '' },
-    { id: 'email', platform: 'Email Marketing (MailChimp/ActiveCampaign)', url: '', username: '', password: '', notes: '' },
-    { id: 'crm', platform: 'CRM System', url: '', username: '', password: '', notes: '' },
-    { id: 'smm', platform: 'Social Media Management Tool', url: '', username: '', password: '', notes: '' },
-    { id: 'whatsapp', platform: 'WhatsApp Business API', url: '', username: '', password: '', notes: '' },
-  ]);
-
-  // Property Portals - Separate Section
-  const [propertyPortals, setPropertyPortals] = useState<PropertyPortal[]>([
-    { id: 'magicbricks', portal: 'Magicbricks', dashboardUrl: 'https://www.magicbricks.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
-    { id: 'homeonline', portal: 'Homeonline', dashboardUrl: 'https://www.homeonline.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
-    { id: '99acres', portal: '99acres', dashboardUrl: 'https://www.99acres.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
-    { id: 'housing', portal: 'Housing.com', dashboardUrl: 'https://www.housing.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
-    { id: 'nobroker', portal: 'NoBroker', dashboardUrl: 'https://www.nobroker.in', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
-    { id: 'squareyards', portal: 'Square Yards', dashboardUrl: 'https://www.squareyards.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
-  ]);
-
-  // Agency Data - With editable name, URL, WhatsApp Group, and Work Portfolio
-  const [agencies, setAgencies] = useState<AgencyData[]>([
-    { 
-      id: 'web', 
-      agencyName: 'Parken Solution Pvt. Ltd.', 
-      agencyUrl: 'https://www.par-ken.com', 
-      service: 'Website Development & Maintenance', 
-      contactPerson: 'Prashant Singh', 
-      email: 'prashant@par-ken.com', 
-      phone: '+91 78913-78915', 
-      whatsappGroup: '',
-      workPortfolioUrl: 'https://parkensolution.com/chordias',
-      contractStart: '', 
-      contractEnd: '', 
-      monthlyFee: '', 
-      notes: `SOW: Website Development (PHP Laravel Framework)
+// Default agency data with pre-filled SOW from proposals
+const DEFAULT_AGENCIES: AgencyData[] = [
+  { 
+    id: 'web', 
+    agencyName: 'Parken Solution Pvt. Ltd.', 
+    agencyUrl: 'https://www.par-ken.com', 
+    service: 'Website Development & Maintenance', 
+    contactPerson: 'Prashant Singh', 
+    email: 'prashant@par-ken.com', 
+    phone: '+91 78913-78915', 
+    whatsappGroup: '',
+    workPortfolioUrl: 'https://parkensolution.com/chordias',
+    contractStart: '', 
+    contractEnd: '', 
+    monthlyFee: '', 
+    notes: `SOW: Website Development (PHP Laravel Framework)
 
 Key Deliverables:
 • Modern UI/UX Design aligned with Chordia Group brand
@@ -136,22 +102,215 @@ Pages: Home, Property Listing, Property Details, About Us, Contact Us, T&C, Priv
 Tech Stack: React/Next.js (Frontend), Laravel/Node.js (Backend), MySQL/PostgreSQL, AWS S3
 
 Timeline: 45-60 Days | Design mock-up within 1 week` 
-    },
-    { id: 'smm', agencyName: '', agencyUrl: '', service: 'SMM, Creative & Video Production', contactPerson: '', email: '', phone: '', whatsappGroup: '', workPortfolioUrl: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
-    { id: 'seo', agencyName: '', agencyUrl: '', service: 'SEO & Content Marketing', contactPerson: '', email: '', phone: '', whatsappGroup: '', workPortfolioUrl: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
-    { id: 'vennet', agencyName: 'Vennet Media', agencyUrl: '', service: 'WhatsApp & RCS Messaging', contactPerson: '', email: '', phone: '', whatsappGroup: '', workPortfolioUrl: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
-    { id: 'ppc', agencyName: '', agencyUrl: '', service: 'PPC / Performance Marketing', contactPerson: '', email: '', phone: '', whatsappGroup: '', workPortfolioUrl: '', contractStart: '', contractEnd: '', monthlyFee: '', notes: '' },
-  ]);
+  },
+  { 
+    id: 'smm', 
+    agencyName: 'TechTail Inc.', 
+    agencyUrl: 'https://techtail.in', 
+    service: 'SMM, Creative & Video Production', 
+    contactPerson: 'Ayush Sharma', 
+    email: 'ayush@techtail.in', 
+    phone: '+91-7821058873', 
+    whatsappGroup: '', 
+    workPortfolioUrl: '', 
+    contractStart: '', 
+    contractEnd: '', 
+    monthlyFee: '₹67,500/month + taxes', 
+    notes: `SOW: Digital Marketing Services (Chordia Group)
 
-  // Load data from localStorage
+Lead Generation & Visibility:
+• Tailored PPC campaigns, Sponsored Ads, I-Target AI Tool
+• Facebook/Instagram Carousel Ads and Video Ads
+• Google Ads (Display, Search, In-App placements)
+
+Google & Meta Ad Management:
+• Setup, management, optimization of paid campaigns
+
+Social Media Management (FB, Instagram, LinkedIn):
+• Showcase projects, before-and-after transformations
+• Carousel ads, video ads, sponsored posts
+• Instagram Stories and Reels
+• Prompt response to comments and messages
+• Effective hashtag strategies
+
+Monthly Deliverables:
+• 15-20 creative assets (stories, posts, carousels)
+• 8-10 short videos + 2 detailed videos
+• 20 creative posts (10 per project)
+• 6-8 insightful blogs
+• 1 drone shoot, 1 video/photo shoot, 1 model/influencer shoot
+
+Additional Services:
+• Project Landing Page creation/optimization
+• Google My Business Management
+• Real-Time Lead Management
+• Influencer & Model Collaboration (fees separate)
+
+Offline Branding (Additional):
+• Banner/Flex/Pole Kiosk/Standee: ₹1,000
+• Pamphlet: ₹500
+• Mini Brochure: ₹5,000
+• Brochure: ₹10,000
+
+Notes:
+• Package covers 2 projects; additional projects charged separately
+• Ad spend NOT included (billed separately)
+• Influencer/Model fees covered separately by client` 
+  },
+  { 
+    id: 'seo', 
+    agencyName: 'SEO Appoint', 
+    agencyUrl: '', 
+    service: 'SEO & Content Marketing', 
+    contactPerson: 'Mukesh Prajapati', 
+    email: 'seoappoint@gmail.com', 
+    phone: '+91-9785009245', 
+    whatsappGroup: '', 
+    workPortfolioUrl: '', 
+    contractStart: '', 
+    contractEnd: '', 
+    monthlyFee: '₹25,000/month', 
+    notes: `SOW: Search Engine Optimization (chordiasgroup.com)
+Proposal Date: November 22, 2025
+
+Services & Approach:
+• 360-degree Website Auditing
+• Indexing and Crawling optimization
+• Mobile Optimization and AMP
+• On-page SEO (structure, content, speed)
+• Off-page SEO (social media, link building, local SEO)
+• Competitive Analysis
+• Monthly reporting on current SEO status
+
+Pricing:
+• SEO + Link Building: ₹25,000/month
+• Graphics (Poster & Banner): Depends on size
+• Content Writing: ₹1-2 per word
+
+Tools Used: SEMrush, Ahrefs
+
+Payment Terms:
+• All payments charged in advance
+• 30 days termination notice required` 
+  },
+  { 
+    id: 'vennet', 
+    agencyName: 'Venets Media Pvt. Ltd.', 
+    agencyUrl: '', 
+    service: 'WhatsApp & RCS Messaging', 
+    contactPerson: '', 
+    email: 'accounts@venetsmedia.com', 
+    phone: '80100085100, 9313425050', 
+    whatsappGroup: '', 
+    workPortfolioUrl: '', 
+    contractStart: '', 
+    contractEnd: '', 
+    monthlyFee: '', 
+    notes: `SOW: WhatsApp & RCS Messaging Services
+Invoice: VMPL/25-26/PR-51 (10/12/2025)
+GST: 07AAFCV9730NIZO
+
+Message Rates:
+┌─────────────────────────────┬──────────┬─────────────────┬───────────┐
+│ Service                     │ Quantity │ Rate/Message    │ Amount    │
+├─────────────────────────────┼──────────┼─────────────────┼───────────┤
+│ Business WhatsApp Marketing │ 60,000   │ ₹0.075 (7.5p)   │ ₹45,000   │
+│ Business WhatsApp Utility   │ 40,000   │ ₹0.020 (2p)     │ ₹8,000    │
+│ RCS SMS                     │ 100,000  │ ₹0.015 (1.5p)   │ ₹15,000   │
+└─────────────────────────────┴──────────┴─────────────────┴───────────┘
+
+Total: ₹68,000 + GST (18%) = ₹80,240
+
+Bank Details:
+• Bank: ICICI Bank LTD
+• Account: Venets Media Pvt. Ltd.
+• A/C No: 007105007487
+• Branch: Green Park New Delhi - 110016
+• IFSC: ICIC0000071
+
+Address: R-45 Faraz Complex, Ramesh Park Delhi-110092` 
+  },
+  { 
+    id: 'leadgen', 
+    agencyName: '', 
+    agencyUrl: '', 
+    service: 'Lead Generation (Property Portals)', 
+    contactPerson: '', 
+    email: '', 
+    phone: '', 
+    whatsappGroup: '', 
+    workPortfolioUrl: '', 
+    contractStart: '', 
+    contractEnd: '', 
+    monthlyFee: '', 
+    notes: 'Magicbricks, Homeonline, 99acres - See Property Portals tab for details' 
+  },
+];
+
+const DEFAULT_CREDENTIALS: PlatformCredential[] = [
+  { id: 'cms', platform: 'Website CMS (WordPress/Other)', url: '', username: '', password: '', notes: '' },
+  { id: 'hosting', platform: 'Website Hosting (cPanel)', url: '', username: '', password: '', notes: '' },
+  { id: 'domain', platform: 'Domain Registrar', url: '', username: '', password: '', notes: '' },
+  { id: 'ga', platform: 'Google Analytics', url: 'https://analytics.google.com', username: '', password: '', notes: '' },
+  { id: 'gsc', platform: 'Google Search Console', url: 'https://search.google.com/search-console', username: '', password: '', notes: '' },
+  { id: 'gads', platform: 'Google Ads', url: 'https://ads.google.com', username: '', password: '', notes: '' },
+  { id: 'fbm', platform: 'Facebook Business Manager', url: 'https://business.facebook.com', username: '', password: '', notes: '' },
+  { id: 'meta', platform: 'Meta Ads Manager', url: 'https://adsmanager.facebook.com', username: '', password: '', notes: '' },
+  { id: 'instagram', platform: 'Instagram Business', url: 'https://instagram.com', username: '', password: '', notes: '' },
+  { id: 'linkedin', platform: 'LinkedIn Company Page', url: '', username: '', password: '', notes: '' },
+  { id: 'twitter', platform: 'Twitter/X', url: 'https://x.com', username: '', password: '', notes: '' },
+  { id: 'youtube', platform: 'YouTube Channel', url: '', username: '', password: '', notes: '' },
+  { id: 'gmb', platform: 'Google Business Profile', url: 'https://business.google.com', username: '', password: '', notes: '' },
+  { id: 'email', platform: 'Email Marketing (MailChimp/ActiveCampaign)', url: '', username: '', password: '', notes: '' },
+  { id: 'crm', platform: 'CRM System', url: '', username: '', password: '', notes: '' },
+  { id: 'smm', platform: 'Social Media Management Tool', url: '', username: '', password: '', notes: '' },
+  { id: 'whatsapp', platform: 'WhatsApp Business API', url: '', username: '', password: '', notes: '' },
+];
+
+const DEFAULT_PORTALS: PropertyPortal[] = [
+  { id: 'magicbricks', portal: 'Magicbricks', dashboardUrl: 'https://www.magicbricks.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
+  { id: 'homeonline', portal: 'Homeonline', dashboardUrl: 'https://www.homeonline.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
+  { id: '99acres', portal: '99acres', dashboardUrl: 'https://www.99acres.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
+  { id: 'housing', portal: 'Housing.com', dashboardUrl: 'https://www.housing.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
+  { id: 'nobroker', portal: 'NoBroker', dashboardUrl: 'https://www.nobroker.in', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
+  { id: 'squareyards', portal: 'Square Yards', dashboardUrl: 'https://www.squareyards.com', username: '', password: '', accountManager: '', managerPhone: '', managerEmail: '', monthlySpend: '', notes: '' },
+];
+
+// Smart merge function - preserves user data, only fills empty fields with defaults
+function mergeWithDefaults<T extends { id: string }>(saved: T[] | undefined, defaults: T[]): T[] {
+  if (!saved || saved.length === 0) return defaults;
+  
+  return defaults.map(defaultItem => {
+    const savedItem = saved.find(s => s.id === defaultItem.id);
+    if (!savedItem) return defaultItem;
+    
+    // Merge: keep saved values, but fill empty fields with defaults
+    const merged = { ...defaultItem };
+    for (const key of Object.keys(savedItem) as (keyof T)[]) {
+      const savedValue = savedItem[key];
+      if (savedValue !== undefined && savedValue !== null && savedValue !== '') {
+        (merged as any)[key] = savedValue;
+      }
+    }
+    return merged;
+  });
+}
+
+const ChordiaCredentials = () => {
+  const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
+  const [credentials, setCredentials] = useState<PlatformCredential[]>(DEFAULT_CREDENTIALS);
+  const [propertyPortals, setPropertyPortals] = useState<PropertyPortal[]>(DEFAULT_PORTALS);
+  const [agencies, setAgencies] = useState<AgencyData[]>(DEFAULT_AGENCIES);
+
+  // Load data from localStorage with smart merge
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       try {
         const data = JSON.parse(saved);
-        if (data.credentials) setCredentials(data.credentials);
-        if (data.propertyPortals) setPropertyPortals(data.propertyPortals);
-        if (data.agencies) setAgencies(data.agencies);
+        setCredentials(mergeWithDefaults(data.credentials, DEFAULT_CREDENTIALS));
+        setPropertyPortals(mergeWithDefaults(data.propertyPortals, DEFAULT_PORTALS));
+        setAgencies(mergeWithDefaults(data.agencies, DEFAULT_AGENCIES));
       } catch (e) {
         console.error('Failed to load saved data');
       }
@@ -215,9 +374,7 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
       {/* Header - Fully Responsive */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-3 sm:py-4">
-          {/* Mobile: Stack vertically, Desktop: Side by side */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
-            {/* Logo and Title */}
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="p-1.5 sm:p-2 bg-amber-100 rounded-lg flex-shrink-0">
                 <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-amber-700" />
@@ -228,7 +385,6 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
               </div>
             </div>
             
-            {/* Actions - Responsive */}
             <div className="flex items-center justify-between sm:justify-end gap-2 sm:gap-3">
               <div className="text-left sm:text-right">
                 <div className="text-xs sm:text-sm text-slate-500">Completion</div>
@@ -250,10 +406,9 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
         </div>
       </header>
 
-      {/* Main Content - Fully Responsive */}
+      {/* Main Content */}
       <main className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8">
         <Tabs defaultValue="credentials" className="space-y-4 sm:space-y-6">
-          {/* Tabs - Responsive */}
           <TabsList className="w-full grid grid-cols-3 bg-white h-auto p-1">
             <TabsTrigger value="credentials" className="gap-1 sm:gap-2 text-xs sm:text-sm py-2 sm:py-2.5 px-1 sm:px-3">
               <Globe className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -272,7 +427,7 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
             </TabsTrigger>
           </TabsList>
 
-          {/* Credentials Tab - Responsive */}
+          {/* Credentials Tab */}
           <TabsContent value="credentials">
             <div className="space-y-3 sm:space-y-4">
               {credentials.map((cred) => (
@@ -340,7 +495,7 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
             </div>
           </TabsContent>
 
-          {/* Property Portals Tab - Responsive */}
+          {/* Property Portals Tab */}
           <TabsContent value="portals">
             <div className="space-y-4 sm:space-y-6">
               {propertyPortals.map((portal) => (
@@ -352,7 +507,6 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="px-3 sm:px-6 pb-3 sm:pb-6">
-                    {/* Login Details */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4">
                       <div className="space-y-1">
                         <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Dashboard URL</label>
@@ -395,7 +549,6 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
                       </div>
                     </div>
                     
-                    {/* Account Manager Details */}
                     <div className="border-t pt-3 sm:pt-4 mt-3 sm:mt-4">
                       <p className="text-xs sm:text-sm font-medium text-slate-600 mb-2 sm:mb-3">Account Manager Details</p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
@@ -442,7 +595,6 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
                       </div>
                     </div>
 
-                    {/* Notes */}
                     <div className="mt-3 sm:mt-4 space-y-1">
                       <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Notes</label>
                       <Input
@@ -459,7 +611,7 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
             </div>
           </TabsContent>
 
-          {/* Agencies Tab - With WhatsApp Group and Work Portfolio */}
+          {/* Agencies Tab */}
           <TabsContent value="agencies">
             <div className="space-y-4 sm:space-y-6">
               {agencies.map((agency) => (
@@ -495,7 +647,6 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
                     </div>
                   </CardHeader>
                   <CardContent className="px-3 sm:px-6 pb-3 sm:pb-6">
-                    {/* Contact Details */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                       <div className="space-y-1">
                         <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Contact Person</label>
@@ -527,7 +678,6 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
                       </div>
                     </div>
 
-                    {/* WhatsApp Group and Work Portfolio - NEW FIELDS */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-3 sm:mt-4 pt-3 sm:pt-4 border-t">
                       <div className="space-y-1">
                         <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide flex items-center gap-1">
@@ -557,7 +707,6 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
                       </div>
                     </div>
 
-                    {/* Contract Details */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-3 sm:mt-4">
                       <div className="space-y-1">
                         <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Contract Start</label>
@@ -588,15 +737,14 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
                       </div>
                     </div>
 
-                    {/* Notes / SOW */}
                     <div className="mt-3 sm:mt-4 space-y-1">
                       <label className="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wide">Notes / SOW Details</label>
                       <Textarea
                         placeholder="Contract details, scope of work, SLAs, deliverables..."
                         value={agency.notes}
                         onChange={(e) => updateAgency(agency.id, 'notes', e.target.value)}
-                        rows={agency.notes.length > 200 ? 8 : 3}
-                        className="text-sm resize-y"
+                        rows={agency.notes.length > 200 ? 12 : 4}
+                        className="text-sm resize-y font-mono text-xs"
                       />
                     </div>
                   </CardContent>
@@ -607,7 +755,7 @@ Timeline: 45-60 Days | Design mock-up within 1 week`
         </Tabs>
       </main>
 
-      {/* Footer - Responsive */}
+      {/* Footer */}
       <footer className="border-t border-slate-200 bg-white mt-8 sm:mt-12">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm text-slate-500 text-center sm:text-left">
