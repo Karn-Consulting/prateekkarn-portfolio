@@ -1,9 +1,27 @@
 {
   "buildCommand": "rm -rf .vite node_modules/.vite && pnpm run build",
+  "redirects": [
+    { "source": "/home", "destination": "/", "statusCode": 301 },
+    { "source": "/Home", "destination": "/", "statusCode": 301 }
+  ],
   "rewrites": [
     { "source": "/mywork", "destination": "/index.html" },
     { "source": "/mywork/(.*)", "destination": "/index.html" },
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml" }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain" }
+      ]
+    }
   ]
 }
