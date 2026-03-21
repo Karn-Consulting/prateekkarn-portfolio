@@ -28,5 +28,9 @@ Allow: /
 User-agent: *
 Allow: /
 
-# Disallow admin and private paths (if any)
+# Disallow admin and private paths
 Disallow: /api/
+Disallow: /404
+
+# Crawl-delay for polite crawling
+Crawl-delay: 10

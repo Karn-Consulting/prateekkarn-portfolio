@@ -29,9 +29,9 @@
     <!-- Primary Meta Tags (fallback for crawlers that don't execute JS) -->
     <title>Prateek Karn | AI Business Architect & MarTech Strategist</title>
     <meta name="description" content="Prateek Karn is an AI Business Architect who designs intelligent MarTech systems, AI-powered automation, and data pipelines for enterprise growth." />
-    <meta name="keywords" content="AI Business Architect, MarTech Architect, AI Transformation Consultant, Enterprise AI Systems, Marketing Attribution, AI Lead Scoring, Data Pipeline Consultant, Prateek Karn" />
+    <meta name="keywords" content="AI Business Architect, MarTech Architect, AI Transformation Consultant, Enterprise AI Systems, Marketing Attribution, AI Lead Scoring, Data Pipeline Consultant, Prateek Karn, Karn Consulting, AI Consultant India" />
     <meta name="author" content="Prateek Karn" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://prateekkarn.com/" />
     
     <!-- Google Fonts -->
@@ -47,11 +47,85 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- 
-      NOTE: Open Graph and Twitter Card tags are managed dynamically by react-helmet-async 
-      via the SEOHead component. Do NOT add duplicate OG/Twitter tags here.
-      The SEOHead component handles per-page OG/Twitter meta for all routes.
-    -->
+    <!-- Open Graph / Facebook (static fallback for crawlers that don't execute JS; react-helmet-async overrides per-page) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://prateekkarn.com/" />
+    <meta property="og:site_name" content="Prateek Karn" />
+    <meta property="og:title" content="Prateek Karn | AI Business Architect & MarTech Strategist" />
+    <meta property="og:description" content="I design AI-powered business systems that integrate marketing, data, and automation into intelligent growth engines for enterprises." />
+    <meta property="og:image" content="https://prateekkarn.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Prateek Karn - AI Business Architect" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card (static fallback for crawlers that don't execute JS; react-helmet-async overrides per-page) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://prateekkarn.com/" />
+    <meta name="twitter:title" content="Prateek Karn | AI Business Architect & MarTech Strategist" />
+    <meta name="twitter:description" content="I design AI-powered business systems that integrate marketing, data, and automation into intelligent growth engines for enterprises." />
+    <meta name="twitter:image" content="https://prateekkarn.com/og-image.png" />
+    <meta name="twitter:image:alt" content="Prateek Karn - AI Business Architect" />
+    <meta name="twitter:creator" content="@prateekkarn" />
+
+    <!-- Static JSON-LD Structured Data (visible to all crawlers without JS execution) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://prateekkarn.com/#person",
+          "name": "Prateek Karn",
+          "givenName": "Prateek",
+          "familyName": "Karn",
+          "url": "https://prateekkarn.com",
+          "image": { "@type": "ImageObject", "url": "https://prateekkarn.com/prateek-karn-about.jpg", "width": 400, "height": 400 },
+          "sameAs": ["https://www.linkedin.com/in/prateekkarn/"],
+          "jobTitle": "AI Business Architect",
+          "description": "AI Business Architect who designs intelligent MarTech systems, AI-powered automation, and data pipelines for enterprise growth.",
+          "email": "prateek.karn@prateekkarn.com",
+          "knowsAbout": ["AI Business Architecture", "MarTech Systems", "Marketing Attribution", "AI Lead Scoring", "Data Pipeline Architecture", "Enterprise AI Transformation", "CRM Automation", "Growth Systems", "Agentic AI", "Marketing Analytics"],
+          "worksFor": { "@id": "https://prateekkarn.com/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://prateekkarn.com/#organization",
+          "name": "Karn Consulting",
+          "alternateName": "Prateek Karn Consulting",
+          "url": "https://prateekkarn.com",
+          "logo": { "@type": "ImageObject", "url": "https://prateekkarn.com/pk-logo.png", "width": 512, "height": 512 },
+          "description": "AI Business Architecture and MarTech consulting for enterprise transformation.",
+          "founder": { "@id": "https://prateekkarn.com/#person" },
+          "sameAs": ["https://www.linkedin.com/in/prateekkarn/"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://prateekkarn.com/#website",
+          "name": "Prateek Karn - AI Business Architect",
+          "alternateName": "Prateekkarn.com",
+          "url": "https://prateekkarn.com",
+          "description": "AI Business Architecture and MarTech consulting for enterprise transformation.",
+          "publisher": { "@id": "https://prateekkarn.com/#organization" },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://prateekkarn.com/#service",
+          "name": "AI Business Architecture Consulting",
+          "description": "Expert consulting services for AI transformation, MarTech architecture, marketing attribution, and enterprise growth systems.",
+          "url": "https://prateekkarn.com",
+          "priceRange": "$$$$",
+          "address": { "@type": "PostalAddress", "addressLocality": "Amritsar", "addressRegion": "Punjab", "addressCountry": "IN" },
+          "areaServed": [
+            { "@type": "Country", "name": "United States" },
+            { "@type": "Country", "name": "United Kingdom" },
+            { "@type": "Country", "name": "India" }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- RB2B Visitor Identification -->
     <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("4N210HQQD76Z");</script>
@@ -59,6 +133,38 @@
 
   <body>
     <div id="root"></div>
+    <!-- Noscript fallback: ensures crawlers that don't execute JS can still see core content and links -->
+    <noscript>
+      <div style="max-width:800px;margin:0 auto;padding:40px 20px;font-family:Inter,sans-serif;">
+        <h1>Prateek Karn — AI Business Architect & MarTech Strategist</h1>
+        <p>Prateek Karn is an AI Business Architect who designs intelligent MarTech systems, AI-powered automation, and data pipelines for enterprise growth. He builds AI-powered business systems that integrate marketing, data, and automation into intelligent growth engines, transforming complex data architectures into measurable enterprise outcomes.</p>
+        <h2>Services</h2>
+        <ul>
+          <li>AI Business Architecture</li>
+          <li>MarTech Stack Optimization</li>
+          <li>Marketing Attribution Systems</li>
+          <li>AI Lead Scoring</li>
+          <li>Data Pipeline Architecture</li>
+          <li>Enterprise AI Preparedness</li>
+        </ul>
+        <h2>Explore</h2>
+        <nav>
+          <ul>
+            <li><a href="/about">About Prateek Karn</a></li>
+            <li><a href="/mywork">My Work & Case Studies</a></li>
+            <li><a href="/insights">Insights & Blog</a></li>
+            <li><a href="/mywork/enterprise-ai-preparedness">Enterprise AI Preparedness</a></li>
+            <li><a href="/mywork/end-to-end-attribution">End-to-End Attribution</a></li>
+            <li><a href="/mywork/executive-dashboard">Executive Dashboard</a></li>
+            <li><a href="/mywork/revenue-engineering">Revenue Engineering</a></li>
+            <li><a href="/mywork/bofu-intent-intelligence">BOFU Intent Intelligence</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions">Terms & Conditions</a></li>
+          </ul>
+        </nav>
+        <p>Contact: <a href="mailto:prateek.karn@prateekkarn.com">prateek.karn@prateekkarn.com</a></p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
