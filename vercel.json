@@ -5,10 +5,25 @@
     { "source": "/Home", "destination": "/", "statusCode": 301 }
   ],
   "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/privacy-policy", "destination": "/index.html" },
+    { "source": "/terms-and-conditions", "destination": "/index.html" },
     { "source": "/mywork", "destination": "/index.html" },
-    { "source": "/mywork/(.*)", "destination": "/index.html" },
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/mywork/enterprise-ai-preparedness", "destination": "/index.html" },
+    { "source": "/mywork/web-infrastructure", "destination": "/index.html" },
+    { "source": "/mywork/exec-venture-gauge", "destination": "/index.html" },
+    { "source": "/mywork/exec-venture-gauge/app", "destination": "/index.html" },
+    { "source": "/mywork/end-to-end-attribution", "destination": "/index.html" },
+    { "source": "/mywork/executive-dashboard", "destination": "/index.html" },
+    { "source": "/mywork/meta-ads-performance", "destination": "/index.html" },
+    { "source": "/mywork/revenue-engineering", "destination": "/index.html" },
+    { "source": "/mywork/bofu-intent-intelligence", "destination": "/index.html" },
+    { "source": "/mywork/luxury-real-estate", "destination": "/index.html" },
+    { "source": "/insights", "destination": "/index.html" },
+    { "source": "/insights/:slug", "destination": "/index.html" },
+    { "source": "/Chordia/Credentials", "destination": "/index.html" },
+    { "source": "/api/(.*)", "destination": "/api/$1" }
   ],
   "headers": [
     {
@@ -21,6 +36,12 @@
       "source": "/robots.txt",
       "headers": [
         { "key": "Content-Type", "value": "text/plain" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "index, follow" }
       ]
     }
   ]
