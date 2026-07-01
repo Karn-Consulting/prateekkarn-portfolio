@@ -51,7 +51,7 @@ export default function MetaAdsPerformance() {
         <div className="container max-w-4xl mx-auto">
           <PasswordProtectedVideo
             videoSrc="/meta-ads-walkthrough.mp4"
-            password="ROAS237"
+            password="ALPHA23"
             caption="Watch the full walkthrough of the Meta Ads account turnaround"
           />
         </div>
