@@ -220,7 +220,7 @@ export default function EndToEndAttribution() {
           {/* Embedded Attribution Simulator */}
           <div className="bg-[#f8f7f5] rounded-sm overflow-hidden border border-[#e5e5e0]">
             <iframe 
-              src="https://attribution.prateekkarn.com/"
+              src="https://attribution.prateekkarn.in/"
               className="w-full border-0"
               style={{ height: '800px', minHeight: '600px' }}
               title="End-to-End Marketing Attribution Simulator"
@@ -232,7 +232,7 @@ export default function EndToEndAttribution() {
           {/* Open in new tab option */}
           <div className="mt-6 text-center">
             <a 
-              href="https://attribution.prateekkarn.com/" 
+              href="https://attribution.prateekkarn.in/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-[#8b7355] text-white font-medium text-base rounded-sm hover:bg-[#6b5a45] transition-all duration-300 shadow-lg hover:shadow-xl"

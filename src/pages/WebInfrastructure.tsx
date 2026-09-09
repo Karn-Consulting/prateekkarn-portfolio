@@ -38,7 +38,7 @@ const WEBSITES = [
   {
     id: 'prateekkarn',
     name: 'Prateek Karn',
-    url: 'https://www.prateekkarn.com',
+    url: 'https://www.prateekkarn.in',
     image: '/website-prateekkarn.webp',
     description: 'AI Business Architect portfolio website. Showcases MarTech systems, career trajectory, testimonials, and thought leadership content.',
     techStack: ['React', 'TypeScript', 'TailwindCSS', 'Vite'],

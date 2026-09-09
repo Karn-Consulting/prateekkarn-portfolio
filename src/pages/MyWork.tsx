@@ -241,13 +241,13 @@ export default function MyWork() {
       <Helmet>
         <title>My Work | Prateek Karn - AI Business Architect</title>
         <meta name="description" content="A curated body of AI decision frameworks, data systems, and growth architectures — organized by strategic impact. Case studies from Prateek Karn." />
-        <link rel="canonical" href="https://prateekkarn.com/mywork" />
+        <link rel="canonical" href="https://prateekkarn.in/mywork" />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://prateekkarn.com/mywork" />
+        <meta property="og:url" content="https://prateekkarn.in/mywork" />
         <meta property="og:title" content="My Work | Prateek Karn - AI Business Architect" />
         <meta property="og:description" content="A curated body of AI decision frameworks, data systems, and growth architectures — organized by strategic impact." />
-        <meta property="og:image" content="https://prateekkarn.com/og-image.png" />
+        <meta property="og:image" content="https://prateekkarn.in/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="My Work | Prateek Karn" />
         <meta name="twitter:description" content="AI decision frameworks, data systems, and growth architectures." />

@@ -1,5 +1,5 @@
 # COMPREHENSIVE DESIGN SYSTEM AUDIT
-## prateekkarn.com — Growth Architect Design System
+## prateekkarn.in — Growth Architect Design System
 
 **Audit Date:** December 24, 2025  
 **Version:** 1.0  
@@ -487,4 +487,4 @@ className="grid grid-cols-2 lg:grid-cols-4"
 
 **End of Design System Audit**
 
-*Generated for prateekkarn.com portfolio project*
+*Generated for prateekkarn.in portfolio project*

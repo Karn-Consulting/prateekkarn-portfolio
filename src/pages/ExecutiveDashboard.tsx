@@ -254,7 +254,7 @@ export default function ExecutiveDashboard() {
           {/* Embedded Dashboard */}
           <div className="bg-[#f8f7f5] rounded-sm overflow-hidden border border-[#e5e5e0]">
             <iframe 
-              src="https://dashboard.prateekkarn.com" 
+              src="https://dashboard.prateekkarn.in" 
               className="w-full border-0"
               style={{ height: '800px', minHeight: '600px' }}
               title="Executive Marketing Command Dashboard"
@@ -266,7 +266,7 @@ export default function ExecutiveDashboard() {
           {/* Open in new tab option */}
           <div className="mt-6 text-center">
             <a 
-              href="https://dashboard.prateekkarn.com" 
+              href="https://dashboard.prateekkarn.in" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-[#8b7355] text-white font-medium text-base rounded-sm hover:bg-[#6b5a45] transition-all duration-300 shadow-lg hover:shadow-xl"

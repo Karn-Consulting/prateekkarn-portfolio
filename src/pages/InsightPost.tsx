@@ -90,7 +90,7 @@ const Breadcrumb = ({ post }: { post: BlogPost }) => (
 // Share Buttons Component
 const ShareButtons = ({ post }: { post: BlogPost }) => {
   const [copied, setCopied] = useState(false);
-  const postUrl = `https://prateekkarn.com/insights/${post.slug}`;
+  const postUrl = `https://prateekkarn.in/insights/${post.slug}`;
   
   const handleCopyLink = async () => {
     try {
@@ -292,12 +292,12 @@ const InsightPost = () => {
       <Helmet>
         <title>{post.title} | Karn Insights</title>
         <meta name="description" content={post.excerpt} />
-        <link rel="canonical" href={`https://prateekkarn.com/insights/${post.slug}`} />
+        <link rel="canonical" href={`https://prateekkarn.in/insights/${post.slug}`} />
         <meta property="og:title" content={`${post.title} | Karn Insights`} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://prateekkarn.com/insights/${post.slug}`} />
-        <meta property="og:image" content={post.featuredImage ? `https://prateekkarn.com${post.featuredImage}` : 'https://prateekkarn.com/og-image.png'} />
+        <meta property="og:url" content={`https://prateekkarn.in/insights/${post.slug}`} />
+        <meta property="og:image" content={post.featuredImage ? `https://prateekkarn.in${post.featuredImage}` : 'https://prateekkarn.in/og-image.png'} />
         <meta property="og:image:alt" content={post.imageAlt || post.title} />
         <meta property="article:published_time" content={post.dateISO} />
         <meta property="article:author" content={post.author.name} />
@@ -305,7 +305,7 @@ const InsightPost = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${post.title} | Karn Insights`} />
         <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:image" content={post.featuredImage ? `https://prateekkarn.com${post.featuredImage}` : 'https://prateekkarn.com/og-image.png'} />
+        <meta name="twitter:image" content={post.featuredImage ? `https://prateekkarn.in${post.featuredImage}` : 'https://prateekkarn.in/og-image.png'} />
       </Helmet>
       
       {/* Article Structured Data for Rich Snippets */}

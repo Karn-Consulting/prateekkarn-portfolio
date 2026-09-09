@@ -114,7 +114,7 @@ const PrivacyPolicy = () => {
                   <li>Request data portability</li>
                 </ul>
                 <p className="text-muted-foreground leading-relaxed mt-3">
-                  To exercise these rights, please contact us at prateek.karn@prateekkarn.com.
+                  To exercise these rights, please contact us at prateekkarn5@gmail.com.
                 </p>
               </section>
 
@@ -205,7 +205,7 @@ const PrivacyPolicy = () => {
                     <p><strong>Karn Corporation</strong></p>
                     <p>Proprietor: Prateek Kumar Karan</p>
                     <p>GSTIN: 03CLWPK4491C1ZX</p>
-                    <p>Email: prateek.karn@prateekkarn.com</p>
+                    <p>Email: prateekkarn5@gmail.com</p>
                     <p>Address: Kala Ghanupur Sub Urban, House No 8, New Pal Avenue, Ram Tirath Road, Amritsar, Punjab, 143001, India</p>
                   </div>
                 </div>
