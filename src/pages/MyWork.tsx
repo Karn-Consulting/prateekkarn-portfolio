@@ -288,7 +288,7 @@ export default function MyWork() {
               ctaText={currentContent.hero.ctaText}
               link={currentContent.hero.link}
               logoImage={currentContent.hero.logoImage}
-              imagePlaceholder={currentContent.hero.image}
+              imagePlaceholder={(currentContent.hero as { image?: string }).image}
               onClick={currentContent.hero.link ? undefined : () => setSelectedCase(currentContent.hero)}
             />
           )}

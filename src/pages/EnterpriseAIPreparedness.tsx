@@ -159,7 +159,7 @@ const EnterpriseAIPreparedness = () => {
       const scores = data.questions.map(q => answers[q.id] || 0);
       dimensionScores[dimension] = scores.reduce((a, b) => a + b, 0) / scores.length;
       
-      data.questions.forEach(q => {
+      data.questions.forEach((q: { id: number; text: string; isConfidence?: boolean }) => {
         if (q.isConfidence) {
           confidenceSum += answers[q.id] || 0;
           confidenceCount++;
