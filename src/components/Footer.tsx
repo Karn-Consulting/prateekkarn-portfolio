@@ -1,7 +1,6 @@
-// Footer v2.2 - Build timestamp: 2025-12-26T12:10:00Z - Cache bust
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail } from "lucide-react";
-import { useState } from "react";
+import { ArrowUpRight, Linkedin, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 // Noise texture overlay component
 const NoiseOverlay = () => (
@@ -16,27 +15,21 @@ const NoiseOverlay = () => (
 
 // Clean PK Logo Component - Simple text-based design
 const PKLogo = ({ onClick }: { onClick: () => void }) => (
-  <button
+  <Button
+    type="button"
+    variant="ghost"
     onClick={onClick}
-    className="group cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#c9b896]/50 rounded-sm transition-all duration-300"
+    className="group h-auto p-0 text-accent hover:bg-transparent hover:text-accent focus-visible:ring-accent"
     aria-label="Scroll to top"
     title="Back to top"
   >
-    <span 
-      className="font-heading text-4xl sm:text-5xl font-normal text-[#c9b896] tracking-[0.08em] transition-all duration-300 group-hover:brightness-125 group-hover:tracking-[0.12em]"
-      style={{ letterSpacing: '0.08em' }}
-    >
+    <span className="font-heading text-4xl font-normal tracking-normal transition-opacity duration-300 group-hover:opacity-80 sm:text-5xl">
       PK
     </span>
-  </button>
+  </Button>
 );
 
-// Footer v2.1 - with clean text-based PK logo and scroll-to-top
 const Footer = () => {
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [message, setMessage] = useState('');
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -44,150 +37,69 @@ const Footer = () => {
     });
   };
 
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!email) {
-      setStatus('error');
-      setMessage('Please enter your email address');
-      return;
-    }
-
-    setStatus('loading');
-    setMessage('');
-
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setStatus('success');
-        setMessage(data.message);
-        setEmail('');
-      } else {
-        setStatus('error');
-        setMessage(data.error);
-      }
-    } catch (error) {
-      setStatus('error');
-      setMessage('An unexpected error occurred. Please try again later.');
-    }
-  };
-
   return (
-    <footer className="relative overflow-hidden" style={{ backgroundColor: '#1a1a1a' }}>
+    <footer className="relative overflow-hidden bg-primary text-primary-foreground">
       {/* Noise texture overlay */}
       <NoiseOverlay />
       
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        {/* Two Column Layout */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Left Column - Contact Info */}
-            <div className="text-center lg:text-left">
-              {/* PK Logo - Clean text-based design with scroll-to-top */}
+      <div className="relative z-10 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid items-end gap-10 lg:grid-cols-[1fr_auto] lg:gap-20">
+            <div className="max-w-2xl text-center lg:text-left">
               <div className="mb-6 flex justify-center lg:justify-start">
                 <PKLogo onClick={scrollToTop} />
               </div>
-              <h3 className="font-heading text-2xl sm:text-3xl font-normal text-[#f5f5dc] mb-6 leading-relaxed tracking-wide">
+              <h3 className="mb-4 font-heading text-3xl font-normal leading-tight tracking-normal sm:text-4xl lg:text-5xl">
                 Architect Your Advantage
               </h3>
-              
-              {/* Contact Links */}
-              <div className="flex flex-col gap-4">
-                <a 
-                  href="mailto:prateekkarn5@gmail.com"
-                  className="inline-flex items-center gap-3 text-[#c9b896] hover:text-[#c9b896] hover:brightness-125 transition-all duration-300 text-sm sm:text-base justify-center lg:justify-start"
-                >
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                  <span className="font-medium">prateekkarn5@gmail.com</span>
-                </a>
-                
-                <a 
-                  href="https://linkedin.com/in/prateekkarn" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-[#c9b896] hover:text-[#c9b896] hover:brightness-125 transition-all duration-300 text-sm sm:text-base justify-center lg:justify-start"
-                  aria-label="LinkedIn Profile"
-                >
-                  <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                  <span className="font-medium">LinkedIn</span>
-                </a>
-              </div>
+              <p className="mx-auto max-w-xl text-sm leading-7 text-primary-foreground/60 sm:text-base lg:mx-0">
+                Transform your marketing with AI-powered automation and data systems built for one purpose: Measurable Results.
+              </p>
             </div>
 
-            {/* Right Column - Newsletter */}
-            <div className="text-center lg:text-left">
-              <h4 className="font-heading text-xl sm:text-2xl font-normal text-[#f5f5dc] mb-4 leading-relaxed tracking-wide">
-                Strategic Intelligence Newsletter
-              </h4>
-              
-              <p className="text-white/50 text-sm leading-[1.8] mb-6 max-w-md mx-auto lg:mx-0">
-                Curated frameworks and lessons learned from building AI and MarTech systems.
-              </p>
-              
-              {/* Input & CTA */}
-              <form onSubmit={handleSubscribe} className="flex flex-col gap-4">
-                <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <div className="relative w-full sm:w-64">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your corporate email"
-                      disabled={status === 'loading'}
-                      className="w-full bg-[#2a2a2a] border border-[#444] text-white/90 placeholder-white/40 focus:outline-none focus:border-[#c9b896] transition-colors py-3 px-4 text-center sm:text-left font-heading text-sm tracking-wide rounded disabled:opacity-50"
-                    />
-                  </div>
-                  
-                  <button 
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className="group px-5 py-3 bg-transparent border border-[#c9b896] hover:bg-[#c9b896] text-[#c9b896] hover:text-[#1a1a1a] transition-all duration-300 rounded disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <span className="text-xs font-medium tracking-[0.2em] uppercase">
-                      {status === 'loading' ? 'SUBSCRIBING...' : 'SUBSCRIBE'}
-                    </span>
-                  </button>
-                </div>
-                
-                {/* Status Message */}
-                {message && (
-                  <p className={`text-sm ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>
-                    {message}
-                  </p>
-                )}
-              </form>
+            <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center lg:flex-col lg:items-end">
+              <a
+                href="mailto:prateekkarn5@gmail.com"
+                className="group inline-flex min-h-12 items-center justify-between gap-5 border-b border-primary-foreground/20 py-3 text-sm text-primary-foreground transition-colors duration-300 hover:border-accent hover:text-accent sm:min-w-72 sm:text-base"
+              >
+                <span className="inline-flex items-center gap-3">
+                  <Mail className="h-4 w-4" aria-hidden="true" />
+                  prateekkarn5@gmail.com
+                </span>
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+              </a>
+              <a
+                href="https://linkedin.com/in/prateekkarn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex min-h-12 items-center justify-between gap-5 border-b border-primary-foreground/20 py-3 text-sm text-primary-foreground transition-colors duration-300 hover:border-accent hover:text-accent sm:min-w-72 sm:text-base"
+                aria-label="Visit Prateek Karn on LinkedIn"
+              >
+                <span className="inline-flex items-center gap-3">
+                  <Linkedin className="h-4 w-4" aria-hidden="true" />
+                  Connect on LinkedIn
+                </span>
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+              </a>
             </div>
           </div>
 
-          {/* Divider Line */}
-          <div className="border-t border-[#333] mt-12 pt-8">
+          <div className="mt-12 border-t border-primary-foreground/15 pt-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              {/* Copyright */}
-              <p className="text-white/50 text-xs sm:text-sm">
+              <p className="text-xs text-primary-foreground/50 sm:text-sm">
                 © 2025 Prateek Karn. All rights reserved.
               </p>
-              
-              {/* Legal Links */}
               <div className="flex items-center gap-4 text-xs sm:text-sm">
                 <Link 
                   to="/privacy-policy" 
-                  className="text-white/50 hover:text-[#c9b896] transition-colors duration-300"
+                  className="text-primary-foreground/50 transition-colors duration-300 hover:text-accent"
                 >
                   Privacy Policy
                 </Link>
-                <span className="text-white/30">|</span>
+                <span className="text-primary-foreground/20">|</span>
                 <Link 
                   to="/terms-and-conditions" 
-                  className="text-white/50 hover:text-[#c9b896] transition-colors duration-300"
+                  className="text-primary-foreground/50 transition-colors duration-300 hover:text-accent"
                 >
                   Terms & Conditions
                 </Link>
