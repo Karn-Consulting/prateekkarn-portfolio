@@ -17,11 +17,11 @@ const ContactSection = () => {
         {/* Contact Links */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-6 sm:pt-8">
           <a 
-            href="mailto:prateek.karn@prateekkarn.com"
+            href="mailto:prateekkarn5@gmail.com"
             className="flex items-center gap-2 sm:gap-3 text-primary-foreground hover:text-accent transition-colors duration-200 text-sm sm:text-base"
           >
             <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-            <span className="font-medium break-all sm:break-normal">prateek.karn@prateekkarn.com</span>
+            <span className="font-medium break-all sm:break-normal">prateekkarn5@gmail.com</span>
           </a>
           
           <div className="w-px h-4 sm:h-6 bg-primary-foreground/30 hidden sm:block"></div>

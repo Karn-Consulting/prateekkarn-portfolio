@@ -1,8 +1,8 @@
-# robots.txt for prateekkarn.com
+# robots.txt for prateekkarn.in
 # AI Business Architect & MarTech Strategist
 
 # Sitemap location
-Sitemap: https://prateekkarn.com/sitemap.xml
+Sitemap: https://prateekkarn.in/sitemap.xml
 
 # Google specific
 User-agent: Googlebot

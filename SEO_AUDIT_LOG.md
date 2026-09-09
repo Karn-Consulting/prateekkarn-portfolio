@@ -1,5 +1,5 @@
 # Comprehensive SEO & Technical Implementation Log
-**Project:** Prateek Karn Portfolio (prateekkarn.com)
+**Project:** Prateek Karn Portfolio (prateekkarn.in)
 **Last Updated:** March 22, 2026
 **Auditor:** Manus AI
 
@@ -40,7 +40,7 @@ The `sitemap.xml` file is comprehensive, including all main pages, individual ca
 
 | SEO Element | Implementation Status | Technical Details |
 | :--- | :--- | :--- |
-| **Domain Resolution** | ✅ Optimized | `www.prateekkarn.com` permanently redirects (301) to the root domain. |
+| **Domain Resolution** | ✅ Optimized | `www.prateekkarn.in` permanently redirects (301) to the root domain. |
 | **Soft 404 Handling** | ✅ Resolved | Explicit route whitelisting in `vercel.json` ensures invalid URLs return a true 404 status. |
 | **Meta Tags** | ✅ Implemented | Dynamic injection via `SEOHead.tsx` using `react-helmet-async`. |
 | **Canonical Tags** | ✅ Implemented | Self-referencing canonicals dynamically generated for all routes. |

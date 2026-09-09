@@ -10,14 +10,14 @@ import { Helmet } from 'react-helmet-async';
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://prateekkarn.com/#person",
+  "@id": "https://prateekkarn.in/#person",
   "name": "Prateek Karn",
   "givenName": "Prateek",
   "familyName": "Karn",
-  "url": "https://prateekkarn.com",
+  "url": "https://prateekkarn.in",
   "image": {
     "@type": "ImageObject",
-    "url": "https://prateekkarn.com/prateek-karn-about.jpg",
+    "url": "https://prateekkarn.in/prateek-karn-about.jpg",
     "width": 400,
     "height": 400
   },
@@ -26,7 +26,7 @@ const personSchema = {
   ],
   "jobTitle": "AI Business Architect",
   "description": "AI Business Architect who designs intelligent MarTech systems, AI-powered automation, and data pipelines for enterprise growth.",
-  "email": "prateek.karn@prateekkarn.com",
+  "email": "prateekkarn5@gmail.com",
   "knowsAbout": [
     "AI Business Architecture",
     "MarTech Systems",
@@ -40,7 +40,7 @@ const personSchema = {
     "Marketing Analytics"
   ],
   "worksFor": {
-    "@id": "https://prateekkarn.com/#organization"
+    "@id": "https://prateekkarn.in/#organization"
   }
 };
 
@@ -48,26 +48,26 @@ const personSchema = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://prateekkarn.com/#organization",
+  "@id": "https://prateekkarn.in/#organization",
   "name": "Karn Consulting",
   "alternateName": "Prateek Karn Consulting",
-  "url": "https://prateekkarn.com",
+  "url": "https://prateekkarn.in",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://prateekkarn.com/pk-logo.png",
+    "url": "https://prateekkarn.in/pk-logo.png",
     "width": 512,
     "height": 512
   },
   "image": {
     "@type": "ImageObject",
-    "url": "https://prateekkarn.com/og-image.png",
+    "url": "https://prateekkarn.in/og-image.png",
     "width": 1200,
     "height": 630
   },
   "description": "AI Business Architecture and MarTech consulting for enterprise transformation.",
-  "email": "prateek.karn@prateekkarn.com",
+  "email": "prateekkarn5@gmail.com",
   "founder": {
-    "@id": "https://prateekkarn.com/#person"
+    "@id": "https://prateekkarn.in/#person"
   },
   "sameAs": [
     "https://www.linkedin.com/in/prateekkarn/"
@@ -75,8 +75,8 @@ const organizationSchema = {
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
-    "email": "prateek.karn@prateekkarn.com",
-    "url": "https://prateekkarn.com",
+    "email": "prateekkarn5@gmail.com",
+    "url": "https://prateekkarn.in",
     "availableLanguage": ["English", "Hindi"]
   }
 };
@@ -85,13 +85,13 @@ const organizationSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://prateekkarn.com/#website",
+  "@id": "https://prateekkarn.in/#website",
   "name": "Prateek Karn - AI Business Architect",
   "alternateName": "Prateekkarn.com",
-  "url": "https://prateekkarn.com",
+  "url": "https://prateekkarn.in",
   "description": "AI Business Architecture and MarTech consulting for enterprise transformation.",
   "publisher": {
-    "@id": "https://prateekkarn.com/#organization"
+    "@id": "https://prateekkarn.in/#organization"
   },
   "inLanguage": "en-US"
 };
@@ -100,18 +100,18 @@ const websiteSchema = {
 const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://prateekkarn.com/#service",
+  "@id": "https://prateekkarn.in/#service",
   "name": "AI Business Architecture Consulting",
   "description": "Expert consulting services for AI transformation, MarTech architecture, marketing attribution, and enterprise growth systems.",
-  "url": "https://prateekkarn.com",
+  "url": "https://prateekkarn.in",
   "image": {
     "@type": "ImageObject",
-    "url": "https://prateekkarn.com/og-image.png",
+    "url": "https://prateekkarn.in/og-image.png",
     "width": 1200,
     "height": 630
   },
   "priceRange": "$$$$",
-  "email": "prateek.karn@prateekkarn.com",
+  "email": "prateekkarn5@gmail.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Amritsar",
@@ -247,27 +247,27 @@ export const generateArticleSchema = ({
     "@type": "Article",
     "headline": title,
     "description": description,
-    "url": `https://prateekkarn.com/insights/${slug}`,
-    "image": image || "https://prateekkarn.com/og-image.png",
+    "url": `https://prateekkarn.in/insights/${slug}`,
+    "image": image || "https://prateekkarn.in/og-image.png",
     "datePublished": datePublished,
     "dateModified": dateModified || datePublished,
     "author": {
       "@type": "Person",
-      "@id": "https://prateekkarn.com/#person",
+      "@id": "https://prateekkarn.in/#person",
       "name": "Prateek Karn"
     },
     "publisher": {
       "@type": "Organization",
-      "@id": "https://prateekkarn.com/#organization",
+      "@id": "https://prateekkarn.in/#organization",
       "name": "Karn Consulting",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://prateekkarn.com/pk-logo.png"
+        "url": "https://prateekkarn.in/pk-logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://prateekkarn.com/insights/${slug}`
+      "@id": `https://prateekkarn.in/insights/${slug}`
     },
     "keywords": keywords.join(", "),
     "articleSection": "Insights",
@@ -311,9 +311,9 @@ export const ArticleStructuredData = ({
   const articleSchema = generateArticleSchema(articleProps);
   
   const defaultBreadcrumbs = [
-    { name: "Home", url: "https://prateekkarn.com" },
-    { name: "Insights", url: "https://prateekkarn.com/insights" },
-    { name: articleProps.title, url: `https://prateekkarn.com/insights/${articleProps.slug}` }
+    { name: "Home", url: "https://prateekkarn.in" },
+    { name: "Insights", url: "https://prateekkarn.in/insights" },
+    { name: articleProps.title, url: `https://prateekkarn.in/insights/${articleProps.slug}` }
   ];
   
   const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs || defaultBreadcrumbs);

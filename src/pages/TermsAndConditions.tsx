@@ -256,7 +256,7 @@ const TermsAndConditions = () => {
                     <p><strong>Karn Corporation</strong></p>
                     <p>Proprietor: Prateek Kumar Karan</p>
                     <p>GSTIN: 03CLWPK4491C1ZX</p>
-                    <p>Email: prateek.karn@prateekkarn.com</p>
+                    <p>Email: prateekkarn5@gmail.com</p>
                     <p>Address: Kala Ghanupur Sub Urban, House No 8, New Pal Avenue, Ram Tirath Road, Amritsar, Punjab, 143001, India</p>
                   </div>
                 </div>

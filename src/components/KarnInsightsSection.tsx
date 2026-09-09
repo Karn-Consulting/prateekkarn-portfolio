@@ -345,11 +345,11 @@ const KarnInsightsSection = () => {
                   {/* Contact Links */}
                   <div className="flex flex-col gap-4">
                     <a 
-                      href="mailto:prateek.karn@prateekkarn.com"
+                      href="mailto:prateekkarn5@gmail.com"
                       className="inline-flex items-center gap-3 text-[#c9b896] hover:text-[#c9b896] hover:brightness-125 transition-all duration-300 text-sm sm:text-base justify-center lg:justify-start"
                     >
                       <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                      <span className="font-medium">prateek.karn@prateekkarn.com</span>
+                      <span className="font-medium">prateekkarn5@gmail.com</span>
                     </a>
                     
                     <a 

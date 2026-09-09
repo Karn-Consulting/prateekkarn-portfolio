@@ -97,7 +97,7 @@ const getWelcomeEmailHtml = () => `
     <div style="background-color: #1a1a1a; padding: 20px 40px; text-align: center;">
       <p style="font-size: 12px; color: #888888; margin: 0;">
         © 2025 Prateek Karn. All rights reserved.<br>
-        <a href="https://prateekkarn.com" style="color: #8b7355; text-decoration: none;">prateekkarn.com</a>
+        <a href="https://prateekkarn.in" style="color: #8b7355; text-decoration: none;">prateekkarn.in</a>
       </p>
     </div>
   </div>
@@ -162,8 +162,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Prateek Karn <newsletter@prateekkarn.com>',
-        reply_to: 'prateek.karn@prateekkarn.com',
+        from: 'Prateek Karn <newsletter@prateekkarn.in>',
+        reply_to: 'prateekkarn5@gmail.com',
         to: [normalizedEmail],
         subject: 'Welcome to Strategic Intelligence Newsletter',
         html: getWelcomeEmailHtml(),
@@ -220,9 +220,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           'Content-Type': 'application/json',
         },
       body: JSON.stringify({
-        from: 'Newsletter System <newsletter@prateekkarn.com>',
+        from: 'Newsletter System <newsletter@prateekkarn.in>',
         reply_to: normalizedEmail,
-        to: ['prateek.karn@prateekkarn.com'],
+        to: ['prateekkarn5@gmail.com'],
         subject: `New Newsletter Subscriber: ${normalizedEmail}`,
         html: getNotificationEmailHtml(normalizedEmail),
       })
